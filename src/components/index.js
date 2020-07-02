@@ -367,7 +367,7 @@ class Badminton extends Component {
       this.state.shot_type_top_2 === "Nill" &&
       this.state.shot_type_top_3 != "Nill"
     ) {
-      alert("You need to input the other players shot");
+      // alert("You need to input the other players shot");
     } else if (this.state.shot_type_top_2 != "Nill") {
       shot_type_2_val = this.shotTypeToLetter(
         this.state.shot_type_top_2,
@@ -412,7 +412,7 @@ class Badminton extends Component {
       );
       final_resp.push(response_array);
     } else if (this.state.rightRally < this.state.leftRally) {
-      alert("The right rally number should be greater than the left");
+      // alert("The right rally number should be greater than the left");
     } else {
       for (let i = this.state.leftRally; i <= this.state.rightRally; i++) {
         let initialPlayer =
@@ -457,7 +457,7 @@ class Badminton extends Component {
       this.state.shot_type_bot_2 === "Nill" &&
       this.state.shot_type_bot_3 != "Nill"
     ) {
-      alert("You need to input the other players shot");
+      // alert("You need to input the other players shot");
     } else if (this.state.shot_type_bot_2 != "Nill") {
       shot_type_2_val = this.shotTypeToLetter(
         this.state.shot_type_bot_2,
@@ -502,7 +502,7 @@ class Badminton extends Component {
       );
       final_resp.push(response_array);
     } else if (this.state.rightRally < this.state.leftRally) {
-      alert("The right rally number should be greater than the left");
+      // alert("The right rally number should be greater than the left");
     } else {
       for (let i = this.state.leftRally; i <= this.state.rightRally; i++) {
         let initialPlayer =
@@ -639,6 +639,90 @@ class Badminton extends Component {
           } else {
           }
         });
+      } else if (
+        this.state.top_forehand === true &&
+        this.state.top_backhand === true
+      ) {
+        badminton_points_data_array.map((item, index) => {
+          if (this.state.top_winners) {
+            if (this.state.top_win_smash) {
+              if (
+                item.Action_FB_init_top === "Forehand" &&
+                item.Action_wl_init_top === "Winner" &&
+                item.shot === "Smash"
+              ) {
+                final_array.push(item);
+              } else if (
+                item.Action_FB_init_top === "Backhand" &&
+                item.Action_wl_init_top === "Winner" &&
+                item.shot === "Smash"
+              ) {
+                final_array.push(item);
+              }
+            } else if (this.state.top_win_plac) {
+              if (
+                item.Action_FB_init_top === "Forehand" &&
+                item.Action_wl_init_top === "Winner" &&
+                item.shot === "Placement"
+              ) {
+                final_array.push(item);
+              } else if (
+                item.Action_FB_init_top === "Backhand" &&
+                item.Action_wl_init_top === "Winner" &&
+                item.shot === "Placement"
+              ) {
+                final_array.push(item);
+              }
+            } else {
+            }
+          } else if (this.state.top_losers) {
+            if (this.state.top_losers_smash) {
+              if (
+                item.Action_FB_init_top === "Forehand" &&
+                item.Action_wl_init_top === "Mistake" &&
+                item.shot === "Smash"
+              ) {
+                final_array.push(item);
+              } else if (
+                item.Action_FB_init_top === "Backhand" &&
+                item.Action_wl_init_top === "Mistake" &&
+                item.shot === "Smash"
+              ) {
+                final_array.push(item);
+              }
+            } else if (this.state.top_losers_plac) {
+              if (
+                item.Action_FB_init_top === "Forehand" &&
+                item.Action_wl_init_top === "Mistake" &&
+                item.shot === "Placement"
+              ) {
+                final_array.push(item);
+              } else if (
+                item.Action_FB_init_top === "Backhand" &&
+                item.Action_wl_init_top === "Mistake" &&
+                item.shot === "Placement"
+              ) {
+                final_array.push(item);
+              }
+            } else if (this.state.top_losers_net) {
+              if (
+                item.Action_FB_init_top === "Forehand" &&
+                item.Action_wl_init_top === "Mistake" &&
+                item.shot === "Net Shot"
+              ) {
+                final_array.push(item);
+              } else if (
+                item.Action_FB_init_top === "Backhand" &&
+                item.Action_wl_init_top === "Mistake" &&
+                item.shot === "Net Shot"
+              ) {
+                final_array.push(item);
+              }
+            } else {
+            }
+          } else {
+          }
+        });
       }
       this.setState({ isRightSide: true, rightSideData: final_array });
     } else if (index === 1) {
@@ -750,6 +834,90 @@ class Badminton extends Component {
           } else {
           }
         });
+      } else if (
+        this.state.bot_forehand === true &&
+        this.state.bot_backhand === true
+      ) {
+        badminton_points_data_array.map((item, index) => {
+          if (this.state.bot_winners) {
+            if (this.state.bot_win_smash) {
+              if (
+                item.Action_FB_init_bottom === "Forehand" &&
+                item.Action_wl_init_bottom === "Winner" &&
+                item.shot === "Smash"
+              ) {
+                final_array.push(item);
+              } else if (
+                item.Action_FB_init_bottom === "Backhand" &&
+                item.Action_wl_init_bottom === "Winner" &&
+                item.shot === "Smash"
+              ) {
+                final_array.push(item);
+              }
+            } else if (this.state.bot_win_plac) {
+              if (
+                item.Action_FB_init_bottom === "Forehand" &&
+                item.Action_wl_init_bottom === "Winner" &&
+                item.shot === "Placement"
+              ) {
+                final_array.push(item);
+              } else if (
+                item.Action_FB_init_bottom === "Backhand" &&
+                item.Action_wl_init_bottom === "Winner" &&
+                item.shot === "Placement"
+              ) {
+                final_array.push(item);
+              }
+            } else {
+            }
+          } else if (this.state.bot_losers) {
+            if (this.state.bot_losers_smash) {
+              if (
+                item.Action_FB_init_bottom === "Forehand" &&
+                item.Action_wl_init_bottom === "Mistake" &&
+                item.shot === "Smash"
+              ) {
+                final_array.push(item);
+              } else if (
+                item.Action_FB_init_bottom === "Backhand" &&
+                item.Action_wl_init_bottom === "Mistake" &&
+                item.shot === "Smash"
+              ) {
+                final_array.push(item);
+              }
+            } else if (this.state.bot_losers_plac) {
+              if (
+                item.Action_FB_init_bottom === "Forehand" &&
+                item.Action_wl_init_bottom === "Mistake" &&
+                item.shot === "Placement"
+              ) {
+                final_array.push(item);
+              } else if (
+                item.Action_FB_init_bottom === "Backhand" &&
+                item.Action_wl_init_bottom === "Mistake" &&
+                item.shot === "Placement"
+              ) {
+                final_array.push(item);
+              }
+            } else if (this.state.bot_losers_net) {
+              if (
+                item.Action_FB_init_bottom === "Forehand" &&
+                item.Action_wl_init_bottom === "Mistake" &&
+                item.shot === "Net Shot"
+              ) {
+                final_array.push(item);
+              } else if (
+                item.Action_FB_init_bottom === "Backhand" &&
+                item.Action_wl_init_bottom === "Mistake" &&
+                item.shot === "Net Shot"
+              ) {
+                final_array.push(item);
+              }
+            } else {
+            }
+          } else {
+          }
+        });
       }
       this.setState({ isRightSide: true, rightSideData: final_array });
     }
@@ -760,7 +928,7 @@ class Badminton extends Component {
     if (this.state.leftRally != -1) {
       if (index === 1) {
         if (this.state.shot_type_top_1 === "Nill") {
-          alert("You can't keep the first shot as Nill");
+          // alert("You can't keep the first shot as Nill");
         } else if (
           this.state.shot_hand_top_1 === "A" ||
           this.state.shot_hand_top_2 === "A" ||
@@ -969,7 +1137,7 @@ class Badminton extends Component {
             this.state.shot_type_top_2 === "Nill" &&
             this.state.shot_type_top_3 != "Nill"
           ) {
-            alert("You need to input the other players shot");
+            // alert("You need to input the other players shot");
           } else if (this.state.shot_type_top_2 != "Nill") {
             shot_type_2_val = this.shotTypeToLetter(
               this.state.shot_type_top_2,
@@ -1020,7 +1188,7 @@ class Badminton extends Component {
               patter_length: final_array.length,
             });
           } else if (this.state.rightRally < this.state.leftRally) {
-            alert("The right rally number should be greater than the left");
+            // alert("The right rally number should be greater than the left");
           } else {
             let final_resp = [];
             let final_shots = [];
@@ -1060,7 +1228,7 @@ class Badminton extends Component {
         }
       } else if (index === 2) {
         if (this.state.shot_type_bot_1 === "Nill") {
-          alert("You can't keep the first shot as Nill");
+          // alert("You can't keep the first shot as Nill");
         } else if (
           this.state.shot_hand_bot_1 === "A" ||
           this.state.shot_hand_bot_2 === "A" ||
@@ -1269,7 +1437,7 @@ class Badminton extends Component {
             this.state.shot_type_bot_2 === "Nill" &&
             this.state.shot_type_bot_3 != "Nill"
           ) {
-            alert("You need to input the other players shot");
+            // alert("You need to input the other players shot");
           } else if (this.state.shot_type_bot_2 != "Nill") {
             shot_type_2_val = this.shotTypeToLetter(
               this.state.shot_type_bot_2,
@@ -1319,7 +1487,7 @@ class Badminton extends Component {
               patter_length: final_array.length,
             });
           } else if (this.state.rightRally < this.state.leftRally) {
-            alert("The right rally number should be greater than the left");
+            // alert("The right rally number should be greater than the left");
           } else {
             let final_resp = [];
             let final_shots = [];
@@ -3092,7 +3260,6 @@ class Badminton extends Component {
                     let right_score_set2 = 0;
                     let left_score_set3 = 0;
                     let right_score_set3 = 0;
-                    console.log(e.target.value);
                     if (e.target.value != "") {
                       if (this.state.setLeft === 1) {
                         rally_number = rally_number_disp;
@@ -3223,20 +3390,67 @@ class Badminton extends Component {
                   onChange={(e) => {
                     let rally_number_disp = parseInt(e.target.value) - 1;
                     let rally_number = -1;
-                    if (this.state.setRight === 1) {
-                      rally_number = rally_number_disp;
-                    } else if (this.state.setRight === 2) {
-                      rally_number = rally_number_disp + this.state.setArray[0];
-                    } else if (this.state.setRight === 3) {
-                      if (this.state.setArray[1]) {
+                    let left_score_set1 = 0;
+                    let right_score_set1 = 0;
+                    let left_score_set2 = 0;
+                    let right_score_set2 = 0;
+                    let left_score_set3 = 0;
+                    let right_score_set3 = 0;
+                    if (e.target.value != "") {
+                      if (this.state.setRight === 1) {
+                        rally_number = rally_number_disp;
+                        let rall_info = badminton_points_data[e.target.value];
+                        left_score_set1 = rall_info.current_set_top_init_score;
+                        right_score_set1 =
+                          rall_info.current_set_bottom_init_score;
+                      } else if (this.state.setRight === 2) {
                         rally_number =
-                          rally_number_disp + this.state.setArray[1];
+                          rally_number_disp + this.state.setArray[0];
+                        let rall_info =
+                          badminton_points_data[(rally_number + 1).toString()];
+                        console.log(rally_number + 1, rall_info);
+                        left_score_set2 = rall_info.current_set_top_init_score;
+                        right_score_set2 =
+                          rall_info.current_set_bottom_init_score;
+                        left_score_set1 = this.state.points_table[0]
+                          .current_set_top_init_score;
+                        right_score_set1 = this.state.points_table[0]
+                          .current_set_bottom_init_score;
+                      } else if (this.state.setRight === 3) {
+                        if (this.state.setArray[1]) {
+                          rally_number =
+                            rally_number_disp + this.state.setArray[1];
+                          let rall_info =
+                            badminton_points_data[
+                              (rally_number + 1).toString()
+                            ];
+                          console.log(rally_number + 1, rall_info);
+                          left_score_set2 = this.state.points_table[1]
+                            .current_set_top_init_score;
+                          right_score_set2 = this.state.points_table[1]
+                            .current_set_bottom_init_score;
+                          left_score_set1 = this.state.points_table[0]
+                            .current_set_top_init_score;
+                          right_score_set1 = this.state.points_table[0]
+                            .current_set_bottom_init_score;
+                          left_score_set3 =
+                            rall_info.current_set_top_init_score;
+                          right_score_set3 =
+                            rall_info.current_set_bottom_init_score;
+                        }
                       }
                     }
+
                     this.setState({
                       rightRallyDisp: parseInt(e.target.value) - 1,
                       rightRally: rally_number,
                       firstClick: true,
+                      right_top_score_set1: left_score_set1,
+                      right_bot_score_set1: right_score_set1,
+                      right_top_score_set2: left_score_set2,
+                      right_bot_score_set2: right_score_set2,
+                      right_top_score_set3: left_score_set3,
+                      right_bot_score_set3: right_score_set3,
                     });
                   }}
                 ></input>

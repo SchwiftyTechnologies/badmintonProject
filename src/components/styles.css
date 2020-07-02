@@ -621,10 +621,11 @@ input::-webkit-inner-spin-button {
   flex-direction: row;
   border: 2px solid rgb(85, 85, 85);
   margin-top: 10px;
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 10%;
+  margin-right: 10%;
   height: 75px;
   background-color: rgb(46, 46, 46);
+  width: 80%;
 }
 
 .bottom_bar_row_1 {

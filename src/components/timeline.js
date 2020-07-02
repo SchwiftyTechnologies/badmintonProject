@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./styles.css";
-import badminton_data from "../Badminton_data.json";
+import badminton_data from "../Badminton_data_14.json";
 
 class Timeline extends Component {
   constructor(props) {
