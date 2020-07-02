@@ -1,0 +1,634 @@
+.btn_orange {
+  background: rgb(63, 63, 63);
+  color: rgb(255, 154, 71);
+  border: 2px solid rgb(85, 85, 85);
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1;
+  margin: 4px;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  -moz-transition: all 0.2s ease-in-out 0s;
+  -ms-transition: all 0.2s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
+}
+.btn_orange:focus {
+  outline: none;
+}
+.btn_teal:focus {
+  outline: none;
+}
+.btn_teal {
+  background: rgb(63, 63, 63);
+  color: teal;
+  border: 2px solid rgb(85, 85, 85);
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1;
+  margin: 4px;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  -moz-transition: all 0.2s ease-in-out 0s;
+  -ms-transition: all 0.2s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
+}
+
+.btn_custom {
+  background: rgb(63, 63, 63);
+  color: rgb(173, 173, 10);
+  border: 2px solid rgb(85, 85, 85);
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1;
+  margin: 4px;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  -moz-transition: all 0.2s ease-in-out 0s;
+  -ms-transition: all 0.2s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
+}
+.btn_custom:focus {
+  outline: none;
+}
+.btn_small:focus {
+  outline: none;
+}
+.btn_small {
+  background: rgb(63, 63, 63);
+  color: rgb(173, 173, 10);
+  border: 2px solid rgb(85, 85, 85);
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 0.7rem;
+  font-weight: 500;
+  line-height: 1;
+  margin: 4px;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  -moz-transition: all 0.2s ease-in-out 0s;
+  -ms-transition: all 0.2s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
+}
+.btn_small_orange:focus {
+  outline: none;
+}
+.btn_small_teal:focus {
+  outline: none;
+}
+.btn_small_orange {
+  background: rgb(63, 63, 63);
+  color: rgb(255, 154, 71);
+  border: 2px solid rgb(85, 85, 85);
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 0.7rem;
+  font-weight: 500;
+  line-height: 1;
+  margin: 4px;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  -moz-transition: all 0.2s ease-in-out 0s;
+  -ms-transition: all 0.2s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
+}
+
+.btn_small_teal {
+  background: rgb(63, 63, 63);
+  color: teal;
+  border: 2px solid rgb(85, 85, 85);
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 0.7rem;
+  font-weight: 500;
+  line-height: 1;
+  margin: 4px;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  -moz-transition: all 0.2s ease-in-out 0s;
+  -ms-transition: all 0.2s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
+}
+
+.Dropdown-root {
+  position: relative;
+}
+
+.Dropdown-control {
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(63, 63, 63);
+  border: 1px solid 2px solid rgb(85, 85, 85);
+  border-radius: 2px;
+  box-sizing: border-box;
+  color: #333;
+  cursor: default;
+  outline: none;
+  padding: 8px 52px 8px 10px;
+  transition: all 200ms ease;
+  font-size: 0.7rem;
+}
+
+.Dropdown-control-orange {
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(63, 63, 63);
+  border: 2px solid rgb(85, 85, 85);
+  border-radius: 2px;
+  box-sizing: border-box;
+  color: rgb(255, 154, 71);
+  cursor: default;
+  outline: none;
+  padding: 8px 52px 8px 10px;
+  transition: all 200ms ease;
+  font-size: 0.6rem;
+}
+
+.Dropdown-control-teal {
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(63, 63, 63);
+  border: 2px solid rgb(85, 85, 85);
+  border-radius: 2px;
+  box-sizing: border-box;
+  color: teal;
+  cursor: default;
+  outline: none;
+  padding: 8px 52px 8px 10px;
+  transition: all 200ms ease;
+  font-size: 0.6rem;
+}
+
+.Dropdown-control:hover {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+}
+
+.Dropdown-arrow {
+  border-color: #999 transparent transparent;
+  border-style: solid;
+  border-width: 5px 5px 0;
+  content: " ";
+  display: block;
+  height: 0;
+  margin-top: -ceil(2.5);
+  position: absolute;
+  right: 10px;
+  top: 14px;
+  width: 0;
+}
+
+.is-open .Dropdown-arrow {
+  border-color: transparent transparent #999;
+  border-width: 0 5px 5px;
+}
+
+.Dropdown-menu {
+  background-color: rgb(63, 63, 63);
+  border: 2px solid rgb(85, 85, 85);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  margin-top: -1px;
+  max-height: 200px;
+  overflow-y: auto;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 1000;
+  -webkit-overflow-scrolling: touch;
+}
+
+.Dropdown-menu .Dropdown-group > .Dropdown-title {
+  padding: 8px 10px;
+  color: rgba(51, 51, 51, 1);
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.Dropdown-option {
+  box-sizing: border-box;
+  color: rgba(51, 51, 51, 0.8);
+  cursor: pointer;
+  display: block;
+  padding: 8px 10px;
+  font-size: 0.7rem;
+}
+
+.Dropdown-option-orange {
+  box-sizing: border-box;
+  color: rgb(255, 154, 71);
+  cursor: pointer;
+  display: block;
+  padding: 8px 10px;
+  font-size: 0.7rem;
+}
+
+.Dropdown-option-teal {
+  box-sizing: border-box;
+  color: teal;
+  cursor: pointer;
+  display: block;
+  padding: 8px 10px;
+  font-size: 0.7rem;
+}
+
+.Dropdown-option:last-child {
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+.Dropdown-option:hover {
+  background-color: rgb(63, 63, 63);
+  color: #333;
+}
+
+.Dropdown-option.is-selected {
+  background-color: rgb(63, 63, 63);
+  color: #333;
+}
+
+.Dropdown-noresults {
+  box-sizing: border-box;
+  color: #ccc;
+  cursor: default;
+  display: block;
+  padding: 8px 10px;
+}
+
+.timeline {
+  border: 2px solid rgb(85, 85, 85);
+  width: 94%;
+  flex: 1;
+  display: flex;
+  overflow-x: auto;
+}
+
+.timeline::-webkit-scrollbar {
+  display: none;
+}
+
+.timeline_cont {
+  background: rgb(63, 63, 63);
+  /* min-width: 126px; */
+  width: 126px;
+  padding: 0px 10px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  text-align: center;
+  color: rgb(173, 173, 10);
+}
+
+.above_timeline {
+  flex-direction: row;
+  justify-content: space-between;
+  display: flex;
+  padding: 0.5%;
+}
+
+.at_group {
+  display: flex;
+  flex-direction: row;
+  color: rgb(173, 173, 10);
+}
+
+.at_elements {
+  border: 1px solid rgb(85, 85, 85);
+  color: rgb(173, 173, 10);
+  text-align: center;
+  width: 70px;
+  overflow: hidden;
+  background-color: rgb(46, 46, 46);
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.at_elements:focus {
+  outline: none;
+}
+
+.at_elements_score {
+  border: 1px solid rgb(85, 85, 85);
+  color: rgb(173, 173, 10);
+  text-align: center;
+  width: 150px;
+  overflow: hidden;
+  background-color: rgb(46, 46, 46);
+  margin-left: 5px;
+  margin-right: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.main {
+  overflow: hidden;
+  padding: 5px;
+  background-color: rgb(46, 46, 46);
+}
+
+.main::-webkit-scrollbar {
+  display: none !important;
+}
+
+.section_1::-webkit-scrollbar {
+  display: none !important;
+}
+
+.shot_types {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 15px;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.section_1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.column_1 {
+  flex: 3.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: rgb(255, 154, 71);
+  align-items: center;
+}
+
+.column_1_1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgb(255, 154, 71);
+  align-items: center;
+}
+
+.column_1_2 {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  align-items: flex-end;
+}
+
+.column_1_2_wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  align-items: flex-end;
+}
+
+.column_1_3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: teal;
+  align-items: center;
+}
+
+.pattern_text {
+  border: 2px solid rgb(85, 85, 85);
+  height: 30px;
+  width: 85px;
+  text-align: center;
+}
+
+.pattern_input {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  align-items: baseline;
+}
+
+.dropdown_container {
+  padding: 2px;
+}
+
+.dropdown_container_padding {
+  padding: 2px;
+  padding-left: 12px;
+}
+
+.go_button_container {
+  padding: 2px;
+  padding-left: 10px;
+}
+
+.info_row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1px;
+}
+
+.info_box {
+  border: 2px solid rgb(85, 85, 85);
+  width: 52px;
+  height: 32px;
+  margin-right: 5px;
+  margin-left: 5px;
+  text-align: center;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info_box_checkbox {
+  border: 2px solid rgb(85, 85, 85);
+  width: 32px;
+  height: 32px;
+  margin-right: 5px;
+  margin-left: 5px;
+  background-color: #202020;
+}
+
+.div_line {
+  background-color: rgb(85, 85, 85);
+  width: 95%;
+  height: 1px;
+}
+
+.shot_checkbox {
+  border: 2px solid rgb(85, 85, 85);
+  width: 22px;
+  height: 22px;
+  display: flex;
+  justify-content: center;
+}
+
+.column_2 {
+  flex: 3;
+  display: flex;
+  flex-direction: row;
+}
+
+.column_2_1 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.column_2_2 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stats_info_row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: "center";
+}
+
+.stats_info_cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stats_info_row_ind {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.stats_info_box {
+  border: 1px solid rgb(85, 85, 85);
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stats_info_ind_comp {
+  border: 1px solid rgb(85, 85, 85);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  font-size: 12px;
+  width: 90px;
+}
+
+.player_photo {
+  border: 2px solid rgb(85, 85, 85);
+  width: 80px;
+  height: 80px;
+}
+
+.points_table_cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(85, 85, 85);
+  width: 65%;
+  height: 15%;
+}
+
+.points_table_column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(85, 85, 85);
+  height: 100%;
+}
+
+.points_table_box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.column_3 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.right_buttons_cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.right_buttons_cont_1 {
+  display: flex;
+  flex-direction: row;
+}
+
+.bottom_bar {
+  display: flex;
+  flex-direction: row;
+  border: 2px solid rgb(85, 85, 85);
+  margin-top: 10px;
+  margin-left: 20%;
+  margin-right: 20%;
+  height: 75px;
+  background-color: rgb(46, 46, 46);
+}
+
+.bottom_bar_row_1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
