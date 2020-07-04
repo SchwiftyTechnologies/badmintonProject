@@ -536,53 +536,55 @@ class Badminton extends Component {
         this.state.top_backhand === false
       ) {
         badminton_points_data_array.map((item, index) => {
-          if (this.state.top_winners) {
-            if (this.state.top_win_smash) {
-              if (
-                item.Action_FB_init_top === "Forehand" &&
-                item.Action_wl_init_top === "Winner" &&
-                item.shot === "Smash"
-              ) {
-                final_array.push(item);
+          if (index >= this.state.leftRally && index <= this.state.rightRally) {
+            if (this.state.top_winners) {
+              if (this.state.top_win_smash) {
+                if (
+                  item.Action_FB_init_top === "Forehand" &&
+                  item.Action_wl_init_top === "Winner" &&
+                  item.shot === "Smash"
+                ) {
+                  final_array.push(item);
+                }
+              } else if (this.state.top_win_plac) {
+                if (
+                  item.Action_FB_init_top === "Forehand" &&
+                  item.Action_wl_init_top === "Winner" &&
+                  item.shot === "Placement"
+                ) {
+                  final_array.push(item);
+                }
+              } else {
               }
-            } else if (this.state.top_win_plac) {
-              if (
-                item.Action_FB_init_top === "Forehand" &&
-                item.Action_wl_init_top === "Winner" &&
-                item.shot === "Placement"
-              ) {
-                final_array.push(item);
+            } else if (this.state.top_losers) {
+              if (this.state.top_losers_smash) {
+                if (
+                  item.Action_FB_init_top === "Forehand" &&
+                  item.Action_wl_init_top === "Mistake" &&
+                  item.shot === "Smash"
+                ) {
+                  final_array.push(item);
+                }
+              } else if (this.state.top_losers_plac) {
+                if (
+                  item.Action_FB_init_top === "Forehand" &&
+                  item.Action_wl_init_top === "Mistake" &&
+                  item.shot === "Placement"
+                ) {
+                  final_array.push(item);
+                }
+              } else if (this.state.top_losers_net) {
+                if (
+                  item.Action_FB_init_top === "Forehand" &&
+                  item.Action_wl_init_top === "Mistake" &&
+                  item.shot === "Net Shot"
+                ) {
+                  final_array.push(item);
+                }
+              } else {
               }
             } else {
             }
-          } else if (this.state.top_losers) {
-            if (this.state.top_losers_smash) {
-              if (
-                item.Action_FB_init_top === "Forehand" &&
-                item.Action_wl_init_top === "Mistake" &&
-                item.shot === "Smash"
-              ) {
-                final_array.push(item);
-              }
-            } else if (this.state.top_losers_plac) {
-              if (
-                item.Action_FB_init_top === "Forehand" &&
-                item.Action_wl_init_top === "Mistake" &&
-                item.shot === "Placement"
-              ) {
-                final_array.push(item);
-              }
-            } else if (this.state.top_losers_net) {
-              if (
-                item.Action_FB_init_top === "Forehand" &&
-                item.Action_wl_init_top === "Mistake" &&
-                item.shot === "Net Shot"
-              ) {
-                final_array.push(item);
-              }
-            } else {
-            }
-          } else {
           }
         });
       } else if (
@@ -590,53 +592,55 @@ class Badminton extends Component {
         this.state.top_backhand === true
       ) {
         badminton_points_data_array.map((item, index) => {
-          if (this.state.top_winners) {
-            if (this.state.top_win_smash) {
-              if (
-                item.Action_FB_init_top === "Backhand" &&
-                item.Action_wl_init_top === "Winner" &&
-                item.shot === "Smash"
-              ) {
-                final_array.push(item);
+          if (index >= this.state.leftRally && index <= this.state.rightRally) {
+            if (this.state.top_winners) {
+              if (this.state.top_win_smash) {
+                if (
+                  item.Action_FB_init_top === "Backhand" &&
+                  item.Action_wl_init_top === "Winner" &&
+                  item.shot === "Smash"
+                ) {
+                  final_array.push(item);
+                }
+              } else if (this.state.top_win_plac) {
+                if (
+                  item.Action_FB_init_top === "Backhand" &&
+                  item.Action_wl_init_top === "Winner" &&
+                  item.shot === "Placement"
+                ) {
+                  final_array.push(item);
+                }
+              } else {
               }
-            } else if (this.state.top_win_plac) {
-              if (
-                item.Action_FB_init_top === "Backhand" &&
-                item.Action_wl_init_top === "Winner" &&
-                item.shot === "Placement"
-              ) {
-                final_array.push(item);
+            } else if (this.state.top_losers) {
+              if (this.state.top_losers_smash) {
+                if (
+                  item.Action_FB_init_top === "Backhand" &&
+                  item.Action_wl_init_top === "Mistake" &&
+                  item.shot === "Smash"
+                ) {
+                  final_array.push(item);
+                }
+              } else if (this.state.top_losers_plac) {
+                if (
+                  item.Action_FB_init_top === "Backhand" &&
+                  item.Action_wl_init_top === "Mistake" &&
+                  item.shot === "Placement"
+                ) {
+                  final_array.push(item);
+                }
+              } else if (this.state.top_losers_net) {
+                if (
+                  item.Action_FB_init_top === "Backhand" &&
+                  item.Action_wl_init_top === "Mistake" &&
+                  item.shot === "Net Shot"
+                ) {
+                  final_array.push(item);
+                }
+              } else {
               }
             } else {
             }
-          } else if (this.state.top_losers) {
-            if (this.state.top_losers_smash) {
-              if (
-                item.Action_FB_init_top === "Backhand" &&
-                item.Action_wl_init_top === "Mistake" &&
-                item.shot === "Smash"
-              ) {
-                final_array.push(item);
-              }
-            } else if (this.state.top_losers_plac) {
-              if (
-                item.Action_FB_init_top === "Backhand" &&
-                item.Action_wl_init_top === "Mistake" &&
-                item.shot === "Placement"
-              ) {
-                final_array.push(item);
-              }
-            } else if (this.state.top_losers_net) {
-              if (
-                item.Action_FB_init_top === "Backhand" &&
-                item.Action_wl_init_top === "Mistake" &&
-                item.shot === "Net Shot"
-              ) {
-                final_array.push(item);
-              }
-            } else {
-            }
-          } else {
           }
         });
       } else if (
@@ -644,83 +648,85 @@ class Badminton extends Component {
         this.state.top_backhand === true
       ) {
         badminton_points_data_array.map((item, index) => {
-          if (this.state.top_winners) {
-            if (this.state.top_win_smash) {
-              if (
-                item.Action_FB_init_top === "Forehand" &&
-                item.Action_wl_init_top === "Winner" &&
-                item.shot === "Smash"
-              ) {
-                final_array.push(item);
-              } else if (
-                item.Action_FB_init_top === "Backhand" &&
-                item.Action_wl_init_top === "Winner" &&
-                item.shot === "Smash"
-              ) {
-                final_array.push(item);
+          if (index >= this.state.leftRally && index <= this.state.rightRally) {
+            if (this.state.top_winners) {
+              if (this.state.top_win_smash) {
+                if (
+                  item.Action_FB_init_top === "Forehand" &&
+                  item.Action_wl_init_top === "Winner" &&
+                  item.shot === "Smash"
+                ) {
+                  final_array.push(item);
+                } else if (
+                  item.Action_FB_init_top === "Backhand" &&
+                  item.Action_wl_init_top === "Winner" &&
+                  item.shot === "Smash"
+                ) {
+                  final_array.push(item);
+                }
+              } else if (this.state.top_win_plac) {
+                if (
+                  item.Action_FB_init_top === "Forehand" &&
+                  item.Action_wl_init_top === "Winner" &&
+                  item.shot === "Placement"
+                ) {
+                  final_array.push(item);
+                } else if (
+                  item.Action_FB_init_top === "Backhand" &&
+                  item.Action_wl_init_top === "Winner" &&
+                  item.shot === "Placement"
+                ) {
+                  final_array.push(item);
+                }
+              } else {
               }
-            } else if (this.state.top_win_plac) {
-              if (
-                item.Action_FB_init_top === "Forehand" &&
-                item.Action_wl_init_top === "Winner" &&
-                item.shot === "Placement"
-              ) {
-                final_array.push(item);
-              } else if (
-                item.Action_FB_init_top === "Backhand" &&
-                item.Action_wl_init_top === "Winner" &&
-                item.shot === "Placement"
-              ) {
-                final_array.push(item);
+            } else if (this.state.top_losers) {
+              if (this.state.top_losers_smash) {
+                if (
+                  item.Action_FB_init_top === "Forehand" &&
+                  item.Action_wl_init_top === "Mistake" &&
+                  item.shot === "Smash"
+                ) {
+                  final_array.push(item);
+                } else if (
+                  item.Action_FB_init_top === "Backhand" &&
+                  item.Action_wl_init_top === "Mistake" &&
+                  item.shot === "Smash"
+                ) {
+                  final_array.push(item);
+                }
+              } else if (this.state.top_losers_plac) {
+                if (
+                  item.Action_FB_init_top === "Forehand" &&
+                  item.Action_wl_init_top === "Mistake" &&
+                  item.shot === "Placement"
+                ) {
+                  final_array.push(item);
+                } else if (
+                  item.Action_FB_init_top === "Backhand" &&
+                  item.Action_wl_init_top === "Mistake" &&
+                  item.shot === "Placement"
+                ) {
+                  final_array.push(item);
+                }
+              } else if (this.state.top_losers_net) {
+                if (
+                  item.Action_FB_init_top === "Forehand" &&
+                  item.Action_wl_init_top === "Mistake" &&
+                  item.shot === "Net Shot"
+                ) {
+                  final_array.push(item);
+                } else if (
+                  item.Action_FB_init_top === "Backhand" &&
+                  item.Action_wl_init_top === "Mistake" &&
+                  item.shot === "Net Shot"
+                ) {
+                  final_array.push(item);
+                }
+              } else {
               }
             } else {
             }
-          } else if (this.state.top_losers) {
-            if (this.state.top_losers_smash) {
-              if (
-                item.Action_FB_init_top === "Forehand" &&
-                item.Action_wl_init_top === "Mistake" &&
-                item.shot === "Smash"
-              ) {
-                final_array.push(item);
-              } else if (
-                item.Action_FB_init_top === "Backhand" &&
-                item.Action_wl_init_top === "Mistake" &&
-                item.shot === "Smash"
-              ) {
-                final_array.push(item);
-              }
-            } else if (this.state.top_losers_plac) {
-              if (
-                item.Action_FB_init_top === "Forehand" &&
-                item.Action_wl_init_top === "Mistake" &&
-                item.shot === "Placement"
-              ) {
-                final_array.push(item);
-              } else if (
-                item.Action_FB_init_top === "Backhand" &&
-                item.Action_wl_init_top === "Mistake" &&
-                item.shot === "Placement"
-              ) {
-                final_array.push(item);
-              }
-            } else if (this.state.top_losers_net) {
-              if (
-                item.Action_FB_init_top === "Forehand" &&
-                item.Action_wl_init_top === "Mistake" &&
-                item.shot === "Net Shot"
-              ) {
-                final_array.push(item);
-              } else if (
-                item.Action_FB_init_top === "Backhand" &&
-                item.Action_wl_init_top === "Mistake" &&
-                item.shot === "Net Shot"
-              ) {
-                final_array.push(item);
-              }
-            } else {
-            }
-          } else {
           }
         });
       }
@@ -731,53 +737,55 @@ class Badminton extends Component {
         this.state.bot_backhand === false
       ) {
         badminton_points_data_array.map((item, index) => {
-          if (this.state.bot_winners) {
-            if (this.state.bot_win_smash) {
-              if (
-                item.Action_FB_init_bottom === "Forehand" &&
-                item.Action_wl_init_bottom === "Winner" &&
-                item.shot === "Smash"
-              ) {
-                final_array.push(item);
+          if (index >= this.state.leftRally && index <= this.state.rightRally) {
+            if (this.state.bot_winners) {
+              if (this.state.bot_win_smash) {
+                if (
+                  item.Action_FB_init_bottom === "Forehand" &&
+                  item.Action_wl_init_bottom === "Winner" &&
+                  item.shot === "Smash"
+                ) {
+                  final_array.push(item);
+                }
+              } else if (this.state.bot_win_plac) {
+                if (
+                  item.Action_FB_init_bottom === "Forehand" &&
+                  item.Action_wl_init_bottom === "Winner" &&
+                  item.shot === "Placement"
+                ) {
+                  final_array.push(item);
+                }
+              } else {
               }
-            } else if (this.state.bot_win_plac) {
-              if (
-                item.Action_FB_init_bottom === "Forehand" &&
-                item.Action_wl_init_bottom === "Winner" &&
-                item.shot === "Placement"
-              ) {
-                final_array.push(item);
+            } else if (this.state.bot_losers) {
+              if (this.state.bot_losers_smash) {
+                if (
+                  item.Action_FB_init_bottom === "Forehand" &&
+                  item.Action_wl_init_bottom === "Mistake" &&
+                  item.shot === "Smash"
+                ) {
+                  final_array.push(item);
+                }
+              } else if (this.state.bot_losers_plac) {
+                if (
+                  item.Action_FB_init_bottom === "Forehand" &&
+                  item.Action_wl_init_bottom === "Mistake" &&
+                  item.shot === "Placement"
+                ) {
+                  final_array.push(item);
+                }
+              } else if (this.state.bot_losers_net) {
+                if (
+                  item.Action_FB_init_bottom === "Forehand" &&
+                  item.Action_wl_init_bottom === "Mistake" &&
+                  item.shot === "Net Shot"
+                ) {
+                  final_array.push(item);
+                }
+              } else {
               }
             } else {
             }
-          } else if (this.state.bot_losers) {
-            if (this.state.bot_losers_smash) {
-              if (
-                item.Action_FB_init_bottom === "Forehand" &&
-                item.Action_wl_init_bottom === "Mistake" &&
-                item.shot === "Smash"
-              ) {
-                final_array.push(item);
-              }
-            } else if (this.state.bot_losers_plac) {
-              if (
-                item.Action_FB_init_bottom === "Forehand" &&
-                item.Action_wl_init_bottom === "Mistake" &&
-                item.shot === "Placement"
-              ) {
-                final_array.push(item);
-              }
-            } else if (this.state.bot_losers_net) {
-              if (
-                item.Action_FB_init_bottom === "Forehand" &&
-                item.Action_wl_init_bottom === "Mistake" &&
-                item.shot === "Net Shot"
-              ) {
-                final_array.push(item);
-              }
-            } else {
-            }
-          } else {
           }
         });
       } else if (
@@ -785,53 +793,55 @@ class Badminton extends Component {
         this.state.bot_backhand === true
       ) {
         badminton_points_data_array.map((item, index) => {
-          if (this.state.bot_winners) {
-            if (this.state.bot_win_smash) {
-              if (
-                item.Action_FB_init_bottom === "Backhand" &&
-                item.Action_wl_init_bottom === "Winner" &&
-                item.shot === "Smash"
-              ) {
-                final_array.push(item);
+          if (index >= this.state.leftRally && index <= this.state.rightRally) {
+            if (this.state.bot_winners) {
+              if (this.state.bot_win_smash) {
+                if (
+                  item.Action_FB_init_bottom === "Backhand" &&
+                  item.Action_wl_init_bottom === "Winner" &&
+                  item.shot === "Smash"
+                ) {
+                  final_array.push(item);
+                }
+              } else if (this.state.bot_win_plac) {
+                if (
+                  item.Action_FB_init_bottom === "Backhand" &&
+                  item.Action_wl_init_bottom === "Winner" &&
+                  item.shot === "Placement"
+                ) {
+                  final_array.push(item);
+                }
+              } else {
               }
-            } else if (this.state.bot_win_plac) {
-              if (
-                item.Action_FB_init_bottom === "Backhand" &&
-                item.Action_wl_init_bottom === "Winner" &&
-                item.shot === "Placement"
-              ) {
-                final_array.push(item);
+            } else if (this.state.bot_losers) {
+              if (this.state.bot_losers_smash) {
+                if (
+                  item.Action_FB_init_bottom === "Backhand" &&
+                  item.Action_wl_init_bottom === "Mistake" &&
+                  item.shot === "Smash"
+                ) {
+                  final_array.push(item);
+                }
+              } else if (this.state.bot_losers_plac) {
+                if (
+                  item.Action_FB_init_bottom === "Backhand" &&
+                  item.Action_wl_init_bottom === "Mistake" &&
+                  item.shot === "Placement"
+                ) {
+                  final_array.push(item);
+                }
+              } else if (this.state.bot_losers_net) {
+                if (
+                  item.Action_FB_init_bottom === "Backhand" &&
+                  item.Action_wl_init_bottom === "Mistake" &&
+                  item.shot === "Net Shot"
+                ) {
+                  final_array.push(item);
+                }
+              } else {
               }
             } else {
             }
-          } else if (this.state.bot_losers) {
-            if (this.state.bot_losers_smash) {
-              if (
-                item.Action_FB_init_bottom === "Backhand" &&
-                item.Action_wl_init_bottom === "Mistake" &&
-                item.shot === "Smash"
-              ) {
-                final_array.push(item);
-              }
-            } else if (this.state.bot_losers_plac) {
-              if (
-                item.Action_FB_init_bottom === "Backhand" &&
-                item.Action_wl_init_bottom === "Mistake" &&
-                item.shot === "Placement"
-              ) {
-                final_array.push(item);
-              }
-            } else if (this.state.bot_losers_net) {
-              if (
-                item.Action_FB_init_bottom === "Backhand" &&
-                item.Action_wl_init_bottom === "Mistake" &&
-                item.shot === "Net Shot"
-              ) {
-                final_array.push(item);
-              }
-            } else {
-            }
-          } else {
           }
         });
       } else if (
@@ -839,83 +849,85 @@ class Badminton extends Component {
         this.state.bot_backhand === true
       ) {
         badminton_points_data_array.map((item, index) => {
-          if (this.state.bot_winners) {
-            if (this.state.bot_win_smash) {
-              if (
-                item.Action_FB_init_bottom === "Forehand" &&
-                item.Action_wl_init_bottom === "Winner" &&
-                item.shot === "Smash"
-              ) {
-                final_array.push(item);
-              } else if (
-                item.Action_FB_init_bottom === "Backhand" &&
-                item.Action_wl_init_bottom === "Winner" &&
-                item.shot === "Smash"
-              ) {
-                final_array.push(item);
+          if (index >= this.state.leftRally && index <= this.state.rightRally) {
+            if (this.state.bot_winners) {
+              if (this.state.bot_win_smash) {
+                if (
+                  item.Action_FB_init_bottom === "Forehand" &&
+                  item.Action_wl_init_bottom === "Winner" &&
+                  item.shot === "Smash"
+                ) {
+                  final_array.push(item);
+                } else if (
+                  item.Action_FB_init_bottom === "Backhand" &&
+                  item.Action_wl_init_bottom === "Winner" &&
+                  item.shot === "Smash"
+                ) {
+                  final_array.push(item);
+                }
+              } else if (this.state.bot_win_plac) {
+                if (
+                  item.Action_FB_init_bottom === "Forehand" &&
+                  item.Action_wl_init_bottom === "Winner" &&
+                  item.shot === "Placement"
+                ) {
+                  final_array.push(item);
+                } else if (
+                  item.Action_FB_init_bottom === "Backhand" &&
+                  item.Action_wl_init_bottom === "Winner" &&
+                  item.shot === "Placement"
+                ) {
+                  final_array.push(item);
+                }
+              } else {
               }
-            } else if (this.state.bot_win_plac) {
-              if (
-                item.Action_FB_init_bottom === "Forehand" &&
-                item.Action_wl_init_bottom === "Winner" &&
-                item.shot === "Placement"
-              ) {
-                final_array.push(item);
-              } else if (
-                item.Action_FB_init_bottom === "Backhand" &&
-                item.Action_wl_init_bottom === "Winner" &&
-                item.shot === "Placement"
-              ) {
-                final_array.push(item);
+            } else if (this.state.bot_losers) {
+              if (this.state.bot_losers_smash) {
+                if (
+                  item.Action_FB_init_bottom === "Forehand" &&
+                  item.Action_wl_init_bottom === "Mistake" &&
+                  item.shot === "Smash"
+                ) {
+                  final_array.push(item);
+                } else if (
+                  item.Action_FB_init_bottom === "Backhand" &&
+                  item.Action_wl_init_bottom === "Mistake" &&
+                  item.shot === "Smash"
+                ) {
+                  final_array.push(item);
+                }
+              } else if (this.state.bot_losers_plac) {
+                if (
+                  item.Action_FB_init_bottom === "Forehand" &&
+                  item.Action_wl_init_bottom === "Mistake" &&
+                  item.shot === "Placement"
+                ) {
+                  final_array.push(item);
+                } else if (
+                  item.Action_FB_init_bottom === "Backhand" &&
+                  item.Action_wl_init_bottom === "Mistake" &&
+                  item.shot === "Placement"
+                ) {
+                  final_array.push(item);
+                }
+              } else if (this.state.bot_losers_net) {
+                if (
+                  item.Action_FB_init_bottom === "Forehand" &&
+                  item.Action_wl_init_bottom === "Mistake" &&
+                  item.shot === "Net Shot"
+                ) {
+                  final_array.push(item);
+                } else if (
+                  item.Action_FB_init_bottom === "Backhand" &&
+                  item.Action_wl_init_bottom === "Mistake" &&
+                  item.shot === "Net Shot"
+                ) {
+                  final_array.push(item);
+                }
+              } else {
               }
             } else {
             }
-          } else if (this.state.bot_losers) {
-            if (this.state.bot_losers_smash) {
-              if (
-                item.Action_FB_init_bottom === "Forehand" &&
-                item.Action_wl_init_bottom === "Mistake" &&
-                item.shot === "Smash"
-              ) {
-                final_array.push(item);
-              } else if (
-                item.Action_FB_init_bottom === "Backhand" &&
-                item.Action_wl_init_bottom === "Mistake" &&
-                item.shot === "Smash"
-              ) {
-                final_array.push(item);
-              }
-            } else if (this.state.bot_losers_plac) {
-              if (
-                item.Action_FB_init_bottom === "Forehand" &&
-                item.Action_wl_init_bottom === "Mistake" &&
-                item.shot === "Placement"
-              ) {
-                final_array.push(item);
-              } else if (
-                item.Action_FB_init_bottom === "Backhand" &&
-                item.Action_wl_init_bottom === "Mistake" &&
-                item.shot === "Placement"
-              ) {
-                final_array.push(item);
-              }
-            } else if (this.state.bot_losers_net) {
-              if (
-                item.Action_FB_init_bottom === "Forehand" &&
-                item.Action_wl_init_bottom === "Mistake" &&
-                item.shot === "Net Shot"
-              ) {
-                final_array.push(item);
-              } else if (
-                item.Action_FB_init_bottom === "Backhand" &&
-                item.Action_wl_init_bottom === "Mistake" &&
-                item.shot === "Net Shot"
-              ) {
-                final_array.push(item);
-              }
-            } else {
-            }
-          } else {
           }
         });
       }
