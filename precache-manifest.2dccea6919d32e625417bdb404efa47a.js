@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3cf312b32d2c13b49f88d1bb07348f1e",
+    "revision": "f37b9d166ffc0e644eb0ab989ff6d277",
     "url": "/badmintonProject/index.html"
   },
   {
-    "revision": "0833b261b7b9a22576cb",
+    "revision": "25cb1b6aa012bea02815",
     "url": "/badmintonProject/static/css/2.829c9cb5.chunk.css"
   },
   {
-    "revision": "48c1055cbf222e4c2c06",
+    "revision": "e2ff957c9f38930d4bf8",
     "url": "/badmintonProject/static/css/main.a52aae2e.chunk.css"
   },
   {
-    "revision": "0833b261b7b9a22576cb",
-    "url": "/badmintonProject/static/js/2.08565535.chunk.js"
+    "revision": "25cb1b6aa012bea02815",
+    "url": "/badmintonProject/static/js/2.ee20fdbc.chunk.js"
   },
   {
     "revision": "5403b55c1cb422a72be68a013c0b9049",
-    "url": "/badmintonProject/static/js/2.08565535.chunk.js.LICENSE.txt"
+    "url": "/badmintonProject/static/js/2.ee20fdbc.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "48c1055cbf222e4c2c06",
-    "url": "/badmintonProject/static/js/main.6aa351cd.chunk.js"
+    "revision": "e2ff957c9f38930d4bf8",
+    "url": "/badmintonProject/static/js/main.2573cc4f.chunk.js"
   },
   {
     "revision": "099f739b9cc060b7c548",
