@@ -18,6 +18,33 @@ class Field extends Component {
     this.canvasRef = React.createRef();
   }
 
+  checkIfLine = (X, Y) => {
+    const canvas = this.canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    if (this.props.isRightSide) {
+      for (let item of this.props.rightSideData) {
+        let x1 = item.location_contact_shuttle[0] * this.state.width_factor;
+        let y1 = item.location_contact_shuttle[1] * this.state.height_factor;
+        let x2 = item.location_end_shuttle[0] * this.state.width_factor;
+        let y2 = item.location_end_shuttle[1] * this.state.height_factor;
+        console.log("thids", X, Y);
+        console.log(x1, y1, x2, y2);
+        ctx.beginPath();
+        ctx.moveTo(x1, y1); // start of line
+        ctx.lineTo(x2, y2);
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = "red";
+        if (ctx.isPointInStroke(X, Y)) {
+          console.log("Selected shot", item);
+          ctx.stroke();
+          ctx.closePath();
+          this.canvas_arrow(x1, y1, x2, y2);
+          break;
+        }
+      }
+    }
+  };
+
   drawCourt = () => {
     const canvas = this.canvasRef.current;
     const ctx = canvas.getContext("2d");
@@ -387,403 +414,406 @@ class Field extends Component {
     let x = e.pageX - elemLeft;
     let y = e.pageY - elemTop;
     this.setState({ pointSelection: true });
-
-    if (
-      x >= 0 &&
-      x <= 46 * this.state.width_factor &&
-      y >= 0 &&
-      y <= 76 * this.state.height_factor
-    ) {
-      this.highlightSegment([
-        0 * this.state.width_factor,
-        46 * this.state.width_factor,
-        0 * this.state.height_factor,
-        76 * this.state.height_factor,
-      ]);
-      this.clickCheckerFunction(
-        [
+    if (this.props.indShot) {
+      this.checkIfLine(x, y);
+    } else {
+      if (
+        x >= 0 &&
+        x <= 46 * this.state.width_factor &&
+        y >= 0 &&
+        y <= 76 * this.state.height_factor
+      ) {
+        this.highlightSegment([
           0 * this.state.width_factor,
           46 * this.state.width_factor,
           0 * this.state.height_factor,
           76 * this.state.height_factor,
-        ],
-        0,
-        "top"
-      );
-    } else if (
-      x <= 560 * this.state.width_factor &&
-      x >= 46 * this.state.width_factor &&
-      y >= 0 &&
-      y <= 76 * this.state.height_factor
-    ) {
-      this.highlightSegment([
-        46 * this.state.width_factor,
-        515 * this.state.width_factor,
-        0 * this.state.height_factor,
-        76 * this.state.height_factor,
-      ]);
-      this.clickCheckerFunction(
-        [
+        ]);
+        this.clickCheckerFunction(
+          [
+            0 * this.state.width_factor,
+            46 * this.state.width_factor,
+            0 * this.state.height_factor,
+            76 * this.state.height_factor,
+          ],
+          0,
+          "top"
+        );
+      } else if (
+        x <= 560 * this.state.width_factor &&
+        x >= 46 * this.state.width_factor &&
+        y >= 0 &&
+        y <= 76 * this.state.height_factor
+      ) {
+        this.highlightSegment([
           46 * this.state.width_factor,
-          560 * this.state.width_factor,
+          515 * this.state.width_factor,
           0 * this.state.height_factor,
           76 * this.state.height_factor,
-        ],
-        1,
-        "top"
-      );
-    } else if (
-      x >= 560 * this.state.width_factor &&
-      x <= this.state.width &&
-      y >= 0 &&
-      y <= 76 * this.state.height_factor
-    ) {
-      this.highlightSegment([
-        560 * this.state.width_factor,
-        this.state.width,
-        0 * this.state.height_factor,
-        76 * this.state.height_factor,
-      ]);
-      this.clickCheckerFunction(
-        [
+        ]);
+        this.clickCheckerFunction(
+          [
+            46 * this.state.width_factor,
+            560 * this.state.width_factor,
+            0 * this.state.height_factor,
+            76 * this.state.height_factor,
+          ],
+          1,
+          "top"
+        );
+      } else if (
+        x >= 560 * this.state.width_factor &&
+        x <= this.state.width &&
+        y >= 0 &&
+        y <= 76 * this.state.height_factor
+      ) {
+        this.highlightSegment([
           560 * this.state.width_factor,
           this.state.width,
           0 * this.state.height_factor,
           76 * this.state.height_factor,
-        ],
-        2,
-        "top"
-      );
-    } else if (
-      x >= 0 &&
-      x <= 46 * this.state.width_factor &&
-      y <= 468 * this.state.height_factor &&
-      y >= 76 * this.state.height_factor
-    ) {
-      this.highlightSegment([
-        0 * this.state.width_factor,
-        46 * this.state.width_factor,
-        76 * this.state.height_factor,
-        395 * this.state.height_factor,
-      ]);
-      this.clickCheckerFunction(
-        [
+        ]);
+        this.clickCheckerFunction(
+          [
+            560 * this.state.width_factor,
+            this.state.width,
+            0 * this.state.height_factor,
+            76 * this.state.height_factor,
+          ],
+          2,
+          "top"
+        );
+      } else if (
+        x >= 0 &&
+        x <= 46 * this.state.width_factor &&
+        y <= 468 * this.state.height_factor &&
+        y >= 76 * this.state.height_factor
+      ) {
+        this.highlightSegment([
           0 * this.state.width_factor,
           46 * this.state.width_factor,
           76 * this.state.height_factor,
-          468 * this.state.height_factor,
-        ],
-        3,
-        "top"
-      );
-    } else if (
-      x <= 560 * this.state.width_factor &&
-      x >= 46 * this.state.width_factor &&
-      y <= 468 * this.state.height_factor &&
-      y >= 76 * this.state.height_factor
-    ) {
-      this.highlightSegment([
-        46 * this.state.width_factor,
-        515 * this.state.width_factor,
-        76 * this.state.height_factor,
-        395 * this.state.height_factor,
-      ]);
-      this.clickCheckerFunction(
-        [
+          395 * this.state.height_factor,
+        ]);
+        this.clickCheckerFunction(
+          [
+            0 * this.state.width_factor,
+            46 * this.state.width_factor,
+            76 * this.state.height_factor,
+            468 * this.state.height_factor,
+          ],
+          3,
+          "top"
+        );
+      } else if (
+        x <= 560 * this.state.width_factor &&
+        x >= 46 * this.state.width_factor &&
+        y <= 468 * this.state.height_factor &&
+        y >= 76 * this.state.height_factor
+      ) {
+        this.highlightSegment([
           46 * this.state.width_factor,
-          560 * this.state.width_factor,
+          515 * this.state.width_factor,
           76 * this.state.height_factor,
-          468 * this.state.height_factor,
-        ],
-        4,
-        "top"
-      );
-    } else if (
-      x >= 560 * this.state.width_factor &&
-      x <= this.state.width &&
-      y <= 468 * this.state.height_factor &&
-      y >= 76 * this.state.height_factor
-    ) {
-      this.highlightSegment([
-        560 * this.state.width_factor,
-        this.state.width,
-        76 * this.state.height_factor,
-        395 * this.state.height_factor,
-      ]);
-      this.clickCheckerFunction(
-        [
+          395 * this.state.height_factor,
+        ]);
+        this.clickCheckerFunction(
+          [
+            46 * this.state.width_factor,
+            560 * this.state.width_factor,
+            76 * this.state.height_factor,
+            468 * this.state.height_factor,
+          ],
+          4,
+          "top"
+        );
+      } else if (
+        x >= 560 * this.state.width_factor &&
+        x <= this.state.width &&
+        y <= 468 * this.state.height_factor &&
+        y >= 76 * this.state.height_factor
+      ) {
+        this.highlightSegment([
           560 * this.state.width_factor,
           this.state.width,
           76 * this.state.height_factor,
-          468 * this.state.height_factor,
-        ],
-        5,
-        "top"
-      );
-    } else if (
-      x >= 0 &&
-      x <= 46 * this.state.width_factor &&
-      y >= 468 * this.state.height_factor &&
-      y <= 670 * this.state.height_factor
-    ) {
-      this.highlightSegment([
-        0 * this.state.width_factor,
-        46 * this.state.width_factor,
-        468 * this.state.height_factor,
-        200 * this.state.height_factor,
-      ]);
-      this.clickCheckerFunction(
-        [
+          395 * this.state.height_factor,
+        ]);
+        this.clickCheckerFunction(
+          [
+            560 * this.state.width_factor,
+            this.state.width,
+            76 * this.state.height_factor,
+            468 * this.state.height_factor,
+          ],
+          5,
+          "top"
+        );
+      } else if (
+        x >= 0 &&
+        x <= 46 * this.state.width_factor &&
+        y >= 468 * this.state.height_factor &&
+        y <= 670 * this.state.height_factor
+      ) {
+        this.highlightSegment([
           0 * this.state.width_factor,
           46 * this.state.width_factor,
           468 * this.state.height_factor,
-          670 * this.state.height_factor,
-        ],
-        6,
-        "top"
-      );
-    } else if (
-      x <= 560 * this.state.width_factor &&
-      x >= 46 * this.state.width_factor &&
-      y >= 468 * this.state.height_factor &&
-      y <= 670 * this.state.height_factor
-    ) {
-      this.highlightSegment([
-        46 * this.state.width_factor,
-        515 * this.state.width_factor,
-        468 * this.state.height_factor,
-        200 * this.state.height_factor,
-      ]);
-      this.clickCheckerFunction(
-        [
+          200 * this.state.height_factor,
+        ]);
+        this.clickCheckerFunction(
+          [
+            0 * this.state.width_factor,
+            46 * this.state.width_factor,
+            468 * this.state.height_factor,
+            670 * this.state.height_factor,
+          ],
+          6,
+          "top"
+        );
+      } else if (
+        x <= 560 * this.state.width_factor &&
+        x >= 46 * this.state.width_factor &&
+        y >= 468 * this.state.height_factor &&
+        y <= 670 * this.state.height_factor
+      ) {
+        this.highlightSegment([
           46 * this.state.width_factor,
-          560 * this.state.width_factor,
+          515 * this.state.width_factor,
           468 * this.state.height_factor,
-          670 * this.state.height_factor,
-        ],
-        7,
-        "top"
-      );
-    } else if (
-      x >= 560 * this.state.width_factor &&
-      x <= this.state.width &&
-      y >= 468 * this.state.height_factor &&
-      y <= 670 * this.state.height_factor
-    ) {
-      this.highlightSegment([
-        560 * this.state.width_factor,
-        this.state.width,
-        468 * this.state.height_factor,
-        200 * this.state.height_factor,
-      ]);
-      this.clickCheckerFunction(
-        [
+          200 * this.state.height_factor,
+        ]);
+        this.clickCheckerFunction(
+          [
+            46 * this.state.width_factor,
+            560 * this.state.width_factor,
+            468 * this.state.height_factor,
+            670 * this.state.height_factor,
+          ],
+          7,
+          "top"
+        );
+      } else if (
+        x >= 560 * this.state.width_factor &&
+        x <= this.state.width &&
+        y >= 468 * this.state.height_factor &&
+        y <= 670 * this.state.height_factor
+      ) {
+        this.highlightSegment([
           560 * this.state.width_factor,
           this.state.width,
           468 * this.state.height_factor,
-          670 * this.state.height_factor,
-        ],
-        8,
-        "top"
-      );
-    } else if (
-      x >= 0 &&
-      x <= 46 * this.state.width_factor &&
-      y <= 868 * this.state.height_factor &&
-      y >= 670 * this.state.height_factor
-    ) {
-      this.highlightSegment([
-        0 * this.state.width_factor,
-        46 * this.state.width_factor,
-        670 * this.state.height_factor,
-        200 * this.state.height_factor,
-      ]);
-      this.clickCheckerFunction(
-        [
+          200 * this.state.height_factor,
+        ]);
+        this.clickCheckerFunction(
+          [
+            560 * this.state.width_factor,
+            this.state.width,
+            468 * this.state.height_factor,
+            670 * this.state.height_factor,
+          ],
+          8,
+          "top"
+        );
+      } else if (
+        x >= 0 &&
+        x <= 46 * this.state.width_factor &&
+        y <= 868 * this.state.height_factor &&
+        y >= 670 * this.state.height_factor
+      ) {
+        this.highlightSegment([
           0 * this.state.width_factor,
           46 * this.state.width_factor,
           670 * this.state.height_factor,
-          868 * this.state.height_factor,
-        ],
-        9,
-        "bottom"
-      );
-    } else if (
-      x <= 560 * this.state.width_factor &&
-      x >= 46 * this.state.width_factor &&
-      y <= 868 * this.state.height_factor &&
-      y >= 670 * this.state.height_factor
-    ) {
-      this.highlightSegment([
-        46 * this.state.width_factor,
-        515 * this.state.width_factor,
-        670 * this.state.height_factor,
-        200 * this.state.height_factor,
-      ]);
-      this.clickCheckerFunction(
-        [
+          200 * this.state.height_factor,
+        ]);
+        this.clickCheckerFunction(
+          [
+            0 * this.state.width_factor,
+            46 * this.state.width_factor,
+            670 * this.state.height_factor,
+            868 * this.state.height_factor,
+          ],
+          9,
+          "bottom"
+        );
+      } else if (
+        x <= 560 * this.state.width_factor &&
+        x >= 46 * this.state.width_factor &&
+        y <= 868 * this.state.height_factor &&
+        y >= 670 * this.state.height_factor
+      ) {
+        this.highlightSegment([
           46 * this.state.width_factor,
-          560 * this.state.width_factor,
+          515 * this.state.width_factor,
           670 * this.state.height_factor,
-          868 * this.state.height_factor,
-        ],
-        10,
-        "bottom"
-      );
-    } else if (
-      x >= 560 * this.state.width_factor &&
-      x <= this.state.width &&
-      y <= 868 * this.state.height_factor &&
-      y >= 670 * this.state.height_factor
-    ) {
-      this.highlightSegment([
-        560 * this.state.width_factor,
-        this.state.width,
-        670 * this.state.height_factor,
-        200 * this.state.height_factor,
-      ]);
-      this.clickCheckerFunction(
-        [
+          200 * this.state.height_factor,
+        ]);
+        this.clickCheckerFunction(
+          [
+            46 * this.state.width_factor,
+            560 * this.state.width_factor,
+            670 * this.state.height_factor,
+            868 * this.state.height_factor,
+          ],
+          10,
+          "bottom"
+        );
+      } else if (
+        x >= 560 * this.state.width_factor &&
+        x <= this.state.width &&
+        y <= 868 * this.state.height_factor &&
+        y >= 670 * this.state.height_factor
+      ) {
+        this.highlightSegment([
           560 * this.state.width_factor,
           this.state.width,
           670 * this.state.height_factor,
-          868 * this.state.height_factor,
-        ],
-        11,
-        "bottom"
-      );
-    } else if (
-      x >= 0 &&
-      x <= 46 * this.state.width_factor &&
-      y >= 868 * this.state.height_factor &&
-      y <= 1260 * this.state.height_factor
-    ) {
-      this.highlightSegment([
-        0 * this.state.width_factor,
-        46 * this.state.width_factor,
-        868 * this.state.height_factor,
-        395 * this.state.height_factor,
-      ]);
-      this.clickCheckerFunction(
-        [
+          200 * this.state.height_factor,
+        ]);
+        this.clickCheckerFunction(
+          [
+            560 * this.state.width_factor,
+            this.state.width,
+            670 * this.state.height_factor,
+            868 * this.state.height_factor,
+          ],
+          11,
+          "bottom"
+        );
+      } else if (
+        x >= 0 &&
+        x <= 46 * this.state.width_factor &&
+        y >= 868 * this.state.height_factor &&
+        y <= 1260 * this.state.height_factor
+      ) {
+        this.highlightSegment([
           0 * this.state.width_factor,
           46 * this.state.width_factor,
           868 * this.state.height_factor,
-          1260 * this.state.height_factor,
-        ],
-        12,
-        "bottom"
-      );
-    } else if (
-      x <= 560 * this.state.width_factor &&
-      x >= 46 * this.state.width_factor &&
-      y >= 868 * this.state.height_factor &&
-      y <= 1260 * this.state.height_factor
-    ) {
-      this.highlightSegment([
-        46 * this.state.width_factor,
-        515 * this.state.width_factor,
-        868 * this.state.height_factor,
-        395 * this.state.height_factor,
-      ]);
-      this.clickCheckerFunction(
-        [
+          395 * this.state.height_factor,
+        ]);
+        this.clickCheckerFunction(
+          [
+            0 * this.state.width_factor,
+            46 * this.state.width_factor,
+            868 * this.state.height_factor,
+            1260 * this.state.height_factor,
+          ],
+          12,
+          "bottom"
+        );
+      } else if (
+        x <= 560 * this.state.width_factor &&
+        x >= 46 * this.state.width_factor &&
+        y >= 868 * this.state.height_factor &&
+        y <= 1260 * this.state.height_factor
+      ) {
+        this.highlightSegment([
           46 * this.state.width_factor,
-          560 * this.state.width_factor,
+          515 * this.state.width_factor,
           868 * this.state.height_factor,
-          1260 * this.state.height_factor,
-        ],
-        13,
-        "bottom"
-      );
-    } else if (
-      x >= 560 * this.state.width_factor &&
-      x <= this.state.width &&
-      y >= 868 * this.state.height_factor &&
-      y <= 1260 * this.state.height_factor
-    ) {
-      this.highlightSegment([
-        560 * this.state.width_factor,
-        this.state.width,
-        868 * this.state.height_factor,
-        395 * this.state.height_factor,
-      ]);
-      this.clickCheckerFunction(
-        [
+          395 * this.state.height_factor,
+        ]);
+        this.clickCheckerFunction(
+          [
+            46 * this.state.width_factor,
+            560 * this.state.width_factor,
+            868 * this.state.height_factor,
+            1260 * this.state.height_factor,
+          ],
+          13,
+          "bottom"
+        );
+      } else if (
+        x >= 560 * this.state.width_factor &&
+        x <= this.state.width &&
+        y >= 868 * this.state.height_factor &&
+        y <= 1260 * this.state.height_factor
+      ) {
+        this.highlightSegment([
           560 * this.state.width_factor,
           this.state.width,
           868 * this.state.height_factor,
-          1260 * this.state.height_factor,
-        ],
-        14,
-        "bottom"
-      );
-    } else if (
-      x >= 0 &&
-      x <= 46 * this.state.width_factor &&
-      y <= this.state.height &&
-      y >= 1260 * this.state.height_factor
-    ) {
-      this.highlightSegment([
-        0 * this.state.width_factor,
-        46 * this.state.width_factor,
-        1260 * this.state.height_factor,
-        this.state.height,
-      ]);
-      this.clickCheckerFunction(
-        [
+          395 * this.state.height_factor,
+        ]);
+        this.clickCheckerFunction(
+          [
+            560 * this.state.width_factor,
+            this.state.width,
+            868 * this.state.height_factor,
+            1260 * this.state.height_factor,
+          ],
+          14,
+          "bottom"
+        );
+      } else if (
+        x >= 0 &&
+        x <= 46 * this.state.width_factor &&
+        y <= this.state.height &&
+        y >= 1260 * this.state.height_factor
+      ) {
+        this.highlightSegment([
           0 * this.state.width_factor,
           46 * this.state.width_factor,
           1260 * this.state.height_factor,
           this.state.height,
-        ],
-        15,
-        "bottom"
-      );
-    } else if (
-      x <= 560 * this.state.width_factor &&
-      x >= 46 * this.state.width_factor &&
-      y <= this.state.height &&
-      y >= 1260 * this.state.height_factor
-    ) {
-      this.highlightSegment([
-        46 * this.state.width_factor,
-        515 * this.state.width_factor,
-        1260 * this.state.height_factor,
-        this.state.height,
-      ]);
-      this.clickCheckerFunction(
-        [
+        ]);
+        this.clickCheckerFunction(
+          [
+            0 * this.state.width_factor,
+            46 * this.state.width_factor,
+            1260 * this.state.height_factor,
+            this.state.height,
+          ],
+          15,
+          "bottom"
+        );
+      } else if (
+        x <= 560 * this.state.width_factor &&
+        x >= 46 * this.state.width_factor &&
+        y <= this.state.height &&
+        y >= 1260 * this.state.height_factor
+      ) {
+        this.highlightSegment([
           46 * this.state.width_factor,
-          560 * this.state.width_factor,
+          515 * this.state.width_factor,
           1260 * this.state.height_factor,
           this.state.height,
-        ],
-        16,
-        "bottom"
-      );
-    } else if (
-      x >= 560 * this.state.width_factor &&
-      x <= this.state.width &&
-      y <= this.state.height &&
-      y >= 1260 * this.state.height_factor
-    ) {
-      this.highlightSegment([
-        560 * this.state.width_factor,
-        this.state.width,
-        1260 * this.state.height_factor,
-        this.state.height,
-      ]);
-      this.clickCheckerFunction(
-        [
+        ]);
+        this.clickCheckerFunction(
+          [
+            46 * this.state.width_factor,
+            560 * this.state.width_factor,
+            1260 * this.state.height_factor,
+            this.state.height,
+          ],
+          16,
+          "bottom"
+        );
+      } else if (
+        x >= 560 * this.state.width_factor &&
+        x <= this.state.width &&
+        y <= this.state.height &&
+        y >= 1260 * this.state.height_factor
+      ) {
+        this.highlightSegment([
           560 * this.state.width_factor,
           this.state.width,
           1260 * this.state.height_factor,
           this.state.height,
-        ],
-        17,
-        "bottom"
-      );
+        ]);
+        this.clickCheckerFunction(
+          [
+            560 * this.state.width_factor,
+            this.state.width,
+            1260 * this.state.height_factor,
+            this.state.height,
+          ],
+          17,
+          "bottom"
+        );
+      }
     }
   };
 

@@ -121,6 +121,7 @@ class Badminton extends Component {
       right_bot_score_set2: 0,
       left_bot_score_set3: 0,
       right_bot_score_set3: 0,
+      indShot: true,
     };
   }
 
@@ -2617,6 +2618,7 @@ class Badminton extends Component {
                   stretchBot={this.state.stretchBot}
                   distanceTop={this.state.distanceTop}
                   distanceBot={this.state.distanceBot}
+                  indShot={this.state.indShot}
                 ></Field>
               ) : null}
             </div>
