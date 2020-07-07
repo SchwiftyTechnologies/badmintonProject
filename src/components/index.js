@@ -178,7 +178,7 @@ class Badminton extends Component {
           rally_number_disp = rally_number - this.state.setArray[0] - 1;
           leftSet = 2;
           let rall_info = badminton_points_data[(rally_number + 1).toString()];
-          console.log(rally_number + 1, rall_info);
+
           left_score_set2 = rall_info.current_set_top_init_score;
           right_score_set2 = rall_info.current_set_bottom_init_score;
           left_score_set1 = this.state.points_table[0]
@@ -189,7 +189,7 @@ class Badminton extends Component {
           rally_number_disp = rally_number - this.state.setArray[1] - 1;
           leftSet = 3;
           let rall_info = badminton_points_data[(rally_number + 1).toString()];
-          console.log(rally_number + 1, rall_info);
+
           left_score_set2 = this.state.points_table[1]
             .current_set_top_init_score;
           right_score_set2 = this.state.points_table[1]
@@ -205,7 +205,7 @@ class Badminton extends Component {
         rally_number_disp = rally_number - this.state.setArray[0] - 1;
         leftSet = 2;
         let rall_info = badminton_points_data[(rally_number + 1).toString()];
-        console.log(rally_number + 1, rall_info);
+
         left_score_set2 = rall_info.current_set_top_init_score;
         right_score_set2 = rall_info.current_set_bottom_init_score;
         left_score_set1 = this.state.points_table[0].current_set_top_init_score;
@@ -248,7 +248,7 @@ class Badminton extends Component {
           rally_number_disp = rally_number - this.state.setArray[0] - 1;
           leftSet = 2;
           let rall_info = badminton_points_data[(rally_number + 1).toString()];
-          console.log(rally_number + 1, rall_info);
+
           left_score_set2 = rall_info.current_set_top_init_score;
           right_score_set2 = rall_info.current_set_bottom_init_score;
           left_score_set1 = this.state.points_table[0]
@@ -259,7 +259,7 @@ class Badminton extends Component {
           rally_number_disp = rally_number - this.state.setArray[1] - 1;
           leftSet = 3;
           let rall_info = badminton_points_data[(rally_number + 1).toString()];
-          console.log(rally_number + 1, rall_info);
+
           left_score_set2 = this.state.points_table[1]
             .current_set_top_init_score;
           right_score_set2 = this.state.points_table[1]
@@ -275,7 +275,7 @@ class Badminton extends Component {
         rally_number_disp = rally_number - this.state.setArray[0] - 1;
         leftSet = 2;
         let rall_info = badminton_points_data[(rally_number + 1).toString()];
-        console.log(rally_number + 1, rall_info);
+
         left_score_set2 = rall_info.current_set_top_init_score;
         right_score_set2 = rall_info.current_set_bottom_init_score;
         left_score_set1 = this.state.points_table[0].current_set_top_init_score;
@@ -3284,7 +3284,7 @@ class Badminton extends Component {
                           rally_number_disp + this.state.setArray[0] + 1;
                         let rall_info =
                           badminton_points_data[(rally_number + 1).toString()];
-                        console.log(rally_number + 1, rall_info);
+
                         left_score_set2 = rall_info.current_set_top_init_score;
                         right_score_set2 =
                           rall_info.current_set_bottom_init_score;
@@ -3300,7 +3300,7 @@ class Badminton extends Component {
                             badminton_points_data[
                               (rally_number + 1).toString()
                             ];
-                          console.log(rally_number + 1, rall_info);
+
                           left_score_set2 = this.state.points_table[1]
                             .current_set_top_init_score;
                           right_score_set2 = this.state.points_table[1]
@@ -3420,7 +3420,7 @@ class Badminton extends Component {
                           rally_number_disp + this.state.setArray[0];
                         let rall_info =
                           badminton_points_data[(rally_number + 1).toString()];
-                        console.log(rally_number + 1, rall_info);
+
                         left_score_set2 = rall_info.current_set_top_init_score;
                         right_score_set2 =
                           rall_info.current_set_bottom_init_score;
@@ -3436,7 +3436,7 @@ class Badminton extends Component {
                             badminton_points_data[
                               (rally_number + 1).toString()
                             ];
-                          console.log(rally_number + 1, rall_info);
+
                           left_score_set2 = this.state.points_table[1]
                             .current_set_top_init_score;
                           right_score_set2 = this.state.points_table[1]

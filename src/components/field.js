@@ -127,7 +127,6 @@ class Field extends Component {
   }
 
   drawShotIndRightSide = (shot) => {
-    console.log("shotsss",shot)
     const canvas = this.canvasRef.current;
     const ctx = canvas.getContext("2d");
 
