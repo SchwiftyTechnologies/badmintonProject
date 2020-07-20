@@ -12,6 +12,8 @@ import Dropdown from "./dropdown";
 import Timeline from "./timeline";
 import badminton_rally_data from "../Badminton_data_rally_string.json";
 import badminton_points_data from "../Badminton_points_data_14.json";
+import courtPic from "../assets/pitch_to_match.jpg";
+import VideoPlayer from "./videoPlayer";
 
 class Badminton extends Component {
   constructor(props) {
@@ -121,7 +123,12 @@ class Badminton extends Component {
       right_bot_score_set2: 0,
       left_bot_score_set3: 0,
       right_bot_score_set3: 0,
-      indShot: true,
+      indShot: false,
+      fromShot: 0,
+      toShot: 9,
+      currentDiff: 10,
+      videoPlayer: false,
+      url: "",
     };
   }
 
@@ -135,6 +142,14 @@ class Badminton extends Component {
     this.setPoints();
     this.setTotalShotsPerPlayer();
   }
+
+  setVideoSettings = (url) => {
+    // this.setState({ videoPlayer: false });
+    // setTimeout(() => {
+    //   this.setState({ videoPlayer: true, url });
+    // }, 1000);
+    this.setState({ videoPlayer: true, url });
+  };
 
   setPoints = () => {
     let badminton_points_array = Object.values(badminton_points_data);
@@ -1890,713 +1905,791 @@ class Badminton extends Component {
     return (
       <div className="main">
         <div className="section_1">
-          <div className="column_1">
-            <div className="column_1_1">
-              <div className="pattern_text">Pattern</div>
-              <div className="pattern_input">
-                <div className="dropdown_container">
-                  <Dropdown
-                    options={this.state.shot_type}
-                    onChange={(e) => {
-                      this.onSelect(e.value, 1);
-                    }}
-                    value={this.state.shot_type_top_1}
-                    placeholder="Select an option"
-                    className="dropdown_custom"
-                    isOrange={true}
-                    width={"80px"}
-                  />
+          {this.state.videoPlayer ? (
+            <div className="column_1">
+              <button
+                className="btn_small_orange"
+                onClick={() => {
+                  this.setState({ videoPlayer: false });
+                }}
+              >
+                Back
+              </button>
+              <VideoPlayer url={this.state.url} />
+            </div>
+          ) : (
+            <div className="column_1">
+              <div className="column_1_1">
+                <div className="pattern_text">Pattern</div>
+                <div className="pattern_input">
+                  <div className="dropdown_container">
+                    <Dropdown
+                      options={this.state.shot_type}
+                      onChange={(e) => {
+                        this.onSelect(e.value, 1);
+                      }}
+                      value={this.state.shot_type_top_1}
+                      placeholder="Select an option"
+                      className="dropdown_custom"
+                      isOrange={true}
+                      width={"80px"}
+                    />
+                  </div>
+                  <div className="dropdown_container">
+                    <Dropdown
+                      options={this.state.shot_hand}
+                      onChange={(e) => {
+                        this.onSelect(e.value, 7);
+                      }}
+                      value={this.state.shot_hand_top_1}
+                      placeholder="Select an option"
+                      className="dropdown_custom"
+                      isOrange={true}
+                      width={"55px"}
+                    />
+                  </div>
+                  <div className="dropdown_container_padding">
+                    <Dropdown
+                      options={this.state.shot_type}
+                      onChange={(e) => {
+                        this.onSelect(e.value, 2);
+                      }}
+                      value={this.state.shot_type_top_2}
+                      placeholder="Select an option"
+                      className="dropdown_custom"
+                      isOrange={false}
+                      width={"80px"}
+                    />
+                  </div>
+                  <div className="dropdown_container">
+                    <Dropdown
+                      options={this.state.shot_hand}
+                      onChange={(e) => {
+                        this.onSelect(e.value, 8);
+                      }}
+                      value={this.state.shot_hand_top_2}
+                      placeholder="Select an option"
+                      className="dropdown_custom"
+                      isOrange={false}
+                      width={"55px"}
+                    />
+                  </div>
+                  <div className="dropdown_container_padding">
+                    <Dropdown
+                      options={this.state.shot_type}
+                      onChange={(e) => {
+                        this.onSelect(e.value, 3);
+                      }}
+                      value={this.state.shot_type_top_3}
+                      placeholder="Select an option"
+                      className="dropdown_custom"
+                      isOrange={true}
+                      width={"80px"}
+                    />
+                  </div>
+                  <div className="dropdown_container">
+                    <Dropdown
+                      options={this.state.shot_hand}
+                      onChange={(e) => {
+                        this.onSelect(e.value, 9);
+                      }}
+                      value={this.state.shot_hand_top_3}
+                      placeholder="Select an option"
+                      className="dropdown_custom"
+                      isOrange={true}
+                      width={"55px"}
+                    />
+                  </div>
+                  <div className="go_button_container">
+                    <button
+                      className="btn_small_orange"
+                      onClick={() => {
+                        this.onClickGo(1);
+                      }}
+                    >
+                      Go
+                    </button>
+                  </div>
                 </div>
-                <div className="dropdown_container">
-                  <Dropdown
-                    options={this.state.shot_hand}
-                    onChange={(e) => {
-                      this.onSelect(e.value, 7);
-                    }}
-                    value={this.state.shot_hand_top_1}
-                    placeholder="Select an option"
-                    className="dropdown_custom"
-                    isOrange={true}
-                    width={"55px"}
-                  />
-                </div>
-                <div className="dropdown_container_padding">
-                  <Dropdown
-                    options={this.state.shot_type}
-                    onChange={(e) => {
-                      this.onSelect(e.value, 2);
-                    }}
-                    value={this.state.shot_type_top_2}
-                    placeholder="Select an option"
-                    className="dropdown_custom"
-                    isOrange={false}
-                    width={"80px"}
-                  />
-                </div>
-                <div className="dropdown_container">
-                  <Dropdown
-                    options={this.state.shot_hand}
-                    onChange={(e) => {
-                      this.onSelect(e.value, 8);
-                    }}
-                    value={this.state.shot_hand_top_2}
-                    placeholder="Select an option"
-                    className="dropdown_custom"
-                    isOrange={false}
-                    width={"55px"}
-                  />
-                </div>
-                <div className="dropdown_container_padding">
-                  <Dropdown
-                    options={this.state.shot_type}
-                    onChange={(e) => {
-                      this.onSelect(e.value, 3);
-                    }}
-                    value={this.state.shot_type_top_3}
-                    placeholder="Select an option"
-                    className="dropdown_custom"
-                    isOrange={true}
-                    width={"80px"}
-                  />
-                </div>
-                <div className="dropdown_container">
-                  <Dropdown
-                    options={this.state.shot_hand}
-                    onChange={(e) => {
-                      this.onSelect(e.value, 9);
-                    }}
-                    value={this.state.shot_hand_top_3}
-                    placeholder="Select an option"
-                    className="dropdown_custom"
-                    isOrange={true}
-                    width={"55px"}
-                  />
-                </div>
-                <div className="go_button_container">
+                <div className="info_row">
                   <button
                     className="btn_small_orange"
-                    onClick={() => {
-                      this.onClickGo(1);
+                    disabled
+                    style={{
+                      cursor: "default",
+                      paddingLeft: "36px",
+                      paddingRight: "36px",
                     }}
                   >
-                    Go
+                    Stretch
                   </button>
+                  <div className="info_box">{this.state.totalStretchTop}</div>
+                  <div className="info_box">{this.state.avgStretchTop}</div>
+                  {this.state.stretchTop ? (
+                    <div
+                      className="info_box_checkbox"
+                      onClick={() => {
+                        this.setState({ stretchTop: !this.state.stretchTop });
+                      }}
+                    >
+                      <img
+                        src={CheckedImage}
+                        style={{ height: 26, width: 26 }}
+                      />
+                    </div>
+                  ) : (
+                    <div
+                      className="info_box_checkbox"
+                      onClick={() => {
+                        this.setState({ stretchTop: !this.state.stretchTop });
+                      }}
+                    ></div>
+                  )}
                 </div>
-              </div>
-              <div className="info_row">
-                <button
-                  className="btn_small_orange"
-                  disabled
-                  style={{
-                    cursor: "default",
-                    paddingLeft: "36px",
-                    paddingRight: "36px",
-                  }}
-                >
-                  Stretch
-                </button>
-                <div className="info_box">{this.state.totalStretchTop}</div>
-                <div className="info_box">{this.state.avgStretchTop}</div>
-                {this.state.stretchTop ? (
-                  <div
-                    className="info_box_checkbox"
-                    onClick={() => {
-                      this.setState({ stretchTop: !this.state.stretchTop });
+                <div className="info_row">
+                  <button
+                    className="btn_small_orange"
+                    disabled
+                    style={{
+                      cursor: "default",
+                      paddingLeft: "32px",
+                      paddingRight: "32px",
                     }}
                   >
-                    <img src={CheckedImage} style={{ height: 26, width: 26 }} />
-                  </div>
-                ) : (
-                  <div
-                    className="info_box_checkbox"
-                    onClick={() => {
-                      this.setState({ stretchTop: !this.state.stretchTop });
-                    }}
-                  ></div>
-                )}
-              </div>
-              <div className="info_row">
-                <button
-                  className="btn_small_orange"
-                  disabled
-                  style={{
-                    cursor: "default",
-                    paddingLeft: "32px",
-                    paddingRight: "32px",
-                  }}
-                >
-                  Distance
-                </button>
-                <div className="info_box">{this.state.totalDistanceTop}</div>
-                <div className="info_box">{this.state.avgDistanceTop}</div>
-                {this.state.distanceTop ? (
-                  <div
-                    className="info_box_checkbox"
-                    onClick={() => {
-                      this.setState({ distanceTop: !this.state.distanceTop });
+                    Distance
+                  </button>
+                  <div className="info_box">{this.state.totalDistanceTop}</div>
+                  <div className="info_box">{this.state.avgDistanceTop}</div>
+                  {this.state.distanceTop ? (
+                    <div
+                      className="info_box_checkbox"
+                      onClick={() => {
+                        this.setState({ distanceTop: !this.state.distanceTop });
+                      }}
+                    >
+                      <img
+                        src={CheckedImage}
+                        style={{ height: 26, width: 26 }}
+                      />
+                    </div>
+                  ) : (
+                    <div
+                      className="info_box_checkbox"
+                      onClick={() => {
+                        this.setState({ distanceTop: !this.state.distanceTop });
+                      }}
+                    ></div>
+                  )}
+                </div>
+                <div className="info_row">
+                  <button
+                    className="btn_small_orange"
+                    disabled
+                    style={{ cursor: "default" }}
+                  >
+                    Placement/Rec
+                  </button>
+                  <div className="info_box"></div>
+                  <div className="info_box"></div>
+                  {this.state.placrecTop ? (
+                    <div
+                      className="info_box_checkbox"
+                      onClick={() => {
+                        this.setState({ placrecTop: !this.state.placrecTop });
+                      }}
+                    >
+                      <img
+                        src={CheckedImage}
+                        style={{ height: 26, width: 26 }}
+                      />
+                    </div>
+                  ) : (
+                    <div
+                      className="info_box_checkbox"
+                      onClick={() => {
+                        this.setState({ placrecTop: !this.state.placrecTop });
+                      }}
+                    ></div>
+                  )}
+                </div>
+                <div className="info_row">
+                  <button
+                    className="btn_small_orange"
+                    disabled
+                    style={{
+                      cursor: "default",
+                      paddingLeft: "36px",
+                      paddingRight: "36px",
                     }}
                   >
-                    <img src={CheckedImage} style={{ height: 26, width: 26 }} />
-                  </div>
-                ) : (
-                  <div
-                    className="info_box_checkbox"
-                    onClick={() => {
-                      this.setState({ distanceTop: !this.state.distanceTop });
-                    }}
-                  ></div>
-                )}
+                    Height
+                  </button>
+                  <div className="info_box"></div>
+                  <div className="info_box"></div>
+                  {this.state.heightTop ? (
+                    <div
+                      className="info_box_checkbox"
+                      onClick={() => {
+                        this.setState({ heightTop: !this.state.heightTop });
+                      }}
+                    >
+                      <img
+                        src={CheckedImage}
+                        style={{ height: 26, width: 26 }}
+                      />
+                    </div>
+                  ) : (
+                    <div
+                      className="info_box_checkbox"
+                      onClick={() => {
+                        this.setState({ heightTop: !this.state.heightTop });
+                      }}
+                    ></div>
+                  )}
+                </div>
               </div>
-              <div className="info_row">
-                <button
-                  className="btn_small_orange"
-                  disabled
-                  style={{ cursor: "default" }}
-                >
-                  Placement/Rec
-                </button>
-                <div className="info_box"></div>
-                <div className="info_box"></div>
-                {this.state.placrecTop ? (
+              <div className="div_line"></div>
+              <div className="column_1_2_wrapper">
+                <div className="column_1_2">
                   <div
-                    className="info_box_checkbox"
-                    onClick={() => {
-                      this.setState({ placrecTop: !this.state.placrecTop });
-                    }}
+                    className="shot_types"
+                    style={{ color: "rgb(173, 173, 10)" }}
                   >
-                    <img src={CheckedImage} style={{ height: 26, width: 26 }} />
+                    Individual Shot
+                    {this.state.indShot ? (
+                      <div
+                        className="shot_checkbox"
+                        style={{ marginLeft: "3%" }}
+                        onClick={() => {
+                          this.setState({
+                            indShot: !this.state.indShot,
+                            percentage: false,
+                            shots: false,
+                          });
+                        }}
+                      >
+                        <img
+                          src={CheckedImage}
+                          style={{ height: 16, width: 16 }}
+                        />
+                      </div>
+                    ) : (
+                      <div
+                        className="shot_checkbox"
+                        style={{ marginLeft: "3%" }}
+                        onClick={() => {
+                          this.setState({
+                            indShot: !this.state.indShot,
+                            percentage: false,
+                            shots: false,
+                          });
+                        }}
+                      ></div>
+                    )}
                   </div>
-                ) : (
                   <div
-                    className="info_box_checkbox"
-                    onClick={() => {
-                      this.setState({ placrecTop: !this.state.placrecTop });
-                    }}
-                  ></div>
-                )}
-              </div>
-              <div className="info_row">
-                <button
-                  className="btn_small_orange"
-                  disabled
-                  style={{
-                    cursor: "default",
-                    paddingLeft: "36px",
-                    paddingRight: "36px",
-                  }}
-                >
-                  Height
-                </button>
-                <div className="info_box"></div>
-                <div className="info_box"></div>
-                {this.state.heightTop ? (
-                  <div
-                    className="info_box_checkbox"
-                    onClick={() => {
-                      this.setState({ heightTop: !this.state.heightTop });
-                    }}
+                    className="shot_types"
+                    style={{ color: "rgb(173, 173, 10)" }}
                   >
-                    <img src={CheckedImage} style={{ height: 26, width: 26 }} />
+                    Percentages
+                    {this.state.percentage ? (
+                      <div
+                        className="shot_checkbox"
+                        style={{ marginTop: "1%", marginLeft: "3%" }}
+                        onClick={() => {
+                          this.setState({
+                            percentage: !this.state.percentage,
+                            shots: false,
+                            indShot: false,
+                          });
+                        }}
+                      >
+                        <img
+                          src={CheckedImage}
+                          style={{ height: 16, width: 16 }}
+                        />
+                      </div>
+                    ) : (
+                      <div
+                        className="shot_checkbox"
+                        style={{ marginTop: "1%", marginLeft: "3%" }}
+                        onClick={() => {
+                          this.setState({
+                            percentage: !this.state.percentage,
+                            shots: false,
+                            indShot: false,
+                          });
+                        }}
+                      ></div>
+                    )}
                   </div>
-                ) : (
+                  <div className="shot_types" style={{ color: "green" }}>
+                    Shots
+                    {this.state.shots ? (
+                      <div
+                        className="shot_checkbox"
+                        style={{
+                          marginTop: "1%",
+                          marginLeft: "3%",
+                        }}
+                        onClick={() => {
+                          this.setState({
+                            percentage: false,
+                            shots: !this.state.shots,
+                            indShot: false,
+                          });
+                        }}
+                      >
+                        <img
+                          src={CheckedImage}
+                          style={{ height: 16, width: 16 }}
+                        />
+                      </div>
+                    ) : (
+                      <div
+                        className="shot_checkbox"
+                        style={{
+                          marginTop: "1%",
+                          marginLeft: "3%",
+                        }}
+                        onClick={() => {
+                          this.setState({
+                            percentage: false,
+                            shots: !this.state.shots,
+                            indShot: false,
+                          });
+                        }}
+                      ></div>
+                    )}
+                  </div>
+                </div>
+                <div className="column_1_2">
                   <div
-                    className="info_box_checkbox"
-                    onClick={() => {
-                      this.setState({ heightTop: !this.state.heightTop });
-                    }}
-                  ></div>
-                )}
-              </div>
-            </div>
-            <div className="div_line"></div>
-            <div className="column_1_2_wrapper">
-              <div className="column_1_2">
-                <div
-                  className="shot_types"
-                  style={{ color: "rgb(173, 173, 10)" }}
-                >
-                  Percentages
-                  {this.state.percentage ? (
-                    <div
-                      className="shot_checkbox"
-                      style={{ marginLeft: "3%" }}
-                      onClick={() => {
-                        this.setState({
-                          percentage: !this.state.percentage,
-                          shots: !this.state.shots,
-                        });
-                      }}
-                    >
-                      <img
-                        src={CheckedImage}
-                        style={{ height: 16, width: 16 }}
-                      />
-                    </div>
-                  ) : (
-                    <div
-                      className="shot_checkbox"
-                      style={{ marginLeft: "3%" }}
-                      onClick={() => {
-                        this.setState({
-                          percentage: !this.state.percentage,
-                          shots: !this.state.shots,
-                        });
-                      }}
-                    ></div>
-                  )}
+                    className="shot_types"
+                    style={{ color: "rgb(173, 173, 10)" }}
+                  >
+                    First Shot
+                    {this.state.percFirstShot ? (
+                      <div
+                        className="shot_checkbox"
+                        style={{ marginLeft: "6%" }}
+                        onClick={() => {
+                          // this.setState({ percFirstShot: !this.state.firstshot });
+                        }}
+                      >
+                        <img
+                          src={CheckedImage}
+                          style={{ height: 16, width: 16 }}
+                        />
+                      </div>
+                    ) : (
+                      <div
+                        className="shot_checkbox"
+                        style={{ marginLeft: "6%" }}
+                        onClick={() => {
+                          this.setState({
+                            percFirstShot: true,
+                            percSecondShot: false,
+                            percThirdShot: false,
+                          });
+                        }}
+                      ></div>
+                    )}
+                  </div>
+                  <div className="shot_types" style={{ color: "green" }}>
+                    Second Shot
+                    {this.state.percSecondShot ? (
+                      <div
+                        className="shot_checkbox"
+                        style={{
+                          marginTop: "1%",
+                          marginLeft: "2%",
+                        }}
+                        onClick={() => {}}
+                      >
+                        <img
+                          src={CheckedImage}
+                          style={{ height: 16, width: 16 }}
+                        />
+                      </div>
+                    ) : (
+                      <div
+                        className="shot_checkbox"
+                        style={{
+                          marginTop: "1%",
+                          marginLeft: "2%",
+                        }}
+                        onClick={() => {
+                          this.setState({
+                            percFirstShot: false,
+                            percSecondShot: true,
+                            percThirdShot: false,
+                          });
+                        }}
+                      ></div>
+                    )}
+                  </div>
+                  <div className="shot_types" style={{ color: "violet" }}>
+                    Third Shot
+                    {this.state.percThirdShot ? (
+                      <div
+                        className="shot_checkbox"
+                        style={{
+                          marginTop: "1%",
+                          marginLeft: "4.5%",
+                        }}
+                        onClick={() => {
+                          // this.setState({ thirdshot: !this.state.thirdshot });
+                        }}
+                      >
+                        <img
+                          src={CheckedImage}
+                          style={{ height: 16, width: 16 }}
+                        />
+                      </div>
+                    ) : (
+                      <div
+                        className="shot_checkbox"
+                        style={{
+                          marginTop: "1%",
+                          marginLeft: "4.5%",
+                        }}
+                        onClick={() => {
+                          this.setState({
+                            percFirstShot: false,
+                            percSecondShot: false,
+                            percThirdShot: true,
+                          });
+                        }}
+                      ></div>
+                    )}
+                  </div>
                 </div>
-                <div className="shot_types" style={{ color: "green" }}>
-                  Shots
-                  {this.state.shots ? (
-                    <div
-                      className="shot_checkbox"
-                      style={{
-                        marginTop: "1%",
-                        marginLeft: "3%",
-                      }}
-                      onClick={() => {
-                        this.setState({
-                          percentage: !this.state.percentage,
-                          shots: !this.state.shots,
-                        });
-                      }}
-                    >
-                      <img
-                        src={CheckedImage}
-                        style={{ height: 16, width: 16 }}
-                      />
-                    </div>
-                  ) : (
-                    <div
-                      className="shot_checkbox"
-                      style={{
-                        marginTop: "1%",
-                        marginLeft: "3%",
-                      }}
-                      onClick={() => {
-                        this.setState({
-                          percentage: !this.state.percentage,
-                          shots: !this.state.shots,
-                        });
-                      }}
-                    ></div>
-                  )}
-                </div>
-              </div>
-              <div className="column_1_2">
-                <div
-                  className="shot_types"
-                  style={{ color: "rgb(173, 173, 10)" }}
-                >
-                  First Shot
-                  {this.state.percFirstShot ? (
-                    <div
-                      className="shot_checkbox"
-                      style={{ marginLeft: "6%" }}
-                      onClick={() => {
-                        // this.setState({ percFirstShot: !this.state.firstshot });
-                      }}
-                    >
-                      <img
-                        src={CheckedImage}
-                        style={{ height: 16, width: 16 }}
-                      />
-                    </div>
-                  ) : (
-                    <div
-                      className="shot_checkbox"
-                      style={{ marginLeft: "6%" }}
-                      onClick={() => {
-                        this.setState({
-                          percFirstShot: true,
-                          percSecondShot: false,
-                          percThirdShot: false,
-                        });
-                      }}
-                    ></div>
-                  )}
-                </div>
-                <div className="shot_types" style={{ color: "green" }}>
-                  Second Shot
-                  {this.state.percSecondShot ? (
-                    <div
-                      className="shot_checkbox"
-                      style={{
-                        marginTop: "1%",
-                        marginLeft: "2%",
-                      }}
-                      onClick={() => {}}
-                    >
-                      <img
-                        src={CheckedImage}
-                        style={{ height: 16, width: 16 }}
-                      />
-                    </div>
-                  ) : (
-                    <div
-                      className="shot_checkbox"
-                      style={{
-                        marginTop: "1%",
-                        marginLeft: "2%",
-                      }}
-                      onClick={() => {
-                        this.setState({
-                          percFirstShot: false,
-                          percSecondShot: true,
-                          percThirdShot: false,
-                        });
-                      }}
-                    ></div>
-                  )}
-                </div>
-                <div className="shot_types" style={{ color: "violet" }}>
-                  Third Shot
-                  {this.state.percThirdShot ? (
-                    <div
-                      className="shot_checkbox"
-                      style={{
-                        marginTop: "1%",
-                        marginLeft: "4.5%",
-                      }}
-                      onClick={() => {
-                        // this.setState({ thirdshot: !this.state.thirdshot });
-                      }}
-                    >
-                      <img
-                        src={CheckedImage}
-                        style={{ height: 16, width: 16 }}
-                      />
-                    </div>
-                  ) : (
-                    <div
-                      className="shot_checkbox"
-                      style={{
-                        marginTop: "1%",
-                        marginLeft: "4.5%",
-                      }}
-                      onClick={() => {
-                        this.setState({
-                          percFirstShot: false,
-                          percSecondShot: false,
-                          percThirdShot: true,
-                        });
-                      }}
-                    ></div>
-                  )}
-                </div>
-              </div>
-              <div className="column_1_2">
-                <div
-                  className="shot_types"
-                  style={{ color: "rgb(173, 173, 10)" }}
-                >
-                  First Shot
-                  {this.state.firstshot ? (
-                    <div
-                      className="shot_checkbox"
-                      style={{ marginLeft: "6%" }}
-                      onClick={() => {
-                        this.setState({ firstshot: !this.state.firstshot });
-                      }}
-                    >
-                      <img
-                        src={CheckedImage}
-                        style={{ height: 16, width: 16 }}
-                      />
-                    </div>
-                  ) : (
-                    <div
-                      className="shot_checkbox"
-                      style={{ marginLeft: "6%" }}
-                      onClick={() => {
-                        this.setState({ firstshot: !this.state.firstshot });
-                      }}
-                    ></div>
-                  )}
-                </div>
-                <div className="shot_types" style={{ color: "green" }}>
-                  Second Shot
-                  {this.state.secondshot ? (
-                    <div
-                      className="shot_checkbox"
-                      style={{
-                        marginTop: "1%",
-                        marginLeft: "2%",
-                      }}
-                      onClick={() => {
-                        this.setState({ secondshot: !this.state.secondshot });
-                      }}
-                    >
-                      <img
-                        src={CheckedImage}
-                        style={{ height: 16, width: 16 }}
-                      />
-                    </div>
-                  ) : (
-                    <div
-                      className="shot_checkbox"
-                      style={{
-                        marginTop: "1%",
-                        marginLeft: "2%",
-                      }}
-                      onClick={() => {
-                        this.setState({ secondshot: !this.state.secondshot });
-                      }}
-                    ></div>
-                  )}
-                </div>
-                <div className="shot_types" style={{ color: "violet" }}>
-                  Third Shot
-                  {this.state.thirdshot ? (
-                    <div
-                      className="shot_checkbox"
-                      style={{
-                        marginTop: "1%",
-                        marginLeft: "4.5%",
-                      }}
-                      onClick={() => {
-                        this.setState({ thirdshot: !this.state.thirdshot });
-                      }}
-                    >
-                      <img
-                        src={CheckedImage}
-                        style={{ height: 16, width: 16 }}
-                      />
-                    </div>
-                  ) : (
-                    <div
-                      className="shot_checkbox"
-                      style={{
-                        marginTop: "1%",
-                        marginLeft: "4.5%",
-                      }}
-                      onClick={() => {
-                        this.setState({ thirdshot: !this.state.thirdshot });
-                      }}
-                    ></div>
-                  )}
+                <div className="column_1_2">
+                  <div
+                    className="shot_types"
+                    style={{ color: "rgb(173, 173, 10)" }}
+                  >
+                    First Shot
+                    {this.state.firstshot ? (
+                      <div
+                        className="shot_checkbox"
+                        style={{ marginLeft: "6%" }}
+                        onClick={() => {
+                          this.setState({ firstshot: !this.state.firstshot });
+                        }}
+                      >
+                        <img
+                          src={CheckedImage}
+                          style={{ height: 16, width: 16 }}
+                        />
+                      </div>
+                    ) : (
+                      <div
+                        className="shot_checkbox"
+                        style={{ marginLeft: "6%" }}
+                        onClick={() => {
+                          this.setState({ firstshot: !this.state.firstshot });
+                        }}
+                      ></div>
+                    )}
+                  </div>
+                  <div className="shot_types" style={{ color: "green" }}>
+                    Second Shot
+                    {this.state.secondshot ? (
+                      <div
+                        className="shot_checkbox"
+                        style={{
+                          marginTop: "1%",
+                          marginLeft: "2%",
+                        }}
+                        onClick={() => {
+                          this.setState({ secondshot: !this.state.secondshot });
+                        }}
+                      >
+                        <img
+                          src={CheckedImage}
+                          style={{ height: 16, width: 16 }}
+                        />
+                      </div>
+                    ) : (
+                      <div
+                        className="shot_checkbox"
+                        style={{
+                          marginTop: "1%",
+                          marginLeft: "2%",
+                        }}
+                        onClick={() => {
+                          this.setState({ secondshot: !this.state.secondshot });
+                        }}
+                      ></div>
+                    )}
+                  </div>
+                  <div className="shot_types" style={{ color: "violet" }}>
+                    Third Shot
+                    {this.state.thirdshot ? (
+                      <div
+                        className="shot_checkbox"
+                        style={{
+                          marginTop: "1%",
+                          marginLeft: "4.5%",
+                        }}
+                        onClick={() => {
+                          this.setState({ thirdshot: !this.state.thirdshot });
+                        }}
+                      >
+                        <img
+                          src={CheckedImage}
+                          style={{ height: 16, width: 16 }}
+                        />
+                      </div>
+                    ) : (
+                      <div
+                        className="shot_checkbox"
+                        style={{
+                          marginTop: "1%",
+                          marginLeft: "4.5%",
+                        }}
+                        onClick={() => {
+                          this.setState({ thirdshot: !this.state.thirdshot });
+                        }}
+                      ></div>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="div_line"></div>
-            <div className="column_1_3">
-              <div className="pattern_text">Pattern</div>
-              <div className="pattern_input">
-                <div className="dropdown_container">
-                  <Dropdown
-                    options={this.state.shot_type}
-                    onChange={(e) => {
-                      this.onSelect(e.value, 4);
-                    }}
-                    value={this.state.shot_type_bot_1}
-                    placeholder="Select an option"
-                    className="dropdown_custom"
-                    isOrange={false}
-                    width={"80px"}
-                  />
+              <div className="div_line"></div>
+              <div className="column_1_3">
+                <div className="pattern_text">Pattern</div>
+                <div className="pattern_input">
+                  <div className="dropdown_container">
+                    <Dropdown
+                      options={this.state.shot_type}
+                      onChange={(e) => {
+                        this.onSelect(e.value, 4);
+                      }}
+                      value={this.state.shot_type_bot_1}
+                      placeholder="Select an option"
+                      className="dropdown_custom"
+                      isOrange={false}
+                      width={"80px"}
+                    />
+                  </div>
+                  <div className="dropdown_container">
+                    <Dropdown
+                      options={this.state.shot_hand}
+                      onChange={(e) => {
+                        this.onSelect(e.value, 10);
+                      }}
+                      value={this.state.shot_hand_bot_1}
+                      placeholder="Select an option"
+                      className="dropdown_custom"
+                      isOrange={false}
+                      width={"55px"}
+                    />
+                  </div>
+                  <div className="dropdown_container_padding">
+                    <Dropdown
+                      options={this.state.shot_type}
+                      onChange={(e) => {
+                        this.onSelect(e.value, 5);
+                      }}
+                      value={this.state.shot_type_bot_2}
+                      placeholder="Select an option"
+                      className="dropdown_custom"
+                      isOrange={true}
+                      width={"80px"}
+                    />
+                  </div>
+                  <div className="dropdown_container">
+                    <Dropdown
+                      options={this.state.shot_hand}
+                      onChange={(e) => {
+                        this.onSelect(e.value, 11);
+                      }}
+                      value={this.state.shot_hand_bot_2}
+                      placeholder="Select an option"
+                      className="dropdown_custom"
+                      isOrange={true}
+                      width={"55px"}
+                    />
+                  </div>
+                  <div className="dropdown_container_padding">
+                    <Dropdown
+                      options={this.state.shot_type}
+                      onChange={(e) => {
+                        this.onSelect(e.value, 6);
+                      }}
+                      value={this.state.shot_type_bot_3}
+                      placeholder="Select an option"
+                      className="dropdown_custom"
+                      isOrange={false}
+                      width={"80px"}
+                    />
+                  </div>
+                  <div className="dropdown_container">
+                    <Dropdown
+                      options={this.state.shot_hand}
+                      onChange={(e) => {
+                        this.onSelect(e.value, 12);
+                      }}
+                      value={this.state.shot_hand_bot_3}
+                      placeholder="Select an option"
+                      className="dropdown_custom"
+                      isOrange={false}
+                      width={"55px"}
+                    />
+                  </div>
+                  <div className="go_button_container">
+                    <button
+                      className="btn_small_teal"
+                      onClick={() => {
+                        this.onClickGo(2);
+                      }}
+                    >
+                      Go
+                    </button>
+                  </div>
                 </div>
-                <div className="dropdown_container">
-                  <Dropdown
-                    options={this.state.shot_hand}
-                    onChange={(e) => {
-                      this.onSelect(e.value, 10);
-                    }}
-                    value={this.state.shot_hand_bot_1}
-                    placeholder="Select an option"
-                    className="dropdown_custom"
-                    isOrange={false}
-                    width={"55px"}
-                  />
-                </div>
-                <div className="dropdown_container_padding">
-                  <Dropdown
-                    options={this.state.shot_type}
-                    onChange={(e) => {
-                      this.onSelect(e.value, 5);
-                    }}
-                    value={this.state.shot_type_bot_2}
-                    placeholder="Select an option"
-                    className="dropdown_custom"
-                    isOrange={true}
-                    width={"80px"}
-                  />
-                </div>
-                <div className="dropdown_container">
-                  <Dropdown
-                    options={this.state.shot_hand}
-                    onChange={(e) => {
-                      this.onSelect(e.value, 11);
-                    }}
-                    value={this.state.shot_hand_bot_2}
-                    placeholder="Select an option"
-                    className="dropdown_custom"
-                    isOrange={true}
-                    width={"55px"}
-                  />
-                </div>
-                <div className="dropdown_container_padding">
-                  <Dropdown
-                    options={this.state.shot_type}
-                    onChange={(e) => {
-                      this.onSelect(e.value, 6);
-                    }}
-                    value={this.state.shot_type_bot_3}
-                    placeholder="Select an option"
-                    className="dropdown_custom"
-                    isOrange={false}
-                    width={"80px"}
-                  />
-                </div>
-                <div className="dropdown_container">
-                  <Dropdown
-                    options={this.state.shot_hand}
-                    onChange={(e) => {
-                      this.onSelect(e.value, 12);
-                    }}
-                    value={this.state.shot_hand_bot_3}
-                    placeholder="Select an option"
-                    className="dropdown_custom"
-                    isOrange={false}
-                    width={"55px"}
-                  />
-                </div>
-                <div className="go_button_container">
+                <div className="info_row">
                   <button
                     className="btn_small_teal"
-                    onClick={() => {
-                      this.onClickGo(2);
+                    disabled
+                    style={{
+                      cursor: "default",
+                      paddingLeft: "36px",
+                      paddingRight: "36px",
                     }}
                   >
-                    Go
+                    Stretch
                   </button>
+                  <div className="info_box">{this.state.totalStretchBot}</div>
+                  <div className="info_box">{this.state.avgStretchBot}</div>
+                  {this.state.stretchBot ? (
+                    <div
+                      className="info_box_checkbox"
+                      onClick={() => {
+                        this.setState({ stretchBot: !this.state.stretchBot });
+                      }}
+                    >
+                      <img
+                        src={CheckedImage}
+                        style={{ height: 26, width: 26 }}
+                      />
+                    </div>
+                  ) : (
+                    <div
+                      className="info_box_checkbox"
+                      onClick={() => {
+                        this.setState({ stretchBot: !this.state.stretchBot });
+                      }}
+                    ></div>
+                  )}
+                </div>
+                <div className="info_row">
+                  <button
+                    className="btn_small_teal"
+                    disabled
+                    style={{
+                      cursor: "default",
+                      paddingLeft: "32px",
+                      paddingRight: "32px",
+                    }}
+                  >
+                    Distance
+                  </button>
+                  <div className="info_box">{this.state.totalDistanceBot}</div>
+                  <div className="info_box">{this.state.avgDistanceBot}</div>
+                  {this.state.distanceBot ? (
+                    <div
+                      className="info_box_checkbox"
+                      onClick={() => {
+                        this.setState({ distanceBot: !this.state.distanceBot });
+                      }}
+                    >
+                      <img
+                        src={CheckedImage}
+                        style={{ height: 26, width: 26 }}
+                      />
+                    </div>
+                  ) : (
+                    <div
+                      className="info_box_checkbox"
+                      onClick={() => {
+                        this.setState({ distanceBot: !this.state.distanceBot });
+                      }}
+                    ></div>
+                  )}
+                </div>
+                <div className="info_row">
+                  <button
+                    className="btn_small_teal"
+                    disabled
+                    style={{ cursor: "default" }}
+                  >
+                    Placement/Rec
+                  </button>
+                  <div className="info_box"></div>
+                  <div className="info_box"></div>
+                  {this.state.placrecBot ? (
+                    <div
+                      className="info_box_checkbox"
+                      onClick={() => {
+                        this.setState({ placrecBot: !this.state.placrecBot });
+                      }}
+                    >
+                      <img
+                        src={CheckedImage}
+                        style={{ height: 26, width: 26 }}
+                      />
+                    </div>
+                  ) : (
+                    <div
+                      className="info_box_checkbox"
+                      onClick={() => {
+                        this.setState({ placrecBot: !this.state.placrecBot });
+                      }}
+                    ></div>
+                  )}
+                </div>
+                <div className="info_row">
+                  <button
+                    className="btn_small_teal"
+                    disabled
+                    style={{
+                      cursor: "default",
+                      paddingLeft: "36px",
+                      paddingRight: "36px",
+                    }}
+                  >
+                    Height
+                  </button>
+                  <div className="info_box"></div>
+                  <div className="info_box"></div>
+                  {this.state.heightBot ? (
+                    <div
+                      className="info_box_checkbox"
+                      onClick={() => {
+                        this.setState({ heightBot: !this.state.heightBot });
+                      }}
+                    >
+                      <img
+                        src={CheckedImage}
+                        style={{ height: 26, width: 26 }}
+                      />
+                    </div>
+                  ) : (
+                    <div
+                      className="info_box_checkbox"
+                      onClick={() => {
+                        this.setState({ heightBot: !this.state.heightBot });
+                      }}
+                    ></div>
+                  )}
                 </div>
               </div>
-              <div className="info_row">
-                <button
-                  className="btn_small_teal"
-                  disabled
-                  style={{
-                    cursor: "default",
-                    paddingLeft: "36px",
-                    paddingRight: "36px",
-                  }}
-                >
-                  Stretch
-                </button>
-                <div className="info_box">{this.state.totalStretchBot}</div>
-                <div className="info_box">{this.state.avgStretchBot}</div>
-                {this.state.stretchBot ? (
-                  <div
-                    className="info_box_checkbox"
-                    onClick={() => {
-                      this.setState({ stretchBot: !this.state.stretchBot });
-                    }}
-                  >
-                    <img src={CheckedImage} style={{ height: 26, width: 26 }} />
-                  </div>
-                ) : (
-                  <div
-                    className="info_box_checkbox"
-                    onClick={() => {
-                      this.setState({ stretchBot: !this.state.stretchBot });
-                    }}
-                  ></div>
-                )}
-              </div>
-              <div className="info_row">
-                <button
-                  className="btn_small_teal"
-                  disabled
-                  style={{
-                    cursor: "default",
-                    paddingLeft: "32px",
-                    paddingRight: "32px",
-                  }}
-                >
-                  Distance
-                </button>
-                <div className="info_box">{this.state.totalDistanceBot}</div>
-                <div className="info_box">{this.state.avgDistanceBot}</div>
-                {this.state.distanceBot ? (
-                  <div
-                    className="info_box_checkbox"
-                    onClick={() => {
-                      this.setState({ distanceBot: !this.state.distanceBot });
-                    }}
-                  >
-                    <img src={CheckedImage} style={{ height: 26, width: 26 }} />
-                  </div>
-                ) : (
-                  <div
-                    className="info_box_checkbox"
-                    onClick={() => {
-                      this.setState({ distanceBot: !this.state.distanceBot });
-                    }}
-                  ></div>
-                )}
-              </div>
-              <div className="info_row">
-                <button
-                  className="btn_small_teal"
-                  disabled
-                  style={{ cursor: "default" }}
-                >
-                  Placement/Rec
-                </button>
-                <div className="info_box"></div>
-                <div className="info_box"></div>
-                {this.state.placrecBot ? (
-                  <div
-                    className="info_box_checkbox"
-                    onClick={() => {
-                      this.setState({ placrecBot: !this.state.placrecBot });
-                    }}
-                  >
-                    <img src={CheckedImage} style={{ height: 26, width: 26 }} />
-                  </div>
-                ) : (
-                  <div
-                    className="info_box_checkbox"
-                    onClick={() => {
-                      this.setState({ placrecBot: !this.state.placrecBot });
-                    }}
-                  ></div>
-                )}
-              </div>
-              <div className="info_row">
-                <button
-                  className="btn_small_teal"
-                  disabled
-                  style={{
-                    cursor: "default",
-                    paddingLeft: "36px",
-                    paddingRight: "36px",
-                  }}
-                >
-                  Height
-                </button>
-                <div className="info_box"></div>
-                <div className="info_box"></div>
-                {this.state.heightBot ? (
-                  <div
-                    className="info_box_checkbox"
-                    onClick={() => {
-                      this.setState({ heightBot: !this.state.heightBot });
-                    }}
-                  >
-                    <img src={CheckedImage} style={{ height: 26, width: 26 }} />
-                  </div>
-                ) : (
-                  <div
-                    className="info_box_checkbox"
-                    onClick={() => {
-                      this.setState({ heightBot: !this.state.heightBot });
-                    }}
-                  ></div>
-                )}
-              </div>
             </div>
-          </div>
+          )}
           <div className="column_2">
             <div className="column_2_1">
               {this.state.badminton_array ? (
@@ -2619,8 +2712,15 @@ class Badminton extends Component {
                   distanceTop={this.state.distanceTop}
                   distanceBot={this.state.distanceBot}
                   indShot={this.state.indShot}
+                  fromShot={this.state.fromShot}
+                  toShot={this.state.toShot}
+                  setVideoSettings={this.setVideoSettings}
                 ></Field>
-              ) : null}
+              ) : // <img
+              //   src={courtPic}
+              //   style={{ height: "554.4px", width: "291.6px" }}
+              // />
+              null}
             </div>
             <div className="column_2_2">
               <div
@@ -3360,6 +3460,76 @@ class Badminton extends Component {
                     {this.state.left_bot_score_set3}
                   </div>
                 </div>
+              </div>
+              <div className="at_group" style={{ alignItems: "center" }}>
+                <img
+                  src={LeftArrowImage}
+                  style={{ height: 20, width: 20 }}
+                  onClick={() => {
+                    if (this.state.fromShot - this.state.currentDiff >= 0) {
+                      let fromShot =
+                        this.state.fromShot - this.state.currentDiff;
+                      let toShot = this.state.toShot - this.state.currentDiff;
+                      this.setState({ fromShot, toShot });
+                    }
+                  }}
+                />
+                <input
+                  type="number"
+                  className="at_elements_min"
+                  value={
+                    this.state.fromShot === NaN ? "" : this.state.fromShot + 1
+                  }
+                  maxLength="3"
+                  rows="1"
+                  onChange={(e) => {
+                    this.setState({
+                      fromShot: parseInt(e.target.value) - 1,
+                      // firstClick: true,
+                    });
+                  }}
+                ></input>{" "}
+                -{" "}
+                <input
+                  type="number"
+                  className="at_elements_min"
+                  value={this.state.toShot === NaN ? "" : this.state.toShot + 1}
+                  maxLength="3"
+                  rows="1"
+                  onChange={(e) => {
+                    this.setState({
+                      toShot: parseInt(e.target.value) - 1,
+                      // firstClick: true,
+                    });
+                  }}
+                ></input>
+                <img
+                  src={RightArrowImage}
+                  style={{ height: 20, width: 20 }}
+                  onClick={() => {
+                    let fromShot = this.state.fromShot + this.state.currentDiff;
+                    let toShot = this.state.toShot + this.state.currentDiff;
+                    this.setState({ fromShot, toShot });
+                  }}
+                  // onMouseUp={()=>{
+                  //   this.endInterval()
+                  // }}
+                />
+                <input
+                  type="number"
+                  className="at_elements_min"
+                  value={
+                    this.state.currentDiff === NaN ? "" : this.state.currentDiff
+                  }
+                  maxLength="3"
+                  rows="1"
+                  onChange={(e) => {
+                    this.setState({
+                      currentDiff: parseInt(e.target.value),
+                      // firstClick: true,
+                    });
+                  }}
+                ></input>
               </div>
               <div className="at_group">
                 <div className="at_elements_score">

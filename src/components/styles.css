@@ -340,6 +340,21 @@
   outline: none;
 }
 
+.at_elements_min {
+  border: 1px solid rgb(85, 85, 85);
+  color: rgb(173, 173, 10);
+  text-align: center;
+  width: 50px;
+  overflow: hidden;
+  background-color: rgb(46, 46, 46);
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.at_elements_min:focus {
+  outline: none;
+}
+
 .at_elements_score {
   border: 1px solid rgb(85, 85, 85);
   color: rgb(173, 173, 10);
@@ -621,11 +636,11 @@ input::-webkit-inner-spin-button {
   flex-direction: row;
   border: 2px solid rgb(85, 85, 85);
   margin-top: 10px;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 8%;
+  margin-right: 8%;
   height: 75px;
   background-color: rgb(46, 46, 46);
-  width: 80%;
+  width: 85%;
 }
 
 .bottom_bar_row_1 {
