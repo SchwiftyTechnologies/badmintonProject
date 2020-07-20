@@ -20,10 +20,10 @@ class Field extends Component {
       popUp: false,
       startTime: 0,
       endTime: 0,
-      height1_perc: 25,
-      height2_perc: 50,
-      width1_perc: 25,
-      width2_perc: 50,
+      height1_perc: this.props.height1_perc,
+      height2_perc: this.props.height2_perc,
+      width1_perc: this.props.width1_perc,
+      width2_perc: this.props.width2_perc,
     };
 
     this.canvasRef = React.createRef();
@@ -1648,6 +1648,12 @@ class Field extends Component {
 
   componentWillReceiveProps(nextProps) {
     let shot_count = 0;
+    this.setState({
+      height1_perc: nextProps.height1_perc,
+      height2_perc: nextProps.height2_perc,
+      width1_perc: nextProps.width1_perc,
+      width2_perc: nextProps.width2_perc,
+    });
     if (nextProps !== this.props) {
       if (nextProps.isRightSide) {
         const canvas = this.canvasRef.current;
