@@ -3441,292 +3441,331 @@ class Badminton extends Component {
             }}
           >
             <div className="above_timeline">
-              <div className="at_group">
-                Rally:
-                <input
-                  type="number"
-                  className="at_elements"
-                  value={
-                    this.state.leftRallyDisp === NaN
-                      ? ""
-                      : this.state.leftRallyDisp + 1
-                  }
-                  maxLength="3"
-                  rows="1"
-                  onChange={(e) => {
-                    let rally_number_disp = parseInt(e.target.value) - 1;
-                    let rally_number = -1;
-                    let left_score_set1 = 0;
-                    let right_score_set1 = 0;
-                    let left_score_set2 = 0;
-                    let right_score_set2 = 0;
-                    let left_score_set3 = 0;
-                    let right_score_set3 = 0;
-                    if (e.target.value != "") {
-                      if (this.state.setLeft === 1) {
-                        rally_number = rally_number_disp;
-                        let rall_info = badminton_points_data[e.target.value];
-                        left_score_set1 = rall_info.current_set_top_init_score;
-                        right_score_set1 =
-                          rall_info.current_set_bottom_init_score;
-                      } else if (this.state.setLeft === 2) {
-                        rally_number =
-                          rally_number_disp + this.state.setArray[0] + 1;
-                        let rall_info =
-                          badminton_points_data[(rally_number + 1).toString()];
-
-                        left_score_set2 = rall_info.current_set_top_init_score;
-                        right_score_set2 =
-                          rall_info.current_set_bottom_init_score;
-                        left_score_set1 = this.state.points_table[0]
-                          .current_set_top_init_score;
-                        right_score_set1 = this.state.points_table[0]
-                          .current_set_bottom_init_score;
-                      } else if (this.state.setLeft === 3) {
-                        if (this.state.setArray[1]) {
-                          rally_number =
-                            rally_number_disp + this.state.setArray[1] + 1;
-                          let rall_info =
-                            badminton_points_data[
-                              (rally_number + 1).toString()
-                            ];
-
-                          left_score_set2 = this.state.points_table[1]
-                            .current_set_top_init_score;
-                          right_score_set2 = this.state.points_table[1]
-                            .current_set_bottom_init_score;
-                          left_score_set1 = this.state.points_table[0]
-                            .current_set_top_init_score;
-                          right_score_set1 = this.state.points_table[0]
-                            .current_set_bottom_init_score;
-                          left_score_set3 =
-                            rall_info.current_set_top_init_score;
-                          right_score_set3 =
-                            rall_info.current_set_bottom_init_score;
-                        }
+              <ul style={{display: "flex",
+                          width: "100%",
+                          flex:1,
+                          justifyContent: 'space-evenly',
+                          listStyle: "none",
+                          margin: "0",
+                          padding: "0"}}>
+                <li style={{ flex: "1 1 auto",
+                              width:"100%",
+                              marginLeft:"20px",
+                              marginRight:"20px",
+                              alignItems: "center",
+                              position: "relative",
+                              textAlign: "center",
+                              lineHeight: "auto",
+                              }}>
+                  <div className="at_group">
+                    Rally:
+                    <input
+                      type="number"
+                      className="at_elements"
+                      value={
+                        this.state.leftRallyDisp === NaN
+                          ? ""
+                          : this.state.leftRallyDisp + 1
                       }
-                    }
+                      maxLength="3"
+                      rows="1"
+                      onChange={(e) => {
+                        let rally_number_disp = parseInt(e.target.value) - 1;
+                        let rally_number = -1;
+                        let left_score_set1 = 0;
+                        let right_score_set1 = 0;
+                        let left_score_set2 = 0;
+                        let right_score_set2 = 0;
+                        let left_score_set3 = 0;
+                        let right_score_set3 = 0;
+                        if (e.target.value != "") {
+                          if (this.state.setLeft === 1) {
+                            rally_number = rally_number_disp;
+                            let rall_info = badminton_points_data[e.target.value];
+                            left_score_set1 = rall_info.current_set_top_init_score;
+                            right_score_set1 =
+                              rall_info.current_set_bottom_init_score;
+                          } else if (this.state.setLeft === 2) {
+                            rally_number =
+                              rally_number_disp + this.state.setArray[0] + 1;
+                            let rall_info =
+                              badminton_points_data[(rally_number + 1).toString()];
 
-                    this.setState({
-                      leftRallyDisp: parseInt(e.target.value) - 1,
-                      leftRally: rally_number,
-                      firstClick: false,
-                      left_top_score_set1: left_score_set1,
-                      left_bot_score_set1: right_score_set1,
-                      left_top_score_set2: left_score_set2,
-                      left_bot_score_set2: right_score_set2,
-                      left_top_score_set3: left_score_set3,
-                      left_bot_score_set3: right_score_set3,
-                    });
-                  }}
-                ></input>
-                Set:
-                <input
-                  type="number"
-                  className="at_elements"
-                  value={this.state.setLeft === NaN ? "" : this.state.setLeft}
-                  maxLength="3"
-                  rows="1"
-                  onChange={(e) => {
-                    this.setState({
-                      setLeft: parseInt(e.target.value),
-                      // firstClick: false,
-                    });
-                  }}
-                ></input>
-                <div className="at_elements_score">
-                  <div className="scoreDiv">
-                    {this.state.left_top_score_set1}-
-                    {this.state.left_bot_score_set1}
-                  </div>
-                  <div className="scoreDiv">
-                    {this.state.left_top_score_set2}-
-                    {this.state.left_bot_score_set2}
-                  </div>
-                  <div className="scoreDiv">
-                    {this.state.left_top_score_set3}-
-                    {this.state.left_bot_score_set3}
-                  </div>
-                </div>
-              </div>
-              <div className="at_group" style={{ alignItems: "center" }}>
-                <img
-                  src={LeftArrowImage}
-                  style={{ height: 20, width: 20 }}
-                  onClick={() => {
-                    if (this.state.fromShot - this.state.currentDiff >= 0) {
-                      let fromShot =
-                        this.state.fromShot - this.state.currentDiff;
-                      let toShot = this.state.toShot - this.state.currentDiff;
-                      this.setState({ fromShot, toShot });
-                    }
-                  }}
-                />
-                <input
-                  type="number"
-                  className="at_elements_min"
-                  value={
-                    this.state.fromShot === NaN ? "" : this.state.fromShot + 1
-                  }
-                  maxLength="3"
-                  rows="1"
-                  onChange={(e) => {
-                    this.setState({
-                      fromShot: parseInt(e.target.value) - 1,
-                      // firstClick: true,
-                    });
-                  }}
-                ></input>{" "}
-                -{" "}
-                <input
-                  type="number"
-                  className="at_elements_min"
-                  value={this.state.toShot === NaN ? "" : this.state.toShot + 1}
-                  maxLength="3"
-                  rows="1"
-                  onChange={(e) => {
-                    this.setState({
-                      toShot: parseInt(e.target.value) - 1,
-                      // firstClick: true,
-                    });
-                  }}
-                ></input>
-                <img
-                  src={RightArrowImage}
-                  style={{ height: 20, width: 20 }}
-                  onClick={() => {
-                    let fromShot = this.state.fromShot + this.state.currentDiff;
-                    let toShot = this.state.toShot + this.state.currentDiff;
-                    this.setState({ fromShot, toShot });
-                  }}
-                  // onMouseUp={()=>{
-                  //   this.endInterval()
-                  // }}
-                />
-                <input
-                  type="number"
-                  className="at_elements_min"
-                  value={
-                    this.state.currentDiff === NaN ? "" : this.state.currentDiff
-                  }
-                  maxLength="3"
-                  rows="1"
-                  onChange={(e) => {
-                    this.setState({
-                      currentDiff: parseInt(e.target.value),
-                      // firstClick: true,
-                    });
-                  }}
-                ></input>
-              </div>
-              <div className="at_group">
-                <div className="at_elements_score">
-                  <div className="scoreDiv">
-                    {this.state.right_top_score_set1}-
-                    {this.state.right_bot_score_set1}
-                  </div>
-                  <div className="scoreDiv">
-                    {this.state.right_top_score_set2}-
-                    {this.state.right_bot_score_set2}
-                  </div>
-                  <div className="scoreDiv">
-                    {this.state.right_top_score_set3}-
-                    {this.state.right_bot_score_set3}
-                  </div>
-                </div>
-                Set:
-                <input
-                  type="number"
-                  className="at_elements"
-                  value={this.state.setRight === NaN ? "" : this.state.setRight}
-                  maxLength="3"
-                  rows="1"
-                  onChange={(e) => {
-                    this.setState({
-                      setRight: parseInt(e.target.value),
-                      // firstClick: true,
-                    });
-                  }}
-                ></input>
-                Rally:
-                <input
-                  type="number"
-                  className="at_elements"
-                  value={
-                    this.state.rightRallyDisp === NaN
-                      ? ""
-                      : this.state.rightRallyDisp + 1
-                  }
-                  maxLength="3"
-                  rows="1"
-                  onChange={(e) => {
-                    let rally_number_disp = parseInt(e.target.value) - 1;
-                    let rally_number = -1;
-                    let left_score_set1 = 0;
-                    let right_score_set1 = 0;
-                    let left_score_set2 = 0;
-                    let right_score_set2 = 0;
-                    let left_score_set3 = 0;
-                    let right_score_set3 = 0;
-                    if (e.target.value != "") {
-                      if (this.state.setRight === 1) {
-                        rally_number = rally_number_disp;
-                        let rall_info = badminton_points_data[e.target.value];
-                        left_score_set1 = rall_info.current_set_top_init_score;
-                        right_score_set1 =
-                          rall_info.current_set_bottom_init_score;
-                      } else if (this.state.setRight === 2) {
-                        rally_number =
-                          rally_number_disp + this.state.setArray[0];
-                        let rall_info =
-                          badminton_points_data[(rally_number + 1).toString()];
+                            left_score_set2 = rall_info.current_set_top_init_score;
+                            right_score_set2 =
+                              rall_info.current_set_bottom_init_score;
+                            left_score_set1 = this.state.points_table[0]
+                              .current_set_top_init_score;
+                            right_score_set1 = this.state.points_table[0]
+                              .current_set_bottom_init_score;
+                          } else if (this.state.setLeft === 3) {
+                            if (this.state.setArray[1]) {
+                              rally_number =
+                                rally_number_disp + this.state.setArray[1] + 1;
+                              let rall_info =
+                                badminton_points_data[
+                                  (rally_number + 1).toString()
+                                ];
 
-                        left_score_set2 = rall_info.current_set_top_init_score;
-                        right_score_set2 =
-                          rall_info.current_set_bottom_init_score;
-                        left_score_set1 = this.state.points_table[0]
-                          .current_set_top_init_score;
-                        right_score_set1 = this.state.points_table[0]
-                          .current_set_bottom_init_score;
-                      } else if (this.state.setRight === 3) {
-                        if (this.state.setArray[1]) {
-                          rally_number =
-                            rally_number_disp + this.state.setArray[1];
-                          let rall_info =
-                            badminton_points_data[
-                              (rally_number + 1).toString()
-                            ];
-
-                          left_score_set2 = this.state.points_table[1]
-                            .current_set_top_init_score;
-                          right_score_set2 = this.state.points_table[1]
-                            .current_set_bottom_init_score;
-                          left_score_set1 = this.state.points_table[0]
-                            .current_set_top_init_score;
-                          right_score_set1 = this.state.points_table[0]
-                            .current_set_bottom_init_score;
-                          left_score_set3 =
-                            rall_info.current_set_top_init_score;
-                          right_score_set3 =
-                            rall_info.current_set_bottom_init_score;
+                              left_score_set2 = this.state.points_table[1]
+                                .current_set_top_init_score;
+                              right_score_set2 = this.state.points_table[1]
+                                .current_set_bottom_init_score;
+                              left_score_set1 = this.state.points_table[0]
+                                .current_set_top_init_score;
+                              right_score_set1 = this.state.points_table[0]
+                                .current_set_bottom_init_score;
+                              left_score_set3 =
+                                rall_info.current_set_top_init_score;
+                              right_score_set3 =
+                                rall_info.current_set_bottom_init_score;
+                            }
+                          }
                         }
-                      }
-                    }
 
-                    this.setState({
-                      rightRallyDisp: parseInt(e.target.value) - 1,
-                      rightRally: rally_number,
-                      firstClick: true,
-                      right_top_score_set1: left_score_set1,
-                      right_bot_score_set1: right_score_set1,
-                      right_top_score_set2: left_score_set2,
-                      right_bot_score_set2: right_score_set2,
-                      right_top_score_set3: left_score_set3,
-                      right_bot_score_set3: right_score_set3,
-                    });
-                  }}
-                ></input>
-              </div>
+                        this.setState({
+                          leftRallyDisp: parseInt(e.target.value) - 1,
+                          leftRally: rally_number,
+                          firstClick: false,
+                          left_top_score_set1: left_score_set1,
+                          left_bot_score_set1: right_score_set1,
+                          left_top_score_set2: left_score_set2,
+                          left_bot_score_set2: right_score_set2,
+                          left_top_score_set3: left_score_set3,
+                          left_bot_score_set3: right_score_set3,
+                        });
+                      }}
+                    ></input>
+                    Set:
+                    <input
+                      type="number"
+                      className="at_elements"
+                      value={this.state.setLeft === NaN ? "" : this.state.setLeft}
+                      maxLength="3"
+                      rows="1"
+                      onChange={(e) => {
+                        this.setState({
+                          setLeft: parseInt(e.target.value),
+                          // firstClick: false,
+                        });
+                      }}
+                    ></input>
+                    <div className="at_elements_score">
+                      <div className="scoreDiv">
+                        {this.state.left_top_score_set1}-
+                        {this.state.left_bot_score_set1}
+                      </div>
+                      <div className="scoreDiv">
+                        {this.state.left_top_score_set2}-
+                        {this.state.left_bot_score_set2}
+                      </div>
+                      <div className="scoreDiv">
+                        {this.state.left_top_score_set3}-
+                        {this.state.left_bot_score_set3}
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li style={{ flex: "1 1 auto",
+                              width:"100%",
+                              marginLeft:"20px",
+                              marginRight:"20px",
+                              alignItems: "center",
+                              position: "relative",
+                              textAlign: "center",
+                              lineHeight: "auto",
+                              alignItems: "center",
+                              borderLeft: "solid 1px rgb(85, 85, 85)",
+                              borderRight: "solid 1px rgb(85, 85, 85"}}> 
+                  <div className="at_group" style={{display: "block", alignItems: "center",bordeRight: "10px solid black" }}>
+                    <img
+                      src={LeftArrowImage}
+                      style={{ height: 20, width: 20 }}
+                      onClick={() => {
+                        if (this.state.fromShot - this.state.currentDiff >= 0) {
+                          let fromShot =
+                            this.state.fromShot - this.state.currentDiff;
+                          let toShot = this.state.toShot - this.state.currentDiff;
+                          this.setState({ fromShot, toShot });
+                        }
+                      }}
+                    />
+                    <input
+                      type="number"
+                      className="at_elements_min"
+                      value={
+                        this.state.fromShot === NaN ? "" : this.state.fromShot + 1
+                      }
+                      maxLength="3"
+                      rows="1"
+                      onChange={(e) => {
+                        this.setState({
+                          fromShot: parseInt(e.target.value) - 1,
+                          // firstClick: true,
+                        });
+                      }}
+                    ></input>{" "}
+                    -{" "}
+                    <input
+                      type="number"
+                      className="at_elements_min"
+                      value={this.state.toShot === NaN ? "" : this.state.toShot + 1}
+                      maxLength="3"
+                      rows="1"
+                      onChange={(e) => {
+                        this.setState({
+                          toShot: parseInt(e.target.value) - 1,
+                          // firstClick: true,
+                        });
+                      }}
+                    ></input>
+                    <img
+                      src={RightArrowImage}
+                      style={{ height: 20, width: 20 }}
+                      onClick={() => {
+                        let fromShot = this.state.toShot +1;
+                        let toShot = this.state.toShot + this.state.currentDiff;
+                        this.setState({ fromShot, toShot });
+                      }}
+                      // onMouseUp={()=>{
+                      //   this.endInterval()
+                      // }}
+                    />
+                    <input
+                      type="number"
+                      className="at_elements_min"
+                      value={
+                        this.state.currentDiff === NaN ? "" : this.state.currentDiff
+                      }
+                      maxLength="3"
+                      rows="1"
+                      onChange={(e) => {
+                        this.setState({
+                          currentDiff: parseInt(e.target.value),
+                          // firstClick: true,
+                        });
+                      }}
+                    ></input>
+                  </div>
+                </li>
+                <li style={{ flex: "1 1 auto",
+                              width:"100%",
+                              marginLeft:"20px",
+                              marginRight:"20px",
+                              alignItems: "center",
+                              position: "relative",
+                              textAlign: "center",
+                              lineHeight: "auto"}} >  
+                  <div className="at_group">
+                    <div className="at_elements_score">
+                      <div className="scoreDiv">
+                        {this.state.right_top_score_set1}-
+                        {this.state.right_bot_score_set1}
+                      </div>
+                      <div className="scoreDiv">
+                        {this.state.right_top_score_set2}-
+                        {this.state.right_bot_score_set2}
+                      </div>
+                      <div className="scoreDiv">
+                        {this.state.right_top_score_set3}-
+                        {this.state.right_bot_score_set3}
+                      </div>
+                    </div>
+                    Set:
+                    <input
+                      type="number"
+                      className="at_elements"
+                      value={this.state.setRight === NaN ? "" : this.state.setRight}
+                      maxLength="3"
+                      rows="1"
+                      onChange={(e) => {
+                        this.setState({
+                          setRight: parseInt(e.target.value),
+                          // firstClick: true,
+                        });
+                      }}
+                    ></input>
+                    Rally:
+                    <input
+                      type="number"
+                      className="at_elements"
+                      value={
+                        this.state.rightRallyDisp === NaN
+                          ? ""
+                          : this.state.rightRallyDisp + 1
+                      }
+                      maxLength="3"
+                      rows="1"
+                      onChange={(e) => {
+                        let rally_number_disp = parseInt(e.target.value) - 1;
+                        let rally_number = -1;
+                        let left_score_set1 = 0;
+                        let right_score_set1 = 0;
+                        let left_score_set2 = 0;
+                        let right_score_set2 = 0;
+                        let left_score_set3 = 0;
+                        let right_score_set3 = 0;
+                        if (e.target.value != "") {
+                          if (this.state.setRight === 1) {
+                            rally_number = rally_number_disp;
+                            let rall_info = badminton_points_data[e.target.value];
+                            left_score_set1 = rall_info.current_set_top_init_score;
+                            right_score_set1 =
+                              rall_info.current_set_bottom_init_score;
+                          } else if (this.state.setRight === 2) {
+                            rally_number =
+                              rally_number_disp + this.state.setArray[0];
+                            let rall_info =
+                              badminton_points_data[(rally_number + 1).toString()];
+
+                            left_score_set2 = rall_info.current_set_top_init_score;
+                            right_score_set2 =
+                              rall_info.current_set_bottom_init_score;
+                            left_score_set1 = this.state.points_table[0]
+                              .current_set_top_init_score;
+                            right_score_set1 = this.state.points_table[0]
+                              .current_set_bottom_init_score;
+                          } else if (this.state.setRight === 3) {
+                            if (this.state.setArray[1]) {
+                              rally_number =
+                                rally_number_disp + this.state.setArray[1];
+                              let rall_info =
+                                badminton_points_data[
+                                  (rally_number + 1).toString()
+                                ];
+
+                              left_score_set2 = this.state.points_table[1]
+                                .current_set_top_init_score;
+                              right_score_set2 = this.state.points_table[1]
+                                .current_set_bottom_init_score;
+                              left_score_set1 = this.state.points_table[0]
+                                .current_set_top_init_score;
+                              right_score_set1 = this.state.points_table[0]
+                                .current_set_bottom_init_score;
+                              left_score_set3 =
+                                rall_info.current_set_top_init_score;
+                              right_score_set3 =
+                                rall_info.current_set_bottom_init_score;
+                            }
+                          }
+                        }
+
+                        this.setState({
+                          rightRallyDisp: parseInt(e.target.value) - 1,
+                          rightRally: rally_number,
+                          firstClick: true,
+                          right_top_score_set1: left_score_set1,
+                          right_bot_score_set1: right_score_set1,
+                          right_top_score_set2: left_score_set2,
+                          right_bot_score_set2: right_score_set2,
+                          right_top_score_set3: left_score_set3,
+                          right_bot_score_set3: right_score_set3,
+                        });
+                      }}
+                    ></input>
+                  </div>
+                </li>
+              </ul>  
             </div>
             <div className="right_buttons_cont_1">
               <img
