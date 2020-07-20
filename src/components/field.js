@@ -20,11 +20,123 @@ class Field extends Component {
       popUp: false,
       startTime: 0,
       endTime: 0,
+      height1_perc: 25,
+      height2_perc: 50,
+      width1_perc: 25,
+      width2_perc: 50,
     };
 
     this.canvasRef = React.createRef();
     this.playerRef = React.createRef();
   }
+
+  drawSegments = (player) => {
+    const canvas = this.canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    if (player === "top") {
+      ctx.beginPath();
+      ctx.strokeStyle = "rgb(173, 173, 10)";
+      ctx.setLineDash([4]);
+      ctx.lineWidth = 2;
+
+      //horizontal line 1
+      ctx.moveTo(
+        100 * this.state.width_factor,
+        770 * this.state.height_factor * (this.state.height1_perc / 100)
+      );
+      ctx.lineTo(
+        710 * this.state.width_factor,
+        770 * this.state.height_factor * (this.state.height1_perc / 100)
+      );
+      ctx.stroke();
+
+      //horizontal line 2
+      ctx.moveTo(
+        100 * this.state.width_factor,
+        770 * this.state.height_factor * (this.state.height2_perc / 100)
+      );
+      ctx.lineTo(
+        710 * this.state.width_factor,
+        770 * this.state.height_factor * (this.state.height2_perc / 100)
+      );
+      ctx.stroke();
+
+      //vertical line 1
+      ctx.moveTo(
+        810 * this.state.width_factor * (this.state.width1_perc / 100),
+        100 * this.state.height_factor
+      );
+      ctx.lineTo(
+        810 * this.state.width_factor * (this.state.width1_perc / 100),
+        770 * this.state.height_factor
+      );
+      ctx.stroke();
+
+      //vertical line 2
+      ctx.moveTo(
+        810 * this.state.width_factor * (this.state.width2_perc / 100),
+        100 * this.state.height_factor
+      );
+      ctx.lineTo(
+        810 * this.state.width_factor * (this.state.width2_perc / 100),
+        770 * this.state.height_factor
+      );
+      ctx.stroke();
+    } else {
+      ctx.beginPath();
+      ctx.strokeStyle = "rgb(173, 173, 10)";
+      ctx.setLineDash([4]);
+      ctx.lineWidth = 2;
+
+      //horizontal line 1
+      ctx.moveTo(
+        100 * this.state.width_factor,
+        770 * this.state.height_factor +
+          670 * this.state.height_factor * (this.state.height1_perc / 100)
+      );
+      ctx.lineTo(
+        710 * this.state.width_factor,
+        770 * this.state.height_factor +
+          670 * this.state.height_factor * (this.state.height1_perc / 100)
+      );
+      ctx.stroke();
+
+      //horizontal line 2
+      ctx.moveTo(
+        100 * this.state.width_factor,
+        770 * this.state.height_factor +
+          670 * this.state.height_factor * (this.state.height2_perc / 100)
+      );
+      ctx.lineTo(
+        710 * this.state.width_factor,
+        770 * this.state.height_factor +
+          670 * this.state.height_factor * (this.state.height2_perc / 100)
+      );
+      ctx.stroke();
+
+      //vertical line 1
+      ctx.moveTo(
+        810 * this.state.width_factor * (this.state.width1_perc / 100),
+        770 * this.state.height_factor
+      );
+      ctx.lineTo(
+        810 * this.state.width_factor * (this.state.width1_perc / 100),
+        1440 * this.state.height_factor
+      );
+      ctx.stroke();
+
+      //vertical line 2
+      ctx.moveTo(
+        810 * this.state.width_factor * (this.state.width2_perc / 100),
+        770 * this.state.height_factor
+      );
+      ctx.lineTo(
+        810 * this.state.width_factor * (this.state.width2_perc / 100),
+        1440 * this.state.height_factor
+      );
+      ctx.stroke();
+    }
+  };
 
   checkIfLine = (X, Y) => {
     const canvas = this.canvasRef.current;
@@ -35,7 +147,7 @@ class Field extends Component {
         let y1 = item.location_contact_shuttle[1] * this.state.height_factor;
         let x2 = item.location_end_shuttle[0] * this.state.width_factor;
         let y2 = item.location_end_shuttle[1] * this.state.height_factor;
-      
+
         ctx.beginPath();
         ctx.moveTo(x1, y1); // start of line
         ctx.lineTo(x2, y2);
@@ -429,11 +541,20 @@ class Field extends Component {
           }
         });
         if (player_played_val === init_player) {
+          let arr = [];
+          let x = (loc[0] + loc[1]) / 2.5;
+          let y = (loc[2] + loc[3]) / 1.8;
+          if (player_played_val === "bottom") {
+            x = (loc[0] + loc[1]) / 2.5;
+            y = (loc[2] + loc[3]) / 2;
+          }
+          arr.push(x);
+          arr.push(y);
           this.drawPercentage(
             total_length,
             num_shots_in_segment,
             init_player,
-            PERC_LOCATION_VAL[ind]
+            arr
           );
           if (num_shots_in_segment > 0) {
             this.drawPercentagePrecentageOpposite(
@@ -467,11 +588,20 @@ class Field extends Component {
           }
         });
         if (player_played_val === init_player) {
+          let arr = [];
+          let x = (loc[0] + loc[1]) / 2.5;
+          let y = (loc[2] + loc[3]) / 1.8;
+          if (player_played_val === "bottom") {
+            x = (loc[0] + loc[1]) / 2.5;
+            y = (loc[2] + loc[3]) / 2;
+          }
+          arr.push(x);
+          arr.push(y);
           this.drawPercentage(
             total_length,
             num_shots_in_segment,
             player_played_val,
-            PERC_LOCATION_VAL[ind]
+            arr
           );
           if (num_shots_in_segment > 0) {
             this.drawPercentagePrecentageOpposite(
@@ -505,11 +635,20 @@ class Field extends Component {
           }
         });
         if (player_played_val === init_player) {
+          let arr = [];
+          let x = (loc[0] + loc[1]) / 2.5;
+          let y = (loc[2] + loc[3]) / 1.8;
+          if (player_played_val === "bottom") {
+            x = (loc[0] + loc[1]) / 2.5;
+            y = (loc[2] + loc[3]) / 2;
+          }
+          arr.push(x);
+          arr.push(y);
           this.drawPercentage(
             total_length,
             num_shots_in_segment,
             player_played_val,
-            PERC_LOCATION_VAL[ind]
+            arr
           );
           if (num_shots_in_segment > 0) {
             this.drawPercentagePrecentageOpposite(
@@ -619,6 +758,13 @@ class Field extends Component {
     const ctx = canvas.getContext("2d");
     ctx.clearRect(0, 0, this.state.width, this.state.height);
     this.drawCourt();
+    if (this.props.perc || this.props.arrows) {
+      if (this.props.percFirstShot || this.props.percThirdShot) {
+        this.drawSegments("top");
+      } else {
+        this.drawSegments("bottom");
+      }
+    }
     let e_doc = document.getElementById("canvas");
     let elemLeft = e_doc.offsetLeft;
     let elemTop = e_doc.offsetTop;
@@ -630,197 +776,215 @@ class Field extends Component {
     } else {
       if (
         x >= 100 * this.state.width_factor &&
-        x <= 146 * this.state.width_factor &&
+        x <= 810 * this.state.width_factor * (this.state.width1_perc / 100) &&
         y >= 100 * this.state.height_factor &&
-        y <= 176 * this.state.height_factor
+        y <= 770 * this.state.height_factor * (this.state.height1_perc / 100)
       ) {
         this.highlightSegment([
           100 * this.state.width_factor,
-          46 * this.state.width_factor,
+          810 * this.state.width_factor * (this.state.width1_perc / 100) -
+            100 * this.state.width_factor,
           100 * this.state.height_factor,
-          76 * this.state.height_factor,
+          770 * this.state.height_factor * (this.state.height1_perc / 100) -
+            100 * this.state.height_factor,
         ]);
         this.clickCheckerFunction(
           [
             100 * this.state.width_factor,
-            146 * this.state.width_factor,
+            810 * this.state.width_factor * (this.state.width1_perc / 100),
             100 * this.state.height_factor,
-            176 * this.state.height_factor,
+            770 * this.state.height_factor * (this.state.height1_perc / 100),
           ],
           0,
           "top"
         );
       } else if (
-        x <= 660 * this.state.width_factor &&
-        x >= 146 * this.state.width_factor &&
+        x <= 810 * this.state.width_factor * (this.state.width2_perc / 100) &&
+        x >= 810 * this.state.width_factor * (this.state.width1_perc / 100) &&
         y >= 100 * this.state.height_factor &&
-        y <= 176 * this.state.height_factor
+        y <= 770 * this.state.height_factor * (this.state.height1_perc / 100)
       ) {
         this.highlightSegment([
-          146 * this.state.width_factor,
-          514 * this.state.width_factor,
+          810 * this.state.width_factor * (this.state.width1_perc / 100),
+          810 * this.state.width_factor * (this.state.width2_perc / 100) -
+            810 * this.state.width_factor * (this.state.width1_perc / 100),
           100 * this.state.height_factor,
-          76 * this.state.height_factor,
+          770 * this.state.height_factor * (this.state.height1_perc / 100) -
+            100 * this.state.height_factor,
         ]);
         this.clickCheckerFunction(
           [
-            146 * this.state.width_factor,
-            660 * this.state.width_factor,
+            810 * this.state.width_factor * (this.state.width1_perc / 100),
+            810 * this.state.width_factor * (this.state.width2_perc / 100),
             100 * this.state.height_factor,
-            176 * this.state.height_factor,
+            770 * this.state.height_factor * (this.state.height1_perc / 100),
           ],
           1,
           "top"
         );
       } else if (
-        x >= 660 * this.state.width_factor &&
+        x >= 810 * this.state.width_factor * (this.state.width2_perc / 100) &&
         x <= 710 * this.state.width_factor &&
         y >= 100 * this.state.height_factor &&
-        y <= 176 * this.state.height_factor
+        y <= 770 * this.state.height_factor * (this.state.height1_perc / 100)
       ) {
         this.highlightSegment([
-          660 * this.state.width_factor,
-          50 * this.state.width_factor,
+          810 * this.state.width_factor * (this.state.width2_perc / 100),
+          710 * this.state.width_factor -
+            810 * this.state.width_factor * (this.state.width2_perc / 100),
           100 * this.state.height_factor,
-          76 * this.state.height_factor,
+          770 * this.state.height_factor * (this.state.height1_perc / 100) -
+            100 * this.state.height_factor,
         ]);
         this.clickCheckerFunction(
           [
-            660 * this.state.width_factor,
+            810 * this.state.width_factor * (this.state.width2_perc / 100),
             710 * this.state.width_factor,
             100 * this.state.height_factor,
-            176 * this.state.height_factor,
+            770 * this.state.height_factor * (this.state.height1_perc / 100),
           ],
           2,
           "top"
         );
       } else if (
         x >= 100 * this.state.width_factor &&
-        x <= 146 * this.state.width_factor &&
-        y <= 568 * this.state.height_factor &&
-        y >= 176 * this.state.height_factor
+        x <= 810 * this.state.width_factor * (this.state.width1_perc / 100) &&
+        y <= 770 * this.state.height_factor * (this.state.height2_perc / 100) &&
+        y >= 770 * this.state.height_factor * (this.state.height1_perc / 100)
       ) {
         this.highlightSegment([
           100 * this.state.width_factor,
-          46 * this.state.width_factor,
-          176 * this.state.height_factor,
-          392 * this.state.height_factor,
+          810 * this.state.width_factor * (this.state.width1_perc / 100) -
+            100 * this.state.width_factor,
+          770 * this.state.height_factor * (this.state.height1_perc / 100),
+          770 * this.state.height_factor * (this.state.height2_perc / 100) -
+            770 * this.state.height_factor * (this.state.height1_perc / 100),
         ]);
         this.clickCheckerFunction(
           [
             100 * this.state.width_factor,
-            146 * this.state.width_factor,
-            176 * this.state.height_factor,
-            568 * this.state.height_factor,
+            810 * this.state.width_factor * (this.state.width1_perc / 100),
+            770 * this.state.height_factor * (this.state.height1_perc / 100),
+            770 * this.state.height_factor * (this.state.height2_perc / 100),
           ],
           3,
           "top"
         );
       } else if (
-        x <= 660 * this.state.width_factor &&
-        x >= 146 * this.state.width_factor &&
-        y <= 568 * this.state.height_factor &&
-        y >= 176 * this.state.height_factor
+        x <= 810 * this.state.width_factor * (this.state.width2_perc / 100) &&
+        x >= 810 * this.state.width_factor * (this.state.width1_perc / 100) &&
+        y <= 770 * this.state.height_factor * (this.state.height2_perc / 100) &&
+        y >= 770 * this.state.height_factor * (this.state.height1_perc / 100)
       ) {
         this.highlightSegment([
-          146 * this.state.width_factor,
-          514 * this.state.width_factor,
-          176 * this.state.height_factor,
-          392 * this.state.height_factor,
+          810 * this.state.width_factor * (this.state.width1_perc / 100),
+          810 * this.state.width_factor * (this.state.width2_perc / 100) -
+            810 * this.state.width_factor * (this.state.width1_perc / 100),
+          770 * this.state.height_factor * (this.state.height1_perc / 100),
+          770 * this.state.height_factor * (this.state.height2_perc / 100) -
+            770 * this.state.height_factor * (this.state.height1_perc / 100),
         ]);
         this.clickCheckerFunction(
           [
-            146 * this.state.width_factor,
-            660 * this.state.width_factor,
-            176 * this.state.height_factor,
-            568 * this.state.height_factor,
+            810 * this.state.width_factor * (this.state.width1_perc / 100),
+            810 * this.state.width_factor * (this.state.width2_perc / 100),
+            770 * this.state.height_factor * (this.state.height1_perc / 100),
+            770 * this.state.height_factor * (this.state.height2_perc / 100),
           ],
           4,
           "top"
         );
       } else if (
-        x >= 660 * this.state.width_factor &&
+        x >= 810 * this.state.width_factor * (this.state.width2_perc / 100) &&
         x <= 710 * this.state.width_factor &&
-        y <= 568 * this.state.height_factor &&
-        y >= 176 * this.state.height_factor
+        y <= 770 * this.state.height_factor * (this.state.height2_perc / 100) &&
+        y >= 770 * this.state.height_factor * (this.state.height1_perc / 100)
       ) {
         this.highlightSegment([
-          660 * this.state.width_factor,
-          50 * this.state.width_factor,
-          176 * this.state.height_factor,
-          392 * this.state.height_factor,
+          810 * this.state.width_factor * (this.state.width2_perc / 100),
+          710 * this.state.width_factor -
+            810 * this.state.width_factor * (this.state.width2_perc / 100),
+          770 * this.state.height_factor * (this.state.height1_perc / 100),
+          770 * this.state.height_factor * (this.state.height2_perc / 100) -
+            770 * this.state.height_factor * (this.state.height1_perc / 100),
         ]);
         this.clickCheckerFunction(
           [
-            660 * this.state.width_factor,
+            810 * this.state.width_factor * (this.state.width2_perc / 100),
             710 * this.state.width_factor,
-            176 * this.state.height_factor,
-            568 * this.state.height_factor,
+            770 * this.state.height_factor * (this.state.height1_perc / 100),
+            770 * this.state.height_factor * (this.state.height2_perc / 100),
           ],
           5,
           "top"
         );
       } else if (
         x >= 100 * this.state.width_factor &&
-        x <= 146 * this.state.width_factor &&
-        y >= 568 * this.state.height_factor &&
+        x <= 810 * this.state.width_factor * (this.state.width1_perc / 100) &&
+        y >= 770 * this.state.height_factor * (this.state.height2_perc / 100) &&
         y <= 770 * this.state.height_factor
       ) {
         this.highlightSegment([
           100 * this.state.width_factor,
-          46 * this.state.width_factor,
-          568 * this.state.height_factor,
-          202 * this.state.height_factor,
+          810 * this.state.width_factor * (this.state.width1_perc / 100) -
+            100 * this.state.width_factor,
+          770 * this.state.height_factor * (this.state.height2_perc / 100),
+          770 * this.state.height_factor -
+            770 * this.state.height_factor * (this.state.height2_perc / 100),
         ]);
         this.clickCheckerFunction(
           [
             100 * this.state.width_factor,
-            146 * this.state.width_factor,
-            568 * this.state.height_factor,
+            810 * this.state.width_factor * (this.state.width1_perc / 100),
+            770 * this.state.height_factor * (this.state.height2_perc / 100),
             770 * this.state.height_factor,
           ],
           6,
           "top"
         );
       } else if (
-        x <= 660 * this.state.width_factor &&
-        x >= 146 * this.state.width_factor &&
-        y >= 568 * this.state.height_factor &&
+        x <= 810 * this.state.width_factor * (this.state.width2_perc / 100) &&
+        x >= 810 * this.state.width_factor * (this.state.width1_perc / 100) &&
+        y >= 770 * this.state.height_factor * (this.state.height2_perc / 100) &&
         y <= 770 * this.state.height_factor
       ) {
         this.highlightSegment([
-          146 * this.state.width_factor,
-          514 * this.state.width_factor,
-          568 * this.state.height_factor,
-          202 * this.state.height_factor,
+          810 * this.state.width_factor * (this.state.width1_perc / 100),
+          810 * this.state.width_factor * (this.state.width2_perc / 100) -
+            810 * this.state.width_factor * (this.state.width1_perc / 100),
+          770 * this.state.height_factor * (this.state.height2_perc / 100),
+          770 * this.state.height_factor -
+            770 * this.state.height_factor * (this.state.height2_perc / 100),
         ]);
         this.clickCheckerFunction(
           [
-            146 * this.state.width_factor,
-            660 * this.state.width_factor,
-            568 * this.state.height_factor,
+            810 * this.state.width_factor * (this.state.width1_perc / 100),
+            810 * this.state.width_factor * (this.state.width2_perc / 100),
+            770 * this.state.height_factor * (this.state.height2_perc / 100),
             770 * this.state.height_factor,
           ],
           7,
           "top"
         );
       } else if (
-        x >= 660 * this.state.width_factor &&
+        x >= 810 * this.state.width_factor * (this.state.width2_perc / 100) &&
         x <= 710 * this.state.width_factor &&
-        y >= 568 * this.state.height_factor &&
+        y >= 770 * this.state.height_factor * (this.state.height2_perc / 100) &&
         y <= 770 * this.state.height_factor
       ) {
         this.highlightSegment([
-          660 * this.state.width_factor,
-          50 * this.state.width_factor,
-          568 * this.state.height_factor,
-          202 * this.state.height_factor,
+          810 * this.state.width_factor * (this.state.width2_perc / 100),
+          710 * this.state.width_factor -
+            810 * this.state.width_factor * (this.state.width2_perc / 100),
+          770 * this.state.height_factor * (this.state.height2_perc / 100),
+          770 * this.state.height_factor -
+            770 * this.state.height_factor * (this.state.height2_perc / 100),
         ]);
         this.clickCheckerFunction(
           [
-            660 * this.state.width_factor,
+            810 * this.state.width_factor * (this.state.width2_perc / 100),
             710 * this.state.width_factor,
-            568 * this.state.height_factor,
+            770 * this.state.height_factor * (this.state.height2_perc / 100),
             770 * this.state.height_factor,
           ],
           8,
@@ -828,197 +992,263 @@ class Field extends Component {
         );
       } else if (
         x >= 100 * this.state.width_factor &&
-        x <= 146 * this.state.width_factor &&
-        y <= 968 * this.state.height_factor &&
+        x <= 810 * this.state.width_factor * (this.state.width1_perc / 100) &&
+        y <=
+          770 * this.state.height_factor +
+            670 * this.state.height_factor * (this.state.height1_perc / 100) &&
         y >= 770 * this.state.height_factor
       ) {
         this.highlightSegment([
           100 * this.state.width_factor,
-          46 * this.state.width_factor,
+          810 * this.state.width_factor * (this.state.width1_perc / 100) -
+            100 * this.state.width_factor,
           770 * this.state.height_factor,
-          198 * this.state.height_factor,
+          670 * this.state.height_factor * (this.state.height1_perc / 100),
         ]);
         this.clickCheckerFunction(
           [
             100 * this.state.width_factor,
-            146 * this.state.width_factor,
+            810 * this.state.width_factor * (this.state.width1_perc / 100),
             770 * this.state.height_factor,
-            968 * this.state.height_factor,
+            770 * this.state.height_factor +
+              670 * this.state.height_factor * (this.state.height1_perc / 100),
           ],
           9,
           "bottom"
         );
       } else if (
-        x <= 660 * this.state.width_factor &&
-        x >= 146 * this.state.width_factor &&
-        y <= 968 * this.state.height_factor &&
+        x <= 810 * this.state.width_factor * (this.state.width2_perc / 100) &&
+        x >= 810 * this.state.width_factor * (this.state.width1_perc / 100) &&
+        y <=
+          770 * this.state.height_factor +
+            670 * this.state.height_factor * (this.state.height1_perc / 100) &&
         y >= 770 * this.state.height_factor
       ) {
         this.highlightSegment([
-          146 * this.state.width_factor,
-          514 * this.state.width_factor,
+          810 * this.state.width_factor * (this.state.width1_perc / 100),
+          810 * this.state.width_factor * (this.state.width2_perc / 100) -
+            810 * this.state.width_factor * (this.state.width1_perc / 100),
           770 * this.state.height_factor,
-          198 * this.state.height_factor,
+          670 * this.state.height_factor * (this.state.height1_perc / 100),
         ]);
         this.clickCheckerFunction(
           [
-            146 * this.state.width_factor,
-            660 * this.state.width_factor,
+            810 * this.state.width_factor * (this.state.width1_perc / 100),
+            810 * this.state.width_factor * (this.state.width2_perc / 100),
             770 * this.state.height_factor,
-            968 * this.state.height_factor,
+            770 * this.state.height_factor +
+              670 * this.state.height_factor * (this.state.height1_perc / 100),
           ],
           10,
           "bottom"
         );
       } else if (
-        x >= 660 * this.state.width_factor &&
+        x >= 810 * this.state.width_factor * (this.state.width2_perc / 100) &&
         x <= 710 * this.state.width_factor &&
-        y <= 968 * this.state.height_factor &&
+        y <=
+          770 * this.state.height_factor +
+            670 * this.state.height_factor * (this.state.height1_perc / 100) &&
         y >= 770 * this.state.height_factor
       ) {
         this.highlightSegment([
-          660 * this.state.width_factor,
-          50 * this.state.width_factor,
+          810 * this.state.width_factor * (this.state.width2_perc / 100),
+          710 * this.state.width_factor -
+            810 * this.state.width_factor * (this.state.width2_perc / 100),
           770 * this.state.height_factor,
-          198 * this.state.height_factor,
+          670 * this.state.height_factor * (this.state.height1_perc / 100),
         ]);
         this.clickCheckerFunction(
           [
-            660 * this.state.width_factor,
+            810 * this.state.width_factor * (this.state.width2_perc / 100),
             710 * this.state.width_factor,
             770 * this.state.height_factor,
-            968 * this.state.height_factor,
+            770 * this.state.height_factor +
+              670 * this.state.height_factor * (this.state.height1_perc / 100),
           ],
           11,
           "bottom"
         );
       } else if (
         x >= 100 * this.state.width_factor &&
-        x <= 146 * this.state.width_factor &&
-        y >= 968 * this.state.height_factor &&
-        y <= 1360 * this.state.height_factor
+        x <= 810 * this.state.width_factor * (this.state.width1_perc / 100) &&
+        y >=
+          770 * this.state.height_factor +
+            670 * this.state.height_factor * (this.state.height1_perc / 100) &&
+        y <=
+          770 * this.state.height_factor +
+            670 * this.state.height_factor * (this.state.height2_perc / 100)
       ) {
         this.highlightSegment([
           100 * this.state.width_factor,
-          46 * this.state.width_factor,
-          968 * this.state.height_factor,
-          392 * this.state.height_factor,
+          810 * this.state.width_factor * (this.state.width1_perc / 100) -
+            100 * this.state.width_factor,
+          770 * this.state.height_factor +
+            670 * this.state.height_factor * (this.state.height1_perc / 100),
+          770 * this.state.height_factor +
+            670 * this.state.height_factor * (this.state.height2_perc / 100) -
+            (770 * this.state.height_factor +
+              670 * this.state.height_factor * (this.state.height1_perc / 100)),
         ]);
         this.clickCheckerFunction(
           [
             100 * this.state.width_factor,
-            146 * this.state.width_factor,
-            968 * this.state.height_factor,
-            1360 * this.state.height_factor,
+            810 * this.state.width_factor * (this.state.width1_perc / 100),
+            770 * this.state.height_factor +
+              670 * this.state.height_factor * (this.state.height1_perc / 100),
+            770 * this.state.height_factor +
+              670 * this.state.height_factor * (this.state.height2_perc / 100),
           ],
           12,
           "bottom"
         );
       } else if (
-        x <= 660 * this.state.width_factor &&
-        x >= 146 * this.state.width_factor &&
-        y >= 968 * this.state.height_factor &&
-        y <= 1360 * this.state.height_factor
+        x <= 810 * this.state.width_factor * (this.state.width2_perc / 100) &&
+        x >= 810 * this.state.width_factor * (this.state.width1_perc / 100) &&
+        y >=
+          770 * this.state.height_factor +
+            670 * this.state.height_factor * (this.state.height1_perc / 100) &&
+        y <=
+          770 * this.state.height_factor +
+            670 * this.state.height_factor * (this.state.height2_perc / 100)
       ) {
         this.highlightSegment([
-          146 * this.state.width_factor,
-          514 * this.state.width_factor,
-          968 * this.state.height_factor,
-          392 * this.state.height_factor,
+          810 * this.state.width_factor * (this.state.width1_perc / 100),
+          810 * this.state.width_factor * (this.state.width2_perc / 100) -
+            810 * this.state.width_factor * (this.state.width1_perc / 100),
+          770 * this.state.height_factor +
+            670 * this.state.height_factor * (this.state.height1_perc / 100),
+          770 * this.state.height_factor +
+            670 * this.state.height_factor * (this.state.height2_perc / 100) -
+            (770 * this.state.height_factor +
+              670 * this.state.height_factor * (this.state.height1_perc / 100)),
         ]);
         this.clickCheckerFunction(
           [
-            146 * this.state.width_factor,
-            660 * this.state.width_factor,
-            968 * this.state.height_factor,
-            1360 * this.state.height_factor,
+            810 * this.state.width_factor * (this.state.width1_perc / 100),
+            810 * this.state.width_factor * (this.state.width2_perc / 100),
+            770 * this.state.height_factor +
+              670 * this.state.height_factor * (this.state.height1_perc / 100),
+            770 * this.state.height_factor +
+              670 * this.state.height_factor * (this.state.height2_perc / 100),
           ],
           13,
           "bottom"
         );
       } else if (
-        x >= 660 * this.state.width_factor &&
+        x >= 810 * this.state.width_factor * (this.state.width2_perc / 100) &&
         x <= 710 * this.state.width_factor &&
-        y >= 968 * this.state.height_factor &&
-        y <= 1360 * this.state.height_factor
+        y >=
+          770 * this.state.height_factor +
+            670 * this.state.height_factor * (this.state.height1_perc / 100) &&
+        y <=
+          770 * this.state.height_factor +
+            670 * this.state.height_factor * (this.state.height2_perc / 100)
       ) {
         this.highlightSegment([
-          660 * this.state.width_factor,
-          50 * this.state.width_factor,
-          968 * this.state.height_factor,
-          392 * this.state.height_factor,
+          810 * this.state.width_factor * (this.state.width2_perc / 100),
+          710 * this.state.width_factor -
+            810 * this.state.width_factor * (this.state.width2_perc / 100),
+          770 * this.state.height_factor +
+            670 * this.state.height_factor * (this.state.height1_perc / 100),
+          770 * this.state.height_factor +
+            670 * this.state.height_factor * (this.state.height2_perc / 100) -
+            (770 * this.state.height_factor +
+              670 * this.state.height_factor * (this.state.height1_perc / 100)),
         ]);
         this.clickCheckerFunction(
           [
-            660 * this.state.width_factor,
+            810 * this.state.width_factor * (this.state.width2_perc / 100),
             710 * this.state.width_factor,
-            968 * this.state.height_factor,
-            1360 * this.state.height_factor,
+            770 * this.state.height_factor +
+              670 * this.state.height_factor * (this.state.height1_perc / 100),
+            770 * this.state.height_factor +
+              670 * this.state.height_factor * (this.state.height2_perc / 100),
           ],
           14,
           "bottom"
         );
       } else if (
         x >= 100 * this.state.width_factor &&
-        x <= 146 * this.state.width_factor &&
+        x <= 810 * this.state.width_factor * (this.state.width1_perc / 100) &&
         y <= 1440 * this.state.height_factor &&
-        y >= 1360 * this.state.height_factor
+        y >=
+          770 * this.state.height_factor +
+            670 * this.state.height_factor * (this.state.height2_perc / 100)
       ) {
         this.highlightSegment([
           100 * this.state.width_factor,
-          46 * this.state.width_factor,
-          1360 * this.state.height_factor,
-          80 * this.state.height_factor,
+          810 * this.state.width_factor * (this.state.width1_perc / 100) -
+            100 * this.state.width_factor,
+          770 * this.state.height_factor +
+            670 * this.state.height_factor * (this.state.height2_perc / 100),
+          1440 * this.state.height_factor -
+            (770 * this.state.height_factor +
+              670 * this.state.height_factor * (this.state.height2_perc / 100)),
         ]);
         this.clickCheckerFunction(
           [
             100 * this.state.width_factor,
-            146 * this.state.width_factor,
-            1360 * this.state.height_factor,
+            810 * this.state.width_factor * (this.state.width1_perc / 100),
+            770 * this.state.height_factor +
+              670 * this.state.height_factor * (this.state.height2_perc / 100),
             1440 * this.state.height_factor,
           ],
           15,
           "bottom"
         );
       } else if (
-        x <= 660 * this.state.width_factor &&
-        x >= 146 * this.state.width_factor &&
+        x <= 810 * this.state.width_factor * (this.state.width2_perc / 100) &&
+        x >= 810 * this.state.width_factor * (this.state.width1_perc / 100) &&
         y <= 1440 * this.state.height_factor &&
-        y >= 1360 * this.state.height_factor
+        y >=
+          770 * this.state.height_factor +
+            670 * this.state.height_factor * (this.state.height2_perc / 100)
       ) {
         this.highlightSegment([
-          146 * this.state.width_factor,
-          514 * this.state.width_factor,
-          1360 * this.state.height_factor,
-          80 * this.state.height_factor,
+          810 * this.state.width_factor * (this.state.width1_perc / 100),
+          810 * this.state.width_factor * (this.state.width2_perc / 100) -
+            810 * this.state.width_factor * (this.state.width1_perc / 100),
+          770 * this.state.height_factor +
+            670 * this.state.height_factor * (this.state.height2_perc / 100),
+          1440 * this.state.height_factor -
+            (770 * this.state.height_factor +
+              670 * this.state.height_factor * (this.state.height2_perc / 100)),
         ]);
         this.clickCheckerFunction(
           [
-            146 * this.state.width_factor,
-            660 * this.state.width_factor,
-            1360 * this.state.height_factor,
+            810 * this.state.width_factor * (this.state.width1_perc / 100),
+            810 * this.state.width_factor * (this.state.width2_perc / 100),
+            770 * this.state.height_factor +
+              670 * this.state.height_factor * (this.state.height2_perc / 100),
             1440 * this.state.height_factor,
           ],
           16,
           "bottom"
         );
       } else if (
-        x >= 660 * this.state.width_factor &&
+        x >= 810 * this.state.width_factor * (this.state.width2_perc / 100) &&
         x <= 710 * this.state.width_factor &&
         y <= 1440 * this.state.height_factor &&
-        y >= 1360 * this.state.height_factor
+        y >=
+          770 * this.state.height_factor +
+            670 * this.state.height_factor * (this.state.height2_perc / 100)
       ) {
         this.highlightSegment([
-          660 * this.state.width_factor,
-          50 * this.state.width_factor,
-          1360 * this.state.height_factor,
-          80 * this.state.height_factor,
+          810 * this.state.width_factor * (this.state.width2_perc / 100),
+          710 * this.state.width_factor -
+            810 * this.state.width_factor * (this.state.width2_perc / 100),
+          770 * this.state.height_factor +
+            670 * this.state.height_factor * (this.state.height2_perc / 100),
+          1440 * this.state.height_factor -
+            (770 * this.state.height_factor +
+              670 * this.state.height_factor * (this.state.height2_perc / 100)),
         ]);
         this.clickCheckerFunction(
           [
-            660 * this.state.width_factor,
+            810 * this.state.width_factor * (this.state.width2_perc / 100),
             710 * this.state.width_factor,
-            1360 * this.state.height_factor,
+            770 * this.state.height_factor +
+              670 * this.state.height_factor * (this.state.height2_perc / 100),
             1440 * this.state.height_factor,
           ],
           17,
@@ -1332,11 +1562,7 @@ class Field extends Component {
       ctx.beginPath();
       ctx.fillStyle = "rgb(255, 154, 71)";
       ctx.font = "bold 16px Arial";
-      ctx.fillText(
-        perc_val,
-        location[0] * this.state.width_factor,
-        location[1] * this.state.height_factor
-      );
+      ctx.fillText(perc_val, location[0], location[1]);
       ctx.closePath();
     } else if (player_played === "bottom") {
       const canvas = this.canvasRef.current;
@@ -1348,11 +1574,7 @@ class Field extends Component {
       ctx.beginPath();
       ctx.fillStyle = "teal";
       ctx.font = "bold 16px Arial";
-      ctx.fillText(
-        perc_val,
-        location[0] * this.state.width_factor,
-        location[1] * this.state.height_factor
-      );
+      ctx.fillText(perc_val, location[0], location[1]);
       ctx.closePath();
     }
   }
@@ -1432,6 +1654,13 @@ class Field extends Component {
         const ctx = canvas.getContext("2d");
         ctx.clearRect(0, 0, this.state.width, this.state.height);
         this.drawCourt();
+        if (nextProps.perc || nextProps.arrows) {
+          if (nextProps.percFirstShot || nextProps.percThirdShot) {
+            this.drawSegments("top");
+          } else {
+            this.drawSegments("bottom");
+          }
+        }
         nextProps.rightSideData.map((item, index) => {
           this.drawShotIndRightSide(item);
         });
@@ -1441,6 +1670,13 @@ class Field extends Component {
           const ctx = canvas.getContext("2d");
           ctx.clearRect(0, 0, this.state.width, this.state.height);
           this.drawCourt();
+          if (nextProps.perc || nextProps.arrows) {
+            if (nextProps.percFirstShot || nextProps.percThirdShot) {
+              this.drawSegments("top");
+            } else {
+              this.drawSegments("bottom");
+            }
+          }
           if (nextProps.patter_length === 1) {
             nextProps.pattern_array.map((rally, rally_index) => {
               if (rally.length > 0) {

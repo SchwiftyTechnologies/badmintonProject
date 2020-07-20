@@ -48,10 +48,10 @@ class Badminton extends Component {
       heightBot: false,
       factor: 5,
       numberFactor: 5,
-      leftRally: -1,
-      rightRally: -1,
-      leftRallyDisp: -1,
-      rightRallyDisp: -1,
+      leftRally: 0,
+      rightRally: 0,
+      leftRallyDisp: 0,
+      rightRallyDisp: 0,
       firstClick: true,
       graph_data: [],
       firstshot: true,
@@ -129,6 +129,10 @@ class Badminton extends Component {
       currentDiff: 10,
       videoPlayer: false,
       url: "",
+      height1_perc: 25,
+      height2_perc: 50,
+      width1_perc: 25,
+      width2_perc: 50,
     };
   }
 
@@ -2155,6 +2159,86 @@ class Badminton extends Component {
                     className="shot_types"
                     style={{ color: "rgb(173, 173, 10)" }}
                   >
+                    H 1
+                    <input
+                      type="number"
+                      className="at_elements"
+                      value={
+                        this.state.width1_perc === NaN
+                          ? ""
+                          : this.state.width1_perc
+                      }
+                      maxLength="3"
+                      rows="1"
+                      onChange={(e) => {
+                        let rally_number_disp = parseInt(e.target.value);
+                        this.setState({ width1_perc: rally_number_disp });
+                      }}
+                    ></input>
+                  </div>
+                  <div
+                    className="shot_types"
+                    style={{ color: "rgb(173, 173, 10)" }}
+                  >
+                    H 2
+                    <input
+                      type="number"
+                      className="at_elements"
+                      value={
+                        this.state.width2_perc === NaN
+                          ? ""
+                          : this.state.width2_perc
+                      }
+                      maxLength="3"
+                      rows="1"
+                      onChange={(e) => {
+                        let rally_number_disp = parseInt(e.target.value);
+                        this.setState({ width2_perc: rally_number_disp });
+                      }}
+                    ></input>
+                  </div>
+                  <div className="shot_types" style={{ color: "green" }}>
+                    V 1
+                    <input
+                      type="number"
+                      className="at_elements"
+                      value={
+                        this.state.height1_perc === NaN
+                          ? ""
+                          : this.state.height1_perc
+                      }
+                      maxLength="3"
+                      rows="1"
+                      onChange={(e) => {
+                        let rally_number_disp = parseInt(e.target.value);
+                        this.setState({ height1_perc: rally_number_disp });
+                      }}
+                    ></input>
+                  </div>
+                  <div className="shot_types" style={{ color: "green" }}>
+                    V 2
+                    <input
+                      type="number"
+                      className="at_elements"
+                      value={
+                        this.state.height2_perc === NaN
+                          ? ""
+                          : this.state.height2_perc
+                      }
+                      maxLength="3"
+                      rows="1"
+                      onChange={(e) => {
+                        let rally_number_disp = parseInt(e.target.value);
+                        this.setState({ height2_perc: rally_number_disp });
+                      }}
+                    ></input>
+                  </div>
+                </div>
+                <div className="column_1_2">
+                  <div
+                    className="shot_types"
+                    style={{ color: "rgb(173, 173, 10)" }}
+                  >
                     Individual Shot
                     {this.state.indShot ? (
                       <div
@@ -2715,6 +2799,10 @@ class Badminton extends Component {
                   fromShot={this.state.fromShot}
                   toShot={this.state.toShot}
                   setVideoSettings={this.setVideoSettings}
+                  height1_perc={this.state.height1_perc}
+                  height2_perc={this.state.height2_perc}
+                  width1_perc={this.state.width1_perc}
+                  width2_perc={this.state.width2_perc}
                 ></Field>
               ) : // <img
               //   src={courtPic}
