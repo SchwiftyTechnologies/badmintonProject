@@ -32,7 +32,6 @@ class LandingPage extends Component {
         setTimeout(function(){
             sound.pause();
         }, 9730);
-
         StartTextAnimation(0);
     }
 

@@ -5,7 +5,7 @@ class schedule extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            data : [    // Dummy data nd format used
+            data : [
             {
                 player1:"ABC",
                 player2:"XYZ",
@@ -62,25 +62,25 @@ class schedule extends Component {
                     year:"2020"
                 }
             }
-        ]
-         };
+          ]
+        };
     }
 
     render() {
-        // retrieving the names of players and tournaments from the data
         let players = [], tournaments = [];
         for(let i = 0 ; i < this.state.data.length; i++ ){
             players.push(this.state.data[i].player1);
             players.push(this.state.data[i].player2);
             tournaments.push(this.state.data[i].tournament.name);
         }
-        // filtering usinque names and tournaments
+        
         let uniqueplayers = players.filter((x, i, a) => a.indexOf(x) === i);
         let uniquetournament = tournaments.filter((x, i, a) => a.indexOf(x) === i);
         var playerOption = [];
         var tournamentOption = [];
         for(let i = 0 ; i < uniqueplayers.length; i++ )
             playerOption.push(<option value={uniqueplayers[i]}>{uniqueplayers[i]}</option>);
+        
         for(let i = 0 ; i < uniquetournament.length; i++ )
             tournamentOption.push(<option value={uniquetournament[i]}>{uniquetournament[i]}</option>);
 
@@ -127,15 +127,17 @@ class schedule extends Component {
                                     <option value="lose">Loss</option>
                                 </select>
                             </span>
+                            <button>Filter</button>
                         </form>
                     </div>
                     <div id="schedule-sort">
                         <span>Sort By</span>
-                        <form action="/schedule/sort" method="POST">
+                        <form id="sort-form" action="/schedule/sort" method="POST">
                             <select name="sortby">
                                 <option value="date">Date</option>
                                 <option value="score">Score</option>
                             </select>
+                            <button>Sort</button>
                         </form>
                     </div>
                 </div>
