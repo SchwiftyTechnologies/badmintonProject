@@ -6,6 +6,7 @@ import UpArrowImg from "../assets/up_arrow.png";
 import DownArrowImg from "../assets/down_arrow.png";
 import RightArrowImage from "../assets/right-arrow.png";
 import LeftArrowImage from "../assets/left-arrow.png";
+import PlayImage from "../assets/play.png";
 import CheckedImage from "../assets/checked.png";
 import badminton_data from "../Badminton_data_14.json";
 import Dropdown from "./dropdown";
@@ -29,22 +30,22 @@ class Badminton extends Component {
       shot_type_bot_1: "Smash",
       shot_type_bot_2: "Nill",
       shot_type_bot_3: "Nill",
-      shot_hand_top_1: "F",
-      shot_hand_top_2: "F",
-      shot_hand_top_3: "F",
-      shot_hand_bot_1: "F",
-      shot_hand_bot_2: "F",
-      shot_hand_bot_3: "F",
+      shot_hand_top_1: "A",
+      shot_hand_top_2: "A",
+      shot_hand_top_3: "A",
+      shot_hand_bot_1: "A",
+      shot_hand_bot_2: "A",
+      shot_hand_bot_3: "A",
       final_dictionary: {},
       pattern_array: [],
       patter_length: -1,
       stretchTop: true,
       distanceTop: true,
-      placrecTop: false,
+      placrecTop: true,
       heightTop: false,
       stretchBot: true,
       distanceBot: true,
-      placrecBot: false,
+      placrecBot: true,
       heightBot: false,
       factor: 5,
       numberFactor: 5,
@@ -58,7 +59,7 @@ class Badminton extends Component {
       secondshot: true,
       thirdshot: true,
       points_table: null,
-      percentage: true,
+      percentage: false,
       shots: false,
       percFirstShot: true,
       percSecondShot: false,
@@ -79,8 +80,8 @@ class Badminton extends Component {
       bot_toss_count_F: 0,
       bot_lob_count_B: 0,
       bot_lob_count_F: 0,
-      top_forehand: false,
-      top_backhand: false,
+      top_forehand: true,
+      top_backhand: true,
       top_winners: false,
       top_win_smash: false,
       top_win_plac: false,
@@ -88,8 +89,8 @@ class Badminton extends Component {
       top_losers_smash: false,
       top_losers_plac: false,
       top_losers_net: false,
-      bot_forehand: false,
-      bot_backhand: false,
+      bot_forehand: true,
+      bot_backhand: true,
       bot_winners: false,
       bot_win_smash: false,
       bot_win_plac: false,
@@ -123,16 +124,18 @@ class Badminton extends Component {
       right_bot_score_set2: 0,
       left_bot_score_set3: 0,
       right_bot_score_set3: 0,
-      indShot: false,
+      indShot: true,
       fromShot: 0,
       toShot: 9,
       currentDiff: 10,
       videoPlayer: false,
+      videoPlayerRight: false,
       url: "",
-      height1_perc: 25,
-      height2_perc: 50,
-      width1_perc: 25,
-      width2_perc: 50,
+      height1_perc: 33,
+      height2_perc: 67,
+      width1_perc: 33,
+      width2_perc: 67,
+      isBottom: false,
     };
   }
 
@@ -147,12 +150,89 @@ class Badminton extends Component {
     this.setTotalShotsPerPlayer();
   }
 
+  setInitScore = (setArray, points_table) => {
+    let rally_number_disp = this.state.leftRallyDisp;
+    let rally_number = -1;
+    let left_score_set1 = 0;
+    let right_score_set1 = 0;
+    let left_score_set2 = 0;
+    let right_score_set2 = 0;
+    let left_score_set3 = 0;
+    let right_score_set3 = 0;
+
+    if (this.state.setLeft === 1) {
+      rally_number = rally_number_disp;
+      let rall_info = badminton_points_data[(rally_number + 1).toString()];
+      left_score_set1 = rall_info.current_set_top_init_score;
+      right_score_set1 = rall_info.current_set_bottom_init_score;
+    }
+
+    this.setState({
+      left_top_score_set1: left_score_set1,
+      left_bot_score_set1: right_score_set1,
+      left_top_score_set2: left_score_set2,
+      left_bot_score_set2: right_score_set2,
+      left_top_score_set3: left_score_set3,
+      left_bot_score_set3: right_score_set3,
+    });
+
+    rally_number = -1;
+    left_score_set1 = 0;
+    right_score_set1 = 0;
+    left_score_set2 = 0;
+    right_score_set2 = 0;
+    left_score_set3 = 0;
+    right_score_set3 = 0;
+    let setRight = 2;
+
+    let pointsArray = Object.values(badminton_points_data);
+    let pointsLength = pointsArray.length;
+    rally_number_disp = pointsLength - setArray[1] - 2;
+
+    if (setArray[1]) {
+      setRight = 3;
+      rally_number = rally_number_disp + setArray[1] + 1;
+      let rall_info = badminton_points_data[(rally_number + 1).toString()];
+
+      left_score_set2 = points_table[1].current_set_top_init_score;
+      right_score_set2 = points_table[1].current_set_bottom_init_score;
+      left_score_set1 = points_table[0].current_set_top_init_score;
+      right_score_set1 = points_table[0].current_set_bottom_init_score;
+      left_score_set3 = rall_info.current_set_top_init_score;
+      right_score_set3 = rall_info.current_set_bottom_init_score;
+    } else {
+      rally_number = rally_number_disp + setArray[0] + 1;
+      let rall_info = badminton_points_data[(rally_number + 1).toString()];
+
+      left_score_set2 = rall_info.current_set_top_init_score;
+      right_score_set2 = rall_info.current_set_bottom_init_score;
+      left_score_set1 = points_table[0].current_set_top_init_score;
+      right_score_set1 = points_table[0].current_set_bottom_init_score;
+    }
+
+    this.setState({
+      setRight: setRight,
+      right_top_score_set1: left_score_set1,
+      right_bot_score_set1: right_score_set1,
+      right_top_score_set2: left_score_set2,
+      right_bot_score_set2: right_score_set2,
+      right_top_score_set3: left_score_set3,
+      right_bot_score_set3: right_score_set3,
+      rightRally: rally_number,
+      rightRallyDisp: rally_number_disp,
+    });
+  };
+
   setVideoSettings = (url) => {
     // this.setState({ videoPlayer: false });
     // setTimeout(() => {
     //   this.setState({ videoPlayer: true, url });
     // }, 1000);
-    this.setState({ videoPlayer: true, url });
+    if (this.state.isRightSide) {
+      this.setState({ videoPlayer: true, url });
+    } else {
+      this.setState({ videoPlayerRight: true, url });
+    }
   };
 
   setPoints = () => {
@@ -161,7 +241,9 @@ class Badminton extends Component {
     let temparray = [];
     badminton_points_array.map((item, index) => {
       if (badminton_points_array[index + 1]) {
-        if (item.current_set != badminton_points_array[index + 1].current_set) {
+        if (
+          item.current_set !== badminton_points_array[index + 1].current_set
+        ) {
           final_array.push(item);
 
           temparray.push(index);
@@ -171,6 +253,7 @@ class Badminton extends Component {
       }
     });
     this.setState({ points_table: final_array, setArray: temparray });
+    this.setInitScore(temparray, final_array);
   };
 
   onClickRally = (val) => {
@@ -375,6 +458,7 @@ class Badminton extends Component {
     final_shots,
     final_array
   ) => {
+    this.setState({ isBottom: false });
     final_array = [];
     let shot_type_2_val = null;
     let shot_type_3_val = null;
@@ -385,16 +469,16 @@ class Badminton extends Component {
     final_array.push(shot_type_1_val);
     if (
       this.state.shot_type_top_2 === "Nill" &&
-      this.state.shot_type_top_3 != "Nill"
+      this.state.shot_type_top_3 !== "Nill"
     ) {
       // alert("You need to input the other players shot");
-    } else if (this.state.shot_type_top_2 != "Nill") {
+    } else if (this.state.shot_type_top_2 !== "Nill") {
       shot_type_2_val = this.shotTypeToLetter(
         this.state.shot_type_top_2,
         shot_hand_2 === null ? this.state.shot_hand_top_2 : shot_hand_2
       );
       final_array.push(shot_type_2_val);
-      if (this.state.shot_type_top_3 != "Nill") {
+      if (this.state.shot_type_top_3 !== "Nill") {
         shot_type_3_val = this.shotTypeToLetter(
           this.state.shot_type_top_3,
           shot_hand_3 === null ? this.state.shot_hand_top_3 : shot_hand_3
@@ -409,39 +493,21 @@ class Badminton extends Component {
       this.state.leftRally === this.state.rightRally ||
       this.state.rightRally === -1
     ) {
-      let initialPlayer =
-        badminton_data[(this.state.leftRally + 1).toString()].shots["1"]
-          .player_played;
-      let intialValue = 0;
-      if (initialPlayer === "bottom") {
-        intialValue = 1;
-      }
-      rally_data_array = Object.values(badminton_rally_data)[
-        this.state.leftRally
-      ];
-      let shots = Object.values(
-        this.state.badminton_array[this.state.leftRally].shots
-      );
-      final_shots.push(shots);
-
-      let response_array = this.findIndShotsInRally(
-        final_array,
-        rally_data_array,
-        final_array.length,
-        intialValue
-      );
-      final_resp.push(response_array);
-    } else if (this.state.rightRally < this.state.leftRally) {
-      // alert("The right rally number should be greater than the left");
-    } else {
-      for (let i = this.state.leftRally; i <= this.state.rightRally; i++) {
+      if (badminton_data[(this.state.leftRally + 1).toString()].shots["1"]) {
         let initialPlayer =
-          badminton_data[(i + 1).toString()].shots["1"].player_played;
+          badminton_data[(this.state.leftRally + 1).toString()].shots["1"]
+            .player_played;
         let intialValue = 0;
         if (initialPlayer === "bottom") {
           intialValue = 1;
         }
-        rally_data_array = Object.values(badminton_rally_data)[i];
+        rally_data_array = Object.values(badminton_rally_data)[
+          this.state.leftRally
+        ];
+        let shots = Object.values(
+          this.state.badminton_array[this.state.leftRally].shots
+        );
+        final_shots.push(shots);
 
         let response_array = this.findIndShotsInRally(
           final_array,
@@ -450,8 +516,30 @@ class Badminton extends Component {
           intialValue
         );
         final_resp.push(response_array);
+      }
+    } else if (this.state.rightRally < this.state.leftRally) {
+      // alert("The right rally number should be greater than the left");
+    } else {
+      for (let i = this.state.leftRally; i <= this.state.rightRally; i++) {
+        if (badminton_data[(i + 1).toString()].shots["1"]) {
+          let initialPlayer =
+            badminton_data[(i + 1).toString()].shots["1"].player_played;
+          let intialValue = 0;
+          if (initialPlayer === "bottom") {
+            intialValue = 1;
+          }
+          rally_data_array = Object.values(badminton_rally_data)[i];
 
-        final_shots.push(Object.values(this.state.badminton_array[i].shots));
+          let response_array = this.findIndShotsInRally(
+            final_array,
+            rally_data_array,
+            final_array.length,
+            intialValue
+          );
+          final_resp.push(response_array);
+
+          final_shots.push(Object.values(this.state.badminton_array[i].shots));
+        }
       }
     }
     return [final_resp, final_shots, final_array];
@@ -465,6 +553,7 @@ class Badminton extends Component {
     final_shots,
     final_array
   ) => {
+    this.setState({ isBottom: true });
     final_array = [];
     let shot_type_2_val = null;
     let shot_type_3_val = null;
@@ -475,16 +564,16 @@ class Badminton extends Component {
     final_array.push(shot_type_1_val);
     if (
       this.state.shot_type_bot_2 === "Nill" &&
-      this.state.shot_type_bot_3 != "Nill"
+      this.state.shot_type_bot_3 !== "Nill"
     ) {
       // alert("You need to input the other players shot");
-    } else if (this.state.shot_type_bot_2 != "Nill") {
+    } else if (this.state.shot_type_bot_2 !== "Nill") {
       shot_type_2_val = this.shotTypeToLetter(
         this.state.shot_type_bot_2,
         shot_hand_2 === null ? this.state.shot_hand_bot_2 : shot_hand_2
       );
       final_array.push(shot_type_2_val);
-      if (this.state.shot_type_bot_3 != "Nill") {
+      if (this.state.shot_type_bot_3 !== "Nill") {
         shot_type_3_val = this.shotTypeToLetter(
           this.state.shot_type_bot_3,
           shot_hand_3 === null ? this.state.shot_hand_bot_3 : shot_hand_3
@@ -499,39 +588,21 @@ class Badminton extends Component {
       this.state.leftRally === this.state.rightRally ||
       this.state.rightRally === -1
     ) {
-      let initialPlayer =
-        badminton_data[(this.state.leftRally + 1).toString()].shots["1"]
-          .player_played;
-      let intialValue = 0;
-      if (initialPlayer === "top") {
-        intialValue = 1;
-      }
-      rally_data_array = Object.values(badminton_rally_data)[
-        this.state.leftRally
-      ];
-      let shots = Object.values(
-        this.state.badminton_array[this.state.leftRally].shots
-      );
-      final_shots.push(shots);
-
-      let response_array = this.findIndShotsInRally(
-        final_array,
-        rally_data_array,
-        final_array.length,
-        intialValue
-      );
-      final_resp.push(response_array);
-    } else if (this.state.rightRally < this.state.leftRally) {
-      // alert("The right rally number should be greater than the left");
-    } else {
-      for (let i = this.state.leftRally; i <= this.state.rightRally; i++) {
+      if (badminton_data[(this.state.leftRally + 1).toString()].shots["1"]) {
         let initialPlayer =
-          badminton_data[(i + 1).toString()].shots["1"].player_played;
+          badminton_data[(this.state.leftRally + 1).toString()].shots["1"]
+            .player_played;
         let intialValue = 0;
         if (initialPlayer === "top") {
           intialValue = 1;
         }
-        rally_data_array = Object.values(badminton_rally_data)[i];
+        rally_data_array = Object.values(badminton_rally_data)[
+          this.state.leftRally
+        ];
+        let shots = Object.values(
+          this.state.badminton_array[this.state.leftRally].shots
+        );
+        final_shots.push(shots);
 
         let response_array = this.findIndShotsInRally(
           final_array,
@@ -540,8 +611,30 @@ class Badminton extends Component {
           intialValue
         );
         final_resp.push(response_array);
+      }
+    } else if (this.state.rightRally < this.state.leftRally) {
+      // alert("The right rally number should be greater than the left");
+    } else {
+      for (let i = this.state.leftRally; i <= this.state.rightRally; i++) {
+        if (badminton_data[(i + 1).toString()].shots["1"]) {
+          let initialPlayer =
+            badminton_data[(i + 1).toString()].shots["1"].player_played;
+          let intialValue = 0;
+          if (initialPlayer === "top") {
+            intialValue = 1;
+          }
+          rally_data_array = Object.values(badminton_rally_data)[i];
 
-        final_shots.push(Object.values(this.state.badminton_array[i].shots));
+          let response_array = this.findIndShotsInRally(
+            final_array,
+            rally_data_array,
+            final_array.length,
+            intialValue
+          );
+          final_resp.push(response_array);
+
+          final_shots.push(Object.values(this.state.badminton_array[i].shots));
+        }
       }
     }
     return [final_resp, final_shots, final_array];
@@ -956,8 +1049,10 @@ class Badminton extends Component {
   };
 
   onClickGo = (index) => {
+    let final_array = [];
+    let patArray = [];
     this.setState({ isRightSide: false });
-    if (this.state.leftRally != -1) {
+    if (this.state.leftRally !== -1) {
       if (index === 1) {
         if (this.state.shot_type_top_1 === "Nill") {
           // alert("You can't keep the first shot as Nill");
@@ -967,44 +1062,120 @@ class Badminton extends Component {
           this.state.shot_hand_top_3 === "A"
         ) {
           if (
-            this.state.shot_hand_top_1 === "A" &&
-            this.state.shot_hand_top_2 != "A" &&
-            this.state.shot_hand_top_3 != "A"
+            this.state.shot_type_top_2 === "Nill" &&
+            this.state.shot_type_top_3 === "Nill"
           ) {
-            let shot_hand_types = ["F", "B"];
-            let final_array = [];
-            let final_resp = [];
-            let final_shots = [];
-            let temparray = [final_resp, final_shots, final_array];
-            for (let shot_hand_1 of shot_hand_types) {
-              temparray = this.findAllShots(
-                shot_hand_1,
-                null,
-                null,
-                temparray[0],
-                temparray[1],
-                temparray[2]
-              );
-            }
-            this.setState({ graph_data: temparray[1] });
-            this.setState({
-              pattern_array: temparray[0],
-              patter_length: temparray[2].length,
-            });
-          } else if (
-            this.state.shot_hand_top_1 === "A" &&
-            this.state.shot_hand_top_2 === "A" &&
-            this.state.shot_hand_top_3 != "A"
-          ) {
-            let shot_hand_types = ["F", "B"];
-            let final_array = [];
-            let final_resp = [];
-            let final_shots = [];
-            let temparray = [final_resp, final_shots, final_array];
-            for (let shot_hand_1 of shot_hand_types) {
-              for (let shot_hand_2 of shot_hand_types) {
+            if (this.state.shot_hand_top_1 !== "A") {
+              let shot_hand_types = [this.state.shot_hand_top_1];
+
+              let final_resp = [];
+              let final_shots = [];
+              let temparray = [final_resp, final_shots, final_array];
+              for (let shot_hand_1 of shot_hand_types) {
                 temparray = this.findAllShots(
                   shot_hand_1,
+                  null,
+                  null,
+                  temparray[0],
+                  temparray[1],
+                  temparray[2]
+                );
+              }
+              this.setState({ graph_data: temparray[1] });
+              this.setState({
+                pattern_array: temparray[0],
+                patter_length: temparray[2].length,
+              });
+              patArray = temparray[0];
+            } else if (this.state.shot_hand_top_1 === "A") {
+              let shot_hand_types = ["F", "B"];
+
+              let final_resp = [];
+              let final_shots = [];
+              let temparray = [final_resp, final_shots, final_array];
+              for (let shot_hand_1 of shot_hand_types) {
+                temparray = this.findAllShots(
+                  shot_hand_1,
+                  null,
+                  null,
+                  temparray[0],
+                  temparray[1],
+                  temparray[2]
+                );
+              }
+              this.setState({ graph_data: temparray[1] });
+              this.setState({
+                pattern_array: temparray[0],
+                patter_length: temparray[2].length,
+              });
+              patArray = temparray[0];
+            }
+          } else if (this.state.shot_type_top_3 === "Nill") {
+            if (
+              this.state.shot_hand_top_1 === "A" &&
+              this.state.shot_hand_top_2 !== "A"
+            ) {
+              let shot_hand_types = ["F", "B"];
+
+              let final_resp = [];
+              let final_shots = [];
+              let temparray = [final_resp, final_shots, final_array];
+              for (let shot_hand_1 of shot_hand_types) {
+                temparray = this.findAllShots(
+                  shot_hand_1,
+                  null,
+                  null,
+                  temparray[0],
+                  temparray[1],
+                  temparray[2]
+                );
+              }
+              this.setState({ graph_data: temparray[1] });
+              this.setState({
+                pattern_array: temparray[0],
+                patter_length: temparray[2].length,
+              });
+              patArray = temparray[0];
+            } else if (
+              this.state.shot_hand_top_1 === "A" &&
+              this.state.shot_hand_top_2 === "A"
+            ) {
+              let shot_hand_types = ["F", "B"];
+
+              let final_resp = [];
+              let final_shots = [];
+              let temparray = [final_resp, final_shots, final_array];
+              for (let shot_hand_1 of shot_hand_types) {
+                for (let shot_hand_2 of shot_hand_types) {
+                  temparray = this.findAllShots(
+                    shot_hand_1,
+                    shot_hand_2,
+                    null,
+                    temparray[0],
+                    temparray[1],
+                    temparray[2]
+                  );
+                }
+              }
+              this.setState({ graph_data: temparray[1] });
+              this.setState({
+                pattern_array: temparray[0],
+                patter_length: temparray[2].length,
+              });
+              patArray = temparray[0];
+            } else if (
+              this.state.shot_hand_top_1 !== "A" &&
+              this.state.shot_hand_top_2 === "A"
+            ) {
+              let shot_hand_types = ["F", "B"];
+
+              let final_resp = [];
+              let final_shots = [];
+              let temparray = [final_resp, final_shots, final_array];
+
+              for (let shot_hand_2 of shot_hand_types) {
+                temparray = this.findAllShots(
+                  null,
                   shot_hand_2,
                   null,
                   temparray[0],
@@ -1012,27 +1183,191 @@ class Badminton extends Component {
                   temparray[2]
                 );
               }
+              this.setState({ graph_data: temparray[1] });
+              this.setState({
+                pattern_array: temparray[0],
+                patter_length: temparray[2].length,
+              });
+              patArray = temparray[0];
+            } else if (
+              this.state.shot_hand_top_1 !== "A" &&
+              this.state.shot_hand_top_2 !== "A"
+            ) {
+              let final_resp = [];
+              let final_shots = [];
+              let temparray = [final_resp, final_shots, final_array];
+
+              temparray = this.findAllShots(
+                null,
+                null,
+                null,
+                temparray[0],
+                temparray[1],
+                temparray[2]
+              );
+
+              this.setState({ graph_data: temparray[1] });
+              this.setState({
+                pattern_array: temparray[0],
+                patter_length: temparray[2].length,
+              });
+              patArray = temparray[0];
             }
-            this.setState({ graph_data: temparray[1] });
-            this.setState({
-              pattern_array: temparray[0],
-              patter_length: temparray[2].length,
-            });
-          } else if (
-            this.state.shot_hand_top_1 === "A" &&
-            this.state.shot_hand_top_2 === "A" &&
-            this.state.shot_hand_top_3 === "A"
-          ) {
-            let shot_hand_types = ["F", "B"];
-            let final_array = [];
-            let final_resp = [];
-            let final_shots = [];
-            let temparray = [final_resp, final_shots, final_array];
-            for (let shot_hand_1 of shot_hand_types) {
-              for (let shot_hand_2 of shot_hand_types) {
+          } else {
+            if (
+              this.state.shot_hand_top_1 === "A" &&
+              this.state.shot_hand_top_2 !== "A" &&
+              this.state.shot_hand_top_3 !== "A"
+            ) {
+              let shot_hand_types = ["F", "B"];
+
+              let final_resp = [];
+              let final_shots = [];
+              let temparray = [final_resp, final_shots, final_array];
+              for (let shot_hand_1 of shot_hand_types) {
+                temparray = this.findAllShots(
+                  shot_hand_1,
+                  null,
+                  null,
+                  temparray[0],
+                  temparray[1],
+                  temparray[2]
+                );
+              }
+              this.setState({ graph_data: temparray[1] });
+              this.setState({
+                pattern_array: temparray[0],
+                patter_length: temparray[2].length,
+              });
+              patArray = temparray[0];
+            } else if (
+              this.state.shot_hand_top_1 === "A" &&
+              this.state.shot_hand_top_2 === "A" &&
+              this.state.shot_hand_top_3 !== "A"
+            ) {
+              let shot_hand_types = ["F", "B"];
+
+              let final_resp = [];
+              let final_shots = [];
+              let temparray = [final_resp, final_shots, final_array];
+              for (let shot_hand_1 of shot_hand_types) {
+                for (let shot_hand_2 of shot_hand_types) {
+                  temparray = this.findAllShots(
+                    shot_hand_1,
+                    shot_hand_2,
+                    null,
+                    temparray[0],
+                    temparray[1],
+                    temparray[2]
+                  );
+                }
+              }
+              this.setState({ graph_data: temparray[1] });
+              this.setState({
+                pattern_array: temparray[0],
+                patter_length: temparray[2].length,
+              });
+              patArray = temparray[0];
+            } else if (
+              this.state.shot_hand_top_1 === "A" &&
+              this.state.shot_hand_top_2 === "A" &&
+              this.state.shot_hand_top_3 === "A"
+            ) {
+              let shot_hand_types = ["F", "B"];
+
+              let final_resp = [];
+              let final_shots = [];
+              let temparray = [final_resp, final_shots, final_array];
+              for (let shot_hand_1 of shot_hand_types) {
+                for (let shot_hand_2 of shot_hand_types) {
+                  for (let shot_hand_3 of shot_hand_types) {
+                    temparray = this.findAllShots(
+                      shot_hand_1,
+                      shot_hand_2,
+                      shot_hand_3,
+                      temparray[0],
+                      temparray[1],
+                      temparray[2]
+                    );
+                  }
+                }
+              }
+              this.setState({ graph_data: temparray[1] });
+              this.setState({
+                pattern_array: temparray[0],
+                patter_length: temparray[2].length,
+              });
+              patArray = temparray[0];
+            } else if (
+              this.state.shot_hand_top_1 === "A" &&
+              this.state.shot_hand_top_2 !== "A" &&
+              this.state.shot_hand_top_3 === "A"
+            ) {
+              let shot_hand_types = ["F", "B"];
+
+              let final_resp = [];
+              let final_shots = [];
+              let temparray = [final_resp, final_shots, final_array];
+              for (let shot_hand_1 of shot_hand_types) {
                 for (let shot_hand_3 of shot_hand_types) {
                   temparray = this.findAllShots(
                     shot_hand_1,
+                    null,
+                    shot_hand_3,
+                    temparray[0],
+                    temparray[1],
+                    temparray[2]
+                  );
+                }
+              }
+              this.setState({ graph_data: temparray[1] });
+              this.setState({
+                pattern_array: temparray[0],
+                patter_length: temparray[2].length,
+              });
+              patArray = temparray[0];
+            } else if (
+              this.state.shot_hand_top_1 !== "A" &&
+              this.state.shot_hand_top_2 === "A" &&
+              this.state.shot_hand_top_3 !== "A"
+            ) {
+              let shot_hand_types = ["F", "B"];
+
+              let final_resp = [];
+              let final_shots = [];
+              let temparray = [final_resp, final_shots, final_array];
+
+              for (let shot_hand_2 of shot_hand_types) {
+                temparray = this.findAllShots(
+                  null,
+                  shot_hand_2,
+                  null,
+                  temparray[0],
+                  temparray[1],
+                  temparray[2]
+                );
+              }
+              this.setState({ graph_data: temparray[1] });
+              this.setState({
+                pattern_array: temparray[0],
+                patter_length: temparray[2].length,
+              });
+              patArray = temparray[0];
+            } else if (
+              this.state.shot_hand_top_1 !== "A" &&
+              this.state.shot_hand_top_2 === "A" &&
+              this.state.shot_hand_top_3 === "A"
+            ) {
+              let shot_hand_types = ["F", "B"];
+
+              let final_resp = [];
+              let final_shots = [];
+              let temparray = [final_resp, final_shots, final_array];
+
+              for (let shot_hand_2 of shot_hand_types) {
+                for (let shot_hand_3 of shot_hand_types) {
+                  temparray = this.findAllShots(
+                    null,
                     shot_hand_2,
                     shot_hand_3,
                     temparray[0],
@@ -1041,26 +1376,26 @@ class Badminton extends Component {
                   );
                 }
               }
-            }
-            this.setState({ graph_data: temparray[1] });
-            this.setState({
-              pattern_array: temparray[0],
-              patter_length: temparray[2].length,
-            });
-          } else if (
-            this.state.shot_hand_top_1 === "A" &&
-            this.state.shot_hand_top_2 != "A" &&
-            this.state.shot_hand_top_3 === "A"
-          ) {
-            let shot_hand_types = ["F", "B"];
-            let final_array = [];
-            let final_resp = [];
-            let final_shots = [];
-            let temparray = [final_resp, final_shots, final_array];
-            for (let shot_hand_1 of shot_hand_types) {
+              this.setState({ graph_data: temparray[1] });
+              this.setState({
+                pattern_array: temparray[0],
+                patter_length: temparray[2].length,
+              });
+              patArray = temparray[0];
+            } else if (
+              this.state.shot_hand_top_1 !== "A" &&
+              this.state.shot_hand_top_2 !== "A" &&
+              this.state.shot_hand_top_3 === "A"
+            ) {
+              let shot_hand_types = ["F", "B"];
+
+              let final_resp = [];
+              let final_shots = [];
+              let temparray = [final_resp, final_shots, final_array];
+
               for (let shot_hand_3 of shot_hand_types) {
                 temparray = this.findAllShots(
-                  shot_hand_1,
+                  null,
                   null,
                   shot_hand_3,
                   temparray[0],
@@ -1068,96 +1403,16 @@ class Badminton extends Component {
                   temparray[2]
                 );
               }
-            }
-            this.setState({ graph_data: temparray[1] });
-            this.setState({
-              pattern_array: temparray[0],
-              patter_length: temparray[2].length,
-            });
-          } else if (
-            this.state.shot_hand_top_1 != "A" &&
-            this.state.shot_hand_top_2 === "A" &&
-            this.state.shot_hand_top_3 != "A"
-          ) {
-            let shot_hand_types = ["F", "B"];
-            let final_array = [];
-            let final_resp = [];
-            let final_shots = [];
-            let temparray = [final_resp, final_shots, final_array];
 
-            for (let shot_hand_2 of shot_hand_types) {
-              temparray = this.findAllShots(
-                null,
-                shot_hand_2,
-                null,
-                temparray[0],
-                temparray[1],
-                temparray[2]
-              );
+              this.setState({ graph_data: temparray[1] });
+              this.setState({
+                pattern_array: temparray[0],
+                patter_length: temparray[2].length,
+              });
+              patArray = temparray[0];
             }
-            this.setState({ graph_data: temparray[1] });
-            this.setState({
-              pattern_array: temparray[0],
-              patter_length: temparray[2].length,
-            });
-          } else if (
-            this.state.shot_hand_top_1 != "A" &&
-            this.state.shot_hand_top_2 === "A" &&
-            this.state.shot_hand_top_3 === "A"
-          ) {
-            let shot_hand_types = ["F", "B"];
-            let final_array = [];
-            let final_resp = [];
-            let final_shots = [];
-            let temparray = [final_resp, final_shots, final_array];
-
-            for (let shot_hand_2 of shot_hand_types) {
-              for (let shot_hand_3 of shot_hand_types) {
-                temparray = this.findAllShots(
-                  null,
-                  shot_hand_2,
-                  shot_hand_3,
-                  temparray[0],
-                  temparray[1],
-                  temparray[2]
-                );
-              }
-            }
-            this.setState({ graph_data: temparray[1] });
-            this.setState({
-              pattern_array: temparray[0],
-              patter_length: temparray[2].length,
-            });
-          } else if (
-            this.state.shot_hand_top_1 != "A" &&
-            this.state.shot_hand_top_2 != "A" &&
-            this.state.shot_hand_top_3 === "A"
-          ) {
-            let shot_hand_types = ["F", "B"];
-            let final_array = [];
-            let final_resp = [];
-            let final_shots = [];
-            let temparray = [final_resp, final_shots, final_array];
-
-            for (let shot_hand_3 of shot_hand_types) {
-              temparray = this.findAllShots(
-                null,
-                null,
-                shot_hand_3,
-                temparray[0],
-                temparray[1],
-                temparray[2]
-              );
-            }
-
-            this.setState({ graph_data: temparray[1] });
-            this.setState({
-              pattern_array: temparray[0],
-              patter_length: temparray[2].length,
-            });
           }
         } else {
-          let final_array = [];
           let shot_type_2_val = null;
           let shot_type_3_val = null;
           let shot_type_1_val = this.shotTypeToLetter(
@@ -1167,16 +1422,16 @@ class Badminton extends Component {
           final_array.push(shot_type_1_val);
           if (
             this.state.shot_type_top_2 === "Nill" &&
-            this.state.shot_type_top_3 != "Nill"
+            this.state.shot_type_top_3 !== "Nill"
           ) {
             // alert("You need to input the other players shot");
-          } else if (this.state.shot_type_top_2 != "Nill") {
+          } else if (this.state.shot_type_top_2 !== "Nill") {
             shot_type_2_val = this.shotTypeToLetter(
               this.state.shot_type_top_2,
               this.state.shot_hand_top_2
             );
             final_array.push(shot_type_2_val);
-            if (this.state.shot_type_top_3 != "Nill") {
+            if (this.state.shot_type_top_3 !== "Nill") {
               shot_type_3_val = this.shotTypeToLetter(
                 this.state.shot_type_top_3,
                 this.state.shot_hand_top_3
@@ -1219,6 +1474,7 @@ class Badminton extends Component {
               pattern_array: final_resp,
               patter_length: final_array.length,
             });
+            patArray = final_resp;
           } else if (this.state.rightRally < this.state.leftRally) {
             // alert("The right rally number should be greater than the left");
           } else {
@@ -1229,25 +1485,27 @@ class Badminton extends Component {
               i <= this.state.rightRally;
               i++
             ) {
-              let initialPlayer =
-                badminton_data[(i + 1).toString()].shots["1"].player_played;
-              let intialValue = 0;
-              if (initialPlayer === "bottom") {
-                intialValue = 1;
+              if (badminton_data[(i + 1).toString()].shots["1"]) {
+                let initialPlayer =
+                  badminton_data[(i + 1).toString()].shots["1"].player_played;
+                let intialValue = 0;
+                if (initialPlayer === "bottom") {
+                  intialValue = 1;
+                }
+                rally_data_array = Object.values(badminton_rally_data)[i];
+
+                let response_array = this.findIndShotsInRally(
+                  final_array,
+                  rally_data_array,
+                  final_array.length,
+                  intialValue
+                );
+                final_resp.push(response_array);
+
+                final_shots.push(
+                  Object.values(this.state.badminton_array[i].shots)
+                );
               }
-              rally_data_array = Object.values(badminton_rally_data)[i];
-
-              let response_array = this.findIndShotsInRally(
-                final_array,
-                rally_data_array,
-                final_array.length,
-                intialValue
-              );
-              final_resp.push(response_array);
-
-              final_shots.push(
-                Object.values(this.state.badminton_array[i].shots)
-              );
             }
 
             this.setState({ graph_data: final_shots });
@@ -1256,6 +1514,7 @@ class Badminton extends Component {
               pattern_array: final_resp,
               patter_length: final_array.length,
             });
+            patArray = final_resp;
           }
         }
       } else if (index === 2) {
@@ -1267,44 +1526,120 @@ class Badminton extends Component {
           this.state.shot_hand_bot_3 === "A"
         ) {
           if (
-            this.state.shot_hand_bot_1 === "A" &&
-            this.state.shot_hand_bot_2 != "A" &&
-            this.state.shot_hand_bot_3 != "A"
+            this.state.shot_type_bot_2 === "Nill" &&
+            this.state.shot_type_bot_3 === "Nill"
           ) {
-            let shot_hand_types = ["F", "B"];
-            let final_array = [];
-            let final_resp = [];
-            let final_shots = [];
-            let temparray = [final_resp, final_shots, final_array];
-            for (let shot_hand_1 of shot_hand_types) {
-              temparray = this.findAllShotsBottom(
-                shot_hand_1,
-                null,
-                null,
-                temparray[0],
-                temparray[1],
-                temparray[2]
-              );
-            }
-            this.setState({ graph_data: temparray[1] });
-            this.setState({
-              pattern_array: temparray[0],
-              patter_length: temparray[2].length,
-            });
-          } else if (
-            this.state.shot_hand_bot_1 === "A" &&
-            this.state.shot_hand_bot_2 === "A" &&
-            this.state.shot_hand_bot_3 != "A"
-          ) {
-            let shot_hand_types = ["F", "B"];
-            let final_array = [];
-            let final_resp = [];
-            let final_shots = [];
-            let temparray = [final_resp, final_shots, final_array];
-            for (let shot_hand_1 of shot_hand_types) {
-              for (let shot_hand_2 of shot_hand_types) {
+            if (this.state.shot_hand_bot_1 !== "A") {
+              let shot_hand_types = [this.state.shot_hand_bot_1];
+
+              let final_resp = [];
+              let final_shots = [];
+              let temparray = [final_resp, final_shots, final_array];
+              for (let shot_hand_1 of shot_hand_types) {
                 temparray = this.findAllShotsBottom(
                   shot_hand_1,
+                  null,
+                  null,
+                  temparray[0],
+                  temparray[1],
+                  temparray[2]
+                );
+              }
+              this.setState({ graph_data: temparray[1] });
+              this.setState({
+                pattern_array: temparray[0],
+                patter_length: temparray[2].length,
+              });
+              patArray = temparray[0];
+            } else if (this.state.shot_hand_bot_1 === "A") {
+              let shot_hand_types = ["F", "B"];
+
+              let final_resp = [];
+              let final_shots = [];
+              let temparray = [final_resp, final_shots, final_array];
+              for (let shot_hand_1 of shot_hand_types) {
+                temparray = this.findAllShotsBottom(
+                  shot_hand_1,
+                  null,
+                  null,
+                  temparray[0],
+                  temparray[1],
+                  temparray[2]
+                );
+              }
+              this.setState({ graph_data: temparray[1] });
+              this.setState({
+                pattern_array: temparray[0],
+                patter_length: temparray[2].length,
+              });
+              patArray = temparray[0];
+            }
+          } else if (this.state.shot_type_bot_3 === "Nill") {
+            if (
+              this.state.shot_hand_bot_1 === "A" &&
+              this.state.shot_hand_bot_2 !== "A"
+            ) {
+              let shot_hand_types = ["F", "B"];
+
+              let final_resp = [];
+              let final_shots = [];
+              let temparray = [final_resp, final_shots, final_array];
+              for (let shot_hand_1 of shot_hand_types) {
+                temparray = this.findAllShotsBottom(
+                  shot_hand_1,
+                  null,
+                  null,
+                  temparray[0],
+                  temparray[1],
+                  temparray[2]
+                );
+              }
+              this.setState({ graph_data: temparray[1] });
+              this.setState({
+                pattern_array: temparray[0],
+                patter_length: temparray[2].length,
+              });
+              patArray = temparray[0];
+            } else if (
+              this.state.shot_hand_bot_1 === "A" &&
+              this.state.shot_hand_bot_2 === "A"
+            ) {
+              let shot_hand_types = ["F", "B"];
+
+              let final_resp = [];
+              let final_shots = [];
+              let temparray = [final_resp, final_shots, final_array];
+              for (let shot_hand_1 of shot_hand_types) {
+                for (let shot_hand_2 of shot_hand_types) {
+                  temparray = this.findAllShotsBottom(
+                    shot_hand_1,
+                    shot_hand_2,
+                    null,
+                    temparray[0],
+                    temparray[1],
+                    temparray[2]
+                  );
+                }
+              }
+              this.setState({ graph_data: temparray[1] });
+              this.setState({
+                pattern_array: temparray[0],
+                patter_length: temparray[2].length,
+              });
+              patArray = temparray[0];
+            } else if (
+              this.state.shot_hand_bot_1 !== "A" &&
+              this.state.shot_hand_bot_2 === "A"
+            ) {
+              let shot_hand_types = ["F", "B"];
+
+              let final_resp = [];
+              let final_shots = [];
+              let temparray = [final_resp, final_shots, final_array];
+
+              for (let shot_hand_2 of shot_hand_types) {
+                temparray = this.findAllShotsBottom(
+                  null,
                   shot_hand_2,
                   null,
                   temparray[0],
@@ -1312,27 +1647,191 @@ class Badminton extends Component {
                   temparray[2]
                 );
               }
+              this.setState({ graph_data: temparray[1] });
+              this.setState({
+                pattern_array: temparray[0],
+                patter_length: temparray[2].length,
+              });
+              patArray = temparray[0];
+            } else if (
+              this.state.shot_hand_bot_1 !== "A" &&
+              this.state.shot_hand_bot_2 !== "A"
+            ) {
+              let final_resp = [];
+              let final_shots = [];
+              let temparray = [final_resp, final_shots, final_array];
+
+              temparray = this.findAllShotsBottom(
+                null,
+                null,
+                null,
+                temparray[0],
+                temparray[1],
+                temparray[2]
+              );
+
+              this.setState({ graph_data: temparray[1] });
+              this.setState({
+                pattern_array: temparray[0],
+                patter_length: temparray[2].length,
+              });
+              patArray = temparray[0];
             }
-            this.setState({ graph_data: temparray[1] });
-            this.setState({
-              pattern_array: temparray[0],
-              patter_length: temparray[2].length,
-            });
-          } else if (
-            this.state.shot_hand_bot_1 === "A" &&
-            this.state.shot_hand_bot_2 === "A" &&
-            this.state.shot_hand_bot_3 === "A"
-          ) {
-            let shot_hand_types = ["F", "B"];
-            let final_array = [];
-            let final_resp = [];
-            let final_shots = [];
-            let temparray = [final_resp, final_shots, final_array];
-            for (let shot_hand_1 of shot_hand_types) {
-              for (let shot_hand_2 of shot_hand_types) {
+          } else {
+            if (
+              this.state.shot_hand_bot_1 === "A" &&
+              this.state.shot_hand_bot_2 !== "A" &&
+              this.state.shot_hand_bot_3 !== "A"
+            ) {
+              let shot_hand_types = ["F", "B"];
+
+              let final_resp = [];
+              let final_shots = [];
+              let temparray = [final_resp, final_shots, final_array];
+              for (let shot_hand_1 of shot_hand_types) {
+                temparray = this.findAllShotsBottom(
+                  shot_hand_1,
+                  null,
+                  null,
+                  temparray[0],
+                  temparray[1],
+                  temparray[2]
+                );
+              }
+              this.setState({ graph_data: temparray[1] });
+              this.setState({
+                pattern_array: temparray[0],
+                patter_length: temparray[2].length,
+              });
+              patArray = temparray[0];
+            } else if (
+              this.state.shot_hand_bot_1 === "A" &&
+              this.state.shot_hand_bot_2 === "A" &&
+              this.state.shot_hand_bot_3 !== "A"
+            ) {
+              let shot_hand_types = ["F", "B"];
+
+              let final_resp = [];
+              let final_shots = [];
+              let temparray = [final_resp, final_shots, final_array];
+              for (let shot_hand_1 of shot_hand_types) {
+                for (let shot_hand_2 of shot_hand_types) {
+                  temparray = this.findAllShotsBottom(
+                    shot_hand_1,
+                    shot_hand_2,
+                    null,
+                    temparray[0],
+                    temparray[1],
+                    temparray[2]
+                  );
+                }
+              }
+              this.setState({ graph_data: temparray[1] });
+              this.setState({
+                pattern_array: temparray[0],
+                patter_length: temparray[2].length,
+              });
+              patArray = temparray[0];
+            } else if (
+              this.state.shot_hand_bot_1 === "A" &&
+              this.state.shot_hand_bot_2 === "A" &&
+              this.state.shot_hand_bot_3 === "A"
+            ) {
+              let shot_hand_types = ["F", "B"];
+
+              let final_resp = [];
+              let final_shots = [];
+              let temparray = [final_resp, final_shots, final_array];
+              for (let shot_hand_1 of shot_hand_types) {
+                for (let shot_hand_2 of shot_hand_types) {
+                  for (let shot_hand_3 of shot_hand_types) {
+                    temparray = this.findAllShotsBottom(
+                      shot_hand_1,
+                      shot_hand_2,
+                      shot_hand_3,
+                      temparray[0],
+                      temparray[1],
+                      temparray[2]
+                    );
+                  }
+                }
+              }
+              this.setState({ graph_data: temparray[1] });
+              this.setState({
+                pattern_array: temparray[0],
+                patter_length: temparray[2].length,
+              });
+              patArray = temparray[0];
+            } else if (
+              this.state.shot_hand_bot_1 === "A" &&
+              this.state.shot_hand_bot_2 !== "A" &&
+              this.state.shot_hand_bot_3 === "A"
+            ) {
+              let shot_hand_types = ["F", "B"];
+
+              let final_resp = [];
+              let final_shots = [];
+              let temparray = [final_resp, final_shots, final_array];
+              for (let shot_hand_1 of shot_hand_types) {
                 for (let shot_hand_3 of shot_hand_types) {
                   temparray = this.findAllShotsBottom(
                     shot_hand_1,
+                    null,
+                    shot_hand_3,
+                    temparray[0],
+                    temparray[1],
+                    temparray[2]
+                  );
+                }
+              }
+              this.setState({ graph_data: temparray[1] });
+              this.setState({
+                pattern_array: temparray[0],
+                patter_length: temparray[2].length,
+              });
+              patArray = temparray[0];
+            } else if (
+              this.state.shot_hand_bot_1 !== "A" &&
+              this.state.shot_hand_bot_2 === "A" &&
+              this.state.shot_hand_bot_3 !== "A"
+            ) {
+              let shot_hand_types = ["F", "B"];
+
+              let final_resp = [];
+              let final_shots = [];
+              let temparray = [final_resp, final_shots, final_array];
+
+              for (let shot_hand_2 of shot_hand_types) {
+                temparray = this.findAllShotsBottom(
+                  null,
+                  shot_hand_2,
+                  null,
+                  temparray[0],
+                  temparray[1],
+                  temparray[2]
+                );
+              }
+              this.setState({ graph_data: temparray[1] });
+              this.setState({
+                pattern_array: temparray[0],
+                patter_length: temparray[2].length,
+              });
+              patArray = temparray[0];
+            } else if (
+              this.state.shot_hand_bot_1 !== "A" &&
+              this.state.shot_hand_bot_2 === "A" &&
+              this.state.shot_hand_bot_3 === "A"
+            ) {
+              let shot_hand_types = ["F", "B"];
+
+              let final_resp = [];
+              let final_shots = [];
+              let temparray = [final_resp, final_shots, final_array];
+
+              for (let shot_hand_2 of shot_hand_types) {
+                for (let shot_hand_3 of shot_hand_types) {
+                  temparray = this.findAllShotsBottom(
+                    null,
                     shot_hand_2,
                     shot_hand_3,
                     temparray[0],
@@ -1341,26 +1840,26 @@ class Badminton extends Component {
                   );
                 }
               }
-            }
-            this.setState({ graph_data: temparray[1] });
-            this.setState({
-              pattern_array: temparray[0],
-              patter_length: temparray[2].length,
-            });
-          } else if (
-            this.state.shot_hand_bot_1 === "A" &&
-            this.state.shot_hand_bot_2 != "A" &&
-            this.state.shot_hand_bot_3 === "A"
-          ) {
-            let shot_hand_types = ["F", "B"];
-            let final_array = [];
-            let final_resp = [];
-            let final_shots = [];
-            let temparray = [final_resp, final_shots, final_array];
-            for (let shot_hand_1 of shot_hand_types) {
+              this.setState({ graph_data: temparray[1] });
+              this.setState({
+                pattern_array: temparray[0],
+                patter_length: temparray[2].length,
+              });
+              patArray = temparray[0];
+            } else if (
+              this.state.shot_hand_bot_1 !== "A" &&
+              this.state.shot_hand_bot_2 !== "A" &&
+              this.state.shot_hand_bot_3 === "A"
+            ) {
+              let shot_hand_types = ["F", "B"];
+
+              let final_resp = [];
+              let final_shots = [];
+              let temparray = [final_resp, final_shots, final_array];
+
               for (let shot_hand_3 of shot_hand_types) {
                 temparray = this.findAllShotsBottom(
-                  shot_hand_1,
+                  null,
                   null,
                   shot_hand_3,
                   temparray[0],
@@ -1368,96 +1867,16 @@ class Badminton extends Component {
                   temparray[2]
                 );
               }
-            }
-            this.setState({ graph_data: temparray[1] });
-            this.setState({
-              pattern_array: temparray[0],
-              patter_length: temparray[2].length,
-            });
-          } else if (
-            this.state.shot_hand_bot_1 != "A" &&
-            this.state.shot_hand_bot_2 === "A" &&
-            this.state.shot_hand_bot_3 != "A"
-          ) {
-            let shot_hand_types = ["F", "B"];
-            let final_array = [];
-            let final_resp = [];
-            let final_shots = [];
-            let temparray = [final_resp, final_shots, final_array];
 
-            for (let shot_hand_2 of shot_hand_types) {
-              temparray = this.findAllShotsBottom(
-                null,
-                shot_hand_2,
-                null,
-                temparray[0],
-                temparray[1],
-                temparray[2]
-              );
+              this.setState({ graph_data: temparray[1] });
+              this.setState({
+                pattern_array: temparray[0],
+                patter_length: temparray[2].length,
+              });
+              patArray = temparray[0];
             }
-            this.setState({ graph_data: temparray[1] });
-            this.setState({
-              pattern_array: temparray[0],
-              patter_length: temparray[2].length,
-            });
-          } else if (
-            this.state.shot_hand_bot_1 != "A" &&
-            this.state.shot_hand_bot_2 === "A" &&
-            this.state.shot_hand_bot_3 === "A"
-          ) {
-            let shot_hand_types = ["F", "B"];
-            let final_array = [];
-            let final_resp = [];
-            let final_shots = [];
-            let temparray = [final_resp, final_shots, final_array];
-
-            for (let shot_hand_2 of shot_hand_types) {
-              for (let shot_hand_3 of shot_hand_types) {
-                temparray = this.findAllShotsBottom(
-                  null,
-                  shot_hand_2,
-                  shot_hand_3,
-                  temparray[0],
-                  temparray[1],
-                  temparray[2]
-                );
-              }
-            }
-            this.setState({ graph_data: temparray[1] });
-            this.setState({
-              pattern_array: temparray[0],
-              patter_length: temparray[2].length,
-            });
-          } else if (
-            this.state.shot_hand_bot_1 != "A" &&
-            this.state.shot_hand_bot_2 != "A" &&
-            this.state.shot_hand_bot_3 === "A"
-          ) {
-            let shot_hand_types = ["F", "B"];
-            let final_array = [];
-            let final_resp = [];
-            let final_shots = [];
-            let temparray = [final_resp, final_shots, final_array];
-
-            for (let shot_hand_3 of shot_hand_types) {
-              temparray = this.findAllShotsBottom(
-                null,
-                null,
-                shot_hand_3,
-                temparray[0],
-                temparray[1],
-                temparray[2]
-              );
-            }
-
-            this.setState({ graph_data: temparray[1] });
-            this.setState({
-              pattern_array: temparray[0],
-              patter_length: temparray[2].length,
-            });
           }
         } else {
-          let final_array = [];
           let shot_type_2_val = null;
           let shot_type_3_val = null;
           let shot_type_1_val = this.shotTypeToLetter(
@@ -1467,16 +1886,16 @@ class Badminton extends Component {
           final_array.push(shot_type_1_val);
           if (
             this.state.shot_type_bot_2 === "Nill" &&
-            this.state.shot_type_bot_3 != "Nill"
+            this.state.shot_type_bot_3 !== "Nill"
           ) {
             // alert("You need to input the other players shot");
-          } else if (this.state.shot_type_bot_2 != "Nill") {
+          } else if (this.state.shot_type_bot_2 !== "Nill") {
             shot_type_2_val = this.shotTypeToLetter(
               this.state.shot_type_bot_2,
               this.state.shot_hand_bot_2
             );
             final_array.push(shot_type_2_val);
-            if (this.state.shot_type_bot_3 != "Nill") {
+            if (this.state.shot_type_bot_3 !== "Nill") {
               shot_type_3_val = this.shotTypeToLetter(
                 this.state.shot_type_bot_3,
                 this.state.shot_hand_bot_3
@@ -1518,6 +1937,7 @@ class Badminton extends Component {
               pattern_array: final_resp,
               patter_length: final_array.length,
             });
+            patArray = final_resp;
           } else if (this.state.rightRally < this.state.leftRally) {
             // alert("The right rally number should be greater than the left");
           } else {
@@ -1528,25 +1948,27 @@ class Badminton extends Component {
               i <= this.state.rightRally;
               i++
             ) {
-              let initialPlayer =
-                badminton_data[(i + 1).toString()].shots["1"].player_played;
-              let intialValue = 0;
-              if (initialPlayer === "top") {
-                intialValue = 1;
+              if (badminton_data[(i + 1).toString()].shots["1"]) {
+                let initialPlayer =
+                  badminton_data[(i + 1).toString()].shots["1"].player_played;
+                let intialValue = 0;
+                if (initialPlayer === "top") {
+                  intialValue = 1;
+                }
+                rally_data_array = Object.values(badminton_rally_data)[i];
+
+                let response_array = this.findIndShotsInRally(
+                  final_array,
+                  rally_data_array,
+                  final_array.length,
+                  intialValue
+                );
+                final_resp.push(response_array);
+
+                final_shots.push(
+                  Object.values(this.state.badminton_array[i].shots)
+                );
               }
-              rally_data_array = Object.values(badminton_rally_data)[i];
-
-              let response_array = this.findIndShotsInRally(
-                final_array,
-                rally_data_array,
-                final_array.length,
-                intialValue
-              );
-              final_resp.push(response_array);
-
-              final_shots.push(
-                Object.values(this.state.badminton_array[i].shots)
-              );
             }
 
             this.setState({ graph_data: final_shots });
@@ -1555,6 +1977,7 @@ class Badminton extends Component {
               pattern_array: final_resp,
               patter_length: final_array.length,
             });
+            patArray = final_resp;
           }
         }
       }
@@ -1579,13 +2002,36 @@ class Badminton extends Component {
       let distanceTop = 0;
       let distanceBot = 0;
       let total_number_rally = this.state.rightRally - this.state.leftRally + 1;
+      let topShotCount = 0;
+      let botShotCount = 0;
+
       for (let x = this.state.leftRally; x <= this.state.rightRally; x++) {
         let rally_count = this.state.shotCountDic[x + 1];
         let info_dic = this.state.info_dictionary[x + 1];
-        stretchTop = parseFloat(stretchTop) + parseFloat(info_dic.stretchTop);
-        stretchBot = parseFloat(stretchBot) + parseFloat(info_dic.stretchbot);
-        distanceTop = parseFloat(distanceTop) + parseFloat(info_dic.disttop);
-        distanceBot = parseFloat(distanceBot) + parseFloat(info_dic.distbot);
+        let patArrayVal = patArray[x];
+
+        if (patArrayVal.length > 0) {
+          patArrayVal.map((item, index) => {
+            if (info_dic.stretchTop[item]) {
+              topShotCount += 1;
+              stretchTop =
+                parseFloat(stretchTop) + parseFloat(info_dic.stretchTop[item]);
+            }
+            if (info_dic.stretchbot[item]) {
+              botShotCount += 1;
+              stretchBot =
+                parseFloat(stretchBot) + parseFloat(info_dic.stretchbot[item]);
+            }
+            if (info_dic.distbot[item]) {
+              distanceBot =
+                parseFloat(distanceBot) + parseFloat(info_dic.distbot[item]);
+            }
+            if (info_dic.disttop[item]) {
+              distanceTop =
+                parseFloat(distanceTop) + parseFloat(info_dic.disttop[item]);
+            }
+          });
+        }
         top_smash_count_F = top_smash_count_F + rally_count.top_smash_count_F;
         top_drive_count_F = top_drive_count_F + rally_count.top_drive_count_F;
         top_lob_count_F = top_lob_count_F + rally_count.top_lob_count_F;
@@ -1621,13 +2067,13 @@ class Badminton extends Component {
         bot_lob_count_B,
         bot_lob_count_F,
         totalStretchTop: (stretchTop / 100).toFixed(1),
-        avgStretchTop: (stretchTop / total_number_rally / 100).toFixed(1),
+        avgStretchTop: (stretchTop / 100 / topShotCount).toFixed(1),
         totalStretchBot: (stretchBot / 100).toFixed(1),
-        avgStretchBot: (stretchBot / total_number_rally / 100).toFixed(1),
+        avgStretchBot: (stretchBot / botShotCount / 100).toFixed(1),
         totalDistanceTop: (distanceTop / 100).toFixed(1),
-        avgDistanceTop: (distanceTop / total_number_rally / 100).toFixed(1),
+        avgDistanceTop: (distanceTop / topShotCount / 100).toFixed(1),
         totalDistanceBot: (distanceBot / 100).toFixed(1),
-        avgDistanceBot: (distanceBot / total_number_rally / 100).toFixed(1),
+        avgDistanceBot: (distanceBot / botShotCount / 100).toFixed(1),
       });
     }
   };
@@ -1760,10 +2206,10 @@ class Badminton extends Component {
     let info_dictionary = {};
     rally_data_array.map((item, index) => {
       let temp_obj = {};
-      temp_obj.stretchbot = 0;
-      temp_obj.stretchTop = 0;
-      temp_obj.disttop = 0;
-      temp_obj.distbot = 0;
+      temp_obj.stretchbot = [];
+      temp_obj.stretchTop = [];
+      temp_obj.disttop = [];
+      temp_obj.distbot = [];
       let temp_dictionary = {};
       let shots = Object.values(item.shots);
       temp_dictionary.top_smash_count_F = 0;
@@ -1782,120 +2228,176 @@ class Badminton extends Component {
       temp_dictionary.bot_lob_count_B = 0;
       temp_dictionary.bot_drive_count_B = 0;
       temp_dictionary.bot_toss_count_B = 0;
-      shots.map((subitem, subIndex) => {
-        temp_obj.stretchTop =
-          parseFloat(temp_obj.stretchTop) +
-          parseFloat(
-            Math.sqrt(
-              Math.pow(
-                subitem.position_top[0][0] - subitem.position_top[1][0],
-                2
-              ) +
-                Math.pow(
-                  subitem.position_top[0][1] - subitem.position_top[1][1],
-                  2
+      if (shots.length > 0) {
+        shots.map((subitem, subIndex) => {
+          if (
+            Array.isArray(subitem.position_top) &&
+            Array.isArray(subitem.position_bottom)
+          ) {
+            temp_obj.stretchTop.push(
+              parseFloat(
+                Math.sqrt(
+                  Math.pow(
+                    subitem.position_top[0][0] - subitem.position_top[1][0],
+                    2
+                  ) +
+                    Math.pow(
+                      subitem.position_top[0][1] - subitem.position_top[1][1],
+                      2
+                    )
                 )
-            )
-          );
-        temp_obj.stretchbot =
-          parseFloat(temp_obj.stretchbot) +
-          parseFloat(
-            Math.sqrt(
-              Math.pow(
-                subitem.position_bottom[0][0] - subitem.position_bottom[1][0],
-                2
-              ) +
-                Math.pow(
-                  subitem.position_bottom[0][1] - subitem.position_bottom[1][1],
-                  2
-                )
-            )
-          );
-        if (shots[index + 1]) {
-          let init_top_x =
-            (subitem.position_top[0][1] + subitem.position_top[1][1]) / 2;
-          let init_top_y =
-            (subitem.position_top[0][1] + subitem.position_top[1][1]) / 2;
-
-          let fin_top_x =
-            (shots[index + 1].position_top[0][1] +
-              shots[index + 1].position_top[1][1]) /
-            2;
-          let fin_top_y =
-            (shots[index + 1].position_top[0][1] +
-              shots[index + 1].position_top[1][1]) /
-            2;
-
-          let init_bot_x =
-            (subitem.position_bottom[0][1] + subitem.position_bottom[1][1]) / 2;
-          let init_bot_y =
-            (subitem.position_bottom[0][1] + subitem.position_bottom[1][1]) / 2;
-
-          let fin_bot_x =
-            (shots[index + 1].position_bottom[0][1] +
-              shots[index + 1].position_bottom[1][1]) /
-            2;
-          let fin_bot_y =
-            (shots[index + 1].position_bottom[0][1] +
-              shots[index + 1].position_bottom[1][1]) /
-            2;
-
-          temp_obj.disttop =
-            parseFloat(temp_obj.disttop) +
-            parseFloat(
-              Math.sqrt(
-                Math.pow(init_top_x - fin_top_x, 2) +
-                  Math.pow(init_top_y - fin_top_y, 2)
               )
             );
-
-          temp_obj.distbot =
-            parseFloat(temp_obj.distbot) +
-            parseFloat(
-              Math.sqrt(
-                Math.pow(init_bot_x - fin_bot_x, 2) +
-                  Math.pow(init_bot_y - fin_bot_y, 2)
+            temp_obj.stretchbot.push(
+              parseFloat(
+                Math.sqrt(
+                  Math.pow(
+                    subitem.position_bottom[0][0] -
+                      subitem.position_bottom[1][0],
+                    2
+                  ) +
+                    Math.pow(
+                      subitem.position_bottom[0][1] -
+                        subitem.position_bottom[1][1],
+                      2
+                    )
+                )
               )
             );
-        }
-        if (subitem.player_played === "top") {
-          if (subitem.shot_played === "L" && subitem.B_or_F === "F") {
-            temp_dictionary.top_lob_count_F += 1;
-          } else if (subitem.shot_played === "D" && subitem.B_or_F === "F") {
-            temp_dictionary.top_drive_count_F += 1;
-          } else if (subitem.shot_played === "T" && subitem.B_or_F === "F") {
-            temp_dictionary.top_toss_count_F += 1;
-          } else if (subitem.shot_played === "SM" && subitem.B_or_F === "F") {
-            temp_dictionary.top_smash_count_F += 1;
-          } else if (subitem.shot_played === "L" && subitem.B_or_F === "B") {
-            temp_dictionary.top_lob_count_B += 1;
-          } else if (subitem.shot_played === "D" && subitem.B_or_F === "B") {
-            temp_dictionary.top_drive_count_B += 1;
-          } else if (subitem.shot_played === "T" && subitem.B_or_F === "B") {
-            temp_dictionary.top_toss_count_B += 1;
-          } else if (subitem.shot_played === "SM" && subitem.B_or_F === "B") {
-            temp_dictionary.top_smash_count_B += 1;
+            if (shots[subIndex + 1]) {
+              let init_top_x =
+                (subitem.position_top[0][1] + subitem.position_top[1][1]) / 2;
+              let init_top_y =
+                (subitem.position_top[0][1] + subitem.position_top[1][1]) / 2;
+
+              let fin_top_x =
+                (shots[subIndex + 1].position_top[0][1] +
+                  shots[subIndex + 1].position_top[1][1]) /
+                2;
+              let fin_top_y =
+                (shots[subIndex + 1].position_top[0][1] +
+                  shots[subIndex + 1].position_top[1][1]) /
+                2;
+
+              let init_bot_x =
+                (subitem.position_bottom[0][1] +
+                  subitem.position_bottom[1][1]) /
+                2;
+              let init_bot_y =
+                (subitem.position_bottom[0][1] +
+                  subitem.position_bottom[1][1]) /
+                2;
+
+              let fin_bot_x =
+                (shots[subIndex + 1].position_bottom[0][1] +
+                  shots[subIndex + 1].position_bottom[1][1]) /
+                2;
+              let fin_bot_y =
+                (shots[subIndex + 1].position_bottom[0][1] +
+                  shots[subIndex + 1].position_bottom[1][1]) /
+                2;
+
+              temp_obj.disttop.push(
+                parseFloat(
+                  Math.sqrt(
+                    Math.pow(init_top_x - fin_top_x, 2) +
+                      Math.pow(init_top_y - fin_top_y, 2)
+                  )
+                )
+              );
+
+              temp_obj.distbot.push(
+                parseFloat(
+                  Math.sqrt(
+                    Math.pow(init_bot_x - fin_bot_x, 2) +
+                      Math.pow(init_bot_y - fin_bot_y, 2)
+                  )
+                )
+              );
+            }
+            if (subitem.player_played === "top") {
+              if (subitem.shot_played === "L" && subitem.B_or_F === "F") {
+                temp_dictionary.top_lob_count_F += 1;
+              } else if (
+                subitem.shot_played === "D" &&
+                subitem.B_or_F === "F"
+              ) {
+                temp_dictionary.top_drive_count_F += 1;
+              } else if (
+                subitem.shot_played === "T" &&
+                subitem.B_or_F === "F"
+              ) {
+                temp_dictionary.top_toss_count_F += 1;
+              } else if (
+                subitem.shot_played === "SM" &&
+                subitem.B_or_F === "F"
+              ) {
+                temp_dictionary.top_smash_count_F += 1;
+              } else if (
+                subitem.shot_played === "L" &&
+                subitem.B_or_F === "B"
+              ) {
+                temp_dictionary.top_lob_count_B += 1;
+              } else if (
+                subitem.shot_played === "D" &&
+                subitem.B_or_F === "B"
+              ) {
+                temp_dictionary.top_drive_count_B += 1;
+              } else if (
+                subitem.shot_played === "T" &&
+                subitem.B_or_F === "B"
+              ) {
+                temp_dictionary.top_toss_count_B += 1;
+              } else if (
+                subitem.shot_played === "SM" &&
+                subitem.B_or_F === "B"
+              ) {
+                temp_dictionary.top_smash_count_B += 1;
+              }
+            } else if (subitem.player_played === "bottom") {
+              if (subitem.shot_played === "L" && subitem.B_or_F === "F") {
+                temp_dictionary.bot_lob_count_F += 1;
+              } else if (
+                subitem.shot_played === "D" &&
+                subitem.B_or_F === "F"
+              ) {
+                temp_dictionary.bot_drive_count_F += 1;
+              } else if (
+                subitem.shot_played === "T" &&
+                subitem.B_or_F === "F"
+              ) {
+                temp_dictionary.bot_toss_count_F += 1;
+              } else if (
+                subitem.shot_played === "SM" &&
+                subitem.B_or_F === "F"
+              ) {
+                temp_dictionary.bot_smash_count_F += 1;
+              } else if (
+                subitem.shot_played === "L" &&
+                subitem.B_or_F === "B"
+              ) {
+                temp_dictionary.bot_lob_count_B += 1;
+              } else if (
+                subitem.shot_played === "D" &&
+                subitem.B_or_F === "B"
+              ) {
+                temp_dictionary.bot_drive_count_B += 1;
+              } else if (
+                subitem.shot_played === "T" &&
+                subitem.B_or_F === "B"
+              ) {
+                temp_dictionary.bot_toss_count_B += 1;
+              } else if (
+                subitem.shot_played === "SM" &&
+                subitem.B_or_F === "B"
+              ) {
+                temp_dictionary.bot_smash_count_B += 1;
+              }
+            }
           }
-        } else if (subitem.player_played === "bottom") {
-          if (subitem.shot_played === "L" && subitem.B_or_F === "F") {
-            temp_dictionary.bot_lob_count_F += 1;
-          } else if (subitem.shot_played === "D" && subitem.B_or_F === "F") {
-            temp_dictionary.bot_drive_count_F += 1;
-          } else if (subitem.shot_played === "T" && subitem.B_or_F === "F") {
-            temp_dictionary.bot_toss_count_F += 1;
-          } else if (subitem.shot_played === "SM" && subitem.B_or_F === "F") {
-            temp_dictionary.bot_smash_count_F += 1;
-          } else if (subitem.shot_played === "L" && subitem.B_or_F === "B") {
-            temp_dictionary.bot_lob_count_B += 1;
-          } else if (subitem.shot_played === "D" && subitem.B_or_F === "B") {
-            temp_dictionary.bot_drive_count_B += 1;
-          } else if (subitem.shot_played === "T" && subitem.B_or_F === "B") {
-            temp_dictionary.bot_toss_count_B += 1;
-          } else if (subitem.shot_played === "SM" && subitem.B_or_F === "B") {
-            temp_dictionary.bot_smash_count_B += 1;
-          }
-        }
-      });
+        });
+      }
+
       final_dictionary[index + 1] = temp_dictionary;
       info_dictionary[index + 1] = temp_obj;
     });
@@ -1903,6 +2405,20 @@ class Badminton extends Component {
       shotCountDic: final_dictionary,
       info_dictionary: info_dictionary,
     });
+  };
+
+  setStretch = (val, player) => {
+    if (player === "top") {
+      let currentCount = this.state.totalStretchTop;
+      currentCount = currentCount + val / 100;
+      let avgCount =
+        currentCount / (this.state.toShot - this.state.fromShot + 1);
+
+      this.setState({
+        totalStretchTop: currentCount.toFixed(1),
+        avgStretchTop: avgCount.toFixed(1),
+      });
+    }
   };
 
   render() {
@@ -2027,8 +2543,8 @@ class Badminton extends Component {
                   >
                     Stretch
                   </button>
-                  <div className="info_box">{this.state.totalStretchTop}</div>
-                  <div className="info_box">{this.state.avgStretchTop}</div>
+                  <div className="info_box">{this.props.stats.totalStretchTop}</div>
+                  <div className="info_box">{this.props.stats.averageStretchTop}</div>
                   {this.state.stretchTop ? (
                     <div
                       className="info_box_checkbox"
@@ -2062,8 +2578,8 @@ class Badminton extends Component {
                   >
                     Distance
                   </button>
-                  <div className="info_box">{this.state.totalDistanceTop}</div>
-                  <div className="info_box">{this.state.avgDistanceTop}</div>
+                  <div className="info_box">{this.props.stats.totalDistanceTop}</div>
+                  <div className="info_box">{this.props.stats.averageDistanceTop}</div>
                   {this.state.distanceTop ? (
                     <div
                       className="info_box_checkbox"
@@ -2093,8 +2609,8 @@ class Badminton extends Component {
                   >
                     Placement/Rec
                   </button>
-                  <div className="info_box"></div>
-                  <div className="info_box"></div>
+                  <div className="info_box">{this.props.stats.totalRecTop}</div>
+                  <div className="info_box">{this.props.stats.averageRecTop}</div>
                   {this.state.placrecTop ? (
                     <div
                       className="info_box_checkbox"
@@ -2647,8 +3163,8 @@ class Badminton extends Component {
                   >
                     Stretch
                   </button>
-                  <div className="info_box">{this.state.totalStretchBot}</div>
-                  <div className="info_box">{this.state.avgStretchBot}</div>
+                  <div className="info_box">{this.props.stats.totalStretchBot}</div>
+                  <div className="info_box">{this.props.stats.averageStretchBot}</div>
                   {this.state.stretchBot ? (
                     <div
                       className="info_box_checkbox"
@@ -2682,8 +3198,8 @@ class Badminton extends Component {
                   >
                     Distance
                   </button>
-                  <div className="info_box">{this.state.totalDistanceBot}</div>
-                  <div className="info_box">{this.state.avgDistanceBot}</div>
+                  <div className="info_box">{this.props.stats.totalDistanceBot}</div>
+                  <div className="info_box">{this.props.stats.averageDistanceBot}</div>
                   {this.state.distanceBot ? (
                     <div
                       className="info_box_checkbox"
@@ -2713,8 +3229,8 @@ class Badminton extends Component {
                   >
                     Placement/Rec
                   </button>
-                  <div className="info_box"></div>
-                  <div className="info_box"></div>
+                  <div className="info_box">{this.props.stats.totalRecBot}</div>
+                  <div className="info_box">{this.props.stats.averageRecBot}</div>
                   {this.state.placrecBot ? (
                     <div
                       className="info_box_checkbox"
@@ -2803,6 +3319,10 @@ class Badminton extends Component {
                   height2_perc={this.state.height2_perc}
                   width1_perc={this.state.width1_perc}
                   width2_perc={this.state.width2_perc}
+                  placrecTop={this.state.placrecTop}
+                  placrecBot={this.state.placrecBot}
+                  isBottom={this.state.isBottom}
+                  setStretch={this.setStretch}
                 ></Field>
               ) : // <img
               //   src={courtPic}
@@ -2810,611 +3330,643 @@ class Badminton extends Component {
               // />
               null}
             </div>
-            <div className="column_2_2">
-              <div
-                className="stats_info_row"
-                style={{
-                  color: "rgb(255, 154, 71)",
-                }}
-              >
+            {this.state.videoPlayerRight ? null : (
+              <div className="column_2_2">
                 <div
-                  className="stats_info_cont"
+                  className="stats_info_row"
                   style={{
-                    marginBottom: "25%",
+                    color: "rgb(255, 154, 71)",
                   }}
                 >
-                  <div className="stats_info_row_ind">
-                    <div
-                      className="stats_info_ind_comp"
-                      style={{
-                        color: "rgb(255, 154, 71)",
-                      }}
-                    >
-                      Smash
+                  <div
+                    className="stats_info_cont"
+                    style={{
+                      marginBottom: "25%",
+                    }}
+                  >
+                    <div className="stats_info_row_ind">
                       <div
-                        className="stats_info_box"
+                        className="stats_info_ind_comp"
                         style={{
-                          marginRight: "5px",
-                          marginLeft: "5px",
+                          color: "rgb(255, 154, 71)",
                         }}
                       >
-                        {this.state.top_smash_count_F}
+                        Smash
+                        <div
+                          className="stats_info_box"
+                          style={{
+                            marginRight: "5px",
+                            marginLeft: "5px",
+                          }}
+                        >
+                          {this.state.top_smash_count_F}
+                        </div>
+                        <div className="stats_info_box">
+                          {this.state.top_smash_count_B}
+                        </div>
                       </div>
-                      <div className="stats_info_box">
-                        {this.state.top_smash_count_B}
-                      </div>
-                    </div>
-                    <div
-                      className="stats_info_ind_comp"
-                      style={{
-                        color: "rgb(255, 154, 71)",
-                      }}
-                    >
-                      Toss
                       <div
-                        className="stats_info_box"
+                        className="stats_info_ind_comp"
                         style={{
-                          marginRight: "5px",
-                          marginLeft: "13%",
+                          color: "rgb(255, 154, 71)",
                         }}
                       >
-                        {this.state.top_toss_count_F}
-                      </div>
-                      <div className="stats_info_box">
-                        {this.state.top_toss_count_B}
+                        Toss
+                        <div
+                          className="stats_info_box"
+                          style={{
+                            marginRight: "5px",
+                            marginLeft: "13%",
+                          }}
+                        >
+                          {this.state.top_toss_count_F}
+                        </div>
+                        <div className="stats_info_box">
+                          {this.state.top_toss_count_B}
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div className="stats_info_row_ind">
-                    <div
-                      className="stats_info_ind_comp"
-                      style={{
-                        color: "rgb(255, 154, 71)",
-                      }}
-                    >
-                      Lob
+                    <div className="stats_info_row_ind">
                       <div
-                        className="stats_info_box"
+                        className="stats_info_ind_comp"
                         style={{
-                          marginRight: "5px",
-                          marginLeft: "23%",
+                          color: "rgb(255, 154, 71)",
                         }}
                       >
-                        {this.state.top_lob_count_F}
+                        Lob
+                        <div
+                          className="stats_info_box"
+                          style={{
+                            marginRight: "5px",
+                            marginLeft: "23%",
+                          }}
+                        >
+                          {this.state.top_lob_count_F}
+                        </div>
+                        <div className="stats_info_box">
+                          {this.state.top_lob_count_B}
+                        </div>
                       </div>
-                      <div className="stats_info_box">
-                        {this.state.top_lob_count_B}
-                      </div>
-                    </div>
-                    <div
-                      className="stats_info_ind_comp"
-                      style={{
-                        color: "rgb(255, 154, 71)",
-                      }}
-                    >
-                      Drive
                       <div
-                        className="stats_info_box"
+                        className="stats_info_ind_comp"
                         style={{
-                          marginRight: "5px",
-                          marginLeft: "5px",
+                          color: "rgb(255, 154, 71)",
                         }}
                       >
-                        {this.state.top_drive_count_F}
-                      </div>
-                      <div className="stats_info_box">
-                        {this.state.top_drive_count_B}
+                        Drive
+                        <div
+                          className="stats_info_box"
+                          style={{
+                            marginRight: "5px",
+                            marginLeft: "5px",
+                          }}
+                        >
+                          {this.state.top_drive_count_F}
+                        </div>
+                        <div className="stats_info_box">
+                          {this.state.top_drive_count_B}
+                        </div>
                       </div>
                     </div>
                   </div>
+                  <div className="player_photo">player photo</div>
                 </div>
-                <div className="player_photo">player photo</div>
-              </div>
-              {this.state.points_table === null ? null : (
-                <div className="points_table_cont">
-                  <div className="points_table_column">
-                    <div
-                      className="points_table_box"
-                      style={{
-                        borderBottom: "2px solid rgb(85,85,85)",
-                        color: "rgb(255, 154, 71)",
-                      }}
-                    >
-                      {this.state.points_table[0].current_set_top_init_score}
-                    </div>
-                    <div className="points_table_box" style={{ color: "teal" }}>
-                      {this.state.points_table[0].current_set_bottom_init_score}
-                    </div>
-                  </div>
-                  <div className="points_table_column">
-                    <div
-                      className="points_table_box"
-                      style={{
-                        borderBottom: "2px solid rgb(85,85,85)",
-                        color: "rgb(255, 154, 71)",
-                      }}
-                    >
-                      {this.state.points_table[1].current_set_top_init_score}
-                    </div>
-                    <div className="points_table_box" style={{ color: "teal" }}>
-                      {this.state.points_table[1].current_set_bottom_init_score}
-                    </div>
-                  </div>
-                  <div className="points_table_column">
-                    <div
-                      className="points_table_box"
-                      style={{
-                        borderBottom: "2px solid rgb(85,85,85)",
-                        color: "rgb(255, 154, 71)",
-                      }}
-                    >
-                      {this.state.points_table[2]
-                        ? this.state.points_table[2].current_set_top_init_score
-                        : 0}
-                    </div>
-                    <div className="points_table_box" style={{ color: "teal" }}>
-                      {this.state.points_table[2]
-                        ? this.state.points_table[2]
+                {this.state.points_table === null ? null : (
+                  <div className="points_table_cont">
+                    <div className="points_table_column">
+                      <div
+                        className="points_table_box"
+                        style={{
+                          borderBottom: "2px solid rgb(85,85,85)",
+                          color: "rgb(255, 154, 71)",
+                        }}
+                      >
+                        {this.state.points_table[0].current_set_top_init_score}
+                      </div>
+                      <div
+                        className="points_table_box"
+                        style={{ color: "teal" }}
+                      >
+                        {
+                          this.state.points_table[0]
                             .current_set_bottom_init_score
-                        : 0}
+                        }
+                      </div>
+                    </div>
+                    <div className="points_table_column">
+                      <div
+                        className="points_table_box"
+                        style={{
+                          borderBottom: "2px solid rgb(85,85,85)",
+                          color: "rgb(255, 154, 71)",
+                        }}
+                      >
+                        {this.state.points_table[1].current_set_top_init_score}
+                      </div>
+                      <div
+                        className="points_table_box"
+                        style={{ color: "teal" }}
+                      >
+                        {
+                          this.state.points_table[1]
+                            .current_set_bottom_init_score
+                        }
+                      </div>
+                    </div>
+                    <div className="points_table_column">
+                      <div
+                        className="points_table_box"
+                        style={{
+                          borderBottom: "2px solid rgb(85,85,85)",
+                          color: "rgb(255, 154, 71)",
+                        }}
+                      >
+                        {this.state.points_table[2]
+                          ? this.state.points_table[2]
+                              .current_set_top_init_score
+                          : 0}
+                      </div>
+                      <div
+                        className="points_table_box"
+                        style={{ color: "teal" }}
+                      >
+                        {this.state.points_table[2]
+                          ? this.state.points_table[2]
+                              .current_set_bottom_init_score
+                          : 0}
+                      </div>
                     </div>
                   </div>
-                </div>
-              )}
-              <div
-                className="stats_info_row"
-                style={{
-                  color: "teal",
-                }}
-              >
-                <div className="player_photo">player photo</div>
+                )}
                 <div
-                  className="stats_info_cont"
+                  className="stats_info_row"
                   style={{
-                    marginTop: "25%",
+                    color: "teal",
                   }}
                 >
-                  <div className="stats_info_row_ind">
-                    <div
-                      className="stats_info_ind_comp"
-                      style={{
-                        color: "teal",
-                      }}
-                    >
-                      Smash
+                  <div className="player_photo">player photo</div>
+                  <div
+                    className="stats_info_cont"
+                    style={{
+                      marginTop: "25%",
+                    }}
+                  >
+                    <div className="stats_info_row_ind">
                       <div
-                        className="stats_info_box"
+                        className="stats_info_ind_comp"
                         style={{
-                          marginRight: "5px",
-                          marginLeft: "5px",
+                          color: "teal",
                         }}
                       >
-                        {this.state.bot_smash_count_F}
+                        Smash
+                        <div
+                          className="stats_info_box"
+                          style={{
+                            marginRight: "5px",
+                            marginLeft: "5px",
+                          }}
+                        >
+                          {this.state.bot_smash_count_F}
+                        </div>
+                        <div className="stats_info_box">
+                          {this.state.bot_smash_count_B}
+                        </div>
                       </div>
-                      <div className="stats_info_box">
-                        {this.state.bot_smash_count_B}
+                      <div
+                        className="stats_info_ind_comp"
+                        style={{
+                          color: "teal",
+                        }}
+                      >
+                        Toss
+                        <div
+                          className="stats_info_box"
+                          style={{
+                            marginRight: "5px",
+                            marginLeft: "13%",
+                          }}
+                        >
+                          {this.state.bot_toss_count_F}
+                        </div>
+                        <div className="stats_info_box">
+                          {this.state.bot_toss_count_B}
+                        </div>
                       </div>
                     </div>
-                    <div
-                      className="stats_info_ind_comp"
-                      style={{
-                        color: "teal",
-                      }}
-                    >
-                      Toss
+                    <div className="stats_info_row_ind">
                       <div
-                        className="stats_info_box"
+                        className="stats_info_ind_comp"
                         style={{
-                          marginRight: "5px",
-                          marginLeft: "13%",
+                          color: "teal",
                         }}
                       >
-                        {this.state.bot_toss_count_F}
+                        Lob
+                        <div
+                          className="stats_info_box"
+                          style={{
+                            marginRight: "5px",
+                            marginLeft: "23%",
+                          }}
+                        >
+                          {this.state.bot_lob_count_F}
+                        </div>
+                        <div className="stats_info_box">
+                          {this.state.bot_lob_count_B}
+                        </div>
                       </div>
-                      <div className="stats_info_box">
-                        {this.state.bot_toss_count_B}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="stats_info_row_ind">
-                    <div
-                      className="stats_info_ind_comp"
-                      style={{
-                        color: "teal",
-                      }}
-                    >
-                      Lob
                       <div
-                        className="stats_info_box"
+                        className="stats_info_ind_comp"
                         style={{
-                          marginRight: "5px",
-                          marginLeft: "23%",
+                          color: "teal",
                         }}
                       >
-                        {this.state.bot_lob_count_F}
-                      </div>
-                      <div className="stats_info_box">
-                        {this.state.bot_lob_count_B}
-                      </div>
-                    </div>
-                    <div
-                      className="stats_info_ind_comp"
-                      style={{
-                        color: "teal",
-                      }}
-                    >
-                      Drive
-                      <div
-                        className="stats_info_box"
-                        style={{
-                          marginRight: "5px",
-                          marginLeft: "5px",
-                        }}
-                      >
-                        {this.state.bot_drive_count_F}
-                      </div>
-                      <div className="stats_info_box">
-                        {this.state.bot_drive_count_B}
+                        Drive
+                        <div
+                          className="stats_info_box"
+                          style={{
+                            marginRight: "5px",
+                            marginLeft: "5px",
+                          }}
+                        >
+                          {this.state.bot_drive_count_F}
+                        </div>
+                        <div className="stats_info_box">
+                          {this.state.bot_drive_count_B}
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
-          <div className="column_3">
-            <div className="right_buttons_cont">
+          {this.state.videoPlayerRight ? (
+            <div className="video_player_right">
               <button
-                className="btn_orange"
+                className="btn_small_orange"
                 onClick={() => {
-                  this.setState({
-                    top_forehand: !this.state.top_forehand,
-                    bot_backhand: false,
-                    bot_forehand: false,
-                  });
-                }}
-                style={{
-                  backgroundColor: this.state.top_forehand
-                    ? "rgb(33, 33, 33)"
-                    : "rgb(63, 63, 63)",
+                  this.setState({ videoPlayerRight: false });
                 }}
               >
-                Forehand
+                Back
               </button>
-              <button
-                className="btn_orange"
-                onClick={() => {
-                  this.setState({
-                    top_backhand: !this.state.top_backhand,
-                    bot_backhand: false,
-                    bot_forehand: false,
-                  });
-                }}
-                style={{
-                  backgroundColor: this.state.top_backhand
-                    ? "rgb(33, 33, 33)"
-                    : "rgb(63, 63, 63)",
-                }}
-              >
-                Backhand
-              </button>
+              <VideoPlayer url={this.state.url} />
             </div>
-            <button
-              className="btn_small_orange"
-              onClick={() => {
-                this.setState({
-                  top_winners: !this.state.top_winners,
-                  top_losers: false,
-                  top_losers_net: false,
-                  top_losers_plac: false,
-                  top_losers_smash: false,
-                });
-              }}
-              style={{
-                backgroundColor: this.state.top_winners
-                  ? "rgb(33, 33, 33)"
-                  : "rgb(63, 63, 63)",
-              }}
-            >
-              Winners
-            </button>
-            <div className="right_buttons_cont_1">
+          ) : (
+            <div className="column_3">
+              <div className="right_buttons_cont">
+                <button
+                  className="btn_orange"
+                  onClick={() => {
+                    this.setState({
+                      top_forehand: !this.state.top_forehand,
+                      bot_backhand: false,
+                      bot_forehand: false,
+                    });
+                  }}
+                  style={{
+                    backgroundColor: this.state.top_forehand
+                      ? "rgb(33, 33, 33)"
+                      : "rgb(63, 63, 63)",
+                  }}
+                >
+                  Forehand
+                </button>
+                <button
+                  className="btn_orange"
+                  onClick={() => {
+                    this.setState({
+                      top_backhand: !this.state.top_backhand,
+                      bot_backhand: false,
+                      bot_forehand: false,
+                    });
+                  }}
+                  style={{
+                    backgroundColor: this.state.top_backhand
+                      ? "rgb(33, 33, 33)"
+                      : "rgb(63, 63, 63)",
+                  }}
+                >
+                  Backhand
+                </button>
+              </div>
               <button
-                className="btn_orange"
+                className="btn_small_orange"
                 onClick={() => {
                   this.setState({
-                    top_win_smash: !this.state.top_win_smash,
+                    top_winners: !this.state.top_winners,
+                    top_losers: false,
+                    top_losers_net: false,
+                    top_losers_plac: false,
+                    top_losers_smash: false,
+                  });
+                }}
+                style={{
+                  backgroundColor: this.state.top_winners
+                    ? "rgb(33, 33, 33)"
+                    : "rgb(63, 63, 63)",
+                }}
+              >
+                Forced Winners
+              </button>
+              <div className="right_buttons_cont_1">
+                <button
+                  className="btn_orange"
+                  onClick={() => {
+                    this.setState({
+                      top_win_smash: !this.state.top_win_smash,
+                      top_win_plac: false,
+                    });
+                  }}
+                  style={{
+                    flex: 1,
+                    backgroundColor: this.state.top_win_smash
+                      ? "rgb(33, 33, 33)"
+                      : "rgb(63, 63, 63)",
+                  }}
+                >
+                  Smash
+                </button>
+                <button
+                  className="btn_orange"
+                  onClick={() => {
+                    this.setState({
+                      top_win_plac: !this.state.top_win_plac,
+                      top_win_smash: false,
+                    });
+                  }}
+                  style={{
+                    flex: 1,
+                    backgroundColor: this.state.top_win_plac
+                      ? "rgb(33, 33, 33)"
+                      : "rgb(63, 63, 63)",
+                  }}
+                >
+                  Placement
+                </button>
+              </div>
+              <button
+                className="btn_small_orange"
+                onClick={() => {
+                  this.setState({
+                    top_winners: false,
+                    top_losers: !this.state.top_losers,
+                    top_win_smash: false,
                     top_win_plac: false,
                   });
                 }}
                 style={{
-                  flex: 1,
-                  backgroundColor: this.state.top_win_smash
+                  backgroundColor: this.state.top_losers
                     ? "rgb(33, 33, 33)"
                     : "rgb(63, 63, 63)",
                 }}
               >
-                Smash
+                Unforced Errors
               </button>
+              <div className="right_buttons_cont_1">
+                <button
+                  className="btn_orange"
+                  onClick={() => {
+                    this.setState({
+                      top_losers_smash: !this.state.top_losers_smash,
+                      top_losers_plac: false,
+                      top_losers_net: false,
+                    });
+                  }}
+                  style={{
+                    flex: 1,
+                    backgroundColor: this.state.top_losers_smash
+                      ? "rgb(33, 33, 33)"
+                      : "rgb(63, 63, 63)",
+                  }}
+                >
+                  Smash
+                </button>
+                <button
+                  className="btn_orange"
+                  onClick={() => {
+                    this.setState({
+                      top_losers_plac: !this.state.top_losers_plac,
+                      top_losers_net: false,
+                      top_losers_smash: false,
+                    });
+                  }}
+                  style={{
+                    flex: 1,
+                    backgroundColor: this.state.top_losers_plac
+                      ? "rgb(33, 33, 33)"
+                      : "rgb(63, 63, 63)",
+                  }}
+                >
+                  Placement
+                </button>
+                <button
+                  className="btn_orange"
+                  onClick={() => {
+                    this.setState({
+                      top_losers_net: !this.state.top_losers_net,
+                      top_losers_smash: false,
+                      top_losers_plac: false,
+                    });
+                  }}
+                  style={{
+                    flex: 1,
+                    backgroundColor: this.state.top_losers_net
+                      ? "rgb(33, 33, 33)"
+                      : "rgb(63, 63, 63)",
+                  }}
+                >
+                  Net
+                </button>
+              </div>
               <button
-                className="btn_orange"
+                className="btn_custom"
+                style={{
+                  marginTop: "10px",
+                  marginBottom: "10px",
+                  padding: "14px 24px",
+                }}
+                onClick={() => {
+                  if (
+                    this.state.top_backhand === true ||
+                    this.state.top_forehand === true
+                  ) {
+                    this.onClickPoints(0);
+                  } else {
+                    this.onClickPoints(1);
+                  }
+                }}
+              >
+                Points
+              </button>
+              <div className="right_buttons_cont">
+                <button
+                  className="btn_teal"
+                  onClick={() => {
+                    this.setState({
+                      bot_forehand: !this.state.bot_forehand,
+                      top_forehand: false,
+                      top_backhand: false,
+                    });
+                  }}
+                  style={{
+                    backgroundColor: this.state.bot_forehand
+                      ? "rgb(33, 33, 33)"
+                      : "rgb(63, 63, 63)",
+                  }}
+                >
+                  Forehand
+                </button>
+                <button
+                  className="btn_teal"
+                  onClick={() => {
+                    this.setState({
+                      bot_backhand: !this.state.bot_backhand,
+                      top_forehand: false,
+                      top_backhand: false,
+                    });
+                  }}
+                  style={{
+                    backgroundColor: this.state.bot_backhand
+                      ? "rgb(33, 33, 33)"
+                      : "rgb(63, 63, 63)",
+                  }}
+                >
+                  Backhand
+                </button>
+              </div>
+              <button
+                className="btn_small_teal"
                 onClick={() => {
                   this.setState({
-                    top_win_plac: !this.state.top_win_plac,
-                    top_win_smash: false,
+                    bot_winners: !this.state.bot_winners,
+                    bot_losers: false,
+                    bot_losers_net: false,
+                    bot_losers_plac: false,
+                    bot_losers_smash: false,
                   });
                 }}
                 style={{
-                  flex: 1,
-                  backgroundColor: this.state.top_win_plac
+                  backgroundColor: this.state.bot_winners
                     ? "rgb(33, 33, 33)"
                     : "rgb(63, 63, 63)",
                 }}
               >
-                Placement
+                Forced Winners
               </button>
-            </div>
-            <button
-              className="btn_small_orange"
-              onClick={() => {
-                this.setState({
-                  top_winners: false,
-                  top_losers: !this.state.top_losers,
-                  top_win_smash: false,
-                  top_win_plac: false,
-                });
-              }}
-              style={{
-                backgroundColor: this.state.top_losers
-                  ? "rgb(33, 33, 33)"
-                  : "rgb(63, 63, 63)",
-              }}
-            >
-              Losers
-            </button>
-            <div className="right_buttons_cont_1">
+              <div className="right_buttons_cont_1">
+                <button
+                  className="btn_teal"
+                  onClick={() => {
+                    this.setState({
+                      bot_win_smash: !this.state.bot_win_smash,
+                      bot_win_plac: false,
+                    });
+                  }}
+                  style={{
+                    flex: 1,
+                    backgroundColor: this.state.bot_win_smash
+                      ? "rgb(33, 33, 33)"
+                      : "rgb(63, 63, 63)",
+                  }}
+                >
+                  Smash
+                </button>
+                <button
+                  className="btn_teal"
+                  onClick={() => {
+                    this.setState({
+                      bot_win_plac: !this.state.bot_win_plac,
+                      bot_win_smash: false,
+                    });
+                  }}
+                  style={{
+                    flex: 1,
+                    backgroundColor: this.state.bot_win_plac
+                      ? "rgb(33, 33, 33)"
+                      : "rgb(63, 63, 63)",
+                  }}
+                >
+                  Placement
+                </button>
+              </div>
               <button
-                className="btn_orange"
+                className="btn_small_teal"
                 onClick={() => {
                   this.setState({
-                    top_losers_smash: !this.state.top_losers_smash,
-                    top_losers_plac: false,
-                    top_losers_net: false,
-                  });
-                }}
-                style={{
-                  flex: 1,
-                  backgroundColor: this.state.top_losers_smash
-                    ? "rgb(33, 33, 33)"
-                    : "rgb(63, 63, 63)",
-                }}
-              >
-                Smash
-              </button>
-              <button
-                className="btn_orange"
-                onClick={() => {
-                  this.setState({
-                    top_losers_plac: !this.state.top_losers_plac,
-                    top_losers_net: false,
-                    top_losers_smash: false,
-                  });
-                }}
-                style={{
-                  flex: 1,
-                  backgroundColor: this.state.top_losers_plac
-                    ? "rgb(33, 33, 33)"
-                    : "rgb(63, 63, 63)",
-                }}
-              >
-                Placement
-              </button>
-              <button
-                className="btn_orange"
-                onClick={() => {
-                  this.setState({
-                    top_losers_net: !this.state.top_losers_net,
-                    top_losers_smash: false,
-                    top_losers_plac: false,
-                  });
-                }}
-                style={{
-                  flex: 1,
-                  backgroundColor: this.state.top_losers_net
-                    ? "rgb(33, 33, 33)"
-                    : "rgb(63, 63, 63)",
-                }}
-              >
-                Net
-              </button>
-            </div>
-            <button
-              className="btn_custom"
-              style={{
-                marginTop: "10px",
-                marginBottom: "10px",
-                padding: "14px 24px",
-              }}
-              onClick={() => {
-                if (
-                  this.state.top_backhand === true ||
-                  this.state.top_forehand === true
-                ) {
-                  this.onClickPoints(0);
-                } else {
-                  this.onClickPoints(1);
-                }
-              }}
-            >
-              Points
-            </button>
-            <div className="right_buttons_cont">
-              <button
-                className="btn_teal"
-                onClick={() => {
-                  this.setState({
-                    bot_forehand: !this.state.bot_forehand,
-                    top_forehand: false,
-                    top_backhand: false,
-                  });
-                }}
-                style={{
-                  backgroundColor: this.state.bot_forehand
-                    ? "rgb(33, 33, 33)"
-                    : "rgb(63, 63, 63)",
-                }}
-              >
-                Forehand
-              </button>
-              <button
-                className="btn_teal"
-                onClick={() => {
-                  this.setState({
-                    bot_backhand: !this.state.bot_backhand,
-                    top_forehand: false,
-                    top_backhand: false,
-                  });
-                }}
-                style={{
-                  backgroundColor: this.state.bot_backhand
-                    ? "rgb(33, 33, 33)"
-                    : "rgb(63, 63, 63)",
-                }}
-              >
-                Backhand
-              </button>
-            </div>
-            <button
-              className="btn_small_teal"
-              onClick={() => {
-                this.setState({
-                  bot_winners: !this.state.bot_winners,
-                  bot_losers: false,
-                  bot_losers_net: false,
-                  bot_losers_plac: false,
-                  bot_losers_smash: false,
-                });
-              }}
-              style={{
-                backgroundColor: this.state.bot_winners
-                  ? "rgb(33, 33, 33)"
-                  : "rgb(63, 63, 63)",
-              }}
-            >
-              Winners
-            </button>
-            <div className="right_buttons_cont_1">
-              <button
-                className="btn_teal"
-                onClick={() => {
-                  this.setState({
-                    bot_win_smash: !this.state.bot_win_smash,
+                    bot_winners: false,
+                    bot_losers: !this.state.bot_losers,
+                    bot_win_smash: false,
                     bot_win_plac: false,
                   });
                 }}
                 style={{
-                  flex: 1,
-                  backgroundColor: this.state.bot_win_smash
+                  backgroundColor: this.state.bot_losers
                     ? "rgb(33, 33, 33)"
                     : "rgb(63, 63, 63)",
                 }}
               >
-                Smash
+                Unforced Errors
               </button>
-              <button
-                className="btn_teal"
-                onClick={() => {
-                  this.setState({
-                    bot_win_plac: !this.state.bot_win_plac,
-                    bot_win_smash: false,
-                  });
-                }}
-                style={{
-                  flex: 1,
-                  backgroundColor: this.state.bot_win_plac
-                    ? "rgb(33, 33, 33)"
-                    : "rgb(63, 63, 63)",
-                }}
-              >
-                Placement
-              </button>
+              <div className="right_buttons_cont_1">
+                <button
+                  className="btn_teal"
+                  onClick={() => {
+                    this.setState({
+                      bot_losers_smash: !this.state.bot_losers_smash,
+                      bot_losers_plac: false,
+                      bot_losers_net: false,
+                    });
+                  }}
+                  style={{
+                    flex: 1,
+                    backgroundColor: this.state.bot_losers_smash
+                      ? "rgb(33, 33, 33)"
+                      : "rgb(63, 63, 63)",
+                  }}
+                >
+                  Smash
+                </button>
+                <button
+                  className="btn_teal"
+                  onClick={() => {
+                    this.setState({
+                      bot_losers_smash: false,
+                      bot_losers_plac: !this.state.bot_losers_plac,
+                      bot_losers_net: false,
+                    });
+                  }}
+                  style={{
+                    flex: 1,
+                    backgroundColor: this.state.bot_losers_plac
+                      ? "rgb(33, 33, 33)"
+                      : "rgb(63, 63, 63)",
+                  }}
+                >
+                  Placement
+                </button>
+                <button
+                  className="btn_teal"
+                  onClick={() => {
+                    this.setState({
+                      bot_losers_smash: false,
+                      bot_losers_plac: false,
+                      bot_losers_net: !this.state.bot_losers_net,
+                    });
+                  }}
+                  style={{
+                    flex: 1,
+                    backgroundColor: this.state.bot_losers_net
+                      ? "rgb(33, 33, 33)"
+                      : "rgb(63, 63, 63)",
+                  }}
+                >
+                  Net
+                </button>
+              </div>
             </div>
-            <button
-              className="btn_small_teal"
-              onClick={() => {
-                this.setState({
-                  bot_winners: false,
-                  bot_losers: !this.state.bot_losers,
-                  bot_win_smash: false,
-                  bot_win_plac: false,
-                });
-              }}
-              style={{
-                backgroundColor: this.state.bot_losers
-                  ? "rgb(33, 33, 33)"
-                  : "rgb(63, 63, 63)",
-              }}
-            >
-              Losers
-            </button>
-            <div className="right_buttons_cont_1">
-              <button
-                className="btn_teal"
-                onClick={() => {
-                  this.setState({
-                    bot_losers_smash: !this.state.bot_losers_smash,
-                    bot_losers_plac: false,
-                    bot_losers_net: false,
-                  });
-                }}
-                style={{
-                  flex: 1,
-                  backgroundColor: this.state.bot_losers_smash
-                    ? "rgb(33, 33, 33)"
-                    : "rgb(63, 63, 63)",
-                }}
-              >
-                Smash
-              </button>
-              <button
-                className="btn_teal"
-                onClick={() => {
-                  this.setState({
-                    bot_losers_smash: false,
-                    bot_losers_plac: !this.state.bot_losers_plac,
-                    bot_losers_net: false,
-                  });
-                }}
-                style={{
-                  flex: 1,
-                  backgroundColor: this.state.bot_losers_plac
-                    ? "rgb(33, 33, 33)"
-                    : "rgb(63, 63, 63)",
-                }}
-              >
-                Placement
-              </button>
-              <button
-                className="btn_teal"
-                onClick={() => {
-                  this.setState({
-                    bot_losers_smash: false,
-                    bot_losers_plac: false,
-                    bot_losers_net: !this.state.bot_losers_net,
-                  });
-                }}
-                style={{
-                  flex: 1,
-                  backgroundColor: this.state.bot_losers_net
-                    ? "rgb(33, 33, 33)"
-                    : "rgb(63, 63, 63)",
-                }}
-              >
-                Net
-              </button>
-            </div>
-          </div>
+          )}
         </div>
         <div className="bottom_bar">
           <div className="bottom_bar_row_1">
@@ -3437,7 +3989,7 @@ class Badminton extends Component {
             style={{
               display: "flex",
               flexDirection: "column",
-              width: "94%",
+              width: "97%",
             }}
           >
             <div className="above_timeline">
@@ -3462,7 +4014,7 @@ class Badminton extends Component {
                     let right_score_set2 = 0;
                     let left_score_set3 = 0;
                     let right_score_set3 = 0;
-                    if (e.target.value != "") {
+                    if (e.target.value !== "") {
                       if (this.state.setLeft === 1) {
                         rally_number = rally_number_disp;
                         let rall_info = badminton_points_data[e.target.value];
@@ -3528,9 +4080,71 @@ class Badminton extends Component {
                   maxLength="3"
                   rows="1"
                   onChange={(e) => {
+                    let left = parseInt(e.target.value);
+                    let left_score_set1 = 0;
+
+                    let right_score_set1 = 0;
+                    let left_score_set2 = 0;
+                    let right_score_set2 = 0;
+                    let left_score_set3 = 0;
+                    let right_score_set3 = 0;
+                    if (e.target.value !== "") {
+                      let rally_number = -1;
+                      if (left === 1) {
+                        rally_number = this.state.leftRallyDisp + 1;
+                        let rall_info =
+                          badminton_points_data[rally_number.toString()];
+                        left_score_set1 = rall_info.current_set_top_init_score;
+                        right_score_set1 =
+                          rall_info.current_set_bottom_init_score;
+                      } else if (left === 2) {
+                        rally_number =
+                          this.state.leftRallyDisp + this.state.setArray[0] + 1;
+                        let rall_info =
+                          badminton_points_data[(rally_number + 1).toString()];
+
+                        left_score_set2 = rall_info.current_set_top_init_score;
+                        right_score_set2 =
+                          rall_info.current_set_bottom_init_score;
+                        left_score_set1 = this.state.points_table[0]
+                          .current_set_top_init_score;
+                        right_score_set1 = this.state.points_table[0]
+                          .current_set_bottom_init_score;
+                      } else if (left === 3) {
+                        if (this.state.setArray[1]) {
+                          rally_number =
+                            this.state.leftRallyDisp +
+                            this.state.setArray[1] +
+                            1;
+                          let rall_info =
+                            badminton_points_data[
+                              (rally_number + 1).toString()
+                            ];
+
+                          left_score_set2 = this.state.points_table[1]
+                            .current_set_top_init_score;
+                          right_score_set2 = this.state.points_table[1]
+                            .current_set_bottom_init_score;
+                          left_score_set1 = this.state.points_table[0]
+                            .current_set_top_init_score;
+                          right_score_set1 = this.state.points_table[0]
+                            .current_set_bottom_init_score;
+                          left_score_set3 =
+                            rall_info.current_set_top_init_score;
+                          right_score_set3 =
+                            rall_info.current_set_bottom_init_score;
+                        }
+                      }
+                      this.setState({ leftRally: rally_number });
+                    }
                     this.setState({
                       setLeft: parseInt(e.target.value),
-                      // firstClick: false,
+                      left_top_score_set1: left_score_set1,
+                      left_bot_score_set1: right_score_set1,
+                      left_top_score_set2: left_score_set2,
+                      left_bot_score_set2: right_score_set2,
+                      left_top_score_set3: left_score_set3,
+                      left_bot_score_set3: right_score_set3,
                     });
                   }}
                 ></input>
@@ -3549,14 +4163,20 @@ class Badminton extends Component {
                   </div>
                 </div>
               </div>
+              <div className="line_break" />
               <div className="at_group" style={{ alignItems: "center" }}>
                 <img
-                  src={LeftArrowImage}
-                  style={{ height: 20, width: 20 }}
+                  src={PlayImage}
+                  height={20}
+                  width={20}
+                  className="image_rotate"
                   onClick={() => {
-                    if (this.state.fromShot - this.state.currentDiff >= 0) {
+                    if (
+                      this.state.toShot + 1 - 2 * this.state.currentDiff >=
+                      0
+                    ) {
                       let fromShot =
-                        this.state.fromShot - this.state.currentDiff;
+                        this.state.toShot - 2 * this.state.currentDiff + 1;
                       let toShot = this.state.toShot - this.state.currentDiff;
                       this.setState({ fromShot, toShot });
                     }
@@ -3573,7 +4193,6 @@ class Badminton extends Component {
                   onChange={(e) => {
                     this.setState({
                       fromShot: parseInt(e.target.value) - 1,
-                      // firstClick: true,
                     });
                   }}
                 ></input>{" "}
@@ -3587,21 +4206,17 @@ class Badminton extends Component {
                   onChange={(e) => {
                     this.setState({
                       toShot: parseInt(e.target.value) - 1,
-                      // firstClick: true,
                     });
                   }}
                 ></input>
                 <img
-                  src={RightArrowImage}
-                  style={{ height: 20, width: 20 }}
+                  src={PlayImage}
+                  style={{ height: 20, width: 20, cursor: "pointer" }}
                   onClick={() => {
-                    let fromShot = this.state.fromShot + this.state.currentDiff;
                     let toShot = this.state.toShot + this.state.currentDiff;
+                    let fromShot = toShot - this.state.currentDiff + 1;
                     this.setState({ fromShot, toShot });
                   }}
-                  // onMouseUp={()=>{
-                  //   this.endInterval()
-                  // }}
                 />
                 <input
                   type="number"
@@ -3614,11 +4229,11 @@ class Badminton extends Component {
                   onChange={(e) => {
                     this.setState({
                       currentDiff: parseInt(e.target.value),
-                      // firstClick: true,
                     });
                   }}
                 ></input>
               </div>
+              <div className="line_break" />
               <div className="at_group">
                 <div className="at_elements_score">
                   <div className="scoreDiv">
@@ -3642,9 +4257,74 @@ class Badminton extends Component {
                   maxLength="3"
                   rows="1"
                   onChange={(e) => {
+                    let right = parseInt(e.target.value);
+                    let left_score_set1 = 0;
+                    let right_score_set1 = 0;
+                    let left_score_set2 = 0;
+                    let right_score_set2 = 0;
+                    let left_score_set3 = 0;
+                    let right_score_set3 = 0;
+
+                    if (e.target.value !== "") {
+                      let rally_number = -1;
+                      if (right === 1) {
+                        rally_number = this.state.rightRallyDisp + 1;
+                        let rall_info =
+                          badminton_points_data[rally_number.toString()];
+                        left_score_set1 = rall_info.current_set_top_init_score;
+                        right_score_set1 =
+                          rall_info.current_set_bottom_init_score;
+                      } else if (right === 2) {
+                        rally_number =
+                          this.state.rightRallyDisp +
+                          this.state.setArray[0] +
+                          1;
+                        let rall_info =
+                          badminton_points_data[(rally_number + 1).toString()];
+
+                        left_score_set2 = rall_info.current_set_top_init_score;
+                        right_score_set2 =
+                          rall_info.current_set_bottom_init_score;
+                        left_score_set1 = this.state.points_table[0]
+                          .current_set_top_init_score;
+                        right_score_set1 = this.state.points_table[0]
+                          .current_set_bottom_init_score;
+                      } else if (right === 3) {
+                        if (this.state.setArray[1]) {
+                          rally_number =
+                            this.state.rightRallyDisp +
+                            this.state.setArray[1] +
+                            1;
+                          let rall_info =
+                            badminton_points_data[
+                              (rally_number + 1).toString()
+                            ];
+
+                          left_score_set2 = this.state.points_table[1]
+                            .current_set_top_init_score;
+                          right_score_set2 = this.state.points_table[1]
+                            .current_set_bottom_init_score;
+                          left_score_set1 = this.state.points_table[0]
+                            .current_set_top_init_score;
+                          right_score_set1 = this.state.points_table[0]
+                            .current_set_bottom_init_score;
+                          left_score_set3 =
+                            rall_info.current_set_top_init_score;
+                          right_score_set3 =
+                            rall_info.current_set_bottom_init_score;
+                        }
+                      }
+                      this.setState({ rightRally: rally_number });
+                    }
                     this.setState({
                       setRight: parseInt(e.target.value),
-                      // firstClick: true,
+
+                      right_top_score_set1: left_score_set1,
+                      right_bot_score_set1: right_score_set1,
+                      right_top_score_set2: left_score_set2,
+                      right_bot_score_set2: right_score_set2,
+                      right_top_score_set3: left_score_set3,
+                      right_bot_score_set3: right_score_set3,
                     });
                   }}
                 ></input>
@@ -3668,7 +4348,7 @@ class Badminton extends Component {
                     let right_score_set2 = 0;
                     let left_score_set3 = 0;
                     let right_score_set3 = 0;
-                    if (e.target.value != "") {
+                    if (e.target.value !== "") {
                       if (this.state.setRight === 1) {
                         rally_number = rally_number_disp;
                         let rall_info = badminton_points_data[e.target.value];
@@ -3677,7 +4357,7 @@ class Badminton extends Component {
                           rall_info.current_set_bottom_init_score;
                       } else if (this.state.setRight === 2) {
                         rally_number =
-                          rally_number_disp + this.state.setArray[0];
+                          rally_number_disp + this.state.setArray[0] + 1;
                         let rall_info =
                           badminton_points_data[(rally_number + 1).toString()];
 
@@ -3691,7 +4371,7 @@ class Badminton extends Component {
                       } else if (this.state.setRight === 3) {
                         if (this.state.setArray[1]) {
                           rally_number =
-                            rally_number_disp + this.state.setArray[1];
+                            rally_number_disp + this.state.setArray[1] + 1;
                           let rall_info =
                             badminton_points_data[
                               (rally_number + 1).toString()
@@ -3759,4 +4439,8 @@ class Badminton extends Component {
   }
 }
 
-export default Badminton;
+const mapStateToProps = (state) => ({
+  stats: state.stats,
+});
+
+export default connect(mapStateToProps)(Badminton);

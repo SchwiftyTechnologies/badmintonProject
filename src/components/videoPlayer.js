@@ -17,16 +17,30 @@ class VideoPlayer extends Component {
     this.playerRef = React.createRef();
   }
 
-  componentDidMount() {
-    this.seek(parseFloat(this.props.url));
-  }
+  // componentDidUpdate() {
+  //   console.log("htis", this.props.url);
+  //   let time = parseFloat(this.props.url);
+  //   // this.seek(Math.floor(time));
+  //   this.seek(time);
+  // }
 
-  componentDidUpdate() {
-    this.seek(parseFloat(this.props.url));
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps.url, this.props.url);
+    if (nextProps.url !== this.props.url) {
+      console.log("htis", this.props.url);
+      let time = parseFloat(this.props.url);
+      // this.seek(Math.floor(time));
+      this.seek(time);
+    }
   }
 
   seek = (seconds) => {
-    this.player.seekTo(seconds);
+    this.player.seekTo(seconds, "seconds");
+  };
+
+  onSet = () => {
+    let time = parseFloat(this.props.url);
+    this.seek(time);
   };
 
   render() {
@@ -41,6 +55,8 @@ class VideoPlayer extends Component {
         height="80%"
         controls={true}
         playing={true}
+        style={this.props.style}
+        onStart={this.onSet}
       />
       // <video width="100%" height="75%" controls autoplay="autoplay">
       //   <source src={this.props.url} type="video/mp4" id="video1" />
