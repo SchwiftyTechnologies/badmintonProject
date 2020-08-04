@@ -1849,10 +1849,8 @@ class Field extends Component {
         this.drawCourt();
         nextProps.rightSideData.map((item, index) => {
           this.drawShotIndRightSide(item);
-        });
-        nextProps.rightSideData.map((item) => {
           this.drawFeetInRight(item)
-        })
+        });
         const shots = nextProps.rightSideData
         shots.map((item, index, shots) => {
           this.drawDistanceInRightSide(item, shots[index + 1])
@@ -2196,24 +2194,46 @@ class Field extends Component {
     ctx.beginPath();
     ctx.setLineDash([2]);
     ctx.moveTo(
-      ((shot.location_Init_start_top[0][0] + shot.location_Init_end_top[0][0]) * this.state.width_factor) / 2,
-      ((shot.location_Init_start_top[0][1] + shot.location_Init_end_top[0][1]) * this.state.height_factor) / 2
+      ((shot.location_Init_start_top[0][0]) * this.state.width_factor),
+      ((shot.location_Init_start_top[0][1]) * this.state.height_factor)
     );
     ctx.lineTo(
-      ((shot.location_Init_start_top[1][0] + shot.location_Init_end_top[1][0]) * this.state.width_factor) / 2,
-      ((shot.location_Init_start_top[1][1] + shot.location_Init_end_top[1][1]) * this.state.height_factor) / 2
+      ((shot.location_Init_start_top[1][0]) * this.state.width_factor),
+      ((shot.location_Init_start_top[1][1]) * this.state.height_factor)
+    );
+    ctx.strokeStyle = "red";
+    ctx.lineWidth = 4;
+    ctx.stroke();
+    ctx.moveTo(
+      ((shot.location_Init_end_top[0][0]) * this.state.width_factor),
+      ((shot.location_Init_end_top[0][1]) * this.state.height_factor)
+    );
+    ctx.lineTo(
+      ((shot.location_Init_end_top[1][0]) * this.state.width_factor),
+      ((shot.location_Init_end_top[1][1]) * this.state.height_factor)
     );
     ctx.strokeStyle = "red";
     ctx.lineWidth = 4;
     ctx.stroke();
     ctx.closePath();
     ctx.moveTo(
-      ((shot.location_Init_start_bottom[0][0] + shot.location_Init_end_bottom[0][0]) * this.state.width_factor) / 2,
-      ((shot.location_Init_start_bottom[0][1] + shot.location_Init_end_bottom[0][1]) * this.state.height_factor) / 2
+      ((shot.location_Init_start_bottom[0][0]) * this.state.width_factor),
+      ((shot.location_Init_start_bottom[0][1]) * this.state.height_factor)
     );
     ctx.lineTo(
-      ((shot.location_Init_start_bottom[1][0] + shot.location_Init_end_bottom[1][0]) * this.state.width_factor) / 2,
-      ((shot.location_Init_start_bottom[1][1] + shot.location_Init_end_bottom[1][1]) * this.state.height_factor) / 2
+      (shot.location_Init_start_bottom[1][0]) * this.state.width_factor,
+      (shot.location_Init_start_bottom[1][1]) * this.state.height_factor
+    );
+    ctx.strokeStyle = "red";
+    ctx.lineWidth = 4;
+    ctx.stroke();
+    ctx.moveTo(
+      ((shot.location_Init_end_bottom[0][0]) * this.state.width_factor),
+      ((shot.location_Init_end_bottom[0][1]) * this.state.height_factor)
+    );
+    ctx.lineTo(
+      (shot.location_Init_end_bottom[1][0]) * this.state.width_factor,
+      (shot.location_Init_end_bottom[1][1]) * this.state.height_factor
     );
     ctx.strokeStyle = "red";
     ctx.lineWidth = 4;
@@ -2228,31 +2248,31 @@ class Field extends Component {
     if (typeof nextShot != 'undefined') {
 
       ctx.beginPath();
-      ctx.setLineDash([2]);
+      ctx.setLineDash([0]);
       ctx.moveTo(
-        ((shot.location_Init_start_top[1][0] + shot.location_Init_end_top[1][0]) * this.state.width_factor) / 2,
-        ((shot.location_Init_start_top[1][1] + shot.location_Init_end_top[1][1]) * this.state.height_factor) / 2
+        ((shot.location_Init_start_top[0][0] + shot.location_Init_start_top[1][0]) * this.state.width_factor) / 2,
+        ((shot.location_Init_start_top[0][1] + shot.location_Init_start_top[1][1]) * this.state.height_factor) / 2
       );
       ctx.lineTo(
-        ((nextShot.location_Init_start_top[0][0] + nextShot.location_Init_end_top[0][0]) * this.state.width_factor) / 2,
-        ((nextShot.location_Init_start_top[0][1] + nextShot.location_Init_end_top[0][1]) * this.state.height_factor) / 2
+        ((nextShot.location_Init_end_top[0][0] + nextShot.location_Init_end_top[1][0]) * this.state.width_factor) / 2,
+        ((nextShot.location_Init_end_top[0][1] + nextShot.location_Init_end_top[1][1]) * this.state.height_factor) / 2
       );
-      ctx.strokeStyle = "blue";
+      ctx.strokeStyle = "rgb(255, 154, 71)";
       ctx.lineWidth = 4;
       ctx.stroke();
       ctx.closePath();
 
       ctx.beginPath();
-      ctx.setLineDash([2]);
+      ctx.setLineDash([0]);
       ctx.moveTo(
-        ((shot.location_Init_start_bottom[1][0] + shot.location_Init_end_bottom[1][0]) * this.state.width_factor) / 2,
-        ((shot.location_Init_start_bottom[1][1] + shot.location_Init_end_bottom[1][1]) * this.state.height_factor) / 2
+        ((shot.location_Init_start_bottom[0][0] + shot.location_Init_start_bottom[1][0]) * this.state.width_factor) / 2,
+        ((shot.location_Init_start_bottom[0][1] + shot.location_Init_start_bottom[1][1]) * this.state.height_factor) / 2
       );
       ctx.lineTo(
-        ((nextShot.location_Init_start_bottom[0][0] + nextShot.location_Init_end_bottom[0][0]) * this.state.width_factor) / 2,
-        ((nextShot.location_Init_start_bottom[0][1] + nextShot.location_Init_end_bottom[0][1]) * this.state.height_factor) / 2
+        ((nextShot.location_Init_end_bottom[0][0] + nextShot.location_Init_end_bottom[1][0]) * this.state.width_factor) / 2,
+        ((nextShot.location_Init_end_bottom[0][1] + nextShot.location_Init_end_bottom[1][1]) * this.state.height_factor) / 2
       );
-      ctx.strokeStyle = "blue";
+      ctx.strokeStyle = "teal";
       ctx.lineWidth = 4;
       ctx.stroke();
       ctx.closePath();
