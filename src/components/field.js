@@ -105,65 +105,84 @@ class Field extends Component {
       ctx.beginPath();
       ctx.strokeStyle = "red";
       ctx.setLineDash([4]);
-
-      //draw short service line for bottom half
-      ctx.moveTo(100 * this.state.width_factor, 968 * this.state.height_factor);
-      ctx.lineTo(710 * this.state.width_factor, 968 * this.state.height_factor);
-      ctx.stroke();
-
-      //draw long service line for doubles for bottom half
+      //horizontal line 1
       ctx.moveTo(
-        100 * this.state.width_factor,
-        1360 * this.state.height_factor
-      );
-      ctx.lineTo(
-        710 * this.state.width_factor,
-        1360 * this.state.height_factor
-      );
-      ctx.stroke();
-
-      //draw long bootom line for doubles for bottom half
-      ctx.moveTo(
-        100 * this.state.width_factor,
-        1440 * this.state.height_factor
-      );
-      ctx.lineTo(
-        710 * this.state.width_factor,
-        1440 * this.state.height_factor
-      );
-      ctx.stroke();
-
-      //draw side line for doubles on left side
-      ctx.moveTo(100 * this.state.width_factor, 770 * this.state.height_factor);
-      ctx.lineTo(
-        100 * this.state.width_factor,
-        1440 * this.state.height_factor
-      );
-      ctx.stroke();
-
-      //draw side line for singles on left side
-      ctx.moveTo(146 * this.state.width_factor, 770 * this.state.height_factor);
-      ctx.lineTo(
         146 * this.state.width_factor,
-        1440 * this.state.height_factor
+        770 * this.state.height_factor +
+          594 * this.state.height_factor * (this.state.height1_perc / 100)
       );
-      ctx.stroke();
-
-      //draw side line for doubles on right side
-      ctx.moveTo(710 * this.state.width_factor, 770 * this.state.height_factor);
       ctx.lineTo(
-        710 * this.state.width_factor,
-        1440 * this.state.height_factor
+        660 * this.state.width_factor,
+        770 * this.state.height_factor +
+          594 * this.state.height_factor * (this.state.height1_perc / 100)
       );
       ctx.stroke();
 
-      //draw side line for singles on right side
+      //horizontal line 2
+      ctx.moveTo(
+        146 * this.state.width_factor,
+        770 * this.state.height_factor +
+          594 * this.state.height_factor * (this.state.height2_perc / 100)
+      );
+      ctx.lineTo(
+        660 * this.state.width_factor,
+        770 * this.state.height_factor +
+          594 * this.state.height_factor * (this.state.height2_perc / 100)
+      );
+      ctx.stroke();
+
+      //vertical line 1
+      ctx.moveTo(
+        146 * this.state.width_factor +
+          518 * this.state.width_factor * (this.state.width1_perc / 100),
+        770 * this.state.height_factor
+      );
+      ctx.lineTo(
+        146 * this.state.width_factor +
+          518 * this.state.width_factor * (this.state.width1_perc / 100),
+        1360 * this.state.height_factor
+      );
+      ctx.stroke();
+
+      //vertical line 2
+      ctx.moveTo(
+        146 * this.state.width_factor +
+          518 * this.state.width_factor * (this.state.width2_perc / 100),
+        770 * this.state.height_factor
+      );
+      ctx.lineTo(
+        146 * this.state.width_factor +
+          518 * this.state.width_factor * (this.state.width2_perc / 100),
+        1360 * this.state.height_factor
+      );
+      ctx.stroke();
+
+      // net line
+      ctx.moveTo(0, 770 * this.state.height_factor);
+      ctx.lineTo(this.state.width, 770 * this.state.height_factor);
+      ctx.stroke();
+
+      // end line
+      ctx.moveTo(0, 1360 * this.state.height_factor);
+      ctx.lineTo(this.state.width, 1360 * this.state.height_factor);
+      ctx.stroke();
+
+      // right end line
       ctx.moveTo(660 * this.state.width_factor, 770 * this.state.height_factor);
       ctx.lineTo(
         660 * this.state.width_factor,
-        1440 * this.state.height_factor
+        1360 * this.state.height_factor
       );
       ctx.stroke();
+
+      // left end line
+      ctx.moveTo(146 * this.state.width_factor, 770 * this.state.height_factor);
+      ctx.lineTo(
+        146 * this.state.width_factor,
+        1360 * this.state.height_factor
+      );
+      ctx.stroke();
+
       ctx.closePath();
     } else {
       ctx.beginPath();
@@ -227,40 +246,78 @@ class Field extends Component {
       ctx.strokeStyle = "red";
       ctx.setLineDash([4]);
 
-      //draw long top line for doubles
-      ctx.moveTo(100 * this.state.width_factor, 100 * this.state.height_factor);
-      ctx.lineTo(710 * this.state.width_factor, 100 * this.state.height_factor);
+      //horizontal line 1
+      ctx.moveTo(
+        146 * this.state.width_factor,
+        176 * this.state.height_factor +
+          594 * this.state.height_factor * (this.state.height1_perc / 100)
+      );
+      ctx.lineTo(
+        660 * this.state.width_factor,
+        176 * this.state.height_factor +
+          594 * this.state.height_factor * (this.state.height1_perc / 100)
+      );
       ctx.stroke();
 
-      //draw long service line for doubles
-      ctx.moveTo(100 * this.state.width_factor, 176 * this.state.height_factor);
-      ctx.lineTo(710 * this.state.width_factor, 176 * this.state.height_factor);
+      //horizontal line 2
+      ctx.moveTo(
+        146 * this.state.width_factor,
+        176 * this.state.height_factor +
+          594 * this.state.height_factor * (this.state.height2_perc / 100)
+      );
+      ctx.lineTo(
+        660 * this.state.width_factor,
+        176 * this.state.height_factor +
+          594 * this.state.height_factor * (this.state.height2_perc / 100)
+      );
       ctx.stroke();
 
-      //draw short service line
-      ctx.moveTo(100 * this.state.width_factor, 568 * this.state.height_factor);
-      ctx.lineTo(710 * this.state.width_factor, 568 * this.state.height_factor);
+      //vertical line 1
+      ctx.moveTo(
+        146 * this.state.width_factor +
+          518 * this.state.width_factor * (this.state.width1_perc / 100),
+        176 * this.state.height_factor
+      );
+      ctx.lineTo(
+        146 * this.state.width_factor +
+          518 * this.state.width_factor * (this.state.width1_perc / 100),
+        770 * this.state.height_factor
+      );
       ctx.stroke();
 
-      //draw side line for doubles on left side
-      ctx.moveTo(100 * this.state.width_factor, 100 * this.state.height_factor);
-      ctx.lineTo(100 * this.state.width_factor, 770 * this.state.height_factor);
+      //vertical line 2
+      ctx.moveTo(
+        146 * this.state.width_factor +
+          518 * this.state.width_factor * (this.state.width2_perc / 100),
+        176 * this.state.height_factor
+      );
+      ctx.lineTo(
+        146 * this.state.width_factor +
+          518 * this.state.width_factor * (this.state.width2_perc / 100),
+        770 * this.state.height_factor
+      );
       ctx.stroke();
 
-      //draw side line for singles on left side
-      ctx.moveTo(146 * this.state.width_factor, 100 * this.state.height_factor);
+      // net line
+      ctx.moveTo(0, 770 * this.state.height_factor);
+      ctx.lineTo(this.state.width, 770 * this.state.height_factor);
+      ctx.stroke();
+
+      // end line
+      ctx.moveTo(0, 176 * this.state.height_factor);
+      ctx.lineTo(this.state.width, 176 * this.state.height_factor);
+      ctx.stroke();
+
+      // right end line
+      ctx.moveTo(660 * this.state.width_factor, 176 * this.state.height_factor);
+      ctx.lineTo(660 * this.state.width_factor, 770 * this.state.height_factor);
+      ctx.stroke();
+
+      // left end line
+      ctx.moveTo(146 * this.state.width_factor, 176 * this.state.height_factor);
       ctx.lineTo(146 * this.state.width_factor, 770 * this.state.height_factor);
       ctx.stroke();
 
-      //draw side line for doubles on right side
-      ctx.moveTo(710 * this.state.width_factor, 100 * this.state.height_factor);
-      ctx.lineTo(710 * this.state.width_factor, 770 * this.state.height_factor);
-      ctx.stroke();
-
-      //draw side line for singles on right side
-      ctx.moveTo(660 * this.state.width_factor, 100 * this.state.height_factor);
-      ctx.lineTo(660 * this.state.width_factor, 770 * this.state.height_factor);
-      ctx.stroke();
       ctx.closePath();
     }
   };
@@ -695,7 +752,7 @@ class Field extends Component {
 
   clickCheckerFunction = (loc, ind, init_player) => {
     if (this.props.perc) {
-      let data_array = Array(18).fill(0);
+      let data_array = Array(24).fill(0);
       let total_length = 0;
       let num_shots_in_segment = 0;
       let player_played_val = "";
@@ -1430,133 +1487,209 @@ class Field extends Component {
         ((nextShot.position_top[0][1] + nextShot.position_top[1][1]) / 2) *
         this.state.height_factor;
     }
+    let x1 =
+      146 * this.state.width_factor +
+      518 * this.state.width_factor * (this.state.width1_perc / 100);
+
+    let x2 =
+      146 * this.state.width_factor +
+      518 * this.state.width_factor * (this.state.width2_perc / 100);
+
+    let y1 =
+      176 * this.state.height_factor +
+      594 * this.state.height_factor * (this.state.height1_perc / 100);
+
+    let y2 =
+      176 * this.state.height_factor +
+      594 * this.state.height_factor * (this.state.height2_perc / 100);
 
     if (
-      x >= 100 * this.state.width_factor &&
-      x <= 146 * this.state.width_factor &&
-      y >= 100 * this.state.height_factor &&
-      y <= 176 * this.state.height_factor
+      x >= 146 * this.state.width_factor &&
+      x <= x1 &&
+      y >= 176 * this.state.height_factor &&
+      y <= y1
     ) {
       data_array[0] = data_array[0] + 1;
     } else if (
-      x <= 660 * this.state.width_factor &&
-      x >= 146 * this.state.width_factor &&
-      y >= 100 * this.state.height_factor &&
-      y <= 176 * this.state.height_factor
+      x <= x2 &&
+      x >= x1 &&
+      y >= 176 * this.state.height_factor &&
+      y <= y1
     ) {
       data_array[1] = data_array[1] + 1;
     } else if (
-      x >= 660 * this.state.width_factor &&
-      x <= 710 * this.state.width_factor &&
-      y >= 100 * this.state.height_factor &&
-      y <= 176 * this.state.height_factor
+      x >= x2 &&
+      x <= 660 * this.state.width_factor &&
+      y >= 176 * this.state.height_factor &&
+      y <= y1
     ) {
       data_array[2] = data_array[2] + 1;
     } else if (
-      x >= 100 * this.state.width_factor &&
-      x <= 146 * this.state.width_factor &&
-      y <= 568 * this.state.height_factor &&
-      y >= 176 * this.state.height_factor
+      x >= 146 * this.state.width_factor &&
+      x <= x1 &&
+      y <= y2 &&
+      y >= y1
     ) {
       data_array[3] = data_array[3] + 1;
-    } else if (
-      x <= 660 * this.state.width_factor &&
-      x >= 146 * this.state.width_factor &&
-      y <= 568 * this.state.height_factor &&
-      y >= 176 * this.state.height_factor
-    ) {
+    } else if (x <= x2 && x >= x1 && y <= y2 && y >= y1) {
       data_array[4] = data_array[4] + 1;
     } else if (
-      x >= 660 * this.state.width_factor &&
-      x <= 710 * this.state.width_factor &&
-      y <= 568 * this.state.height_factor &&
-      y >= 176 * this.state.height_factor
+      x >= x2 &&
+      x <= 660 * this.state.width_factor &&
+      y <= y2 &&
+      y >= y1
     ) {
       data_array[5] = data_array[5] + 1;
     } else if (
-      x >= 100 * this.state.width_factor &&
-      x <= 146 * this.state.width_factor &&
-      y >= 568 * this.state.height_factor &&
+      x >= 146 * this.state.width_factor &&
+      x <= x1 &&
+      y >= y2 &&
       y <= 770 * this.state.height_factor
     ) {
       data_array[6] = data_array[6] + 1;
     } else if (
-      x <= 660 * this.state.width_factor &&
-      x >= 146 * this.state.width_factor &&
-      y >= 568 * this.state.height_factor &&
+      x <= x2 &&
+      x >= x1 &&
+      y >= y2 &&
       y <= 770 * this.state.height_factor
     ) {
       data_array[7] = data_array[7] + 1;
     } else if (
-      x >= 660 * this.state.width_factor &&
-      x <= 710 * this.state.width_factor &&
-      y >= 568 * this.state.height_factor &&
+      x >= x2 &&
+      x <= 660 * this.state.width_factor &&
+      y >= y2 &&
       y <= 770 * this.state.height_factor
     ) {
       data_array[8] = data_array[8] + 1;
     } else if (
-      x >= 100 * this.state.width_factor &&
-      x <= 146 * this.state.width_factor &&
-      y <= 968 * this.state.height_factor &&
+      x >= 146 * this.state.width_factor &&
+      x <= x1 &&
+      y <=
+        770 * this.state.height_factor +
+          594 * this.state.height_factor * (this.state.height1_perc / 100) &&
       y >= 770 * this.state.height_factor
     ) {
       data_array[9] = data_array[9] + 1;
     } else if (
-      x <= 660 * this.state.width_factor &&
-      x >= 146 * this.state.width_factor &&
-      y <= 968 * this.state.height_factor &&
+      x <= x2 &&
+      x >= x1 &&
+      y <=
+        770 * this.state.height_factor +
+          594 * this.state.height_factor * (this.state.height1_perc / 100) &&
       y >= 770 * this.state.height_factor
     ) {
       data_array[10] = data_array[10] + 1;
     } else if (
-      x >= 660 * this.state.width_factor &&
-      x <= 710 * this.state.width_factor &&
-      y <= 968 * this.state.height_factor &&
+      x >= x2 &&
+      x <= 660 * this.state.width_factor &&
+      y <=
+        770 * this.state.height_factor +
+          594 * this.state.height_factor * (this.state.height1_perc / 100) &&
       y >= 770 * this.state.height_factor
     ) {
       data_array[11] = data_array[11] + 1;
     } else if (
-      x >= 100 * this.state.width_factor &&
-      x <= 146 * this.state.width_factor &&
-      y >= 968 * this.state.height_factor &&
-      y <= 1360 * this.state.height_factor
+      x >= 146 * this.state.width_factor &&
+      x <= x1 &&
+      y >=
+        770 * this.state.height_factor +
+          594 * this.state.height_factor * (this.state.height1_perc / 100) &&
+      y <=
+        770 * this.state.height_factor +
+          594 * this.state.height_factor * (this.state.height2_perc / 100)
     ) {
       data_array[12] = data_array[12] + 1;
     } else if (
-      x <= 660 * this.state.width_factor &&
-      x >= 146 * this.state.width_factor &&
-      y >= 968 * this.state.height_factor &&
-      y <= 1360 * this.state.height_factor
+      x <= x2 &&
+      x >= x1 &&
+      y >=
+        770 * this.state.height_factor +
+          594 * this.state.height_factor * (this.state.height1_perc / 100) &&
+      y <=
+        770 * this.state.height_factor +
+          594 * this.state.height_factor * (this.state.height2_perc / 100)
     ) {
       data_array[13] = data_array[13] + 1;
     } else if (
-      x >= 660 * this.state.width_factor &&
-      x <= 710 * this.state.width_factor &&
-      y >= 968 * this.state.height_factor &&
-      y <= 1360 * this.state.height_factor
+      x >= x2 &&
+      x <= 660 * this.state.width_factor &&
+      y >=
+        770 * this.state.height_factor +
+          594 * this.state.height_factor * (this.state.height1_perc / 100) &&
+      y <=
+        770 * this.state.height_factor +
+          594 * this.state.height_factor * (this.state.height2_perc / 100)
     ) {
       data_array[14] = data_array[14] + 1;
     } else if (
-      x >= 100 * this.state.width_factor &&
-      x <= 146 * this.state.width_factor &&
-      y <= 1440 * this.state.height_factor &&
-      y >= 1360 * this.state.height_factor
+      x >= 146 * this.state.width_factor &&
+      x <= x1 &&
+      y <= 1360 * this.state.height_factor &&
+      y >=
+        770 * this.state.height_factor +
+          594 * this.state.height_factor * (this.state.height2_perc / 100)
     ) {
       data_array[15] = data_array[15] + 1;
     } else if (
-      x <= 660 * this.state.width_factor &&
-      x >= 146 * this.state.width_factor &&
-      y <= 1440 * this.state.height_factor &&
-      y >= 1360 * this.state.height_factor
+      x <= x2 &&
+      x >= x1 &&
+      y <= 1360 * this.state.height_factor &&
+      y >=
+        770 * this.state.height_factor +
+          594 * this.state.height_factor * (this.state.height2_perc / 100)
     ) {
       data_array[16] = data_array[16] + 1;
     } else if (
-      x >= 660 * this.state.width_factor &&
-      x <= 710 * this.state.width_factor &&
-      y <= 1440 * this.state.height_factor &&
-      y >= 1360 * this.state.height_factor
+      x >= x2 &&
+      x <= 660 * this.state.width_factor &&
+      y <= 1360 * this.state.height_factor &&
+      y >=
+        770 * this.state.height_factor +
+          594 * this.state.height_factor * (this.state.height2_perc / 100)
     ) {
       data_array[17] = data_array[17] + 1;
+    } else if (
+      x <= 146 * this.state.width_factor &&
+      x >= 0 &&
+      y >= 176 * this.state.height_factor &&
+      y <= 770 * this.state.height_factor
+    ) {
+      data_array[18] = data_array[18] + 1;
+    } else if (
+      x <= this.state.width &&
+      x >= 0 &&
+      y <= 176 * this.state.height_factor &&
+      y >= 0
+    ) {
+      data_array[19] = data_array[19] + 1;
+    } else if (
+      x <= this.state.width &&
+      x >= 660 * this.state.width_factor &&
+      y >= 176 * this.state.height_factor &&
+      y <= 770 * this.state.height_factor
+    ) {
+      data_array[20] = data_array[20] + 1;
+    } else if (
+      x <= 146 * this.state.width_factor &&
+      x >= 0 &&
+      y >= 770 * this.state.height_factor &&
+      y <= 1360 * this.state.height_factor
+    ) {
+      data_array[21] = data_array[21] + 1;
+    } else if (
+      x <= this.state.width &&
+      x >= 0 &&
+      y <= this.state.height &&
+      y >= 1360 * this.state.height_factor
+    ) {
+      data_array[22] = data_array[22] + 1;
+    } else if (
+      x <= this.state.width &&
+      x >= 660 * this.state.width_factor &&
+      y >= 770 * this.state.height_factor &&
+      y <= 1360 * this.state.height_factor
+    ) {
+      data_array[23] = data_array[23] + 1;
     }
     return data_array;
   };
@@ -1767,22 +1900,155 @@ class Field extends Component {
     data_array,
     player_played
   ) => {
+    let x1 =
+      146 * this.state.width_factor +
+      518 * this.state.width_factor * (this.state.width1_perc / 100);
+
+    let x2 =
+      146 * this.state.width_factor +
+      518 * this.state.width_factor * (this.state.width2_perc / 100);
+
+    let y1 =
+      176 * this.state.height_factor +
+      594 * this.state.height_factor * (this.state.height1_perc / 100);
+
+    let y2 =
+      176 * this.state.height_factor +
+      594 * this.state.height_factor * (this.state.height2_perc / 100);
+
+    let loc_array = [
+      [146 * this.state.width_factor, x1, 176 * this.state.height_factor, y1],
+      [x2, x1, 176 * this.state.height_factor, y1],
+      [x2, 660 * this.state.width_factor, 176 * this.state.height_factor, y1],
+      [146 * this.state.width_factor, x1, y2, y1],
+      [x2, x1, y2, y1],
+      [x2, 660 * this.state.width_factor, y2, y1],
+      [146 * this.state.width_factor, x1, y2, 770 * this.state.height_factor],
+      [x2, x1, y2, 770 * this.state.height_factor],
+      [x2, 660 * this.state.width_factor, y2, 770 * this.state.height_factor],
+      [
+        146 * this.state.width_factor,
+        x1,
+        770 * this.state.height_factor +
+          594 * this.state.height_factor * (this.state.height1_perc / 100),
+        770 * this.state.height_factor,
+      ],
+      [
+        x2,
+        x1,
+        770 * this.state.height_factor +
+          594 * this.state.height_factor * (this.state.height1_perc / 100),
+        770 * this.state.height_factor,
+      ],
+      [
+        x2,
+        660 * this.state.width_factor,
+        770 * this.state.height_factor +
+          594 * this.state.height_factor * (this.state.height1_perc / 100),
+        770 * this.state.height_factor,
+      ],
+      [
+        146 * this.state.width_factor,
+        x1,
+        770 * this.state.height_factor +
+          594 * this.state.height_factor * (this.state.height1_perc / 100),
+        770 * this.state.height_factor +
+          594 * this.state.height_factor * (this.state.height2_perc / 100),
+      ],
+      [
+        x2,
+        x1,
+        770 * this.state.height_factor +
+          594 * this.state.height_factor * (this.state.height1_perc / 100),
+        770 * this.state.height_factor +
+          594 * this.state.height_factor * (this.state.height2_perc / 100),
+      ],
+      [
+        x2,
+        660 * this.state.width_factor,
+        770 * this.state.height_factor +
+          594 * this.state.height_factor * (this.state.height1_perc / 100),
+        770 * this.state.height_factor +
+          594 * this.state.height_factor * (this.state.height2_perc / 100),
+      ],
+      [
+        146 * this.state.width_factor,
+        x1,
+        1360 * this.state.height_factor,
+        770 * this.state.height_factor +
+          594 * this.state.height_factor * (this.state.height2_perc / 100),
+      ],
+      [
+        x2,
+        x1,
+        1360 * this.state.height_factor,
+        770 * this.state.height_factor +
+          594 * this.state.height_factor * (this.state.height2_perc / 100),
+      ],
+      [
+        x2,
+        660 * this.state.width_factor,
+        1360 * this.state.height_factor,
+        770 * this.state.height_factor +
+          594 * this.state.height_factor * (this.state.height2_perc / 100),
+      ],
+      [
+        146 * this.state.width_factor,
+        0,
+        176 * this.state.height_factor,
+        770 * this.state.height_factor,
+      ],
+      [this.state.width, 0, 176 * this.state.height_factor, 0],
+      [
+        this.state.width,
+        660 * this.state.width_factor,
+        176 * this.state.height_factor,
+        770 * this.state.height_factor,
+      ],
+      [
+        146 * this.state.width_factor,
+        0,
+        770 * this.state.height_factor,
+        1360 * this.state.height_factor,
+      ],
+      [this.state.width, 0, this.state.height, 1360 * this.state.height_factor],
+      [
+        this.state.width,
+        660 * this.state.width_factor,
+        770 * this.state.height_factor,
+        1360 * this.state.height_factor,
+      ],
+    ];
     if (player_played === "top") {
       for (let i = 9; i < 18; i++) {
         const canvas = this.canvasRef.current;
         const ctx = canvas.getContext("2d");
         let perc_val =
           ((data_array[i] / total_length) * 100).toFixed(0).toString() + "%";
-        let location = PERC_LOCATION_VAL[i];
+        let location = loc_array[i];
+        let x = (location[0] + location[1]) / 2;
+        let y = (location[2] + location[3]) / 2;
 
         ctx.beginPath();
         ctx.fillStyle = "teal";
         ctx.font = "bold 12px Arial";
-        ctx.fillText(
-          perc_val,
-          location[0] * this.state.width_factor,
-          location[1] * this.state.height_factor
-        );
+        ctx.fillText(perc_val, x, y);
+        ctx.closePath();
+      }
+      for (let i = 21; i < 24; i++) {
+        const canvas = this.canvasRef.current;
+        const ctx = canvas.getContext("2d");
+        console.log("data", data_array[i], total_length);
+        let perc_val =
+          ((data_array[i] / total_length) * 100).toFixed(0).toString() + "%";
+        let location = loc_array[i];
+        let x = (location[0] + location[1]) / 2;
+        let y = (location[2] + location[3]) / 2;
+
+        ctx.beginPath();
+        ctx.fillStyle = "rgb(255, 154, 71)";
+        ctx.font = "bold 12px Arial";
+        ctx.fillText(perc_val, x, y);
         ctx.closePath();
       }
     } else if (player_played === "bottom") {
@@ -1791,16 +2057,29 @@ class Field extends Component {
         const ctx = canvas.getContext("2d");
         let perc_val =
           ((data_array[i] / total_length) * 100).toFixed(0).toString() + "%";
-        let location = PERC_LOCATION_VAL[i];
+        let location = loc_array[i];
+        let x = (location[0] + location[1]) / 2;
+        let y = (location[2] + location[3]) / 2;
 
         ctx.beginPath();
         ctx.fillStyle = "rgb(255, 154, 71)";
         ctx.font = "bold 12px Arial";
-        ctx.fillText(
-          perc_val,
-          location[0] * this.state.width_factor,
-          location[1] * this.state.height_factor
-        );
+        ctx.fillText(perc_val, x, y);
+        ctx.closePath();
+      }
+      for (let i = 18; i < 21; i++) {
+        const canvas = this.canvasRef.current;
+        const ctx = canvas.getContext("2d");
+        let perc_val =
+          ((data_array[i] / total_length) * 100).toFixed(0).toString() + "%";
+        let location = loc_array[i];
+        let x = (location[0] + location[1]) / 2;
+        let y = (location[2] + location[3]) / 2;
+
+        ctx.beginPath();
+        ctx.fillStyle = "rgb(255, 154, 71)";
+        ctx.font = "bold 12px Arial";
+        ctx.fillText(perc_val, x, y);
         ctx.closePath();
       }
     }
