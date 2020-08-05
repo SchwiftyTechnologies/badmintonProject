@@ -12,6 +12,8 @@ const initialState = {
   averageRecBot: 0,
   totalRecBot: 0,
   count: 0,
+  totalHeightTop: 0,
+  totalHeightBot: 0
 };
 
 export default function statsReducer(state = initialState, action) {
@@ -121,6 +123,15 @@ export default function statsReducer(state = initialState, action) {
         ...state,
         count: new_count,
       };
+    }
+    case "UPDATE_HEIGHT": {
+      let new_height_of_top = state.totalHeightTop + action.payload.valForTop
+      let new_height_of_bot = state.totalHeightBot + action.payload.valForBot
+      return {
+        ...state,
+        totalHeightTop: new_height_of_top,
+        totalHeightBot: new_height_of_bot
+      }
     }
     default:
       return { ...state };
