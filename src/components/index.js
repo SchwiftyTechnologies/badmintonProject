@@ -3832,7 +3832,27 @@ class Badminton extends Component {
                     }
                   }}
                 >
-                  Points
+                  Top
+              </button>
+                <button
+                  className="btn_custom"
+                  style={{
+                    marginTop: "10px",
+                    marginBottom: "10px",
+                    padding: "14px 24px",
+                  }}
+                  onClick={() => {
+                    if (
+                      this.state.top_backhand === true ||
+                      this.state.top_forehand === true
+                    ) {
+                      this.onClickPoints(0);
+                    } else {
+                      this.onClickPoints(1);
+                    }
+                  }}
+                >
+                  Bottom
               </button>
                 <div className="right_buttons_cont">
                   <button
@@ -4004,26 +4024,6 @@ class Badminton extends Component {
                     Net
                 </button>
                 </div>
-                <button
-                  className="btn_custom"
-                  style={{
-                    marginTop: "10px",
-                    marginBottom: "10px",
-                    padding: "14px 24px",
-                  }}
-                  onClick={() => {
-                    if (
-                      this.state.top_backhand === true ||
-                      this.state.top_forehand === true
-                    ) {
-                      this.onClickPoints(0);
-                    } else {
-                      this.onClickPoints(1);
-                    }
-                  }}
-                >
-                  Points
-              </button>
               </div>
             )}
         </div>
