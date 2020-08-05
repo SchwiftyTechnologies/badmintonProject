@@ -54,12 +54,12 @@ class Field extends Component {
       ctx.moveTo(
         146 * this.state.width_factor,
         176 * this.state.height_factor +
-          594 * this.state.height_factor * (this.state.height1_perc / 100)
+        594 * this.state.height_factor * (this.state.height1_perc / 100)
       );
       ctx.lineTo(
         660 * this.state.width_factor,
         176 * this.state.height_factor +
-          594 * this.state.height_factor * (this.state.height1_perc / 100)
+        594 * this.state.height_factor * (this.state.height1_perc / 100)
       );
       ctx.stroke();
 
@@ -67,24 +67,24 @@ class Field extends Component {
       ctx.moveTo(
         146 * this.state.width_factor,
         176 * this.state.height_factor +
-          594 * this.state.height_factor * (this.state.height2_perc / 100)
+        594 * this.state.height_factor * (this.state.height2_perc / 100)
       );
       ctx.lineTo(
         660 * this.state.width_factor,
         176 * this.state.height_factor +
-          594 * this.state.height_factor * (this.state.height2_perc / 100)
+        594 * this.state.height_factor * (this.state.height2_perc / 100)
       );
       ctx.stroke();
 
       //vertical line 1
       ctx.moveTo(
         146 * this.state.width_factor +
-          518 * this.state.width_factor * (this.state.width1_perc / 100),
+        518 * this.state.width_factor * (this.state.width1_perc / 100),
         176 * this.state.height_factor
       );
       ctx.lineTo(
         146 * this.state.width_factor +
-          518 * this.state.width_factor * (this.state.width1_perc / 100),
+        518 * this.state.width_factor * (this.state.width1_perc / 100),
         770 * this.state.height_factor
       );
       ctx.stroke();
@@ -92,12 +92,12 @@ class Field extends Component {
       //vertical line 2
       ctx.moveTo(
         146 * this.state.width_factor +
-          518 * this.state.width_factor * (this.state.width2_perc / 100),
+        518 * this.state.width_factor * (this.state.width2_perc / 100),
         176 * this.state.height_factor
       );
       ctx.lineTo(
         146 * this.state.width_factor +
-          518 * this.state.width_factor * (this.state.width2_perc / 100),
+        518 * this.state.width_factor * (this.state.width2_perc / 100),
         770 * this.state.height_factor
       );
       ctx.stroke();
@@ -194,12 +194,12 @@ class Field extends Component {
       ctx.moveTo(
         146 * this.state.width_factor,
         770 * this.state.height_factor +
-          594 * this.state.height_factor * (this.state.height1_perc / 100)
+        594 * this.state.height_factor * (this.state.height1_perc / 100)
       );
       ctx.lineTo(
         660 * this.state.width_factor,
         770 * this.state.height_factor +
-          594 * this.state.height_factor * (this.state.height1_perc / 100)
+        594 * this.state.height_factor * (this.state.height1_perc / 100)
       );
       ctx.stroke();
 
@@ -207,24 +207,24 @@ class Field extends Component {
       ctx.moveTo(
         146 * this.state.width_factor,
         770 * this.state.height_factor +
-          594 * this.state.height_factor * (this.state.height2_perc / 100)
+        594 * this.state.height_factor * (this.state.height2_perc / 100)
       );
       ctx.lineTo(
         660 * this.state.width_factor,
         770 * this.state.height_factor +
-          594 * this.state.height_factor * (this.state.height2_perc / 100)
+        594 * this.state.height_factor * (this.state.height2_perc / 100)
       );
       ctx.stroke();
 
       //vertical line 1
       ctx.moveTo(
         146 * this.state.width_factor +
-          518 * this.state.width_factor * (this.state.width1_perc / 100),
+        518 * this.state.width_factor * (this.state.width1_perc / 100),
         770 * this.state.height_factor
       );
       ctx.lineTo(
         146 * this.state.width_factor +
-          518 * this.state.width_factor * (this.state.width1_perc / 100),
+        518 * this.state.width_factor * (this.state.width1_perc / 100),
         1360 * this.state.height_factor
       );
       ctx.stroke();
@@ -232,12 +232,12 @@ class Field extends Component {
       //vertical line 2
       ctx.moveTo(
         146 * this.state.width_factor +
-          518 * this.state.width_factor * (this.state.width2_perc / 100),
+        518 * this.state.width_factor * (this.state.width2_perc / 100),
         770 * this.state.height_factor
       );
       ctx.lineTo(
         146 * this.state.width_factor +
-          518 * this.state.width_factor * (this.state.width2_perc / 100),
+        518 * this.state.width_factor * (this.state.width2_perc / 100),
         1360 * this.state.height_factor
       );
       ctx.stroke();
@@ -1210,8 +1210,8 @@ class Field extends Component {
         x >= 146 * this.state.width_factor &&
         x <= x1 &&
         y <=
-          770 * this.state.height_factor +
-            594 * this.state.height_factor * (this.state.height1_perc / 100) &&
+        770 * this.state.height_factor +
+        594 * this.state.height_factor * (this.state.height1_perc / 100) &&
         y >= 770 * this.state.height_factor
       ) {
         this.highlightSegment([
@@ -1226,7 +1226,7 @@ class Field extends Component {
             x1,
             770 * this.state.height_factor,
             770 * this.state.height_factor +
-              594 * this.state.height_factor * (this.state.height1_perc / 100),
+            594 * this.state.height_factor * (this.state.height1_perc / 100),
           ],
           9,
           "bottom"
@@ -1235,8 +1235,8 @@ class Field extends Component {
         x <= x2 &&
         x >= x1 &&
         y <=
-          770 * this.state.height_factor +
-            594 * this.state.height_factor * (this.state.height1_perc / 100) &&
+        770 * this.state.height_factor +
+        594 * this.state.height_factor * (this.state.height1_perc / 100) &&
         y >= 770 * this.state.height_factor
       ) {
         this.highlightSegment([
@@ -1251,7 +1251,7 @@ class Field extends Component {
             x2,
             770 * this.state.height_factor,
             770 * this.state.height_factor +
-              594 * this.state.height_factor * (this.state.height1_perc / 100),
+            594 * this.state.height_factor * (this.state.height1_perc / 100),
           ],
           10,
           "bottom"
@@ -1260,8 +1260,8 @@ class Field extends Component {
         x >= x2 &&
         x <= 660 * this.state.width_factor &&
         y <=
-          770 * this.state.height_factor +
-            594 * this.state.height_factor * (this.state.height1_perc / 100) &&
+        770 * this.state.height_factor +
+        594 * this.state.height_factor * (this.state.height1_perc / 100) &&
         y >= 770 * this.state.height_factor
       ) {
         this.highlightSegment([
@@ -1276,7 +1276,7 @@ class Field extends Component {
             660 * this.state.width_factor,
             770 * this.state.height_factor,
             770 * this.state.height_factor +
-              594 * this.state.height_factor * (this.state.height1_perc / 100),
+            594 * this.state.height_factor * (this.state.height1_perc / 100),
           ],
           11,
           "bottom"
@@ -1285,30 +1285,30 @@ class Field extends Component {
         x >= 146 * this.state.width_factor &&
         x <= x1 &&
         y >=
-          770 * this.state.height_factor +
-            594 * this.state.height_factor * (this.state.height1_perc / 100) &&
+        770 * this.state.height_factor +
+        594 * this.state.height_factor * (this.state.height1_perc / 100) &&
         y <=
-          770 * this.state.height_factor +
-            594 * this.state.height_factor * (this.state.height2_perc / 100)
+        770 * this.state.height_factor +
+        594 * this.state.height_factor * (this.state.height2_perc / 100)
       ) {
         this.highlightSegment([
           146 * this.state.width_factor,
           x1 - 146 * this.state.width_factor,
           770 * this.state.height_factor +
-            594 * this.state.height_factor * (this.state.height1_perc / 100),
+          594 * this.state.height_factor * (this.state.height1_perc / 100),
           770 * this.state.height_factor +
-            594 * this.state.height_factor * (this.state.height2_perc / 100) -
-            (770 * this.state.height_factor +
-              594 * this.state.height_factor * (this.state.height1_perc / 100)),
+          594 * this.state.height_factor * (this.state.height2_perc / 100) -
+          (770 * this.state.height_factor +
+            594 * this.state.height_factor * (this.state.height1_perc / 100)),
         ]);
         this.clickCheckerFunction(
           [
             146 * this.state.width_factor,
             x1,
             770 * this.state.height_factor +
-              594 * this.state.height_factor * (this.state.height1_perc / 100),
+            594 * this.state.height_factor * (this.state.height1_perc / 100),
             770 * this.state.height_factor +
-              594 * this.state.height_factor * (this.state.height2_perc / 100),
+            594 * this.state.height_factor * (this.state.height2_perc / 100),
           ],
           12,
           "bottom"
@@ -1317,30 +1317,30 @@ class Field extends Component {
         x <= x2 &&
         x >= x1 &&
         y >=
-          770 * this.state.height_factor +
-            594 * this.state.height_factor * (this.state.height1_perc / 100) &&
+        770 * this.state.height_factor +
+        594 * this.state.height_factor * (this.state.height1_perc / 100) &&
         y <=
-          770 * this.state.height_factor +
-            594 * this.state.height_factor * (this.state.height2_perc / 100)
+        770 * this.state.height_factor +
+        594 * this.state.height_factor * (this.state.height2_perc / 100)
       ) {
         this.highlightSegment([
           x1,
           x2 - x1,
           770 * this.state.height_factor +
-            594 * this.state.height_factor * (this.state.height1_perc / 100),
+          594 * this.state.height_factor * (this.state.height1_perc / 100),
           770 * this.state.height_factor +
-            594 * this.state.height_factor * (this.state.height2_perc / 100) -
-            (770 * this.state.height_factor +
-              594 * this.state.height_factor * (this.state.height1_perc / 100)),
+          594 * this.state.height_factor * (this.state.height2_perc / 100) -
+          (770 * this.state.height_factor +
+            594 * this.state.height_factor * (this.state.height1_perc / 100)),
         ]);
         this.clickCheckerFunction(
           [
             x1,
             x2,
             770 * this.state.height_factor +
-              594 * this.state.height_factor * (this.state.height1_perc / 100),
+            594 * this.state.height_factor * (this.state.height1_perc / 100),
             770 * this.state.height_factor +
-              594 * this.state.height_factor * (this.state.height2_perc / 100),
+            594 * this.state.height_factor * (this.state.height2_perc / 100),
           ],
           13,
           "bottom"
@@ -1349,30 +1349,30 @@ class Field extends Component {
         x >= x2 &&
         x <= 660 * this.state.width_factor &&
         y >=
-          770 * this.state.height_factor +
-            594 * this.state.height_factor * (this.state.height1_perc / 100) &&
+        770 * this.state.height_factor +
+        594 * this.state.height_factor * (this.state.height1_perc / 100) &&
         y <=
-          770 * this.state.height_factor +
-            594 * this.state.height_factor * (this.state.height2_perc / 100)
+        770 * this.state.height_factor +
+        594 * this.state.height_factor * (this.state.height2_perc / 100)
       ) {
         this.highlightSegment([
           x2,
           660 * this.state.width_factor - x2,
           770 * this.state.height_factor +
-            594 * this.state.height_factor * (this.state.height1_perc / 100),
+          594 * this.state.height_factor * (this.state.height1_perc / 100),
           770 * this.state.height_factor +
-            594 * this.state.height_factor * (this.state.height2_perc / 100) -
-            (770 * this.state.height_factor +
-              594 * this.state.height_factor * (this.state.height1_perc / 100)),
+          594 * this.state.height_factor * (this.state.height2_perc / 100) -
+          (770 * this.state.height_factor +
+            594 * this.state.height_factor * (this.state.height1_perc / 100)),
         ]);
         this.clickCheckerFunction(
           [
             x2,
             660 * this.state.width_factor,
             770 * this.state.height_factor +
-              594 * this.state.height_factor * (this.state.height1_perc / 100),
+            594 * this.state.height_factor * (this.state.height1_perc / 100),
             770 * this.state.height_factor +
-              594 * this.state.height_factor * (this.state.height2_perc / 100),
+            594 * this.state.height_factor * (this.state.height2_perc / 100),
           ],
           14,
           "bottom"
@@ -1382,24 +1382,24 @@ class Field extends Component {
         x <= x1 &&
         y <= 1360 * this.state.height_factor &&
         y >=
-          770 * this.state.height_factor +
-            594 * this.state.height_factor * (this.state.height2_perc / 100)
+        770 * this.state.height_factor +
+        594 * this.state.height_factor * (this.state.height2_perc / 100)
       ) {
         this.highlightSegment([
           146 * this.state.width_factor,
           x1 - 146 * this.state.width_factor,
           770 * this.state.height_factor +
-            594 * this.state.height_factor * (this.state.height2_perc / 100),
+          594 * this.state.height_factor * (this.state.height2_perc / 100),
           1360 * this.state.height_factor -
-            (770 * this.state.height_factor +
-              594 * this.state.height_factor * (this.state.height2_perc / 100)),
+          (770 * this.state.height_factor +
+            594 * this.state.height_factor * (this.state.height2_perc / 100)),
         ]);
         this.clickCheckerFunction(
           [
             146 * this.state.width_factor,
             x1,
             770 * this.state.height_factor +
-              594 * this.state.height_factor * (this.state.height2_perc / 100),
+            594 * this.state.height_factor * (this.state.height2_perc / 100),
             1360 * this.state.height_factor,
           ],
           15,
@@ -1410,24 +1410,24 @@ class Field extends Component {
         x >= x1 &&
         y <= 1360 * this.state.height_factor &&
         y >=
-          770 * this.state.height_factor +
-            594 * this.state.height_factor * (this.state.height2_perc / 100)
+        770 * this.state.height_factor +
+        594 * this.state.height_factor * (this.state.height2_perc / 100)
       ) {
         this.highlightSegment([
           x1,
           x2 - x1,
           770 * this.state.height_factor +
-            594 * this.state.height_factor * (this.state.height2_perc / 100),
+          594 * this.state.height_factor * (this.state.height2_perc / 100),
           1360 * this.state.height_factor -
-            (770 * this.state.height_factor +
-              594 * this.state.height_factor * (this.state.height2_perc / 100)),
+          (770 * this.state.height_factor +
+            594 * this.state.height_factor * (this.state.height2_perc / 100)),
         ]);
         this.clickCheckerFunction(
           [
             x1,
             x2,
             770 * this.state.height_factor +
-              594 * this.state.height_factor * (this.state.height2_perc / 100),
+            594 * this.state.height_factor * (this.state.height2_perc / 100),
             1360 * this.state.height_factor,
           ],
           16,
@@ -1438,24 +1438,24 @@ class Field extends Component {
         x <= 660 * this.state.width_factor &&
         y <= 1360 * this.state.height_factor &&
         y >=
-          770 * this.state.height_factor +
-            594 * this.state.height_factor * (this.state.height2_perc / 100)
+        770 * this.state.height_factor +
+        594 * this.state.height_factor * (this.state.height2_perc / 100)
       ) {
         this.highlightSegment([
           x2,
           660 * this.state.width_factor - x2,
           770 * this.state.height_factor +
-            594 * this.state.height_factor * (this.state.height2_perc / 100),
+          594 * this.state.height_factor * (this.state.height2_perc / 100),
           1360 * this.state.height_factor -
-            (770 * this.state.height_factor +
-              594 * this.state.height_factor * (this.state.height2_perc / 100)),
+          (770 * this.state.height_factor +
+            594 * this.state.height_factor * (this.state.height2_perc / 100)),
         ]);
         this.clickCheckerFunction(
           [
             x2,
             660 * this.state.width_factor,
             770 * this.state.height_factor +
-              594 * this.state.height_factor * (this.state.height2_perc / 100),
+            594 * this.state.height_factor * (this.state.height2_perc / 100),
             1360 * this.state.height_factor,
           ],
           17,
@@ -2128,7 +2128,14 @@ class Field extends Component {
         this.drawCourt();
         nextProps.rightSideData.map((item, index) => {
           this.drawShotIndRightSide(item);
+          this.drawFeetInRight(item)
         });
+        const shots = nextProps.rightSideData
+        shots.map((item, index, shots) => {
+          this.drawDistanceInRightSide(item, shots[index + 1])
+        })
+
+
       } else {
         if (nextProps.patter_length !== -1) {
           const canvas = this.canvasRef.current;
@@ -2460,7 +2467,103 @@ class Field extends Component {
     }
   };
 
+  drawFeetInRight = (shot) => {
+    const canvas = this.canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    ctx.beginPath();
+    ctx.setLineDash([2]);
+    ctx.moveTo(
+      ((shot.location_Init_start_top[0][0]) * this.state.width_factor),
+      ((shot.location_Init_start_top[0][1]) * this.state.height_factor)
+    );
+    ctx.lineTo(
+      ((shot.location_Init_start_top[1][0]) * this.state.width_factor),
+      ((shot.location_Init_start_top[1][1]) * this.state.height_factor)
+    );
+    ctx.strokeStyle = "red";
+    ctx.lineWidth = 4;
+    ctx.stroke();
+    ctx.moveTo(
+      ((shot.location_Init_end_top[0][0]) * this.state.width_factor),
+      ((shot.location_Init_end_top[0][1]) * this.state.height_factor)
+    );
+    ctx.lineTo(
+      ((shot.location_Init_end_top[1][0]) * this.state.width_factor),
+      ((shot.location_Init_end_top[1][1]) * this.state.height_factor)
+    );
+    ctx.strokeStyle = "red";
+    ctx.lineWidth = 4;
+    ctx.stroke();
+    ctx.closePath();
+    ctx.moveTo(
+      ((shot.location_Init_start_bottom[0][0]) * this.state.width_factor),
+      ((shot.location_Init_start_bottom[0][1]) * this.state.height_factor)
+    );
+    ctx.lineTo(
+      (shot.location_Init_start_bottom[1][0]) * this.state.width_factor,
+      (shot.location_Init_start_bottom[1][1]) * this.state.height_factor
+    );
+    ctx.strokeStyle = "red";
+    ctx.lineWidth = 4;
+    ctx.stroke();
+    ctx.moveTo(
+      ((shot.location_Init_end_bottom[0][0]) * this.state.width_factor),
+      ((shot.location_Init_end_bottom[0][1]) * this.state.height_factor)
+    );
+    ctx.lineTo(
+      (shot.location_Init_end_bottom[1][0]) * this.state.width_factor,
+      (shot.location_Init_end_bottom[1][1]) * this.state.height_factor
+    );
+    ctx.strokeStyle = "red";
+    ctx.lineWidth = 4;
+    ctx.stroke();
+    ctx.closePath();
+
+  }
+
+  drawDistanceInRightSide = (shot, nextShot) => {
+    const canvas = this.canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    if (typeof nextShot != 'undefined') {
+
+      ctx.beginPath();
+      ctx.setLineDash([0]);
+      ctx.moveTo(
+        ((shot.location_Init_start_top[0][0] + shot.location_Init_start_top[1][0]) * this.state.width_factor) / 2,
+        ((shot.location_Init_start_top[0][1] + shot.location_Init_start_top[1][1]) * this.state.height_factor) / 2
+      );
+      ctx.lineTo(
+        ((nextShot.location_Init_end_top[0][0] + nextShot.location_Init_end_top[1][0]) * this.state.width_factor) / 2,
+        ((nextShot.location_Init_end_top[0][1] + nextShot.location_Init_end_top[1][1]) * this.state.height_factor) / 2
+      );
+      ctx.strokeStyle = "rgb(255, 154, 71)";
+      ctx.lineWidth = 4;
+      ctx.stroke();
+      ctx.closePath();
+
+      ctx.beginPath();
+      ctx.setLineDash([0]);
+      ctx.moveTo(
+        ((shot.location_Init_start_bottom[0][0] + shot.location_Init_start_bottom[1][0]) * this.state.width_factor) / 2,
+        ((shot.location_Init_start_bottom[0][1] + shot.location_Init_start_bottom[1][1]) * this.state.height_factor) / 2
+      );
+      ctx.lineTo(
+        ((nextShot.location_Init_end_bottom[0][0] + nextShot.location_Init_end_bottom[1][0]) * this.state.width_factor) / 2,
+        ((nextShot.location_Init_end_bottom[0][1] + nextShot.location_Init_end_bottom[1][1]) * this.state.height_factor) / 2
+      );
+      ctx.strokeStyle = "teal";
+      ctx.lineWidth = 4;
+      ctx.stroke();
+      ctx.closePath();
+
+
+    }
+
+
+  }
+
   render() {
+
     return (
       <div>
         <canvas
