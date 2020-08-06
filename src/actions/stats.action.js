@@ -97,21 +97,19 @@ export const UpdateHeight = (h1, h2, player) => {
       type: "UPDATE_HEIGHT",
       payload: {
         valForTop: h1,
-        valForBot: h2
-      }
-    }
-  }
-  else {
+        valForBot: h2,
+      },
+    };
+  } else {
     return {
       type: "UPDATE_HEIGHT",
       payload: {
         valForTop: h2,
-        valForBot: h1
-      }
-    }
+        valForBot: h1,
+      },
+    };
   }
-
-}
+};
 
 export const ResetCount = () => {
   return {

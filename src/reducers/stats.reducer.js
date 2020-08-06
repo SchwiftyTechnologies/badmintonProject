@@ -13,7 +13,9 @@ const initialState = {
   totalRecBot: 0,
   count: 0,
   totalHeightTop: 0,
-  totalHeightBot: 0
+  totalHeightBot: 0,
+  averageHeightBot: 0,
+  averageHeightTop: 0,
 };
 
 export default function statsReducer(state = initialState, action) {
@@ -109,6 +111,10 @@ export default function statsReducer(state = initialState, action) {
         totalRecTop: 0,
         averageRecBot: 0,
         totalRecBot: 0,
+        totalHeightTop: 0,
+        totalHeightBot: 0,
+        averageHeightBot: 0,
+        averageHeightTop: 0,
       };
     }
     case "RESET_COUNT": {
@@ -125,13 +131,27 @@ export default function statsReducer(state = initialState, action) {
       };
     }
     case "UPDATE_HEIGHT": {
-      let new_height_of_top = state.totalHeightTop + action.payload.valForTop
-      let new_height_of_bot = state.totalHeightBot + action.payload.valForBot
+      let new_height_of_top = parseFloat(
+        parseFloat(state.totalHeightTop) +
+          parseFloat(action.payload.valForTop) / 100
+      );
+      let new_height_of_bot = parseFloat(
+        parseFloat(state.totalHeightBot) +
+          parseFloat(action.payload.valForBot) / 100
+      );
+      let avg_height_top = (
+        new_height_of_top / parseFloat(state.count)
+      ).toFixed(2);
+      let avg_height_bot = (
+        new_height_of_bot / parseFloat(state.count)
+      ).toFixed(2);
       return {
         ...state,
-        totalHeightTop: new_height_of_top,
-        totalHeightBot: new_height_of_bot
-      }
+        totalHeightTop: new_height_of_top.toFixed(2),
+        totalHeightBot: new_height_of_bot.toFixed(2),
+        averageHeightBot: avg_height_bot,
+        averageHeightTop: avg_height_top,
+      };
     }
     default:
       return { ...state };
