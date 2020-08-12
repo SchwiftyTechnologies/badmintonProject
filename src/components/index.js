@@ -15,6 +15,22 @@ import badminton_rally_data from "../Badminton_data_rally_string.json";
 import badminton_points_data from "../Badminton_points_data_14.json";
 import courtPic from "../assets/pitch_to_match.jpg";
 import VideoPlayer from "./videoPlayer";
+import SelectImg from "../assets/select.png";
+import CheckImg from "../assets/check.png";
+import UnCheckImg from "../assets/uncheck.png";
+import SelectFill from "../assets/selectfill.png";
+
+import {
+  UpdateStretch,
+  ResetStretch,
+  UpdateDistance,
+  ResetDistance,
+  UpdateReac,
+  AddCount,
+  ResetCount,
+  UpdateHeight,
+  SetSelectedShot,
+} from "../actions/stats.action";
 
 class Badminton extends Component {
   constructor(props) {
@@ -22,7 +38,7 @@ class Badminton extends Component {
 
     this.state = {
       rally_number: 1,
-      shot_type: ["Smash", "Lob", "Drive", "Toss", "Serve", "Nill"],
+      shot_type: ["Smash", "Drop", "Drive", "Clear", "Serve", "Nill"],
       shot_hand: ["A", "F", "B"],
       shot_type_top_1: "Smash",
       shot_type_top_2: "Nill",
@@ -136,6 +152,9 @@ class Badminton extends Component {
       width1_perc: 33,
       width2_perc: 67,
       isBottom: false,
+      multiSelect: false,
+      selectAll: true,
+      firstClickVideo: true,
     };
   }
 
@@ -431,13 +450,13 @@ class Badminton extends Component {
       return "A";
     } else if (type === "Serve" && hand === "B") {
       return "B";
-    } else if (type === "Lob" && hand === "F") {
+    } else if (type === "Drop" && hand === "F") {
       return "C";
-    } else if (type === "Lob" && hand === "B") {
+    } else if (type === "Drop" && hand === "B") {
       return "D";
-    } else if (type === "Toss" && hand === "F") {
+    } else if (type === "Clear" && hand === "F") {
       return "E";
-    } else if (type === "Toss" && hand === "B") {
+    } else if (type === "Clear" && hand === "B") {
       return "F";
     } else if (type === "Drive" && hand === "F") {
       return "G";
@@ -641,6 +660,7 @@ class Badminton extends Component {
   };
 
   onClickPoints = (index) => {
+    this.props._SetSelectedShot([0]);
     let badminton_points_data_array = Object.values(badminton_points_data);
     let final_array = [];
     if (index === 0) {
@@ -1076,6 +1096,7 @@ class Badminton extends Component {
   };
 
   onClickGo = (index) => {
+    this.props._SetSelectedShot([0]);
     let final_array = [];
     let patArray = [];
     this.setState({ isRightSide: false });
@@ -2037,7 +2058,7 @@ class Badminton extends Component {
         let info_dic = this.state.info_dictionary[x + 1];
         let patArrayVal = patArray[x];
 
-        if (patArrayVal.length > 0) {
+        if (patArrayVal && patArrayVal.length > 0) {
           patArrayVal.map((item, index) => {
             if (info_dic.stretchTop[item]) {
               topShotCount += 1;
@@ -2457,7 +2478,7 @@ class Badminton extends Component {
               <button
                 className="btn_small_orange"
                 onClick={() => {
-                  this.setState({ videoPlayer: false });
+                  this.setState({ videoPlayer: false, url: "" });
                 }}
               >
                 Back
@@ -2917,7 +2938,7 @@ class Badminton extends Component {
                     {this.state.percFirstShot ? (
                       <div
                         className="shot_checkbox"
-                        style={{ marginLeft: "6%" }}
+                        style={{ marginLeft: "6%", marginTop: "1%" }}
                         onClick={() => {
                           // this.setState({ percFirstShot: !this.state.firstshot });
                         }}
@@ -2930,7 +2951,7 @@ class Badminton extends Component {
                     ) : (
                       <div
                         className="shot_checkbox"
-                        style={{ marginLeft: "6%" }}
+                        style={{ marginLeft: "6%", marginTop: "1%" }}
                         onClick={() => {
                           this.setState({
                             percFirstShot: true,
@@ -3356,37 +3377,277 @@ class Badminton extends Component {
           <div className="column_2">
             <div className="column_2_1">
               {this.state.badminton_array ? (
-                <Field
-                  shots={this.state.graph_data}
-                  pattern_array={this.state.pattern_array}
-                  patter_length={this.state.patter_length}
-                  firstshot={this.state.firstshot}
-                  secondshot={this.state.secondshot}
-                  thirdshot={this.state.thirdshot}
-                  perc={this.state.percentage}
-                  arrows={this.state.shots}
-                  percFirstShot={this.state.percFirstShot}
-                  percSecondShot={this.state.percSecondShot}
-                  percThirdShot={this.state.percThirdShot}
-                  isRightSide={this.state.isRightSide}
-                  rightSideData={this.state.rightSideData}
-                  stretchTop={this.state.stretchTop}
-                  stretchBot={this.state.stretchBot}
-                  distanceTop={this.state.distanceTop}
-                  distanceBot={this.state.distanceBot}
-                  indShot={this.state.indShot}
-                  fromShot={this.state.fromShot}
-                  toShot={this.state.toShot}
-                  setVideoSettings={this.setVideoSettings}
-                  height1_perc={this.state.height1_perc}
-                  height2_perc={this.state.height2_perc}
-                  width1_perc={this.state.width1_perc}
-                  width2_perc={this.state.width2_perc}
-                  placrecTop={this.state.placrecTop}
-                  placrecBot={this.state.placrecBot}
-                  isBottom={this.state.isBottom}
-                  setStretch={this.setStretch}
-                ></Field>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                  }}
+                >
+                  <img
+                    src={PlayImage}
+                    height={20}
+                    width={20}
+                    className="image_rotate"
+                    onClick={() => {
+                      if (this.state.isRightSide) {
+                        if (
+                          this.props.stats.selectedShot[0] > 0 &&
+                          this.props.stats.selectedShot[0] <=
+                            this.state.toShot &&
+                          this.props.stats.selectedShot[0] > this.state.fromShot
+                        ) {
+                          let ind =
+                            parseInt(this.props.stats.selectedShot[0]) - 1;
+                          this.props._SetSelectedShot([ind]);
+                        }
+                      } else {
+                        let shotCount = 0;
+
+                        if (this.props.stats.selectedShot[3]) {
+                          if (
+                            this.props.stats.selectedShot[3] - 1 <=
+                            this.state.fromShot
+                          ) {
+                            if (
+                              this.state.toShot +
+                                1 -
+                                2 * this.state.currentDiff >=
+                              0
+                            ) {
+                              let fromShot =
+                                this.state.toShot -
+                                2 * this.state.currentDiff +
+                                1;
+                              let toShot =
+                                this.state.toShot - this.state.currentDiff;
+                              this.setState({ fromShot, toShot });
+                            }
+                          }
+                          shotCount = this.props.stats.selectedShot[3];
+                        }
+                        if (
+                          this.state.pattern_array[
+                            this.props.stats.selectedShot[0]
+                          ].length -
+                            1 >
+                          this.props.stats.selectedShot[1]
+                        ) {
+                          if (
+                            this.props.stats.selectedShot[1] <
+                              this.state.toShot &&
+                            this.props.stats.selectedShot[1] >=
+                              this.state.fromShot
+                          ) {
+                            let ind =
+                              parseInt(this.props.stats.selectedShot[1]) - 1;
+                            this.props._SetSelectedShot([
+                              this.props.stats.selectedShot[0],
+                              ind,
+                              this.props.stats.selectedShot[2],
+                              shotCount - 1,
+                            ]);
+                          }
+                        } else if (
+                          this.state.pattern_array.length - 1 >
+                          this.props.stats.selectedShot[0]
+                        ) {
+                          for (
+                            let i = this.props.stats.selectedShot[0] - 1;
+                            i > 0;
+                            i--
+                          ) {
+                            if (this.state.pattern_array[i].length > 0) {
+                              this.props._SetSelectedShot([
+                                i,
+                                this.state.pattern_array[i].length - 1,
+                                this.props.stats.selectedShot[2]
+                                  ? this.props.stats.selectedShot[2]
+                                  : 0,
+                                shotCount - 1,
+                              ]);
+                              break;
+                            }
+                          }
+                        }
+                      }
+                    }}
+                  />
+                  <Field
+                    shots={this.state.graph_data}
+                    pattern_array={this.state.pattern_array}
+                    patter_length={this.state.patter_length}
+                    firstshot={this.state.firstshot}
+                    secondshot={this.state.secondshot}
+                    thirdshot={this.state.thirdshot}
+                    perc={this.state.percentage}
+                    arrows={this.state.shots}
+                    percFirstShot={this.state.percFirstShot}
+                    percSecondShot={this.state.percSecondShot}
+                    percThirdShot={this.state.percThirdShot}
+                    isRightSide={this.state.isRightSide}
+                    rightSideData={this.state.rightSideData}
+                    stretchTop={this.state.stretchTop}
+                    stretchBot={this.state.stretchBot}
+                    distanceTop={this.state.distanceTop}
+                    distanceBot={this.state.distanceBot}
+                    indShot={this.state.indShot}
+                    fromShot={this.state.fromShot}
+                    toShot={this.state.toShot}
+                    setVideoSettings={this.setVideoSettings}
+                    height1_perc={this.state.height1_perc}
+                    height2_perc={this.state.height2_perc}
+                    width1_perc={this.state.width1_perc}
+                    width2_perc={this.state.width2_perc}
+                    placrecTop={this.state.placrecTop}
+                    placrecBot={this.state.placrecBot}
+                    isBottom={this.state.isBottom}
+                    setStretch={this.setStretch}
+                    multiSelect={this.state.multiSelect}
+                    selectAll={this.state.selectAll}
+                    firstClickVideo={this.state.firstClickVideo}
+                    selectedShot={this.props.stats.selectedShot}
+                  ></Field>
+                  <div>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                      }}
+                    >
+                      {this.state.multiSelect ? (
+                        <img
+                          src={CheckImg}
+                          style={{ height: 24, width: 24 }}
+                          onClick={() => {
+                            this.setState({
+                              multiSelect: !this.state.multiSelect,
+                            });
+                          }}
+                        />
+                      ) : (
+                        <img
+                          src={UnCheckImg}
+                          style={{ height: 24, width: 24 }}
+                          onClick={() => {
+                            this.setState({
+                              multiSelect: !this.state.multiSelect,
+                            });
+                          }}
+                        />
+                      )}
+                    </div>
+                    <img
+                      src={PlayImage}
+                      style={{ height: 20, width: 20, cursor: "pointer" }}
+                      onClick={() => {
+                        if (this.state.isRightSide) {
+                          if (
+                            this.state.rightSideData.length - 1 >
+                              this.props.stats.selectedShot[0] &&
+                            this.props.stats.selectedShot[0] <
+                              this.state.toShot &&
+                            this.props.stats.selectedShot[0] >=
+                              this.state.fromShot
+                          ) {
+                            let ind =
+                              parseInt(this.props.stats.selectedShot[0]) + 1;
+                            this.props._SetSelectedShot([ind]);
+                          }
+                        } else {
+                          let shotCount = 0;
+                          if (this.props.stats.selectedShot[3]) {
+                            if (
+                              this.props.stats.selectedShot[3] >
+                              this.state.toShot
+                            ) {
+                              let toShot =
+                                this.state.toShot + this.state.currentDiff;
+                              let fromShot =
+                                toShot - this.state.currentDiff + 1;
+                              this.setState({ fromShot, toShot });
+                            }
+                            shotCount = this.props.stats.selectedShot[3];
+                          }
+                          if (
+                            this.state.pattern_array[
+                              this.props.stats.selectedShot[0]
+                            ].length -
+                              1 >
+                            this.props.stats.selectedShot[1]
+                          ) {
+                            if (
+                              this.props.stats.selectedShot[1] <
+                                this.state.toShot &&
+                              this.props.stats.selectedShot[1] >=
+                                this.state.fromShot
+                            ) {
+                              let ind =
+                                parseInt(this.props.stats.selectedShot[1]) + 1;
+                              this.props._SetSelectedShot([
+                                this.props.stats.selectedShot[0],
+                                ind,
+                                this.props.stats.selectedShot[2],
+                                shotCount + 1,
+                              ]);
+                            }
+                          } else if (
+                            this.state.pattern_array.length - 1 >
+                            this.props.stats.selectedShot[0]
+                          ) {
+                            for (
+                              let i = this.props.stats.selectedShot[0] + 1;
+                              i < this.state.pattern_array.length;
+                              i++
+                            ) {
+                              if (this.state.pattern_array[i].length > 0) {
+                                this.props._SetSelectedShot([
+                                  i,
+                                  0,
+                                  this.props.stats.selectedShot[2]
+                                    ? this.props.stats.selectedShot[2]
+                                    : 0,
+                                  shotCount + 1,
+                                ]);
+                                break;
+                              }
+                            }
+                          }
+                        }
+                      }}
+                    />
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                      }}
+                    >
+                      {this.state.selectAll ? (
+                        <img
+                          src={SelectFill}
+                          style={{ height: 24, width: 24 }}
+                          onClick={() => {
+                            this.setState({
+                              selectAll: !this.state.selectAll,
+                            });
+                          }}
+                        />
+                      ) : (
+                        <img
+                          src={SelectImg}
+                          style={{ height: 24, width: 24 }}
+                          onClick={() => {
+                            this.setState({
+                              selectAll: !this.state.selectAll,
+                            });
+                          }}
+                        />
+                      )}
+                    </div>
+                  </div>
+                </div>
               ) : // <img
               //   src={courtPic}
               //   style={{ height: "554.4px", width: "291.6px" }}
@@ -3398,7 +3659,7 @@ class Badminton extends Component {
                 <div
                   className="stats_info_row"
                   style={{
-                    color: "rgb(255, 154, 71)",
+                    color: "#FF8019",
                   }}
                 >
                   <div
@@ -3411,7 +3672,7 @@ class Badminton extends Component {
                       <div
                         className="stats_info_ind_comp"
                         style={{
-                          color: "rgb(255, 154, 71)",
+                          color: "#FF8019",
                         }}
                       >
                         Smash
@@ -3431,10 +3692,10 @@ class Badminton extends Component {
                       <div
                         className="stats_info_ind_comp"
                         style={{
-                          color: "rgb(255, 154, 71)",
+                          color: "#FF8019",
                         }}
                       >
-                        Toss
+                        Clear
                         <div
                           className="stats_info_box"
                           style={{
@@ -3454,15 +3715,15 @@ class Badminton extends Component {
                       <div
                         className="stats_info_ind_comp"
                         style={{
-                          color: "rgb(255, 154, 71)",
+                          color: "#FF8019",
                         }}
                       >
-                        Lob
+                        Drop
                         <div
                           className="stats_info_box"
                           style={{
                             marginRight: "5px",
-                            marginLeft: "23%",
+                            marginLeft: "15%",
                           }}
                         >
                           {this.state.top_lob_count_F}
@@ -3474,7 +3735,7 @@ class Badminton extends Component {
                       <div
                         className="stats_info_ind_comp"
                         style={{
-                          color: "rgb(255, 154, 71)",
+                          color: "#FF8019",
                         }}
                       >
                         Drive
@@ -3502,14 +3763,14 @@ class Badminton extends Component {
                         className="points_table_box"
                         style={{
                           borderBottom: "2px solid rgb(85,85,85)",
-                          color: "rgb(255, 154, 71)",
+                          color: "#FF8019",
                         }}
                       >
                         {this.state.points_table[0].current_set_top_init_score}
                       </div>
                       <div
                         className="points_table_box"
-                        style={{ color: "teal" }}
+                        style={{ color: "#00bfff" }}
                       >
                         {
                           this.state.points_table[0]
@@ -3522,14 +3783,14 @@ class Badminton extends Component {
                         className="points_table_box"
                         style={{
                           borderBottom: "2px solid rgb(85,85,85)",
-                          color: "rgb(255, 154, 71)",
+                          color: "#FF8019",
                         }}
                       >
                         {this.state.points_table[1].current_set_top_init_score}
                       </div>
                       <div
                         className="points_table_box"
-                        style={{ color: "teal" }}
+                        style={{ color: "#00bfff" }}
                       >
                         {
                           this.state.points_table[1]
@@ -3542,7 +3803,7 @@ class Badminton extends Component {
                         className="points_table_box"
                         style={{
                           borderBottom: "2px solid rgb(85,85,85)",
-                          color: "rgb(255, 154, 71)",
+                          color: "#FF8019",
                         }}
                       >
                         {this.state.points_table[2]
@@ -3552,7 +3813,7 @@ class Badminton extends Component {
                       </div>
                       <div
                         className="points_table_box"
-                        style={{ color: "teal" }}
+                        style={{ color: "#00bfff" }}
                       >
                         {this.state.points_table[2]
                           ? this.state.points_table[2]
@@ -3565,7 +3826,7 @@ class Badminton extends Component {
                 <div
                   className="stats_info_row"
                   style={{
-                    color: "teal",
+                    color: "#00bfff",
                   }}
                 >
                   <div className="player_photo">player photo</div>
@@ -3579,7 +3840,7 @@ class Badminton extends Component {
                       <div
                         className="stats_info_ind_comp"
                         style={{
-                          color: "teal",
+                          color: "#00bfff",
                         }}
                       >
                         Smash
@@ -3599,10 +3860,10 @@ class Badminton extends Component {
                       <div
                         className="stats_info_ind_comp"
                         style={{
-                          color: "teal",
+                          color: "#00bfff",
                         }}
                       >
-                        Toss
+                        Clear
                         <div
                           className="stats_info_box"
                           style={{
@@ -3621,15 +3882,15 @@ class Badminton extends Component {
                       <div
                         className="stats_info_ind_comp"
                         style={{
-                          color: "teal",
+                          color: "#00bfff",
                         }}
                       >
-                        Lob
+                        Drop
                         <div
                           className="stats_info_box"
                           style={{
                             marginRight: "5px",
-                            marginLeft: "23%",
+                            marginLeft: "15%",
                           }}
                         >
                           {this.state.bot_lob_count_F}
@@ -3641,7 +3902,7 @@ class Badminton extends Component {
                       <div
                         className="stats_info_ind_comp"
                         style={{
-                          color: "teal",
+                          color: "#00bfff",
                         }}
                       >
                         Drive
@@ -3669,7 +3930,7 @@ class Badminton extends Component {
               <button
                 className="btn_small_orange"
                 onClick={() => {
-                  this.setState({ videoPlayerRight: false });
+                  this.setState({ videoPlayerRight: false, url: "" });
                 }}
               >
                 Back
@@ -4508,6 +4769,24 @@ class Badminton extends Component {
 
 const mapStateToProps = (state) => ({
   stats: state.stats,
+  court: state.court,
 });
 
-export default connect(mapStateToProps)(Badminton);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    _UpdateStretch: (x1, y1, x2, y2, player, count) =>
+      dispatch(UpdateStretch(x1, y1, x2, y2, player, count)),
+    _ResetStretch: () => dispatch(ResetStretch()),
+    _UpdateDistance: (x1, y1, x2, y2, player, count) =>
+      dispatch(UpdateDistance(x1, y1, x2, y2, player, count)),
+    _ResetDistance: () => dispatch(ResetDistance()),
+    _UpdateReac: (t1, t2, count, player) =>
+      dispatch(UpdateReac(t1, t2, count, player)),
+    _AddCount: () => dispatch(AddCount()),
+    _ResetCount: () => dispatch(ResetCount()),
+    _updateHeight: (h1, h2, player) => dispatch(UpdateHeight(h1, h2, player)),
+    _SetSelectedShot: (index) => dispatch(SetSelectedShot(index)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Badminton);

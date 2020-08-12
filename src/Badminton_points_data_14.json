@@ -1,115 +1,97 @@
 {
     "1": {
-        "location_end_shuttle": [
-            578,
-            766,
-            119.0
-        ],
-        "sides_changed": 0,
-        "current_rally_top_init_score": 0,
-        "contact_timestamp_shuttle": 73.4,
-        "Action_FB_init_top": "Backhand",
-        "shot": "Net Shot",
-        "location_Init_start_bottom": [
-            [
-                425,
-                1225
-            ],
-            [
-                443,
-                1143
-            ]
-        ],
-        "end_timestamp_shuttle": 73.9,
-        "location_contact_shuttle": [
-            538,
-            484,
-            52.0
-        ],
-        "Action_wl_init_top": "Mistake",
+        "contact_timestamp_shuttle": 73.3,
+        "current_set_bottom_init_score": 1,
         "location_Init_end_bottom": [
             [
-                428,
+                426,
                 1096
             ],
             [
-                458,
-                1055
+                426,
+                1096
             ]
         ],
+        "end_timestamp_shuttle": 73.8,
+        "shot": "Net Shot",
+        "Action_wl_init_top": "Mistake",
+        "Action_FB_init_top": "Backhand",
         "location_Init_end_top": [
             [
-                472,
+                473,
                 349
             ],
             [
-                492,
-                378
+                509,
+                416
             ]
         ],
-        "current_set_bottom_init_score": 1,
+        "current_set_top_init_score": 0,
+        "current_rally_top_init_score": 0,
+        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
-                490,
-                369
+                473,
+                359
             ],
             [
-                518,
+                516,
                 435
             ]
         ],
-        "current_rally_bottom_init_score": 1,
-        "current_set": 1,
-        "current_set_top_init_score": 0
-    },
-    "2": {
         "location_end_shuttle": [
-            435,
-            767,
-            110.0
+            567,
+            766,
+            137.0
+        ],
+        "location_contact_shuttle": [
+            546,
+            452,
+            49.0
         ],
         "sides_changed": 0,
-        "current_rally_top_init_score": 1,
-        "Action_FB_init_bottom": "Backhand",
-        "shot": "Net Shot",
+        "current_set": 1,
         "location_Init_start_bottom": [
             [
-                313,
-                1133
+                441,
+                1236
             ],
             [
-                285,
-                994
+                456,
+                1214
             ]
-        ],
-        "end_timestamp_shuttle": 89.1,
-        "location_contact_shuttle": [
-            228,
-            1014,
-            182.0
-        ],
+        ]
+    },
+    "2": {
+        "contact_timestamp_shuttle": 88.7,
+        "current_set_bottom_init_score": 1,
         "location_Init_end_bottom": [
             [
                 318,
                 1091
             ],
             [
-                265,
-                1000
+                255,
+                994
             ]
         ],
-        "contact_timestamp_shuttle": 88.7,
+        "Action_wl_init_bottom": "Mistake",
+        "end_timestamp_shuttle": 89.0,
+        "Action_FB_init_bottom": "Backhand",
+        "shot": "Net Shot",
         "location_Init_end_top": [
             [
-                387,
-                350
+                374,
+                306
             ],
             [
-                303,
+                301,
                 286
             ]
         ],
-        "current_set": 1,
+        "current_set_top_init_score": 1,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 337,
@@ -120,37 +102,32 @@
                 193
             ]
         ],
-        "current_rally_bottom_init_score": 0,
-        "current_set_bottom_init_score": 1,
-        "Action_wl_init_bottom": "Mistake",
-        "current_set_top_init_score": 1
-    },
-    "3": {
         "location_end_shuttle": [
-            153,
-            269,
-            0
+            418,
+            767,
+            132.0
+        ],
+        "location_contact_shuttle": [
+            229,
+            1037,
+            187.0
         ],
         "sides_changed": 0,
-        "current_rally_top_init_score": 0,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
+        "current_set": 1,
         "location_Init_start_bottom": [
             [
-                299,
-                1317
+                313,
+                1133
             ],
             [
-                308,
-                1322
+                285,
+                994
             ]
-        ],
-        "end_timestamp_shuttle": 107.8,
-        "location_contact_shuttle": [
-            327,
-            1347,
-            269.0
-        ],
+        ]
+    },
+    "3": {
+        "contact_timestamp_shuttle": 107.0,
+        "current_set_bottom_init_score": 2,
         "location_Init_end_bottom": [
             [
                 285,
@@ -161,7 +138,10 @@
                 1172
             ]
         ],
-        "contact_timestamp_shuttle": 107.0,
+        "Action_wl_init_bottom": "Winner",
+        "end_timestamp_shuttle": 107.8,
+        "Action_FB_init_bottom": "Forehand",
+        "shot": "Smash",
         "location_Init_end_top": [
             [
                 390,
@@ -172,7 +152,9 @@
                 361
             ]
         ],
-        "current_set": 1,
+        "current_set_top_init_score": 1,
+        "current_rally_top_init_score": 0,
+        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 437,
@@ -183,59 +165,59 @@
                 341
             ]
         ],
-        "current_rally_bottom_init_score": 1,
-        "current_set_bottom_init_score": 2,
-        "Action_wl_init_bottom": "Winner",
-        "current_set_top_init_score": 1
-    },
-    "4": {
         "location_end_shuttle": [
-            338,
-            -18,
+            149,
+            274,
             0
         ],
+        "location_contact_shuttle": [
+            327,
+            1344,
+            269.0
+        ],
         "sides_changed": 0,
-        "current_rally_top_init_score": 1,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
+        "current_set": 1,
         "location_Init_start_bottom": [
             [
-                444,
-                1166
+                299,
+                1317
             ],
             [
-                421,
-                1143
+                308,
+                1322
             ]
-        ],
-        "end_timestamp_shuttle": 124.9,
-        "location_contact_shuttle": [
-            444,
-            1202,
-            131.0
-        ],
+        ]
+    },
+    "4": {
+        "contact_timestamp_shuttle": 121.5,
+        "current_set_bottom_init_score": 2,
         "location_Init_end_bottom": [
             [
-                355,
-                1138
+                397,
+                1108
             ],
             [
-                383,
-                1178
+                355,
+                1132
             ]
         ],
-        "contact_timestamp_shuttle": 121.5,
+        "Action_wl_init_bottom": "Mistake",
+        "end_timestamp_shuttle": 123.4,
+        "Action_FB_init_bottom": "Forehand",
+        "shot": "Placement",
         "location_Init_end_top": [
             [
-                394,
-                149
+                381,
+                105
             ],
             [
-                373,
-                138
+                380,
+                71
             ]
         ],
-        "current_set": 1,
+        "current_set_top_init_score": 2,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 314,
@@ -246,59 +228,59 @@
                 286
             ]
         ],
-        "current_rally_bottom_init_score": 0,
-        "current_set_bottom_init_score": 2,
-        "Action_wl_init_bottom": "Mistake",
-        "current_set_top_init_score": 2
-    },
-    "5": {
         "location_end_shuttle": [
-            162,
-            256,
+            326,
+            39,
             0
         ],
+        "location_contact_shuttle": [
+            444,
+            1206,
+            132.0
+        ],
         "sides_changed": 0,
-        "current_rally_top_init_score": 0,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
+        "current_set": 1,
         "location_Init_start_bottom": [
             [
-                446,
-                1172
+                444,
+                1166
             ],
             [
-                489,
-                1257
+                421,
+                1143
             ]
-        ],
-        "end_timestamp_shuttle": 138.4,
-        "location_contact_shuttle": [
-            557,
-            1308,
-            262.0
-        ],
+        ]
+    },
+    "5": {
+        "contact_timestamp_shuttle": 136.1,
+        "current_set_bottom_init_score": 3,
         "location_Init_end_bottom": [
             [
-                194,
-                1074
+                455,
+                1257
             ],
             [
-                155,
-                1092
+                475,
+                1268
             ]
         ],
-        "contact_timestamp_shuttle": 136.1,
+        "Action_wl_init_bottom": "Winner",
+        "end_timestamp_shuttle": 136.8,
+        "Action_FB_init_bottom": "Forehand",
+        "shot": "Smash",
         "location_Init_end_top": [
             [
-                176,
-                308
+                367,
+                360
             ],
             [
-                181,
-                308
+                365,
+                360
             ]
         ],
-        "current_set": 1,
+        "current_set_top_init_score": 2,
+        "current_rally_top_init_score": 0,
+        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 456,
@@ -309,122 +291,122 @@
                 360
             ]
         ],
-        "current_rally_bottom_init_score": 1,
-        "current_set_bottom_init_score": 3,
-        "Action_wl_init_bottom": "Winner",
-        "current_set_top_init_score": 2
+        "location_end_shuttle": [
+            154,
+            237,
+            0
+        ],
+        "location_contact_shuttle": [
+            557,
+            1301,
+            261.0
+        ],
+        "sides_changed": 0,
+        "current_set": 1,
+        "location_Init_start_bottom": [
+            [
+                446,
+                1172
+            ],
+            [
+                489,
+                1257
+            ]
+        ]
     },
     "6": {
-        "location_end_shuttle": [
-            166,
-            1344,
-            0
-        ],
-        "sides_changed": 0,
-        "current_rally_top_init_score": 1,
-        "contact_timestamp_shuttle": 156.8,
-        "Action_FB_init_top": "Forehand",
-        "shot": "Placement",
-        "location_Init_start_bottom": [
-            [
-                295,
-                1139
-            ],
-            [
-                295,
-                1133
-            ]
-        ],
-        "end_timestamp_shuttle": 159.1,
-        "location_contact_shuttle": [
-            205,
-            563,
-            204.0
-        ],
-        "Action_wl_init_top": "Winner",
+        "contact_timestamp_shuttle": 156.9,
+        "current_set_bottom_init_score": 3,
         "location_Init_end_bottom": [
             [
-                341,
-                1215
+                397,
+                1212
             ],
             [
-                278,
-                1232
+                295,
+                1185
             ]
         ],
+        "end_timestamp_shuttle": 157.6,
+        "shot": "Smash",
+        "Action_wl_init_top": "Winner",
+        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
-                336,
-                399
+                320,
+                446
             ],
             [
-                368,
-                418
+                279,
+                510
             ]
         ],
-        "current_set_bottom_init_score": 3,
+        "current_set_top_init_score": 3,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
-                380,
-                417
+                368,
+                446
             ],
             [
-                264,
-                437
+                254,
+                545
             ]
         ],
-        "current_rally_bottom_init_score": 0,
-        "current_set": 1,
-        "current_set_top_init_score": 3
-    },
-    "7": {
         "location_end_shuttle": [
-            604,
-            406,
+            153,
+            1280,
             0
         ],
+        "location_contact_shuttle": [
+            209,
+            623,
+            217.0
+        ],
         "sides_changed": 0,
-        "current_rally_top_init_score": 0,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
+        "current_set": 1,
         "location_Init_start_bottom": [
             [
-                329,
-                1190
+                355,
+                1150
             ],
             [
-                382,
-                1190
+                308,
+                1162
             ]
-        ],
-        "end_timestamp_shuttle": 173.5,
-        "location_contact_shuttle": [
-            338,
-            1292,
-            271.0
-        ],
+        ]
+    },
+    "7": {
+        "contact_timestamp_shuttle": 172.8,
+        "current_set_bottom_init_score": 4,
         "location_Init_end_bottom": [
             [
-                365,
-                1306
+                377,
+                1295
             ],
             [
-                384,
-                1279
+                397,
+                1258
             ]
         ],
-        "contact_timestamp_shuttle": 172.8,
+        "Action_wl_init_bottom": "Winner",
+        "end_timestamp_shuttle": 173.6,
+        "Action_FB_init_bottom": "Forehand",
+        "shot": "Smash",
         "location_Init_end_top": [
             [
                 469,
                 369
             ],
             [
-                395,
-                321
+                416,
+                350
             ]
         ],
-        "current_set": 1,
+        "current_set_top_init_score": 3,
+        "current_rally_top_init_score": 0,
+        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 475,
@@ -435,39 +417,32 @@
                 389
             ]
         ],
-        "current_rally_bottom_init_score": 1,
-        "current_set_bottom_init_score": 4,
-        "Action_wl_init_bottom": "Winner",
-        "current_set_top_init_score": 3
-    },
-    "8": {
         "location_end_shuttle": [
-            570,
-            1405,
+            604,
+            476,
             0
         ],
+        "location_contact_shuttle": [
+            338,
+            1299,
+            272.0
+        ],
         "sides_changed": 0,
-        "current_rally_top_init_score": 1,
-        "contact_timestamp_shuttle": 195.1,
-        "Action_FB_init_top": "Backhand",
-        "shot": "Placement",
+        "current_set": 1,
         "location_Init_start_bottom": [
             [
-                427,
-                1131
+                329,
+                1190
             ],
             [
-                453,
-                1089
+                382,
+                1190
             ]
-        ],
-        "end_timestamp_shuttle": 196.6,
-        "location_contact_shuttle": [
-            591,
-            563,
-            55.0
-        ],
-        "Action_wl_init_top": "Winner",
+        ]
+    },
+    "8": {
+        "contact_timestamp_shuttle": 195.2,
+        "current_set_bottom_init_score": 4,
         "location_Init_end_bottom": [
             [
                 487,
@@ -478,6 +453,10 @@
                 1278
             ]
         ],
+        "end_timestamp_shuttle": 196.6,
+        "shot": "Placement",
+        "Action_wl_init_top": "Winner",
+        "Action_FB_init_top": "Backhand",
         "location_Init_end_top": [
             [
                 513,
@@ -488,69 +467,72 @@
                 379
             ]
         ],
-        "current_set_bottom_init_score": 4,
+        "current_set_top_init_score": 4,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
-                493,
-                369
+                560,
+                555
             ],
             [
-                557,
+                552,
                 534
             ]
         ],
-        "current_rally_bottom_init_score": 0,
-        "current_set": 1,
-        "current_set_top_init_score": 4
-    },
-    "9": {
         "location_end_shuttle": [
-            157,
-            180,
+            570,
+            1407,
             0
         ],
+        "location_contact_shuttle": [
+            588,
+            601,
+            88.0
+        ],
         "sides_changed": 0,
-        "current_rally_top_init_score": 0,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
+        "current_set": 1,
         "location_Init_start_bottom": [
             [
-                338,
-                1179
+                415,
+                1137
             ],
             [
-                255,
-                1180
+                446,
+                1077
             ]
-        ],
-        "end_timestamp_shuttle": 225.4,
-        "location_contact_shuttle": [
-            256,
-            1295,
-            271.0
-        ],
+        ]
+    },
+    "9": {
+        "contact_timestamp_shuttle": 224.8,
+        "current_set_bottom_init_score": 5,
         "location_Init_end_bottom": [
             [
-                249,
-                1265
+                278,
+                1191
             ],
             [
-                296,
-                1259
+                301,
+                1243
             ]
         ],
-        "contact_timestamp_shuttle": 224.8,
+        "Action_wl_init_bottom": "Winner",
+        "end_timestamp_shuttle": 225.6,
+        "Action_FB_init_bottom": "Forehand",
+        "shot": "Smash",
         "location_Init_end_top": [
             [
-                410,
-                295
+                338,
+                341
             ],
             [
-                354,
-                341
+                337,
+                326
             ]
         ],
-        "current_set": 1,
+        "current_set_top_init_score": 4,
+        "current_rally_top_init_score": 0,
+        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 473,
@@ -561,163 +543,158 @@
                 233
             ]
         ],
-        "current_rally_bottom_init_score": 1,
-        "current_set_bottom_init_score": 5,
-        "Action_wl_init_bottom": "Winner",
-        "current_set_top_init_score": 4
-    },
-    "10": {
         "location_end_shuttle": [
-            646,
-            152,
+            153,
+            274,
             0
         ],
+        "location_contact_shuttle": [
+            257,
+            1304,
+            274.0
+        ],
         "sides_changed": 0,
-        "current_rally_top_init_score": 0,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
+        "current_set": 1,
         "location_Init_start_bottom": [
             [
-                345,
-                1038
+                338,
+                1179
             ],
             [
-                442,
-                887
+                255,
+                1180
             ]
-        ],
-        "end_timestamp_shuttle": 252.0,
-        "location_contact_shuttle": [
-            507,
-            953,
-            163.0
-        ],
+        ]
+    },
+    "10": {
+        "contact_timestamp_shuttle": 251.3,
+        "current_set_bottom_init_score": 6,
         "location_Init_end_bottom": [
             [
-                426,
+                430,
                 992
             ],
             [
-                458,
-                1062
+                459,
+                1071
             ]
         ],
-        "contact_timestamp_shuttle": 251.2,
-        "location_Init_end_top": [
-            [
-                432,
-                285
-            ],
-            [
-                416,
-                285
-            ]
-        ],
-        "current_set": 1,
-        "location_Init_start_top": [
-            [
-                266,
-                351
-            ],
-            [
-                258,
-                352
-            ]
-        ],
-        "current_rally_bottom_init_score": 1,
-        "current_set_bottom_init_score": 6,
         "Action_wl_init_bottom": "Winner",
-        "current_set_top_init_score": 4
-    },
-    "11": {
-        "location_end_shuttle": [
-            640,
-            1189,
-            0
-        ],
-        "sides_changed": 0,
-        "current_rally_top_init_score": 1,
-        "contact_timestamp_shuttle": 285.1,
-        "Action_FB_init_top": "Forehand",
-        "shot": "Placement",
-        "location_Init_start_bottom": [
-            [
-                476,
-                1043
-            ],
-            [
-                491,
-                1074
-            ]
-        ],
-        "end_timestamp_shuttle": 285.1,
-        "location_contact_shuttle": [
-            602,
-            274,
-            245.0
-        ],
-        "Action_wl_init_top": "Winner",
-        "location_Init_end_bottom": [
-            [
-                476,
-                1043
-            ],
-            [
-                491,
-                1074
-            ]
-        ],
-        "location_Init_end_top": [
-            [
-                504,
-                223
-            ],
-            [
-                504,
-                223
-            ]
-        ],
-        "current_set_bottom_init_score": 6,
-        "location_Init_start_top": [
-            [
-                504,
-                223
-            ],
-            [
-                504,
-                223
-            ]
-        ],
-        "current_rally_bottom_init_score": 0,
-        "current_set": 1,
-        "current_set_top_init_score": 5
-    },
-    "12": {
-        "location_end_shuttle": [
-            359,
-            486,
-            0
-        ],
-        "sides_changed": 0,
-        "current_rally_top_init_score": 0,
+        "end_timestamp_shuttle": 252.1,
         "Action_FB_init_bottom": "Forehand",
         "shot": "Placement",
-        "location_Init_start_bottom": [
+        "location_Init_end_top": [
             [
-                546,
-                851
+                435,
+                275
             ],
             [
-                538,
-                836
+                455,
+                275
             ]
         ],
-        "end_timestamp_shuttle": 323.6,
-        "location_contact_shuttle": [
-            587,
-            863,
-            229.0
+        "current_set_top_init_score": 4,
+        "current_rally_top_init_score": 0,
+        "current_rally_bottom_init_score": 1,
+        "location_Init_start_top": [
+            [
+                315,
+                361
+            ],
+            [
+                326,
+                370
+            ]
         ],
+        "location_end_shuttle": [
+            650,
+            117,
+            0
+        ],
+        "location_contact_shuttle": [
+            503,
+            1053,
+            188.0
+        ],
+        "sides_changed": 0,
+        "current_set": 1,
+        "location_Init_start_bottom": [
+            [
+                370,
+                993
+            ],
+            [
+                446,
+                908
+            ]
+        ]
+    },
+    "11": {
+        "contact_timestamp_shuttle": 285.1,
+        "current_set_bottom_init_score": 6,
+        "location_Init_end_bottom": [
+            [
+                429,
+                1160
+            ],
+            [
+                562,
+                1224
+            ]
+        ],
+        "end_timestamp_shuttle": 285.9,
+        "shot": "Smash",
+        "Action_wl_init_top": "Winner",
+        "Action_FB_init_top": "Forehand",
+        "location_Init_end_top": [
+            [
+                532,
+                243
+            ],
+            [
+                513,
+                274
+            ]
+        ],
+        "current_set_top_init_score": 5,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
+        "location_Init_start_top": [
+            [
+                504,
+                223
+            ],
+            [
+                504,
+                223
+            ]
+        ],
+        "location_end_shuttle": [
+            650,
+            1212,
+            0
+        ],
+        "location_contact_shuttle": [
+            596,
+            195,
+            220.0
+        ],
+        "sides_changed": 0,
+        "current_set": 1,
+        "location_Init_start_bottom": [
+            [
+                476,
+                1043
+            ],
+            [
+                491,
+                1074
+            ]
+        ]
+    },
+    "12": {
+        "contact_timestamp_shuttle": 323.4,
+        "current_set_bottom_init_score": 7,
         "location_Init_end_bottom": [
             [
                 588,
@@ -728,7 +705,10 @@
                 712
             ]
         ],
-        "contact_timestamp_shuttle": 323.4,
+        "Action_wl_init_bottom": "Winner",
+        "end_timestamp_shuttle": 323.6,
+        "Action_FB_init_bottom": "Forehand",
+        "shot": "Smash",
         "location_Init_end_top": [
             [
                 495,
@@ -739,7 +719,9 @@
                 285
             ]
         ],
-        "current_set": 1,
+        "current_set_top_init_score": 5,
+        "current_rally_top_init_score": 0,
+        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 482,
@@ -750,50 +732,59 @@
                 285
             ]
         ],
-        "current_rally_bottom_init_score": 1,
-        "current_set_bottom_init_score": 7,
-        "Action_wl_init_bottom": "Winner",
-        "current_set_top_init_score": 5
-    },
-    "13": {
         "location_end_shuttle": [
-            662,
-            204,
+            355,
+            514,
             0
         ],
+        "location_contact_shuttle": [
+            586,
+            878,
+            232.0
+        ],
         "sides_changed": 0,
-        "current_rally_top_init_score": 0,
-        "Action_FB_init_bottom": "Backhand",
-        "shot": "Placement",
+        "current_set": 1,
         "location_Init_start_bottom": [
             [
-                374,
-                1190
+                546,
+                851
             ],
             [
-                271,
-                1265
+                538,
+                836
             ]
-        ],
-        "end_timestamp_shuttle": 351.7,
-        "location_contact_shuttle": [
-            203,
-            1277,
-            166.0
-        ],
+        ]
+    },
+    "13": {
+        "contact_timestamp_shuttle": 347.9,
+        "current_set_bottom_init_score": 8,
         "location_Init_end_bottom": [
             [
-                445,
-                998
+                397,
+                1138
             ],
             [
-                508,
-                991
+                463,
+                1149
             ]
         ],
-        "contact_timestamp_shuttle": 347.9,
-        "location_Init_end_top": -1,
-        "current_set": 1,
+        "Action_wl_init_bottom": "Winner",
+        "end_timestamp_shuttle": 349.6,
+        "Action_FB_init_bottom": "Backhand",
+        "shot": "Placement",
+        "location_Init_end_top": [
+            [
+                607,
+                190
+            ],
+            [
+                651,
+                135
+            ]
+        ],
+        "current_set_top_init_score": 5,
+        "current_rally_top_init_score": 0,
+        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 395,
@@ -804,59 +795,59 @@
                 380
             ]
         ],
-        "current_rally_bottom_init_score": 1,
-        "current_set_bottom_init_score": 8,
-        "Action_wl_init_bottom": "Winner",
-        "current_set_top_init_score": 5
-    },
-    "14": {
         "location_end_shuttle": [
-            272,
-            19,
+            645,
+            132,
             0
         ],
+        "location_contact_shuttle": [
+            202,
+            1267,
+            163.0
+        ],
         "sides_changed": 0,
-        "current_rally_top_init_score": 1,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
+        "current_set": 1,
         "location_Init_start_bottom": [
             [
-                417,
-                1137
+                374,
+                1190
             ],
             [
-                444,
-                1160
+                271,
+                1265
             ]
-        ],
-        "end_timestamp_shuttle": 449.1,
-        "location_contact_shuttle": [
-            445,
-            1197,
-            128.0
-        ],
+        ]
+    },
+    "14": {
+        "contact_timestamp_shuttle": 446.4,
+        "current_set_bottom_init_score": 8,
         "location_Init_end_bottom": [
             [
-                377,
-                1144
+                355,
+                1126
             ],
             [
-                401,
-                1126
+                399,
+                1120
             ]
         ],
-        "contact_timestamp_shuttle": 446.4,
+        "Action_wl_init_bottom": "Mistake",
+        "end_timestamp_shuttle": 448.5,
+        "Action_FB_init_bottom": "Forehand",
+        "shot": "Placement",
         "location_Init_end_top": [
             [
-                397,
-                42
+                335,
+                71
             ],
             [
-                335,
-                65
+                327,
+                54
             ]
         ],
-        "current_set": 1,
+        "current_set_top_init_score": 6,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 315,
@@ -867,123 +858,122 @@
                 317
             ]
         ],
-        "current_rally_bottom_init_score": 0,
-        "current_set_bottom_init_score": 8,
-        "Action_wl_init_bottom": "Mistake",
-        "current_set_top_init_score": 6
-    },
-    "15": {
         "location_end_shuttle": [
-            258,
-            -1,
+            264,
+            40,
             0
         ],
+        "location_contact_shuttle": [
+            444,
+            1224,
+            140.0
+        ],
         "sides_changed": 0,
-        "current_rally_top_init_score": 1,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
+        "current_set": 1,
         "location_Init_start_bottom": [
             [
-                516,
-                1262
+                417,
+                1137
             ],
             [
-                620,
-                1266
+                444,
+                1160
             ]
-        ],
-        "end_timestamp_shuttle": 474.8,
-        "location_contact_shuttle": [
-            639,
-            1325,
-            226.0
-        ],
+        ]
+    },
+    "15": {
+        "contact_timestamp_shuttle": 473.0,
+        "current_set_bottom_init_score": 8,
         "location_Init_end_bottom": [
             [
-                334,
-                1084
+                336,
+                1078
             ],
             [
-                340,
-                1078
+                401,
+                1120
             ]
         ],
-        "contact_timestamp_shuttle": 472.9,
+        "Action_wl_init_bottom": "Mistake",
+        "end_timestamp_shuttle": 474.6,
+        "Action_FB_init_bottom": "Forehand",
+        "shot": "Placement",
         "location_Init_end_top": [
             [
-                270,
-                117
+                284,
+                128
             ],
             [
                 309,
                 127
             ]
         ],
-        "current_set": 1,
+        "current_set_top_init_score": 7,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
-                474,
-                223
+                493,
+                264
             ],
             [
-                437,
-                244
+                434,
+                285
             ]
         ],
-        "current_rally_bottom_init_score": 0,
-        "current_set_bottom_init_score": 8,
-        "Action_wl_init_bottom": "Mistake",
-        "current_set_top_init_score": 7
-    },
-    "16": {
         "location_end_shuttle": [
-            351,
-            1379,
+            234,
+            14,
             0
         ],
+        "location_contact_shuttle": [
+            639,
+            1327,
+            226.0
+        ],
         "sides_changed": 0,
-        "current_rally_top_init_score": 1,
-        "contact_timestamp_shuttle": 524.9,
-        "Action_FB_init_top": "Forehand",
-        "shot": "Placement",
+        "current_set": 1,
         "location_Init_start_bottom": [
             [
-                270,
-                1202
+                514,
+                1267
             ],
             [
-                310,
-                1270
+                628,
+                1313
             ]
-        ],
-        "end_timestamp_shuttle": 526.9,
-        "location_contact_shuttle": [
-            463,
-            360,
-            144.0
-        ],
-        "Action_wl_init_top": "Winner",
+        ]
+    },
+    "16": {
+        "contact_timestamp_shuttle": 524.9,
+        "current_set_bottom_init_score": 8,
         "location_Init_end_bottom": [
             [
-                291,
+                289,
                 1345
             ],
             [
-                322,
+                321,
                 1374
             ]
         ],
+        "end_timestamp_shuttle": 526.6,
+        "shot": "Placement",
+        "Action_wl_init_top": "Winner",
+        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
-                446,
+                449,
                 359
             ],
             [
-                397,
+                375,
                 350
             ]
         ],
-        "current_set_bottom_init_score": 8,
+        "current_set_top_init_score": 8,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 434,
@@ -994,99 +984,95 @@
                 330
             ]
         ],
-        "current_rally_bottom_init_score": 0,
-        "current_set": 1,
-        "current_set_top_init_score": 8
-    },
-    "17": {
         "location_end_shuttle": [
-            509,
-            766,
-            79.0
-        ],
-        "sides_changed": 0,
-        "current_rally_top_init_score": 1,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Net Shot",
-        "location_Init_start_bottom": [
-            [
-                452,
-                1377
-            ],
-            [
-                482,
-                1401
-            ]
-        ],
-        "end_timestamp_shuttle": 543.1,
-        "location_contact_shuttle": [
-            454,
-            1421,
-            255.0
-        ],
-        "location_Init_end_bottom": [
-            [
-                436,
-                1183
-            ],
-            [
-                419,
-                1149
-            ]
-        ],
-        "contact_timestamp_shuttle": 542.0,
-        "location_Init_end_top": [
-            [
-                463,
-                398
-            ],
-            [
-                489,
-                435
-            ]
-        ],
-        "current_set": 1,
-        "location_Init_start_top": [
-            [
-                452,
-                285
-            ],
-            [
-                387,
-                340
-            ]
-        ],
-        "current_rally_bottom_init_score": 0,
-        "current_set_bottom_init_score": 8,
-        "Action_wl_init_bottom": "Mistake",
-        "current_set_top_init_score": 9
-    },
-    "18": {
-        "location_end_shuttle": [
-            135,
-            214,
+            345,
+            1407,
             0
         ],
+        "location_contact_shuttle": [
+            464,
+            316,
+            133.0
+        ],
         "sides_changed": 0,
-        "current_rally_top_init_score": 1,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
+        "current_set": 1,
         "location_Init_start_bottom": [
             [
-                504,
-                1224
+                270,
+                1202
             ],
             [
-                545,
-                1288
+                310,
+                1270
+            ]
+        ]
+    },
+    "17": {
+        "contact_timestamp_shuttle": 542.1,
+        "current_set_bottom_init_score": 8,
+        "location_Init_end_bottom": [
+            [
+                413,
+                1353
+            ],
+            [
+                456,
+                1320
             ]
         ],
-        "end_timestamp_shuttle": 570.3,
-        "location_contact_shuttle": [
-            545,
-            1337,
-            260.0
+        "Action_wl_init_bottom": "Mistake",
+        "end_timestamp_shuttle": 542.4,
+        "Action_FB_init_bottom": "Forehand",
+        "shot": "Net Shot",
+        "location_Init_end_top": [
+            [
+                474,
+                340
+            ],
+            [
+                365,
+                360
+            ]
         ],
+        "current_set_top_init_score": 9,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
+        "location_Init_start_top": [
+            [
+                457,
+                295
+            ],
+            [
+                377,
+                316
+            ]
+        ],
+        "location_end_shuttle": [
+            520,
+            766,
+            131.0
+        ],
+        "location_contact_shuttle": [
+            454,
+            1398,
+            252.0
+        ],
+        "sides_changed": 0,
+        "current_set": 1,
+        "location_Init_start_bottom": [
+            [
+                422,
+                1343
+            ],
+            [
+                465,
+                1392
+            ]
+        ]
+    },
+    "18": {
+        "contact_timestamp_shuttle": 569.4,
+        "current_set_bottom_init_score": 8,
         "location_Init_end_bottom": [
             [
                 389,
@@ -1097,7 +1083,10 @@
                 1257
             ]
         ],
-        "contact_timestamp_shuttle": 569.4,
+        "Action_wl_init_bottom": "Mistake",
+        "end_timestamp_shuttle": 570.3,
+        "Action_FB_init_bottom": "Forehand",
+        "shot": "Placement",
         "location_Init_end_top": [
             [
                 382,
@@ -1108,7 +1097,9 @@
                 361
             ]
         ],
-        "current_set": 1,
+        "current_set_top_init_score": 10,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 496,
@@ -1119,39 +1110,32 @@
                 265
             ]
         ],
-        "current_rally_bottom_init_score": 0,
-        "current_set_bottom_init_score": 8,
-        "Action_wl_init_bottom": "Mistake",
-        "current_set_top_init_score": 10
-    },
-    "19": {
         "location_end_shuttle": [
-            679,
-            1076,
+            119,
+            237,
             0
         ],
+        "location_contact_shuttle": [
+            549,
+            1328,
+            276.0
+        ],
         "sides_changed": 0,
-        "current_rally_top_init_score": 0,
-        "contact_timestamp_shuttle": 592.9,
-        "Action_FB_init_top": "Forehand",
-        "shot": "Placement",
+        "current_set": 1,
         "location_Init_start_bottom": [
             [
-                430,
-                1083
+                504,
+                1224
             ],
             [
-                478,
-                1113
+                545,
+                1288
             ]
-        ],
-        "end_timestamp_shuttle": 593.6,
-        "location_contact_shuttle": [
-            552,
-            205,
-            256.0
-        ],
-        "Action_wl_init_top": "Mistake",
+        ]
+    },
+    "19": {
+        "contact_timestamp_shuttle": 592.9,
+        "current_set_bottom_init_score": 9,
         "location_Init_end_bottom": [
             [
                 427,
@@ -1162,6 +1146,10 @@
                 1171
             ]
         ],
+        "end_timestamp_shuttle": 593.6,
+        "shot": "Placement",
+        "Action_wl_init_top": "Mistake",
+        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
                 536,
@@ -1172,7 +1160,9 @@
                 201
             ]
         ],
-        "current_set_bottom_init_score": 9,
+        "current_set_top_init_score": 10,
+        "current_rally_top_init_score": 0,
+        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 596,
@@ -1183,58 +1173,59 @@
                 147
             ]
         ],
-        "current_rally_bottom_init_score": 1,
-        "current_set": 1,
-        "current_set_top_init_score": 10
-    },
-    "20": {
         "location_end_shuttle": [
-            684,
-            405,
+            670,
+            1135,
             0
         ],
+        "location_contact_shuttle": [
+            552,
+            215,
+            257.0
+        ],
         "sides_changed": 0,
-        "current_rally_top_init_score": 1,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
+        "current_set": 1,
         "location_Init_start_bottom": [
             [
-                460,
-                1225
+                430,
+                1083
             ],
             [
-                596,
-                1303
+                478,
+                1113
             ]
-        ],
-        "end_timestamp_shuttle": 621.2,
-        "location_contact_shuttle": [
-            653,
-            1343,
-            137.0
-        ],
+        ]
+    },
+    "20": {
+        "contact_timestamp_shuttle": 620.0,
+        "current_set_bottom_init_score": 9,
         "location_Init_end_bottom": [
             [
                 473,
-                1219
+                1225
             ],
             [
-                520,
+                522,
                 1171
             ]
         ],
-        "contact_timestamp_shuttle": 620.0,
+        "Action_wl_init_bottom": "Mistake",
+        "end_timestamp_shuttle": 621.1,
+        "Action_FB_init_bottom": "Forehand",
+        "shot": "Placement",
         "location_Init_end_top": [
+            [
+                551,
+                434
+            ],
             [
                 605,
                 471
-            ],
-            [
-                601,
-                489
             ]
         ],
-        "current_set": 1,
+        "current_set_top_init_score": 11,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 501,
@@ -1245,59 +1236,59 @@
                 435
             ]
         ],
-        "current_rally_bottom_init_score": 0,
-        "current_set_bottom_init_score": 9,
-        "Action_wl_init_bottom": "Mistake",
-        "current_set_top_init_score": 11
-    },
-    "21": {
         "location_end_shuttle": [
-            657,
-            -64,
+            672,
+            442,
             0
         ],
+        "location_contact_shuttle": [
+            656,
+            1320,
+            130.0
+        ],
         "sides_changed": 0,
-        "current_rally_top_init_score": 1,
-        "Action_FB_init_bottom": "Backhand",
-        "shot": "Placement",
+        "current_set": 1,
         "location_Init_start_bottom": [
             [
-                301,
-                1085
+                460,
+                1225
             ],
             [
-                241,
-                968
+                596,
+                1303
             ]
-        ],
-        "end_timestamp_shuttle": 644.1,
-        "location_contact_shuttle": [
-            198,
-            980,
-            137.0
-        ],
+        ]
+    },
+    "21": {
+        "contact_timestamp_shuttle": 642.4,
+        "current_set_bottom_init_score": 9,
         "location_Init_end_bottom": [
             [
-                387,
-                1072
+                405,
+                1084
             ],
             [
-                439,
-                1119
+                457,
+                1125
             ]
         ],
-        "contact_timestamp_shuttle": 642.4,
+        "Action_wl_init_bottom": "Mistake",
+        "end_timestamp_shuttle": 644.0,
+        "Action_FB_init_bottom": "Backhand",
+        "shot": "Placement",
         "location_Init_end_top": [
             [
-                574,
+                569,
                 29
             ],
             [
                 606,
-                51
+                63
             ]
         ],
-        "current_set": 1,
+        "current_set_top_init_score": 12,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 402,
@@ -1308,312 +1299,311 @@
                 360
             ]
         ],
-        "current_rally_bottom_init_score": 0,
-        "current_set_bottom_init_score": 9,
-        "Action_wl_init_bottom": "Mistake",
-        "current_set_top_init_score": 12
+        "location_end_shuttle": [
+            653,
+            57,
+            0
+        ],
+        "location_contact_shuttle": [
+            198,
+            962,
+            157.0
+        ],
+        "sides_changed": 0,
+        "current_set": 1,
+        "location_Init_start_bottom": [
+            [
+                301,
+                1085
+            ],
+            [
+                241,
+                968
+            ]
+        ]
     },
     "22": {
-        "location_end_shuttle": [
-            129,
-            1382,
-            0
-        ],
-        "sides_changed": 0,
-        "current_rally_top_init_score": 0,
-        "contact_timestamp_shuttle": 719.8,
-        "Action_FB_init_top": "Forehand",
-        "shot": "Placement",
-        "location_Init_start_bottom": [
-            [
-                280,
-                1265
-            ],
-            [
-                347,
-                1226
-            ]
-        ],
-        "end_timestamp_shuttle": 719.8,
-        "location_contact_shuttle": [
-            201,
-            414,
-            65.0
-        ],
-        "Action_wl_init_top": "Mistake",
+        "contact_timestamp_shuttle": 719.9,
+        "current_set_bottom_init_score": 10,
         "location_Init_end_bottom": [
             [
-                280,
-                1265
+                196,
+                1244
             ],
             [
-                347,
-                1226
+                174,
+                1308
             ]
         ],
+        "end_timestamp_shuttle": 721.4,
+        "shot": "Placement",
+        "Action_wl_init_top": "Mistake",
+        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
-                364,
-                331
+                359,
+                351
             ],
             [
-                276,
-                361
+                310,
+                351
             ]
         ],
-        "current_set_bottom_init_score": 10,
+        "current_set_top_init_score": 12,
+        "current_rally_top_init_score": 0,
+        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
-                364,
-                331
+                362,
+                351
             ],
             [
-                276,
-                361
+                255,
+                400
             ]
         ],
-        "current_rally_bottom_init_score": 1,
-        "current_set": 1,
-        "current_set_top_init_score": 12
-    },
-    "23": {
         "location_end_shuttle": [
-            565,
-            1436,
+            135,
+            1388,
             0
         ],
+        "location_contact_shuttle": [
+            204,
+            472,
+            78.0
+        ],
         "sides_changed": 0,
-        "current_rally_top_init_score": 0,
-        "contact_timestamp_shuttle": 748.9,
-        "Action_FB_init_top": "Forehand",
-        "shot": "Placement",
+        "current_set": 1,
         "location_Init_start_bottom": [
             [
-                384,
-                1184
+                294,
+                1216
             ],
             [
-                409,
-                1166
+                341,
+                1215
             ]
-        ],
-        "end_timestamp_shuttle": 751.1,
-        "location_contact_shuttle": [
-            543,
-            219,
-            246.0
-        ],
-        "Action_wl_init_top": "Mistake",
+        ]
+    },
+    "23": {
+        "contact_timestamp_shuttle": 749.0,
+        "current_set_bottom_init_score": 11,
         "location_Init_end_bottom": [
             [
                 479,
                 1387
             ],
             [
-                517,
-                1386
+                543,
+                1347
             ]
         ],
+        "end_timestamp_shuttle": 750.9,
+        "shot": "Placement",
+        "Action_wl_init_top": "Mistake",
+        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
-                475,
-                359
+                474,
+                349
             ],
             [
-                429,
-                320
+                400,
+                316
             ]
         ],
-        "current_set_bottom_init_score": 11,
+        "current_set_top_init_score": 12,
+        "current_rally_top_init_score": 0,
+        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
-                446,
-                202
+                566,
+                29
             ],
             [
-                451,
-                202
+                442,
+                81
             ]
         ],
-        "current_rally_bottom_init_score": 1,
+        "location_end_shuttle": [
+            565,
+            1457,
+            0
+        ],
+        "location_contact_shuttle": [
+            542,
+            252,
+            251.0
+        ],
+        "sides_changed": 0,
         "current_set": 1,
-        "current_set_top_init_score": 12
+        "location_Init_start_bottom": [
+            [
+                395,
+                1138
+            ],
+            [
+                452,
+                1154
+            ]
+        ]
     },
     "24": {
-        "location_end_shuttle": [
-            109,
-            59,
-            0
+        "contact_timestamp_shuttle": 775.9,
+        "current_set_bottom_init_score": 11,
+        "location_Init_end_bottom": [
+            [
+                325,
+                1138
+            ],
+            [
+                393,
+                1126
+            ]
         ],
-        "sides_changed": 0,
-        "current_rally_top_init_score": 1,
+        "Action_wl_init_bottom": "Mistake",
+        "end_timestamp_shuttle": 777.5,
         "Action_FB_init_bottom": "Forehand",
         "shot": "Placement",
-        "location_Init_start_bottom": [
-            [
-                475,
-                1148
-            ],
-            [
-                556,
-                1029
-            ]
-        ],
-        "end_timestamp_shuttle": 775.8,
-        "location_contact_shuttle": [
-            560,
-            1056,
-            110.0
-        ],
-        "location_Init_end_bottom": [
-            [
-                475,
-                1148
-            ],
-            [
-                556,
-                1029
-            ]
-        ],
-        "contact_timestamp_shuttle": 775.8,
         "location_Init_end_top": [
             [
-                559,
-                136
+                231,
+                150
             ],
             [
-                530,
-                147
+                227,
+                128
             ]
         ],
-        "current_set": 1,
+        "current_set_top_init_score": 13,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
-                559,
-                136
+                539,
+                201
             ],
             [
-                530,
-                147
+                498,
+                180
             ]
         ],
-        "current_rally_bottom_init_score": 0,
-        "current_set_bottom_init_score": 11,
-        "Action_wl_init_bottom": "Mistake",
-        "current_set_top_init_score": 13
-    },
-    "25": {
         "location_end_shuttle": [
+            116,
             87,
-            927,
             0
         ],
+        "location_contact_shuttle": [
+            559,
+            1080,
+            115.0
+        ],
         "sides_changed": 0,
-        "current_rally_top_init_score": 0,
-        "contact_timestamp_shuttle": 836.5,
-        "Action_FB_init_top": "Forehand",
-        "shot": "Placement",
+        "current_set": 1,
         "location_Init_start_bottom": [
             [
-                376,
-                1195
+                493,
+                1131
             ],
             [
-                354,
-                1220
+                558,
+                1023
             ]
-        ],
-        "end_timestamp_shuttle": 837.7,
-        "location_contact_shuttle": [
-            227,
-            291,
-            128.0
-        ],
-        "Action_wl_init_top": "Mistake",
+        ]
+    },
+    "25": {
+        "contact_timestamp_shuttle": 836.6,
+        "current_set_bottom_init_score": 12,
         "location_Init_end_bottom": [
             [
-                216,
-                994
+                239,
+                1007
             ],
             [
-                241,
-                994
+                240,
+                1013
             ]
         ],
+        "end_timestamp_shuttle": 837.6,
+        "shot": "Placement",
+        "Action_wl_init_top": "Mistake",
+        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
                 334,
                 296
             ],
             [
-                298,
+                303,
                 276
             ]
         ],
-        "current_set_bottom_init_score": 12,
+        "current_set_top_init_score": 13,
+        "current_rally_top_init_score": 0,
+        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
-                313,
-                351
+                304,
+                317
             ],
             [
-                308,
-                351
+                301,
+                307
             ]
         ],
-        "current_rally_bottom_init_score": 1,
-        "current_set": 1,
-        "current_set_top_init_score": 13
-    },
-    "26": {
         "location_end_shuttle": [
-            146,
-            1337,
+            89,
+            990,
             0
         ],
+        "location_contact_shuttle": [
+            227,
+            309,
+            130.0
+        ],
         "sides_changed": 0,
-        "current_rally_top_init_score": 1,
-        "contact_timestamp_shuttle": 882.4,
-        "Action_FB_init_top": "Backhand",
-        "shot": "Placement",
+        "current_set": 1,
         "location_Init_start_bottom": [
             [
-                385,
-                1126
+                380,
+                1184
             ],
             [
-                414,
-                1084
+                344,
+                1179
             ]
-        ],
-        "end_timestamp_shuttle": 884.0,
-        "location_contact_shuttle": [
-            335,
-            522,
-            109.0
-        ],
-        "Action_wl_init_top": "Winner",
+        ]
+    },
+    "26": {
+        "contact_timestamp_shuttle": 882.4,
+        "current_set_bottom_init_score": 12,
         "location_Init_end_bottom": [
             [
-                249,
-                1328
+                280,
+                1275
             ],
             [
-                192,
-                1380
+                194,
+                1385
             ]
         ],
+        "end_timestamp_shuttle": 883.9,
+        "shot": "Placement",
+        "Action_wl_init_top": "Winner",
+        "Action_FB_init_top": "Backhand",
         "location_Init_end_top": [
             [
                 363,
                 427
             ],
             [
-                337,
+                334,
                 427
             ]
         ],
-        "current_set_bottom_init_score": 12,
+        "current_set_top_init_score": 14,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 355,
@@ -1624,122 +1614,122 @@
                 446
             ]
         ],
-        "current_rally_bottom_init_score": 0,
-        "current_set": 1,
-        "current_set_top_init_score": 14
-    },
-    "27": {
         "location_end_shuttle": [
-            651,
-            102,
+            152,
+            1392,
             0
         ],
-        "sides_changed": 0,
-        "current_rally_top_init_score": 0,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
-        "location_Init_start_bottom": [
-            [
-                494,
-                1415
-            ],
-            [
-                446,
-                1382
-            ]
-        ],
-        "end_timestamp_shuttle": 908.4,
         "location_contact_shuttle": [
-            497,
-            1399,
-            243.0
+            336,
+            569,
+            120.0
         ],
-        "location_Init_end_bottom": [
-            [
-                426,
-                1225
-            ],
-            [
-                487,
-                1148
-            ]
-        ],
-        "contact_timestamp_shuttle": 907.5,
-        "location_Init_end_top": [
-            [
-                494,
-                320
-            ],
-            [
-                564,
-                329
-            ]
-        ],
+        "sides_changed": 0,
         "current_set": 1,
-        "location_Init_start_top": [
-            [
-                463,
-                285
-            ],
-            [
-                397,
-                350
-            ]
-        ],
-        "current_rally_bottom_init_score": 1,
-        "current_set_bottom_init_score": 13,
-        "Action_wl_init_bottom": "Winner",
-        "current_set_top_init_score": 14
-    },
-    "28": {
-        "location_end_shuttle": [
-            227,
-            1006,
-            0
-        ],
-        "sides_changed": 0,
-        "current_rally_top_init_score": 1,
-        "contact_timestamp_shuttle": 932.0,
-        "Action_FB_init_top": "Forehand",
-        "shot": "Placement",
         "location_Init_start_bottom": [
             [
-                367,
-                1102
+                385,
+                1126
             ],
             [
-                416,
-                1065
-            ]
-        ],
-        "end_timestamp_shuttle": 933.2,
-        "location_contact_shuttle": [
-            461,
-            572,
-            125.0
-        ],
-        "Action_wl_init_top": "Winner",
-        "location_Init_end_bottom": [
-            [
-                360,
-                1096
-            ],
-            [
-                352,
+                414,
                 1084
             ]
-        ],
-        "location_Init_end_top": [
+        ]
+    },
+    "27": {
+        "contact_timestamp_shuttle": 907.6,
+        "current_set_bottom_init_score": 13,
+        "location_Init_end_bottom": [
             [
-                440,
-                445
+                424,
+                1258
             ],
             [
-                448,
-                445
+                489,
+                1188
             ]
         ],
+        "Action_wl_init_bottom": "Winner",
+        "end_timestamp_shuttle": 908.3,
+        "Action_FB_init_bottom": "Forehand",
+        "shot": "Placement",
+        "location_Init_end_top": [
+            [
+                494,
+                305
+            ],
+            [
+                489,
+                320
+            ]
+        ],
+        "current_set_top_init_score": 14,
+        "current_rally_top_init_score": 0,
+        "current_rally_bottom_init_score": 1,
+        "location_Init_start_top": [
+            [
+                474,
+                305
+            ],
+            [
+                377,
+                341
+            ]
+        ],
+        "location_end_shuttle": [
+            642,
+            185,
+            0
+        ],
+        "location_contact_shuttle": [
+            498,
+            1391,
+            238.0
+        ],
+        "sides_changed": 0,
+        "current_set": 1,
+        "location_Init_start_bottom": [
+            [
+                443,
+                1378
+            ],
+            [
+                469,
+                1353
+            ]
+        ]
+    },
+    "28": {
+        "contact_timestamp_shuttle": 932.0,
         "current_set_bottom_init_score": 13,
+        "location_Init_end_bottom": [
+            [
+                399,
+                1138
+            ],
+            [
+                399,
+                1126
+            ]
+        ],
+        "end_timestamp_shuttle": 933.0,
+        "shot": "Placement",
+        "Action_wl_init_top": "Winner",
+        "Action_FB_init_top": "Forehand",
+        "location_Init_end_top": [
+            [
+                460,
+                435
+            ],
+            [
+                436,
+                417
+            ]
+        ],
+        "current_set_top_init_score": 15,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 520,
@@ -1750,300 +1740,298 @@
                 543
             ]
         ],
-        "current_rally_bottom_init_score": 0,
-        "current_set": 1,
-        "current_set_top_init_score": 15
-    },
-    "29": {
         "location_end_shuttle": [
-            639,
-            1231,
+            203,
+            962,
             0
         ],
-        "sides_changed": 1,
-        "current_rally_top_init_score": 1,
-        "contact_timestamp_shuttle": 1066.2,
-        "Action_FB_init_top": "Backhand",
+        "location_contact_shuttle": [
+            461,
+            624,
+            131.0
+        ],
+        "sides_changed": 0,
+        "current_set": 1,
+        "location_Init_start_bottom": [
+            [
+                367,
+                1102
+            ],
+            [
+                416,
+                1065
+            ]
+        ]
+    },
+    "29": {
+        "contact_timestamp_shuttle": 1066.3,
+        "current_set_bottom_init_score": 0,
+        "location_Init_end_bottom": [
+            [
+                450,
+                1105
+            ],
+            [
+                539,
+                1049
+            ]
+        ],
+        "end_timestamp_shuttle": 1067.1,
         "shot": "Placement",
+        "Action_wl_init_top": "Winner",
+        "Action_FB_init_top": "Backhand",
+        "location_Init_end_top": [
+            [
+                432,
+                335
+            ],
+            [
+                471,
+                261
+            ]
+        ],
+        "current_set_top_init_score": 1,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
+        "location_Init_start_top": [
+            [
+                429,
+                267
+            ],
+            [
+                545,
+                219
+            ]
+        ],
+        "location_end_shuttle": [
+            650,
+            1240,
+            0
+        ],
+        "location_contact_shuttle": [
+            576.0,
+            225.0,
+            164.0
+        ],
+        "sides_changed": 1,
+        "current_set": 2,
         "location_Init_start_bottom": [
             [
                 374,
-                1096
+                1105
             ],
             [
-                376,
-                1162
+                413,
+                1114
             ]
-        ],
-        "end_timestamp_shuttle": 1067.0,
-        "location_contact_shuttle": [
-            574.0,
-            200.0,
-            171.0
-        ],
-        "Action_wl_init_top": "Winner",
-        "location_Init_end_bottom": [
-            [
-                435,
-                1096
-            ],
-            [
-                547,
-                1031
-            ]
-        ],
-        "location_Init_end_top": [
-            [
-                473,
-                272
-            ],
-            [
-                454,
-                332
-            ]
-        ],
-        "current_set_bottom_init_score": 0,
-        "location_Init_start_top": [
-            [
-                405,
-                278
-            ],
-            [
-                543,
-                214
-            ]
-        ],
-        "current_rally_bottom_init_score": 0,
-        "current_set": 2,
-        "current_set_top_init_score": 1
+        ]
     },
     "30": {
-        "location_end_shuttle": [
-            197.0,
-            776.0,
-            132.0
-        ],
-        "sides_changed": 1,
-        "current_rally_top_init_score": 1,
-        "Action_FB_init_bottom": "Backhand",
-        "shot": "Net Shot",
-        "location_Init_start_bottom": [
-            [
-                359,
-                1115
-            ],
-            [
-                254,
-                1097
-            ]
-        ],
-        "end_timestamp_shuttle": 1098.0,
-        "location_contact_shuttle": [
-            205.0,
-            1037.0,
-            43.0
-        ],
+        "contact_timestamp_shuttle": 1097.3,
+        "current_set_bottom_init_score": 0,
         "location_Init_end_bottom": [
             [
-                262,
-                1034
+                263,
+                1070
             ],
             [
-                249,
-                1043
+                241,
+                1016
             ]
         ],
-        "contact_timestamp_shuttle": 1097.2,
+        "Action_wl_init_bottom": "Mistake",
+        "end_timestamp_shuttle": 1097.9,
+        "Action_FB_init_bottom": "Backhand",
+        "shot": "Net Shot",
         "location_Init_end_top": [
             [
-                347,
+                338,
                 517
             ],
             [
-                279,
-                641
+                314,
+                556
             ]
         ],
-        "current_set": 2,
+        "current_set_top_init_score": 2,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
-                439,
-                427
+                431,
+                403
             ],
             [
-                396,
-                457
+                370,
+                458
             ]
         ],
-        "current_rally_bottom_init_score": 0,
-        "current_set_bottom_init_score": 0,
-        "Action_wl_init_bottom": "Mistake",
-        "current_set_top_init_score": 2
+        "location_end_shuttle": [
+            193.0,
+            776.0,
+            132.0
+        ],
+        "location_contact_shuttle": [
+            233.0,
+            998.0,
+            67.0
+        ],
+        "sides_changed": 1,
+        "current_set": 2,
+        "location_Init_start_bottom": [
+            [
+                347,
+                1106
+            ],
+            [
+                242,
+                999
+            ]
+        ]
     },
     "31": {
-        "location_end_shuttle": [
-            557,
-            1435,
-            0
-        ],
-        "sides_changed": 1,
-        "current_rally_top_init_score": 1,
-        "contact_timestamp_shuttle": 1141.9,
-        "Action_FB_init_top": "Forehand",
-        "shot": "Smash",
-        "location_Init_start_bottom": [
-            [
-                273,
-                1288
-            ],
-            [
-                339,
-                1236
-            ]
-        ],
-        "end_timestamp_shuttle": 1141.9,
-        "location_contact_shuttle": [
-            242.0,
-            505.0,
-            171.0
-        ],
-        "Action_wl_init_top": "Winner",
+        "contact_timestamp_shuttle": 1141.8,
+        "current_set_bottom_init_score": 0,
         "location_Init_end_bottom": [
             [
-                273,
-                1288
+                291,
+                1383
             ],
             [
-                339,
-                1236
+                386,
+                1181
             ]
         ],
-        "location_Init_end_top": [
-            [
-                289,
-                493
-            ],
-            [
-                218,
-                544
-            ]
-        ],
-        "current_set_bottom_init_score": 0,
-        "location_Init_start_top": [
-            [
-                289,
-                493
-            ],
-            [
-                218,
-                544
-            ]
-        ],
-        "current_rally_bottom_init_score": 0,
-        "current_set": 2,
-        "current_set_top_init_score": 3
-    },
-    "32": {
-        "location_end_shuttle": [
-            690,
-            294,
-            0
-        ],
-        "sides_changed": 1,
-        "current_rally_top_init_score": 1,
+        "Action_wl_init_bottom": "Mistake",
+        "end_timestamp_shuttle": 1142.2,
         "Action_FB_init_bottom": "Forehand",
         "shot": "Placement",
-        "location_Init_start_bottom": [
-            [
-                559,
-                1358
-            ],
-            [
-                626,
-                1390
-            ]
-        ],
-        "end_timestamp_shuttle": 1178.5,
-        "location_contact_shuttle": [
-            678.0,
-            1356.0,
-            250.0
-        ],
-        "location_Init_end_bottom": [
-            [
-                538,
-                1170
-            ],
-            [
-                536,
-                1170
-            ]
-        ],
-        "contact_timestamp_shuttle": 1177.0,
         "location_Init_end_top": [
             [
-                643,
-                395
+                287,
+                486
             ],
             [
-                598,
-                443
+                234,
+                551
             ]
         ],
-        "current_set": 2,
+        "current_set_top_init_score": 3,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
-                458,
-                362
+                291,
+                499
             ],
             [
-                429,
-                386
+                221,
+                506
             ]
         ],
-        "current_rally_bottom_init_score": 0,
-        "current_set_bottom_init_score": 0,
-        "Action_wl_init_bottom": "Mistake",
-        "current_set_top_init_score": 4
-    },
-    "33": {
         "location_end_shuttle": [
-            554.0,
-            772.0,
-            137.0
+            527,
+            1132,
+            0
+        ],
+        "location_contact_shuttle": [
+            237.0,
+            431.0,
+            216.0
         ],
         "sides_changed": 1,
-        "current_rally_top_init_score": 0,
-        "contact_timestamp_shuttle": 1196.7,
-        "Action_FB_init_top": "Backhand",
-        "shot": "Net Shot",
+        "current_set": 2,
         "location_Init_start_bottom": [
             [
-                421,
-                1338
+                256,
+                1277
             ],
             [
-                439,
-                1265
+                334,
+                1226
+            ]
+        ]
+    },
+    "32": {
+        "contact_timestamp_shuttle": 1177.1,
+        "current_set_bottom_init_score": 0,
+        "location_Init_end_bottom": [
+            [
+                514,
+                1224
+            ],
+            [
+                531,
+                1180
+            ]
+        ],
+        "Action_wl_init_bottom": "Mistake",
+        "end_timestamp_shuttle": 1178.3,
+        "Action_FB_init_bottom": "Forehand",
+        "shot": "Placement",
+        "location_Init_end_top": [
+            [
+                634,
+                413
+            ],
+            [
+                594,
+                419
+            ]
+        ],
+        "current_set_top_init_score": 4,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
+        "location_Init_start_top": [
+            [
+                475,
+                397
+            ],
+            [
+                413,
+                392
+            ]
+        ],
+        "location_end_shuttle": [
+            692,
+            208,
+            0
+        ],
+        "location_contact_shuttle": [
+            680.0,
+            1385.0,
+            245.0
+        ],
+        "sides_changed": 1,
+        "current_set": 2,
+        "location_Init_start_bottom": [
+            [
+                558,
+                1348
+            ],
+            [
+                625,
+                1379
+            ]
+        ]
+    },
+    "33": {
+        "contact_timestamp_shuttle": 1196.7,
+        "current_set_bottom_init_score": 1,
+        "location_Init_end_bottom": [
+            [
+                526,
+                1095
+            ],
+            [
+                526,
+                1095
             ]
         ],
         "end_timestamp_shuttle": 1197.3,
-        "location_contact_shuttle": [
-            584.0,
-            298.0,
-            81.0
-        ],
+        "shot": "Net Shot",
         "Action_wl_init_top": "Mistake",
-        "location_Init_end_bottom": [
-            [
-                526,
-                1095
-            ],
-            [
-                526,
-                1095
-            ]
-        ],
+        "Action_FB_init_top": "Backhand",
         "location_Init_end_top": [
             [
                 500,
@@ -2054,7 +2042,9 @@
                 408
             ]
         ],
-        "current_set_bottom_init_score": 1,
+        "current_set_top_init_score": 4,
+        "current_rally_top_init_score": 0,
+        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 377,
@@ -2065,58 +2055,59 @@
                 356
             ]
         ],
-        "current_rally_bottom_init_score": 1,
-        "current_set": 2,
-        "current_set_top_init_score": 4
-    },
-    "34": {
         "location_end_shuttle": [
-            559,
-            507,
-            0
+            544.0,
+            772.0,
+            123.0
+        ],
+        "location_contact_shuttle": [
+            585.0,
+            307.0,
+            78.0
         ],
         "sides_changed": 1,
-        "current_rally_top_init_score": 0,
-        "Action_FB_init_bottom": "Backhand",
-        "shot": "Placement",
+        "current_set": 2,
         "location_Init_start_bottom": [
             [
-                273,
-                1061
+                421,
+                1338
             ],
             [
-                271,
-                1052
+                439,
+                1265
             ]
-        ],
-        "end_timestamp_shuttle": 1223.8,
-        "location_contact_shuttle": [
-            282.0,
-            1017.0,
-            217.0
-        ],
+        ]
+    },
+    "34": {
+        "contact_timestamp_shuttle": 1222.9,
+        "current_set_bottom_init_score": 2,
         "location_Init_end_bottom": [
             [
-                300,
-                1097
+                274,
+                1088
             ],
             [
-                356,
-                1153
+                295,
+                1088
             ]
         ],
-        "contact_timestamp_shuttle": 1222.9,
+        "Action_wl_init_bottom": "Winner",
+        "end_timestamp_shuttle": 1223.5,
+        "Action_FB_init_bottom": "Backhand",
+        "shot": "Placement",
         "location_Init_end_top": [
             [
-                457,
-                397
+                453,
+                374
             ],
             [
-                464,
-                439
+                401,
+                375
             ]
         ],
-        "current_set": 2,
+        "current_set_top_init_score": 4,
+        "current_rally_top_init_score": 0,
+        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 315,
@@ -2127,23 +2118,33 @@
                 294
             ]
         ],
-        "current_rally_bottom_init_score": 1,
-        "current_set_bottom_init_score": 2,
-        "Action_wl_init_bottom": "Winner",
-        "current_set_top_init_score": 4
-    },
-    "35": {
         "location_end_shuttle": [
-            262,
-            1408,
+            562,
+            496,
             0
         ],
+        "location_contact_shuttle": [
+            283.0,
+            974.0,
+            223.0
+        ],
         "sides_changed": 1,
-        "current_rally_top_init_score": 1,
-        "contact_timestamp_shuttle": 1256.6,
-        "Action_FB_init_top": "Forehand",
-        "shot": "Placement",
+        "current_set": 2,
         "location_Init_start_bottom": [
+            [
+                273,
+                1061
+            ],
+            [
+                271,
+                1052
+            ]
+        ]
+    },
+    "35": {
+        "contact_timestamp_shuttle": 1254.9,
+        "current_set_bottom_init_score": 2,
+        "location_Init_end_bottom": [
             [
                 202,
                 1427
@@ -2154,22 +2155,9 @@
             ]
         ],
         "end_timestamp_shuttle": 1256.6,
-        "location_contact_shuttle": [
-            505.0,
-            244.0,
-            258.0
-        ],
+        "shot": "Placement",
         "Action_wl_init_top": "Winner",
-        "location_Init_end_bottom": [
-            [
-                202,
-                1427
-            ],
-            [
-                163,
-                1502
-            ]
-        ],
+        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
                 362,
@@ -2180,70 +2168,72 @@
                 386
             ]
         ],
-        "current_set_bottom_init_score": 2,
+        "current_set_top_init_score": 5,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
-                362,
-                364
+                519,
+                350
             ],
             [
-                369,
-                386
+                452,
+                321
             ]
         ],
-        "current_rally_bottom_init_score": 0,
-        "current_set": 2,
-        "current_set_top_init_score": 5
-    },
-    "36": {
         "location_end_shuttle": [
-            134,
-            1434,
+            239,
+            1428,
             0
         ],
+        "location_contact_shuttle": [
+            504.0,
+            230.0,
+            263.0
+        ],
         "sides_changed": 1,
-        "current_rally_top_init_score": 0,
-        "contact_timestamp_shuttle": 1282.4,
-        "Action_FB_init_top": "Forehand",
-        "shot": "Placement",
+        "current_set": 2,
         "location_Init_start_bottom": [
             [
-                353,
+                355,
                 1246
             ],
             [
-                376,
-                1256
+                413,
+                1181
             ]
-        ],
-        "end_timestamp_shuttle": 1283.4,
-        "location_contact_shuttle": [
-            204.0,
-            206.0,
-            219.0
-        ],
-        "Action_wl_init_top": "Mistake",
+        ]
+    },
+    "36": {
+        "contact_timestamp_shuttle": 1282.4,
+        "current_set_bottom_init_score": 3,
         "location_Init_end_bottom": [
             [
-                265,
-                1202
+                254,
+                1212
             ],
             [
-                241,
-                1173
+                300,
+                1172
             ]
         ],
+        "end_timestamp_shuttle": 1283.2,
+        "shot": "Placement",
+        "Action_wl_init_top": "Mistake",
+        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
-                305,
-                405
+                329,
+                327
             ],
             [
-                321,
-                399
+                303,
+                405
             ]
         ],
-        "current_set_bottom_init_score": 3,
+        "current_set_top_init_score": 5,
+        "current_rally_top_init_score": 0,
+        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 335,
@@ -2254,36 +2244,32 @@
                 243
             ]
         ],
-        "current_rally_bottom_init_score": 1,
-        "current_set": 2,
-        "current_set_top_init_score": 5
-    },
-    "37": {
         "location_end_shuttle": [
-            145,
-            761,
+            140,
+            1424,
             0
         ],
+        "location_contact_shuttle": [
+            206.0,
+            189.0,
+            224.0
+        ],
         "sides_changed": 1,
-        "current_rally_top_init_score": 1,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
+        "current_set": 2,
         "location_Init_start_bottom": [
             [
-                586,
-                923
+                353,
+                1246
             ],
             [
-                615,
-                898
+                376,
+                1256
             ]
-        ],
-        "end_timestamp_shuttle": 1308.1,
-        "location_contact_shuttle": [
-            610.0,
-            918.0,
-            28.0
-        ],
+        ]
+    },
+    "37": {
+        "contact_timestamp_shuttle": 1306.7,
+        "current_set_bottom_init_score": 3,
         "location_Init_end_bottom": [
             [
                 619,
@@ -2294,7 +2280,10 @@
                 897
             ]
         ],
-        "contact_timestamp_shuttle": 1306.8,
+        "Action_wl_init_bottom": "Mistake",
+        "end_timestamp_shuttle": 1308.1,
+        "Action_FB_init_bottom": "Forehand",
+        "shot": "Placement",
         "location_Init_end_top": [
             [
                 377,
@@ -2305,134 +2294,135 @@
                 712
             ]
         ],
-        "current_set": 2,
+        "current_set_top_init_score": 6,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 509,
-                450
+                444
             ],
             [
-                473,
-                491
+                480,
+                522
             ]
         ],
-        "current_rally_bottom_init_score": 0,
-        "current_set_bottom_init_score": 3,
-        "Action_wl_init_bottom": "Mistake",
-        "current_set_top_init_score": 6
-    },
-    "38": {
         "location_end_shuttle": [
-            173,
-            317,
+            138,
+            757,
             0
         ],
+        "location_contact_shuttle": [
+            618.0,
+            870.0,
+            60.0
+        ],
         "sides_changed": 1,
-        "current_rally_top_init_score": 0,
+        "current_set": 2,
+        "location_Init_start_bottom": [
+            [
+                532,
+                1067
+            ],
+            [
+                584,
+                1013
+            ]
+        ]
+    },
+    "38": {
+        "contact_timestamp_shuttle": 1368.3,
+        "current_set_bottom_init_score": 4,
+        "location_Init_end_bottom": [
+            [
+                373,
+                1226
+            ],
+            [
+                297,
+                1182
+            ]
+        ],
+        "Action_wl_init_bottom": "Winner",
+        "end_timestamp_shuttle": 1369.5,
         "Action_FB_init_bottom": "Forehand",
         "shot": "Placement",
-        "location_Init_start_bottom": [
-            [
-                376,
-                1201
-            ],
-            [
-                552,
-                1199
-            ]
-        ],
-        "end_timestamp_shuttle": 1369.6,
-        "location_contact_shuttle": [
-            631.0,
-            1174.0,
-            66.0
-        ],
-        "location_Init_end_bottom": [
-            [
-                355,
-                1246
-            ],
-            [
-                290,
-                1163
-            ]
-        ],
-        "contact_timestamp_shuttle": 1368.2,
         "location_Init_end_top": [
             [
-                267,
-                405
+                305,
+                381
             ],
             [
-                307,
-                393
+                306,
+                387
             ]
         ],
-        "current_set": 2,
+        "current_set_top_init_score": 6,
+        "current_rally_top_init_score": 0,
+        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
-                564,
-                176
+                552,
+                224
             ],
             [
-                499,
-                224
+                497,
+                230
             ]
         ],
-        "current_rally_bottom_init_score": 1,
-        "current_set_bottom_init_score": 4,
-        "Action_wl_init_bottom": "Winner",
-        "current_set_top_init_score": 6
-    },
-    "39": {
         "location_end_shuttle": [
-            272.0,
-            775.0,
-            129.0
+            178,
+            209,
+            0
+        ],
+        "location_contact_shuttle": [
+            621.0,
+            1131.0,
+            83.0
         ],
         "sides_changed": 1,
-        "current_rally_top_init_score": 0,
-        "contact_timestamp_shuttle": 1398.6,
-        "Action_FB_init_top": "Forehand",
-        "shot": "Net Shot",
+        "current_set": 2,
         "location_Init_start_bottom": [
             [
-                359,
-                1172
+                395,
+                1216
             ],
             [
-                418,
-                1162
+                555,
+                1199
             ]
-        ],
-        "end_timestamp_shuttle": 1399.0,
-        "location_contact_shuttle": [
-            352.0,
-            133.0,
-            250.0
-        ],
-        "Action_wl_init_top": "Mistake",
+        ]
+    },
+    "39": {
+        "contact_timestamp_shuttle": 1398.6,
+        "current_set_bottom_init_score": 5,
         "location_Init_end_bottom": [
             [
-                341,
-                1182
+                353,
+                1191
             ],
             [
                 455,
                 1171
             ]
         ],
+        "end_timestamp_shuttle": 1398.9,
+        "shot": "Placement",
+        "Action_wl_init_top": "Mistake",
+        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
-                371,
+                370,
                 116
             ],
             [
-                370,
-                111
+                351,
+                206
             ]
         ],
-        "current_set_bottom_init_score": 5,
+        "current_set_top_init_score": 6,
+        "current_rally_top_init_score": 0,
+        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 333,
@@ -2443,38 +2433,32 @@
                 154
             ]
         ],
-        "current_rally_bottom_init_score": 1,
-        "current_set": 2,
-        "current_set_top_init_score": 6
-    },
-    "40": {
         "location_end_shuttle": [
-            182.0,
-            776.0,
-            143.0
+            231,
+            1331,
+            0
+        ],
+        "location_contact_shuttle": [
+            352.0,
+            124.0,
+            251.0
         ],
         "sides_changed": 1,
-        "current_rally_top_init_score": 0,
-        "contact_timestamp_shuttle": 1420.3,
-        "Action_FB_init_top": "Forehand",
-        "shot": "Net Shot",
+        "current_set": 2,
         "location_Init_start_bottom": [
             [
-                297,
-                1246
+                359,
+                1172
             ],
             [
-                337,
-                1182
+                418,
+                1162
             ]
-        ],
-        "end_timestamp_shuttle": 1420.7,
-        "location_contact_shuttle": [
-            187.0,
-            486.0,
-            87.0
-        ],
-        "Action_wl_init_top": "Mistake",
+        ]
+    },
+    "40": {
+        "contact_timestamp_shuttle": 1420.3,
+        "current_set_bottom_init_score": 6,
         "location_Init_end_bottom": [
             [
                 351,
@@ -2485,6 +2469,10 @@
                 1162
             ]
         ],
+        "end_timestamp_shuttle": 1420.7,
+        "shot": "Net Shot",
+        "Action_wl_init_top": "Mistake",
+        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
                 223,
@@ -2495,7 +2483,9 @@
                 452
             ]
         ],
-        "current_set_bottom_init_score": 6,
+        "current_set_top_init_score": 6,
+        "current_rally_top_init_score": 0,
+        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 338,
@@ -2506,58 +2496,59 @@
                 544
             ]
         ],
-        "current_rally_bottom_init_score": 1,
-        "current_set": 2,
-        "current_set_top_init_score": 6
-    },
-    "41": {
         "location_end_shuttle": [
-            420.0,
-            773.0,
-            142.0
+            202.0,
+            776.0,
+            124.0
+        ],
+        "location_contact_shuttle": [
+            187.0,
+            489.0,
+            87.0
         ],
         "sides_changed": 1,
-        "current_rally_top_init_score": 1,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Net Shot",
+        "current_set": 2,
         "location_Init_start_bottom": [
             [
-                431,
-                1210
+                297,
+                1246
             ],
             [
-                551,
-                1104
+                337,
+                1182
             ]
-        ],
-        "end_timestamp_shuttle": 1439.9,
-        "location_contact_shuttle": [
-            614.0,
-            1045.0,
-            42.0
-        ],
+        ]
+    },
+    "41": {
+        "contact_timestamp_shuttle": 1439.2,
+        "current_set_bottom_init_score": 6,
         "location_Init_end_bottom": [
             [
-                433,
-                1181
+                558,
+                1113
             ],
             [
-                511,
-                1132
+                465,
+                1190
             ]
         ],
-        "contact_timestamp_shuttle": 1439.2,
+        "Action_wl_init_bottom": "Mistake",
+        "end_timestamp_shuttle": 1439.4,
+        "Action_FB_init_bottom": "Forehand",
+        "shot": "Net Shot",
         "location_Init_end_top": [
             [
-                417,
-                363
+                391,
+                327
             ],
             [
-                385,
-                358
+                449,
+                277
             ]
         ],
-        "current_set": 2,
+        "current_set_top_init_score": 7,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 435,
@@ -2568,249 +2559,248 @@
                 316
             ]
         ],
-        "current_rally_bottom_init_score": 0,
-        "current_set_bottom_init_score": 6,
-        "Action_wl_init_bottom": "Mistake",
-        "current_set_top_init_score": 7
-    },
-    "42": {
         "location_end_shuttle": [
-            678,
-            349,
-            0
+            450.0,
+            773.0,
+            131.0
+        ],
+        "location_contact_shuttle": [
+            611.0,
+            1002.0,
+            54.0
         ],
         "sides_changed": 1,
-        "current_rally_top_init_score": 1,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
+        "current_set": 2,
         "location_Init_start_bottom": [
             [
-                231,
-                1484
+                431,
+                1210
             ],
             [
-                251,
-                1472
+                551,
+                1104
+            ]
+        ]
+    },
+    "42": {
+        "contact_timestamp_shuttle": 1458.3,
+        "current_set_bottom_init_score": 6,
+        "location_Init_end_bottom": [
+            [
+                316,
+                1318
+            ],
+            [
+                379,
+                1201
             ]
         ],
-        "end_timestamp_shuttle": 1460.2,
+        "Action_wl_init_bottom": "Mistake",
+        "end_timestamp_shuttle": 1460.3,
+        "Action_FB_init_bottom": "Forehand",
+        "shot": "Placement",
+        "location_Init_end_top": [
+            [
+                464,
+                368
+            ],
+            [
+                548,
+                426
+            ]
+        ],
+        "current_set_top_init_score": 8,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
+        "location_Init_start_top": [
+            [
+                353,
+                347
+            ],
+            [
+                434,
+                368
+            ]
+        ],
+        "location_end_shuttle": [
+            685,
+            288,
+            0
+        ],
         "location_contact_shuttle": [
             270.0,
             1384.0,
             269.0
         ],
-        "location_Init_end_bottom": [
-            [
-                317,
-                1287
-            ],
-            [
-                376,
-                1256
-            ]
-        ],
-        "contact_timestamp_shuttle": 1459.3,
-        "location_Init_end_top": [
-            [
-                460,
-                368
-            ],
-            [
-                519,
-                414
-            ]
-        ],
+        "sides_changed": 1,
         "current_set": 2,
-        "location_Init_start_top": [
+        "location_Init_start_bottom": [
             [
-                351,
-                364
+                266,
+                1361
             ],
             [
-                434,
-                363
+                289,
+                1340
             ]
-        ],
-        "current_rally_bottom_init_score": 0,
-        "current_set_bottom_init_score": 6,
-        "Action_wl_init_bottom": "Mistake",
-        "current_set_top_init_score": 8
+        ]
     },
     "43": {
-        "location_end_shuttle": [
-            457.0,
-            773.0,
-            136.0
-        ],
-        "sides_changed": 1,
-        "current_rally_top_init_score": 0,
-        "contact_timestamp_shuttle": 1603.2,
-        "Action_FB_init_top": "Forehand",
-        "shot": "Net Shot",
-        "location_Init_start_bottom": [
-            [
-                410,
-                1162
-            ],
-            [
-                519,
-                1031
-            ]
-        ],
-        "end_timestamp_shuttle": 1605.2,
-        "location_contact_shuttle": [
-            255.0,
-            208.0,
-            164.0
-        ],
-        "Action_wl_init_top": "Mistake",
+        "contact_timestamp_shuttle": 1604.2,
+        "current_set_bottom_init_score": 7,
         "location_Init_end_bottom": [
             [
-                472,
-                1180
+                314,
+                1202
             ],
             [
-                474,
-                1180
+                408,
+                1171
             ]
         ],
+        "end_timestamp_shuttle": 1604.5,
+        "shot": "Net Shot",
+        "Action_wl_init_top": "Mistake",
+        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
-                405,
-                310
+                376,
+                283
             ],
             [
-                382,
-                316
+                292,
+                242
             ]
         ],
-        "current_set_bottom_init_score": 7,
+        "current_set_top_init_score": 8,
+        "current_rally_top_init_score": 0,
+        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
-                409,
-                369
+                401,
+                316
             ],
             [
-                397,
-                409
+                287,
+                232
             ]
         ],
-        "current_rally_bottom_init_score": 1,
-        "current_set": 2,
-        "current_set_top_init_score": 8
-    },
-    "44": {
         "location_end_shuttle": [
-            333,
-            1364,
-            0
+            446.0,
+            773.0,
+            127.0
+        ],
+        "location_contact_shuttle": [
+            251.0,
+            201.0,
+            155.0
         ],
         "sides_changed": 1,
-        "current_rally_top_init_score": 1,
-        "contact_timestamp_shuttle": 1629.0,
-        "Action_FB_init_top": "Forehand",
-        "shot": "Placement",
+        "current_set": 2,
         "location_Init_start_bottom": [
             [
-                376,
-                1211
+                379,
+                1172
             ],
             [
-                452,
-                1190
+                400,
+                1152
+            ]
+        ]
+    },
+    "44": {
+        "contact_timestamp_shuttle": 1628.0,
+        "current_set_bottom_init_score": 7,
+        "location_Init_end_bottom": [
+            [
+                258,
+                1125
+            ],
+            [
+                244,
+                1107
             ]
         ],
-        "end_timestamp_shuttle": 1629.5,
+        "end_timestamp_shuttle": 1630.0,
+        "shot": "Placement",
+        "Action_wl_init_top": "Winner",
+        "Action_FB_init_top": "Forehand",
+        "location_Init_end_top": [
+            [
+                468,
+                304
+            ],
+            [
+                400,
+                357
+            ]
+        ],
+        "current_set_top_init_score": 9,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
+        "location_Init_start_top": [
+            [
+                510,
+                240
+            ],
+            [
+                506,
+                229
+            ]
+        ],
+        "location_end_shuttle": [
+            301,
+            815,
+            0
+        ],
         "location_contact_shuttle": [
             552.0,
             141.0,
             275.0
         ],
-        "Action_wl_init_top": "Winner",
-        "location_Init_end_bottom": [
-            [
-                374,
-                1172
-            ],
-            [
-                441,
-                1200
-            ]
-        ],
-        "location_Init_end_top": [
-            [
-                552,
-                157
-            ],
-            [
-                501,
-                182
-            ]
-        ],
-        "current_set_bottom_init_score": 7,
-        "location_Init_start_top": [
-            [
-                567,
-                186
-            ],
-            [
-                531,
-                191
-            ]
-        ],
-        "current_rally_bottom_init_score": 0,
-        "current_set": 2,
-        "current_set_top_init_score": 9
-    },
-    "45": {
-        "location_end_shuttle": [
-            699,
-            1404,
-            0
-        ],
         "sides_changed": 1,
-        "current_rally_top_init_score": 0,
-        "contact_timestamp_shuttle": 1655.6,
-        "Action_FB_init_top": "Forehand",
-        "shot": "Placement",
+        "current_set": 2,
         "location_Init_start_bottom": [
             [
-                350,
-                1216
+                381,
+                1181
             ],
             [
-                389,
-                1191
+                391,
+                1226
             ]
-        ],
-        "end_timestamp_shuttle": 1656.1,
-        "location_contact_shuttle": [
-            585.0,
-            279.0,
-            277.0
-        ],
-        "Action_wl_init_top": "Mistake",
+        ]
+    },
+    "45": {
+        "contact_timestamp_shuttle": 1655.6,
+        "current_set_bottom_init_score": 8,
         "location_Init_end_bottom": [
             [
-                394,
-                1221
+                481,
+                1245
             ],
             [
                 574,
-                1229
+                1234
             ]
         ],
+        "end_timestamp_shuttle": 1656.4,
+        "shot": "Smash",
+        "Action_wl_init_top": "Mistake",
+        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
-                568,
-                319
+                532,
+                314
             ],
             [
-                468,
-                351
+                486,
+                391
             ]
         ],
-        "current_set_bottom_init_score": 8,
+        "current_set_top_init_score": 9,
+        "current_rally_top_init_score": 0,
+        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 523,
@@ -2821,101 +2811,95 @@
                 409
             ]
         ],
-        "current_rally_bottom_init_score": 1,
-        "current_set": 2,
-        "current_set_top_init_score": 9
-    },
-    "46": {
         "location_end_shuttle": [
-            201.0,
-            776.0,
-            137.0
+            693,
+            1304,
+            0
+        ],
+        "location_contact_shuttle": [
+            554.0,
+            253.0,
+            261.0
         ],
         "sides_changed": 1,
-        "current_rally_top_init_score": 0,
-        "contact_timestamp_shuttle": 1691.1,
-        "Action_FB_init_top": "Forehand",
-        "shot": "Net Shot",
+        "current_set": 2,
         "location_Init_start_bottom": [
             [
-                302,
-                1192
+                350,
+                1216
             ],
             [
-                325,
-                1182
+                389,
+                1191
             ]
-        ],
-        "end_timestamp_shuttle": 1691.4,
-        "location_contact_shuttle": [
-            208.0,
-            566.0,
-            119.0
-        ],
-        "Action_wl_init_top": "Mistake",
+        ]
+    },
+    "46": {
+        "contact_timestamp_shuttle": 1691.2,
+        "current_set_bottom_init_score": 9,
         "location_Init_end_bottom": [
             [
-                396,
-                1172
+                340,
+                1236
             ],
             [
                 396,
                 1152
             ]
         ],
+        "end_timestamp_shuttle": 1691.5,
+        "shot": "Net Shot",
+        "Action_wl_init_top": "Mistake",
+        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
+            [
+                295,
+                492
+            ],
+            [
+                232,
+                590
+            ]
+        ],
+        "current_set_top_init_score": 9,
+        "current_rally_top_init_score": 0,
+        "current_rally_bottom_init_score": 1,
+        "location_Init_start_top": [
             [
                 233,
                 564
             ],
             [
-                298,
-                471
+                310,
+                458
             ]
         ],
-        "current_set_bottom_init_score": 9,
-        "location_Init_start_top": [
-            [
-                326,
-                452
-            ],
-            [
-                244,
-                604
-            ]
-        ],
-        "current_rally_bottom_init_score": 1,
-        "current_set": 2,
-        "current_set_top_init_score": 9
-    },
-    "47": {
         "location_end_shuttle": [
-            177.0,
+            202.0,
             776.0,
-            119.0
+            128.0
+        ],
+        "location_contact_shuttle": [
+            211.0,
+            531.0,
+            129.0
         ],
         "sides_changed": 1,
-        "current_rally_top_init_score": 0,
-        "contact_timestamp_shuttle": 1725.4,
-        "Action_FB_init_top": "Forehand",
-        "shot": "Net Shot",
+        "current_set": 2,
         "location_Init_start_bottom": [
             [
-                368,
-                1276
+                353,
+                1211
             ],
             [
-                431,
-                1220
+                351,
+                1172
             ]
-        ],
-        "end_timestamp_shuttle": 1725.9,
-        "location_contact_shuttle": [
-            253.0,
-            249.0,
-            195.0
-        ],
-        "Action_wl_init_top": "Mistake",
+        ]
+    },
+    "47": {
+        "contact_timestamp_shuttle": 1725.5,
+        "current_set_bottom_init_score": 10,
         "location_Init_end_bottom": [
             [
                 321,
@@ -2926,6 +2910,10 @@
                 1246
             ]
         ],
+        "end_timestamp_shuttle": 1725.9,
+        "shot": "Net Shot",
+        "Action_wl_init_top": "Mistake",
+        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
                 339,
@@ -2936,222 +2924,235 @@
                 263
             ]
         ],
-        "current_set_bottom_init_score": 10,
+        "current_set_top_init_score": 9,
+        "current_rally_top_init_score": 0,
+        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
-                327,
-                279
+                362,
+                369
             ],
             [
-                383,
-                398
+                300,
+                274
             ]
         ],
-        "current_rally_bottom_init_score": 1,
+        "location_end_shuttle": [
+            186.0,
+            776.0,
+            126.0
+        ],
+        "location_contact_shuttle": [
+            256.0,
+            208.0,
+            207.0
+        ],
+        "sides_changed": 1,
         "current_set": 2,
-        "current_set_top_init_score": 9
+        "location_Init_start_bottom": [
+            [
+                333,
+                1246
+            ],
+            [
+                428,
+                1225
+            ]
+        ]
     },
     "48": {
-        "location_end_shuttle": [
-            554,
-            75,
-            0
+        "contact_timestamp_shuttle": 1755.9,
+        "current_set_bottom_init_score": 10,
+        "location_Init_end_bottom": [
+            [
+                438,
+                1181
+            ],
+            [
+                482,
+                1180
+            ]
         ],
-        "sides_changed": 1,
-        "current_rally_top_init_score": 1,
+        "Action_wl_init_bottom": "Mistake",
+        "end_timestamp_shuttle": 1757.7,
         "Action_FB_init_bottom": "Backhand",
         "shot": "Placement",
-        "location_Init_start_bottom": [
-            [
-                377,
-                1124
-            ],
-            [
-                299,
-                1042
-            ]
-        ],
-        "end_timestamp_shuttle": 1755.8,
-        "location_contact_shuttle": [
-            265.0,
-            955.0,
-            83.0
-        ],
-        "location_Init_end_bottom": [
-            [
-                377,
-                1124
-            ],
-            [
-                299,
-                1042
-            ]
-        ],
-        "contact_timestamp_shuttle": 1755.8,
         "location_Init_end_top": [
             [
-                425,
-                439
-            ],
-            [
-                458,
-                439
-            ]
-        ],
-        "current_set": 2,
-        "location_Init_start_top": [
-            [
-                425,
-                439
-            ],
-            [
-                458,
-                439
-            ]
-        ],
-        "current_rally_bottom_init_score": 0,
-        "current_set_bottom_init_score": 10,
-        "Action_wl_init_bottom": "Mistake",
-        "current_set_top_init_score": 10
-    },
-    "49": {
-        "location_end_shuttle": [
-            615.0,
-            771.0,
-            111.0
-        ],
-        "sides_changed": 1,
-        "current_rally_top_init_score": 1,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Net Shot",
-        "location_Init_start_bottom": [
-            [
-                435,
-                1459
-            ],
-            [
-                472,
-                1470
-            ]
-        ],
-        "end_timestamp_shuttle": 1795.6,
-        "location_contact_shuttle": [
-            579.0,
-            1430.0,
-            232.0
-        ],
-        "location_Init_end_bottom": [
-            [
-                499,
-                1338
+                500,
+                224
             ],
             [
                 525,
-                1413
+                196
             ]
         ],
-        "contact_timestamp_shuttle": 1795.1,
-        "location_Init_end_top": [
-            [
-                379,
-                416
-            ],
-            [
-                495,
-                385
-            ]
-        ],
-        "current_set": 2,
+        "current_set_top_init_score": 10,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
-                429,
-                451
+                398,
+                457
             ],
             [
-                364,
-                473
+                441,
+                427
             ]
         ],
-        "current_rally_bottom_init_score": 0,
-        "current_set_bottom_init_score": 10,
-        "Action_wl_init_bottom": "Mistake",
-        "current_set_top_init_score": 11
-    },
-    "50": {
         "location_end_shuttle": [
-            442,
-            240,
+            553,
+            79,
             0
         ],
+        "location_contact_shuttle": [
+            256.0,
+            896.0,
+            83.0
+        ],
         "sides_changed": 1,
-        "current_rally_top_init_score": 0,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Smash",
+        "current_set": 2,
         "location_Init_start_bottom": [
             [
-                496,
-                1436
+                374,
+                1105
             ],
             [
-                459,
-                1327
+                276,
+                985
             ]
-        ],
-        "end_timestamp_shuttle": 1841.0,
-        "location_contact_shuttle": [
-            495.0,
-            1282.0,
-            258.0
-        ],
+        ]
+    },
+    "49": {
+        "contact_timestamp_shuttle": 1795.2,
+        "current_set_bottom_init_score": 10,
         "location_Init_end_bottom": [
             [
-                415,
-                1245
+                493,
+                1338
             ],
             [
-                439,
-                1328
+                496,
+                1338
             ]
         ],
-        "contact_timestamp_shuttle": 1840.2,
+        "Action_wl_init_bottom": "Mistake",
+        "end_timestamp_shuttle": 1795.4,
+        "Action_FB_init_bottom": "Forehand",
+        "shot": "Net Shot",
         "location_Init_end_top": [
             [
-                513,
-                368
-            ],
-            [
-                427,
-                469
-            ]
-        ],
-        "current_set": 2,
-        "location_Init_start_top": [
-            [
-                437,
+                485,
                 409
             ],
             [
-                494,
-                420
+                367,
+                422
             ]
         ],
-        "current_rally_bottom_init_score": 1,
-        "current_set_bottom_init_score": 11,
-        "Action_wl_init_bottom": "Winner",
-        "current_set_top_init_score": 11
-    },
-    "51": {
+        "current_set_top_init_score": 11,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
+        "location_Init_start_top": [
+            [
+                431,
+                457
+            ],
+            [
+                376,
+                476
+            ]
+        ],
         "location_end_shuttle": [
-            408.0,
-            773.0,
+            616.0,
+            771.0,
+            119.0
+        ],
+        "location_contact_shuttle": [
+            573.0,
+            1286.0,
             255.0
         ],
         "sides_changed": 1,
-        "current_rally_top_init_score": 0,
-        "contact_timestamp_shuttle": 1874.8,
-        "Action_FB_init_top": "Forehand",
-        "shot": "Net Shot",
+        "current_set": 2,
         "location_Init_start_bottom": [
+            [
+                476,
+                1381
+            ],
+            [
+                506,
+                1425
+            ]
+        ]
+    },
+    "50": {
+        "contact_timestamp_shuttle": 1840.3,
+        "current_set_bottom_init_score": 11,
+        "location_Init_end_bottom": [
+            [
+                439,
+                1317
+            ],
+            [
+                439,
+                1338
+            ]
+        ],
+        "Action_wl_init_bottom": "Winner",
+        "end_timestamp_shuttle": 1840.8,
+        "Action_FB_init_bottom": "Forehand",
+        "shot": "Smash",
+        "location_Init_end_top": [
+            [
+                383,
+                416
+            ],
+            [
+                511,
+                362
+            ]
+        ],
+        "current_set_top_init_score": 11,
+        "current_rally_top_init_score": 0,
+        "current_rally_bottom_init_score": 1,
+        "location_Init_start_top": [
+            [
+                494,
+                414
+            ],
+            [
+                413,
+                427
+            ]
+        ],
+        "location_end_shuttle": [
+            440,
+            354,
+            0
+        ],
+        "location_contact_shuttle": [
+            495.0,
+            1269.0,
+            259.0
+        ],
+        "sides_changed": 1,
+        "current_set": 2,
+        "location_Init_start_bottom": [
+            [
+                458,
+                1338
+            ],
+            [
+                498,
+                1425
+            ]
+        ]
+    },
+    "51": {
+        "contact_timestamp_shuttle": 1874.5,
+        "current_set_bottom_init_score": 12,
+        "location_Init_end_bottom": [
             [
                 340,
                 1211
@@ -3161,35 +3162,11 @@
                 1181
             ]
         ],
-        "end_timestamp_shuttle": 1875.6,
-        "location_contact_shuttle": [
-            288.0,
-            136.0,
-            265.0
-        ],
+        "end_timestamp_shuttle": 1874.8,
+        "shot": "Net Shot",
         "Action_wl_init_top": "Mistake",
-        "location_Init_end_bottom": [
-            [
-                528,
-                1095
-            ],
-            [
-                473,
-                1114
-            ]
-        ],
+        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
-            [
-                311,
-                199
-            ],
-            [
-                275,
-                160
-            ]
-        ],
-        "current_set_bottom_init_score": 12,
-        "location_Init_start_top": [
             [
                 313,
                 196
@@ -3199,58 +3176,72 @@
                 136
             ]
         ],
+        "current_set_top_init_score": 11,
+        "current_rally_top_init_score": 0,
         "current_rally_bottom_init_score": 1,
-        "current_set": 2,
-        "current_set_top_init_score": 11
-    },
-    "52": {
+        "location_Init_start_top": [
+            [
+                323,
+                221
+            ],
+            [
+                305,
+                194
+            ]
+        ],
         "location_end_shuttle": [
-            541.0,
-            772.0,
-            101.0
+            443.0,
+            773.0,
+            82.0
+        ],
+        "location_contact_shuttle": [
+            288.0,
+            136.0,
+            265.0
         ],
         "sides_changed": 1,
-        "current_rally_top_init_score": 1,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Net Shot",
+        "current_set": 2,
         "location_Init_start_bottom": [
             [
-                291,
-                1202
+                356,
+                1182
             ],
             [
-                396,
-                1143
+                428,
+                1181
             ]
-        ],
-        "end_timestamp_shuttle": 1912.5,
-        "location_contact_shuttle": [
-            528.0,
-            1038.0,
-            94.0
-        ],
+        ]
+    },
+    "52": {
+        "contact_timestamp_shuttle": 1912.5,
+        "current_set_bottom_init_score": 12,
         "location_Init_end_bottom": [
             [
-                291,
-                1202
+                399,
+                1171
             ],
             [
-                396,
-                1143
+                489,
+                1171
             ]
         ],
-        "contact_timestamp_shuttle": 1912.5,
+        "Action_wl_init_bottom": "Mistake",
+        "end_timestamp_shuttle": 1912.9,
+        "Action_FB_init_bottom": "Forehand",
+        "shot": "Net Shot",
         "location_Init_end_top": [
             [
-                291,
-                411
+                322,
+                387
             ],
             [
-                301,
-                440
+                383,
+                421
             ]
         ],
-        "current_set": 2,
+        "current_set_top_init_score": 12,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 291,
@@ -3261,240 +3252,238 @@
                 440
             ]
         ],
-        "current_rally_bottom_init_score": 0,
-        "current_set_bottom_init_score": 12,
-        "Action_wl_init_bottom": "Mistake",
-        "current_set_top_init_score": 12
-    },
-    "53": {
         "location_end_shuttle": [
-            552,
-            1640,
-            0
+            538.0,
+            772.0,
+            123.0
+        ],
+        "location_contact_shuttle": [
+            529.0,
+            1074.0,
+            87.0
         ],
         "sides_changed": 1,
-        "current_rally_top_init_score": 0,
-        "contact_timestamp_shuttle": 1960.1,
-        "Action_FB_init_top": "Forehand",
-        "shot": "Placement",
+        "current_set": 2,
         "location_Init_start_bottom": [
             [
-                422,
-                1114
+                291,
+                1202
             ],
             [
-                423,
-                1124
+                396,
+                1143
             ]
-        ],
-        "end_timestamp_shuttle": 1961.7,
-        "location_contact_shuttle": [
-            231.0,
-            557.0,
-            102.0
-        ],
-        "Action_wl_init_top": "Mistake",
+        ]
+    },
+    "53": {
+        "contact_timestamp_shuttle": 1960.2,
+        "current_set_bottom_init_score": 13,
         "location_Init_end_bottom": [
             [
-                413,
-                1371
+                416,
+                1381
             ],
             [
-                413,
-                1403
+                448,
+                1414
             ]
         ],
+        "end_timestamp_shuttle": 1961.6,
+        "shot": "Placement",
+        "Action_wl_init_top": "Mistake",
+        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
                 471,
                 403
             ],
             [
-                407,
+                409,
                 445
             ]
         ],
-        "current_set_bottom_init_score": 13,
+        "current_set_top_init_score": 12,
+        "current_rally_top_init_score": 0,
+        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
-                395,
-                479
+                280,
+                570
             ],
             [
-                281,
-                596
+                378,
+                479
             ]
         ],
-        "current_rally_bottom_init_score": 1,
-        "current_set": 2,
-        "current_set_top_init_score": 12
-    },
-    "54": {
         "location_end_shuttle": [
-            138,
-            1434,
+            564,
+            1501,
             0
         ],
+        "location_contact_shuttle": [
+            230.0,
+            580.0,
+            97.0
+        ],
         "sides_changed": 1,
-        "current_rally_top_init_score": 0,
-        "contact_timestamp_shuttle": 1990.4,
-        "Action_FB_init_top": "Forehand",
-        "shot": "Placement",
+        "current_set": 2,
         "location_Init_start_bottom": [
             [
-                275,
-                1192
+                392,
+                1105
             ],
             [
-                379,
-                1201
+                389,
+                1105
             ]
-        ],
-        "end_timestamp_shuttle": 1992.4,
-        "location_contact_shuttle": [
-            223.0,
-            539.0,
-            141.0
-        ],
-        "Action_wl_init_top": "Mistake",
+        ]
+    },
+    "54": {
+        "contact_timestamp_shuttle": 1991.4,
+        "current_set_bottom_init_score": 14,
         "location_Init_end_bottom": [
             [
                 332,
-                1236
+                1246
             ],
             [
-                308,
+                306,
                 1221
             ]
         ],
+        "end_timestamp_shuttle": 1992.5,
+        "shot": "Placement",
+        "Action_wl_init_top": "Mistake",
+        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
                 326,
-                434
+                440
             ],
             [
                 279,
-                486
+                493
             ]
         ],
-        "current_set_bottom_init_score": 14,
+        "current_set_top_init_score": 12,
+        "current_rally_top_init_score": 0,
+        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
-                373,
-                392
+                254,
+                550
             ],
             [
-                296,
-                411
+                304,
+                410
             ]
         ],
-        "current_rally_bottom_init_score": 1,
+        "location_end_shuttle": [
+            133,
+            1404,
+            0
+        ],
+        "location_contact_shuttle": [
+            222.0,
+            554.0,
+            137.0
+        ],
+        "sides_changed": 1,
         "current_set": 2,
-        "current_set_top_init_score": 12
+        "location_Init_start_bottom": [
+            [
+                273,
+                1182
+            ],
+            [
+                271,
+                1173
+            ]
+        ]
     },
     "55": {
-        "location_end_shuttle": [
-            233,
-            145,
-            0
-        ],
-        "sides_changed": 1,
-        "current_rally_top_init_score": 1,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
-        "location_Init_start_bottom": [
-            [
-                514,
-                1316
-            ],
-            [
-                587,
-                1402
-            ]
-        ],
-        "end_timestamp_shuttle": 2030.6,
-        "location_contact_shuttle": [
-            675.0,
-            1356.0,
-            237.0
-        ],
-        "location_Init_end_bottom": [
-            [
-                182,
-                1164
-            ],
-            [
-                244,
-                1163
-            ]
-        ],
-        "contact_timestamp_shuttle": 2028.5,
-        "location_Init_end_top": [
-            [
-                240,
-                269
-            ],
-            [
-                207,
-                223
-            ]
-        ],
-        "current_set": 2,
-        "location_Init_start_top": [
-            [
-                452,
-                315
-            ],
-            [
-                502,
-                255
-            ]
-        ],
-        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 2028.6,
         "current_set_bottom_init_score": 14,
-        "Action_wl_init_bottom": "Mistake",
-        "current_set_top_init_score": 13
-    },
-    "56": {
-        "location_end_shuttle": [
-            138,
-            251,
-            0
-        ],
-        "sides_changed": 1,
-        "current_rally_top_init_score": 1,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
-        "location_Init_start_bottom": [
-            [
-                275,
-                1257
-            ],
-            [
-                296,
-                1287
-            ]
-        ],
-        "end_timestamp_shuttle": 2076.8,
-        "location_contact_shuttle": [
-            251.0,
-            1253.0,
-            222.0
-        ],
         "location_Init_end_bottom": [
             [
-                242,
-                1097
+                343,
+                1182
             ],
             [
-                297,
+                349,
                 1182
             ]
         ],
-        "contact_timestamp_shuttle": 2076.0,
+        "Action_wl_init_bottom": "Mistake",
+        "end_timestamp_shuttle": 2030.1,
+        "Action_FB_init_bottom": "Forehand",
+        "shot": "Placement",
         "location_Init_end_top": [
             [
-                367,
+                239,
+                264
+            ],
+            [
+                309,
+                279
+            ]
+        ],
+        "current_set_top_init_score": 13,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
+        "location_Init_start_top": [
+            [
+                498,
+                304
+            ],
+            [
+                456,
+                334
+            ]
+        ],
+        "location_end_shuttle": [
+            244,
+            92,
+            0
+        ],
+        "location_contact_shuttle": [
+            671.0,
+            1299.0,
+            246.0
+        ],
+        "sides_changed": 1,
+        "current_set": 2,
+        "location_Init_start_bottom": [
+            [
+                520,
+                1337
+            ],
+            [
+                618,
+                1358
+            ]
+        ]
+    },
+    "56": {
+        "contact_timestamp_shuttle": 2076.0,
+        "current_set_bottom_init_score": 14,
+        "location_Init_end_bottom": [
+            [
+                239,
+                1257
+            ],
+            [
+                292,
+                1182
+            ]
+        ],
+        "Action_wl_init_bottom": "Mistake",
+        "end_timestamp_shuttle": 2076.6,
+        "Action_FB_init_bottom": "Forehand",
+        "shot": "Placement",
+        "location_Init_end_top": [
+            [
+                396,
                 404
             ],
             [
@@ -3502,7 +3491,9 @@
                 404
             ]
         ],
-        "current_set": 2,
+        "current_set_top_init_score": 14,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 364,
@@ -3513,249 +3504,248 @@
                 358
             ]
         ],
-        "current_rally_bottom_init_score": 0,
-        "current_set_bottom_init_score": 14,
-        "Action_wl_init_bottom": "Mistake",
-        "current_set_top_init_score": 14
-    },
-    "57": {
         "location_end_shuttle": [
-            466,
-            1246,
+            133,
+            234,
             0
         ],
+        "location_contact_shuttle": [
+            251.0,
+            1262.0,
+            221.0
+        ],
         "sides_changed": 1,
-        "current_rally_top_init_score": 0,
-        "contact_timestamp_shuttle": 2114.1,
-        "Action_FB_init_top": "Backhand",
-        "shot": "Placement",
+        "current_set": 2,
         "location_Init_start_bottom": [
             [
-                564,
-                1022
+                275,
+                1257
             ],
             [
-                583,
-                1004
+                296,
+                1287
             ]
-        ],
-        "end_timestamp_shuttle": 2114.3,
-        "location_contact_shuttle": [
-            551.0,
-            436.0,
-            175.0
-        ],
-        "Action_wl_init_top": "Mistake",
+        ]
+    },
+    "57": {
+        "contact_timestamp_shuttle": 2113.6,
+        "current_set_bottom_init_score": 15,
         "location_Init_end_bottom": [
             [
-                531,
-                1095
+                561,
+                1013
             ],
             [
-                583,
-                1048
+                582,
+                974
             ]
         ],
+        "Action_wl_init_bottom": "Winner",
+        "end_timestamp_shuttle": 2114.0,
+        "Action_FB_init_bottom": "Backhand",
+        "shot": "Placement",
         "location_Init_end_top": [
             [
                 501,
                 351
             ],
             [
-                532,
-                432
+                445,
+                445
             ]
         ],
-        "current_set_bottom_init_score": 15,
+        "current_set_top_init_score": 14,
+        "current_rally_top_init_score": 0,
+        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
-                503,
-                351
+                508,
+                379
             ],
             [
-                476,
-                450
+                457,
+                421
             ]
         ],
-        "current_rally_bottom_init_score": 1,
+        "location_end_shuttle": [
+            550,
+            328,
+            0
+        ],
+        "location_contact_shuttle": [
+            631.0,
+            892.0,
+            150.0
+        ],
+        "sides_changed": 1,
         "current_set": 2,
-        "current_set_top_init_score": 14
+        "location_Init_start_bottom": [
+            [
+                495,
+                1114
+            ],
+            [
+                579,
+                974
+            ]
+        ]
     },
     "58": {
-        "location_end_shuttle": [
-            198,
-            1171,
-            0
-        ],
-        "sides_changed": 2,
-        "current_rally_top_init_score": 1,
-        "contact_timestamp_shuttle": 2241.5,
-        "Action_FB_init_top": "Forehand",
-        "shot": "Smash",
-        "location_Init_start_bottom": [
-            [
-                447,
-                1131
-            ],
-            [
-                338,
-                1161
-            ]
-        ],
-        "end_timestamp_shuttle": 2241.5,
-        "location_contact_shuttle": [
-            266,
-            150,
-            177.0
-        ],
-        "Action_wl_init_top": "Winner",
+        "contact_timestamp_shuttle": 2242.0,
+        "current_set_bottom_init_score": 0,
         "location_Init_end_bottom": [
             [
-                447,
-                1131
+                255,
+                1174
             ],
             [
-                338,
-                1161
+                291,
+                1139
             ]
         ],
-        "location_Init_end_top": [
-            [
-                306,
-                116
-            ],
-            [
-                287,
-                105
-            ]
-        ],
-        "current_set_bottom_init_score": 0,
-        "location_Init_start_top": [
-            [
-                306,
-                116
-            ],
-            [
-                287,
-                105
-            ]
-        ],
-        "current_rally_bottom_init_score": 0,
-        "current_set": 3,
-        "current_set_top_init_score": 1
-    },
-    "59": {
-        "location_end_shuttle": [
-            678,
-            515,
-            0
-        ],
-        "sides_changed": 2,
-        "current_rally_top_init_score": 1,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
-        "location_Init_start_bottom": [
-            [
-                410,
-                1077
-            ],
-            [
-                571,
-                1035
-            ]
-        ],
-        "end_timestamp_shuttle": 2260.4,
-        "location_contact_shuttle": [
-            625,
-            1058,
-            88.0
-        ],
-        "location_Init_end_bottom": [
-            [
-                410,
-                1077
-            ],
-            [
-                571,
-                1035
-            ]
-        ],
-        "contact_timestamp_shuttle": 2260.4,
-        "location_Init_end_top": [
-            [
-                478,
-                305
-            ],
-            [
-                457,
-                330
-            ]
-        ],
-        "current_set": 3,
-        "location_Init_start_top": [
-            [
-                478,
-                305
-            ],
-            [
-                457,
-                330
-            ]
-        ],
-        "current_rally_bottom_init_score": 0,
-        "current_set_bottom_init_score": 0,
         "Action_wl_init_bottom": "Mistake",
-        "current_set_top_init_score": 2
-    },
-    "60": {
+        "end_timestamp_shuttle": 2243.1,
+        "Action_FB_init_bottom": "Backhand",
+        "shot": "Placement",
+        "location_Init_end_top": [
+            [
+                209,
+                447
+            ],
+            [
+                222,
+                456
+            ]
+        ],
+        "current_set_top_init_score": 1,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
+        "location_Init_start_top": [
+            [
+                335,
+                182
+            ],
+            [
+                293,
+                214
+            ]
+        ],
         "location_end_shuttle": [
-            675,
-            868,
+            95,
+            481,
             0
         ],
+        "location_contact_shuttle": [
+            195,
+            1192,
+            104.0
+        ],
         "sides_changed": 2,
-        "current_rally_top_init_score": 0,
-        "contact_timestamp_shuttle": 2286.1,
-        "Action_FB_init_top": "Forehand",
-        "shot": "Placement",
+        "current_set": 3,
         "location_Init_start_bottom": [
             [
-                357,
+                332,
                 1167
             ],
             [
-                374,
-                1150
+                363,
+                1084
             ]
-        ],
-        "end_timestamp_shuttle": 2287.3,
-        "location_contact_shuttle": [
-            209,
-            170,
-            260.0
-        ],
-        "Action_wl_init_top": "Mistake",
+        ]
+    },
+    "59": {
+        "contact_timestamp_shuttle": 2260.4,
+        "current_set_bottom_init_score": 0,
         "location_Init_end_bottom": [
             [
-                530,
-                1029
+                445,
+                1131
             ],
             [
-                582,
-                984
+                492,
+                1083
             ]
         ],
+        "Action_wl_init_bottom": "Mistake",
+        "end_timestamp_shuttle": 2261.7,
+        "Action_FB_init_bottom": "Forehand",
+        "shot": "Placement",
         "location_Init_end_top": [
             [
-                351,
-                286
+                585,
+                525
             ],
             [
-                359,
-                296
+                579,
+                525
             ]
         ],
+        "current_set_top_init_score": 2,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
+        "location_Init_start_top": [
+            [
+                478,
+                305
+            ],
+            [
+                457,
+                330
+            ]
+        ],
+        "location_end_shuttle": [
+            671,
+            471,
+            0
+        ],
+        "location_contact_shuttle": [
+            623,
+            1080,
+            95.0
+        ],
+        "sides_changed": 2,
+        "current_set": 3,
+        "location_Init_start_bottom": [
+            [
+                410,
+                1077
+            ],
+            [
+                571,
+                1035
+            ]
+        ]
+    },
+    "60": {
+        "contact_timestamp_shuttle": 2286.1,
         "current_set_bottom_init_score": 1,
+        "location_Init_end_bottom": [
+            [
+                460,
+                1095
+            ],
+            [
+                588,
+                997
+            ]
+        ],
+        "end_timestamp_shuttle": 2287.1,
+        "shot": "Placement",
+        "Action_wl_init_top": "Mistake",
+        "Action_FB_init_top": "Forehand",
+        "location_Init_end_top": [
+            [
+                330,
+                203
+            ],
+            [
+                319,
+                193
+            ]
+        ],
+        "current_set_top_init_score": 2,
+        "current_rally_top_init_score": 0,
+        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 288,
@@ -3766,121 +3756,122 @@
                 105
             ]
         ],
-        "current_rally_bottom_init_score": 1,
-        "current_set": 3,
-        "current_set_top_init_score": 2
-    },
-    "61": {
         "location_end_shuttle": [
-            528,
-            1240,
+            666,
+            957,
             0
         ],
+        "location_contact_shuttle": [
+            212,
+            232,
+            270.0
+        ],
         "sides_changed": 2,
-        "current_rally_top_init_score": 1,
-        "contact_timestamp_shuttle": 2398.0,
-        "Action_FB_init_top": "Forehand",
-        "shot": "Placement",
+        "current_set": 3,
         "location_Init_start_bottom": [
             [
-                345,
-                1306
+                357,
+                1167
             ],
             [
-                397,
-                1290
+                374,
+                1150
             ]
-        ],
-        "end_timestamp_shuttle": 2398.5,
-        "location_contact_shuttle": [
-            320,
-            633,
-            199.0
-        ],
-        "Action_wl_init_top": "Winner",
+        ]
+    },
+    "61": {
+        "contact_timestamp_shuttle": 2398.1,
+        "current_set_bottom_init_score": 1,
         "location_Init_end_bottom": [
             [
-                339,
-                1280
+                322,
+                1270
             ],
             [
                 443,
                 1268
             ]
         ],
+        "end_timestamp_shuttle": 2398.4,
+        "shot": "Smash",
+        "Action_wl_init_top": "Winner",
+        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
-                338,
-                625
+                343,
+                642
             ],
             [
-                249,
-                691
+                254,
+                643
             ]
         ],
-        "current_set_bottom_init_score": 1,
+        "current_set_top_init_score": 3,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
-                386,
-                535
+                345,
+                600
             ],
             [
-                418,
-                426
+                358,
+                592
             ]
         ],
-        "current_rally_bottom_init_score": 0,
-        "current_set": 3,
-        "current_set_top_init_score": 3
-    },
-    "62": {
         "location_end_shuttle": [
-            626,
-            -96,
+            560,
+            1289,
             0
         ],
+        "location_contact_shuttle": [
+            320,
+            629,
+            198.0
+        ],
         "sides_changed": 2,
-        "current_rally_top_init_score": 1,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
+        "current_set": 3,
         "location_Init_start_bottom": [
             [
-                519,
-                1230
+                328,
+                1275
             ],
             [
-                588,
-                1288
+                408,
+                1269
             ]
-        ],
-        "end_timestamp_shuttle": 2427.5,
-        "location_contact_shuttle": [
-            604,
-            1332,
-            255.0
-        ],
+        ]
+    },
+    "62": {
+        "contact_timestamp_shuttle": 2426.1,
+        "current_set_bottom_init_score": 1,
         "location_Init_end_bottom": [
             [
-                437,
-                1131
+                473,
+                1137
             ],
             [
-                473,
-                1131
+                409,
+                1090
             ]
         ],
-        "contact_timestamp_shuttle": 2426.1,
+        "Action_wl_init_bottom": "Mistake",
+        "end_timestamp_shuttle": 2427.7,
+        "Action_FB_init_bottom": "Forehand",
+        "shot": "Placement",
         "location_Init_end_top": [
             [
                 555,
-                294
+                284
             ],
             [
-                594,
-                284
+                597,
+                273
             ]
         ],
-        "current_set": 3,
+        "current_set_top_init_score": 4,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 499,
@@ -3891,100 +3882,95 @@
                 275
             ]
         ],
-        "current_rally_bottom_init_score": 0,
-        "current_set_bottom_init_score": 1,
-        "Action_wl_init_bottom": "Mistake",
-        "current_set_top_init_score": 4
-    },
-    "63": {
         "location_end_shuttle": [
-            502,
-            766,
-            98.0
-        ],
-        "sides_changed": 2,
-        "current_rally_top_init_score": 1,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Net Shot",
-        "location_Init_start_bottom": [
-            [
-                283,
-                1265
-            ],
-            [
-                324,
-                1264
-            ]
-        ],
-        "end_timestamp_shuttle": 2488.0,
-        "location_contact_shuttle": [
-            293,
-            1320,
-            267.0
-        ],
-        "location_Init_end_bottom": [
-            [
-                331,
-                1269
-            ],
-            [
-                353,
-                1269
-            ]
-        ],
-        "contact_timestamp_shuttle": 2487.1,
-        "location_Init_end_top": [
-            [
-                456,
-                369
-            ],
-            [
-                486,
-                435
-            ]
-        ],
-        "current_set": 3,
-        "location_Init_start_top": [
-            [
-                379,
-                265
-            ],
-            [
-                356,
-                286
-            ]
-        ],
-        "current_rally_bottom_init_score": 0,
-        "current_set_bottom_init_score": 1,
-        "Action_wl_init_bottom": "Mistake",
-        "current_set_top_init_score": 5
-    },
-    "64": {
-        "location_end_shuttle": [
-            603,
-            118,
+            596,
+            16,
             0
         ],
+        "location_contact_shuttle": [
+            605,
+            1319,
+            252.0
+        ],
         "sides_changed": 2,
-        "current_rally_top_init_score": 0,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Smash",
+        "current_set": 3,
         "location_Init_start_bottom": [
             [
-                373,
-                946
+                519,
+                1230
             ],
             [
-                384,
-                999
+                588,
+                1288
+            ]
+        ]
+    },
+    "63": {
+        "contact_timestamp_shuttle": 2487.2,
+        "current_set_bottom_init_score": 1,
+        "location_Init_end_bottom": [
+            [
+                277,
+                1350
+            ],
+            [
+                361,
+                1269
             ]
         ],
-        "end_timestamp_shuttle": 2536.9,
-        "location_contact_shuttle": [
-            531,
-            1102,
-            265.0
+        "Action_wl_init_bottom": "Mistake",
+        "end_timestamp_shuttle": 2487.6,
+        "Action_FB_init_bottom": "Forehand",
+        "shot": "Net Shot",
+        "location_Init_end_top": [
+            [
+                452,
+                350
+            ],
+            [
+                372,
+                341
+            ]
         ],
+        "current_set_top_init_score": 5,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
+        "location_Init_start_top": [
+            [
+                418,
+                305
+            ],
+            [
+                354,
+                296
+            ]
+        ],
+        "location_end_shuttle": [
+            519,
+            766,
+            103.0
+        ],
+        "location_contact_shuttle": [
+            292,
+            1311,
+            263.0
+        ],
+        "sides_changed": 2,
+        "current_set": 3,
+        "location_Init_start_bottom": [
+            [
+                280,
+                1302
+            ],
+            [
+                337,
+                1269
+            ]
+        ]
+    },
+    "64": {
+        "contact_timestamp_shuttle": 2536.6,
+        "current_set_bottom_init_score": 2,
         "location_Init_end_bottom": [
             [
                 494,
@@ -3995,7 +3981,10 @@
                 1075
             ]
         ],
-        "contact_timestamp_shuttle": 2536.5,
+        "Action_wl_init_bottom": "Winner",
+        "end_timestamp_shuttle": 2536.9,
+        "Action_FB_init_bottom": "Forehand",
+        "shot": "Smash",
         "location_Init_end_top": [
             [
                 499,
@@ -4006,133 +3995,135 @@
                 224
             ]
         ],
-        "current_set": 3,
+        "current_set_top_init_score": 5,
+        "current_rally_top_init_score": 0,
+        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
-                435,
-                202
+                438,
+                213
             ],
             [
-                354,
-                296
+                371,
+                255
             ]
         ],
-        "current_rally_bottom_init_score": 1,
-        "current_set_bottom_init_score": 2,
-        "Action_wl_init_bottom": "Winner",
-        "current_set_top_init_score": 5
-    },
-    "65": {
         "location_end_shuttle": [
-            181,
-            228,
+            592,
+            315,
             0
         ],
+        "location_contact_shuttle": [
+            532,
+            1089,
+            261.0
+        ],
         "sides_changed": 2,
-        "current_rally_top_init_score": 0,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
+        "current_set": 3,
         "location_Init_start_bottom": [
             [
-                553,
-                1182
+                429,
+                952
             ],
             [
-                593,
-                1212
+                445,
+                1005
+            ]
+        ]
+    },
+    "65": {
+        "contact_timestamp_shuttle": 2573.9,
+        "current_set_bottom_init_score": 3,
+        "location_Init_end_bottom": [
+            [
+                558,
+                1224
+            ],
+            [
+                506,
+                1194
             ]
         ],
-        "end_timestamp_shuttle": 2575.6,
+        "Action_wl_init_bottom": "Winner",
+        "end_timestamp_shuttle": 2575.9,
+        "Action_FB_init_bottom": "Forehand",
+        "shot": "Placement",
+        "location_Init_end_top": [
+            [
+                424,
+                285
+            ],
+            [
+                359,
+                306
+            ]
+        ],
+        "current_set_top_init_score": 5,
+        "current_rally_top_init_score": 0,
+        "current_rally_bottom_init_score": 1,
+        "location_Init_start_top": [
+            [
+                300,
+                519
+            ],
+            [
+                285,
+                519
+            ]
+        ],
+        "location_end_shuttle": [
+            148,
+            273,
+            0
+        ],
         "location_contact_shuttle": [
             606,
             1300,
             300.0
         ],
-        "location_Init_end_bottom": [
-            [
-                559,
-                1235
-            ],
-            [
-                581,
-                1223
-            ]
-        ],
-        "contact_timestamp_shuttle": 2574.9,
-        "location_Init_end_top": [
-            [
-                477,
-                285
-            ],
-            [
-                356,
-                306
-            ]
-        ],
-        "current_set": 3,
-        "location_Init_start_top": [
-            [
-                474,
-                295
-            ],
-            [
-                395,
-                350
-            ]
-        ],
-        "current_rally_bottom_init_score": 1,
-        "current_set_bottom_init_score": 3,
-        "Action_wl_init_bottom": "Winner",
-        "current_set_top_init_score": 5
-    },
-    "66": {
-        "location_end_shuttle": [
-            242,
-            769,
-            147.0
-        ],
         "sides_changed": 2,
-        "current_rally_top_init_score": 1,
-        "Action_FB_init_bottom": "Backhand",
-        "shot": "Net Shot",
+        "current_set": 3,
         "location_Init_start_bottom": [
             [
-                261,
-                1145
+                335,
+                1126
             ],
             [
-                263,
-                1139
+                357,
+                1138
             ]
-        ],
-        "end_timestamp_shuttle": 2611.7,
-        "location_contact_shuttle": [
-            217,
-            1090,
-            119.0
-        ],
+        ]
+    },
+    "66": {
+        "contact_timestamp_shuttle": 2611.0,
+        "current_set_bottom_init_score": 3,
         "location_Init_end_bottom": [
             [
                 277,
-                1127
+                1133
             ],
             [
-                298,
-                1063
+                274,
+                1109
             ]
         ],
-        "contact_timestamp_shuttle": 2611.0,
+        "Action_wl_init_bottom": "Mistake",
+        "end_timestamp_shuttle": 2611.6,
+        "Action_FB_init_bottom": "Backhand",
+        "shot": "Net Shot",
         "location_Init_end_top": [
             [
-                342,
+                329,
                 427
             ],
             [
-                300,
-                446
+                318,
+                455
             ]
         ],
-        "current_set": 3,
+        "current_set_top_init_score": 6,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 397,
@@ -4143,59 +4134,59 @@
                 380
             ]
         ],
-        "current_rally_bottom_init_score": 0,
-        "current_set_bottom_init_score": 3,
-        "Action_wl_init_bottom": "Mistake",
-        "current_set_top_init_score": 6
-    },
-    "67": {
         "location_end_shuttle": [
-            228,
+            243,
             769,
-            121.0
+            118.0
+        ],
+        "location_contact_shuttle": [
+            213,
+            1037,
+            104.0
         ],
         "sides_changed": 2,
-        "current_rally_top_init_score": 1,
-        "Action_FB_init_bottom": "Backhand",
-        "shot": "Net Shot",
+        "current_set": 3,
         "location_Init_start_bottom": [
             [
-                271,
+                261,
                 1145
             ],
             [
-                421,
-                1131
+                263,
+                1139
             ]
-        ],
-        "end_timestamp_shuttle": 2651.6,
-        "location_contact_shuttle": [
-            182,
-            1204,
-            105.0
-        ],
+        ]
+    },
+    "67": {
+        "contact_timestamp_shuttle": 2650.7,
+        "current_set_bottom_init_score": 3,
         "location_Init_end_bottom": [
             [
-                307,
-                1133
+                270,
+                1139
             ],
             [
-                263,
-                1097
+                261,
+                1103
             ]
         ],
-        "contact_timestamp_shuttle": 2650.7,
+        "Action_wl_init_bottom": "Mistake",
+        "end_timestamp_shuttle": 2651.3,
+        "Action_FB_init_bottom": "Backhand",
+        "shot": "Net Shot",
         "location_Init_end_top": [
             [
-                296,
-                399
+                295,
+                361
             ],
             [
-                279,
-                428
+                265,
+                256
             ]
         ],
-        "current_set": 3,
+        "current_set_top_init_score": 7,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 268,
@@ -4206,289 +4197,284 @@
                 106
             ]
         ],
-        "current_rally_bottom_init_score": 0,
-        "current_set_bottom_init_score": 3,
-        "Action_wl_init_bottom": "Mistake",
-        "current_set_top_init_score": 7
-    },
-    "68": {
         "location_end_shuttle": [
-            700,
-            42,
-            0
+            229,
+            769,
+            133.0
+        ],
+        "location_contact_shuttle": [
+            181,
+            1194,
+            102.0
         ],
         "sides_changed": 2,
-        "current_rally_top_init_score": 1,
-        "Action_FB_init_bottom": "Backhand",
-        "shot": "Placement",
+        "current_set": 3,
         "location_Init_start_bottom": [
             [
-                300,
-                1259
+                271,
+                1145
             ],
             [
-                327,
-                1248
+                421,
+                1131
             ]
-        ],
-        "end_timestamp_shuttle": 2680.2,
-        "location_contact_shuttle": [
-            217,
-            1000,
-            84.0
-        ],
+        ]
+    },
+    "68": {
+        "contact_timestamp_shuttle": 2679.2,
+        "current_set_bottom_init_score": 3,
         "location_Init_end_bottom": [
             [
-                350,
-                1072
+                455,
+                1131
             ],
             [
-                356,
-                1072
+                491,
+                1142
             ]
         ],
-        "contact_timestamp_shuttle": 2678.2,
+        "Action_wl_init_bottom": "Mistake",
+        "end_timestamp_shuttle": 2681.1,
+        "Action_FB_init_bottom": "Backhand",
+        "shot": "Placement",
         "location_Init_end_top": [
             [
-                422,
-                265
+                626,
+                113
             ],
             [
-                467,
-                159
+                628,
+                124
             ]
         ],
-        "current_set": 3,
+        "current_set_top_init_score": 8,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
-                410,
-                316
+                382,
+                341
             ],
             [
-                280,
-                380
+                338,
+                370
             ]
         ],
-        "current_rally_bottom_init_score": 0,
-        "current_set_bottom_init_score": 3,
-        "Action_wl_init_bottom": "Mistake",
-        "current_set_top_init_score": 8
-    },
-    "69": {
         "location_end_shuttle": [
-            70,
-            217,
+            693,
+            102,
             0
         ],
-        "sides_changed": 3,
-        "current_rally_top_init_score": 1,
-        "Action_FB_init_bottom": "Backhand",
-        "shot": "Placement",
+        "location_contact_shuttle": [
+            215,
+            965,
+            75.0
+        ],
+        "sides_changed": 2,
+        "current_set": 3,
         "location_Init_start_bottom": [
             [
-                317,
-                1202
+                298,
+                1115
             ],
             [
-                344,
-                1162
+                292,
+                1109
             ]
-        ],
-        "end_timestamp_shuttle": 2798.1,
-        "location_contact_shuttle": [
-            158.0,
-            1082.0,
-            167.0
-        ],
+        ]
+    },
+    "69": {
+        "contact_timestamp_shuttle": 2797.1,
+        "current_set_bottom_init_score": 3,
         "location_Init_end_bottom": [
             [
-                315,
-                1246
+                296,
+                1226
             ],
             [
-                343,
-                1201
+                348,
+                1191
             ]
         ],
-        "contact_timestamp_shuttle": 2796.1,
+        "Action_wl_init_bottom": "Mistake",
+        "end_timestamp_shuttle": 2798.0,
+        "Action_FB_init_bottom": "Backhand",
+        "shot": "Placement",
         "location_Init_end_top": [
             [
-                311,
-                405
+                333,
+                398
             ],
             [
-                289,
+                291,
                 393
             ]
         ],
-        "current_set": 3,
+        "current_set_top_init_score": 9,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
-                350,
-                504
+                234,
+                334
             ],
             [
-                305,
-                399
+                334,
+                358
             ]
         ],
-        "current_rally_bottom_init_score": 0,
-        "current_set_bottom_init_score": 3,
-        "Action_wl_init_bottom": "Mistake",
-        "current_set_top_init_score": 9
+        "location_end_shuttle": [
+            79,
+            224,
+            0
+        ],
+        "location_contact_shuttle": [
+            168.0,
+            1174.0,
+            106.0
+        ],
+        "sides_changed": 3,
+        "current_set": 3,
+        "location_Init_start_bottom": [
+            [
+                277,
+                1153
+            ],
+            [
+                211,
+                1107
+            ]
+        ]
     },
     "70": {
-        "location_end_shuttle": [
-            366,
-            1142,
-            0
-        ],
-        "sides_changed": 3,
-        "current_rally_top_init_score": 1,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
-        "location_Init_start_bottom": [
+        "contact_timestamp_shuttle": 2831.0,
+        "current_set_bottom_init_score": 3,
+        "location_Init_end_bottom": [
             [
-                415,
-                1230
+                314,
+                1202
             ],
             [
-                476,
-                1255
+                435,
+                1181
             ]
         ],
-        "end_timestamp_shuttle": 2831.9,
+        "Action_wl_init_bottom": "Mistake",
+        "end_timestamp_shuttle": 2831.3,
+        "Action_FB_init_bottom": "Forehand",
+        "shot": "Placement",
+        "location_Init_end_top": [
+            [
+                457,
+                409
+            ],
+            [
+                350,
+                428
+            ]
+        ],
+        "current_set_top_init_score": 10,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
+        "location_Init_start_top": [
+            [
+                473,
+                415
+            ],
+            [
+                392,
+                445
+            ]
+        ],
+        "location_end_shuttle": [
+            361,
+            1076,
+            0
+        ],
         "location_contact_shuttle": [
             392.0,
-            411.0,
-            203.0
+            385.0,
+            206.0
         ],
-        "location_Init_end_bottom": [
-            [
-                306,
-                1221
-            ],
-            [
-                376,
-                1246
-            ]
-        ],
-        "contact_timestamp_shuttle": 2829.9,
-        "location_Init_end_top": [
-            [
-                380,
-                458
-            ],
-            [
-                361,
-                416
-            ]
-        ],
+        "sides_changed": 3,
         "current_set": 3,
-        "location_Init_start_top": [
+        "location_Init_start_bottom": [
             [
-                407,
-                357
+                344,
+                1172
             ],
             [
-                471,
-                320
+                423,
+                1191
             ]
-        ],
-        "current_rally_bottom_init_score": 0,
-        "current_set_bottom_init_score": 3,
-        "Action_wl_init_bottom": "Mistake",
-        "current_set_top_init_score": 10
+        ]
     },
     "71": {
-        "location_end_shuttle": [
-            176,
-            1063,
-            0
-        ],
-        "sides_changed": 3,
-        "current_rally_top_init_score": 1,
-        "contact_timestamp_shuttle": 2893.6,
-        "Action_FB_init_top": "Backhand",
-        "shot": "Placement",
-        "location_Init_start_bottom": [
-            [
-                557,
-                1435
-            ],
-            [
-                561,
-                1424
-            ]
-        ],
-        "end_timestamp_shuttle": 2895.6,
-        "location_contact_shuttle": [
-            633.0,
-            451.0,
-            69.0
-        ],
-        "Action_wl_init_top": "Winner",
+        "contact_timestamp_shuttle": 2894.7,
+        "current_set_bottom_init_score": 3,
         "location_Init_end_bottom": [
             [
-                269,
-                1034
+                362,
+                1096
             ],
             [
-                394,
-                1152
+                252,
+                977
             ]
         ],
+        "end_timestamp_shuttle": 2895.7,
+        "shot": "Placement",
+        "Action_wl_init_top": "Winner",
+        "Action_FB_init_top": "Backhand",
         "location_Init_end_top": [
             [
-                496,
-                456
-            ],
-            [
-                460,
-                451
-            ]
-        ],
-        "current_set_bottom_init_score": 3,
-        "location_Init_start_top": [
-            [
-                485,
-                277
-            ],
-            [
-                497,
-                271
-            ]
-        ],
-        "current_rally_bottom_init_score": 0,
-        "current_set": 3,
-        "current_set_top_init_score": 11
-    },
-    "72": {
-        "location_end_shuttle": [
-            451.0,
-            773.0,
-            125.0
-        ],
-        "sides_changed": 3,
-        "current_rally_top_init_score": 1,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Net Shot",
-        "location_Init_start_bottom": [
-            [
-                428,
-                1266
+                470,
+                457
             ],
             [
                 456,
-                1245
+                457
             ]
         ],
-        "end_timestamp_shuttle": 2941.7,
-        "location_contact_shuttle": [
-            299.0,
-            1378.0,
-            266.0
+        "current_set_top_init_score": 11,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
+        "location_Init_start_top": [
+            [
+                503,
+                391
+            ],
+            [
+                601,
+                455
+            ]
         ],
+        "location_end_shuttle": [
+            162,
+            941,
+            0
+        ],
+        "location_contact_shuttle": [
+            633.0,
+            448.0,
+            70.0
+        ],
+        "sides_changed": 3,
+        "current_set": 3,
+        "location_Init_start_bottom": [
+            [
+                475,
+                1349
+            ],
+            [
+                488,
+                1338
+            ]
+        ]
+    },
+    "72": {
+        "contact_timestamp_shuttle": 2939.7,
+        "current_set_bottom_init_score": 3,
         "location_Init_end_bottom": [
             [
                 340,
@@ -4499,7 +4485,10 @@
                 1287
             ]
         ],
-        "contact_timestamp_shuttle": 2939.7,
+        "Action_wl_init_bottom": "Mistake",
+        "end_timestamp_shuttle": 2941.7,
+        "Action_FB_init_bottom": "Forehand",
+        "shot": "Net Shot",
         "location_Init_end_top": [
             [
                 469,
@@ -4510,7 +4499,9 @@
                 415
             ]
         ],
-        "current_set": 3,
+        "current_set_top_init_score": 12,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 503,
@@ -4521,100 +4512,95 @@
                 438
             ]
         ],
-        "current_rally_bottom_init_score": 0,
-        "current_set_bottom_init_score": 3,
-        "Action_wl_init_bottom": "Mistake",
-        "current_set_top_init_score": 12
-    },
-    "73": {
         "location_end_shuttle": [
-            163,
-            1189,
-            0
+            451.0,
+            773.0,
+            125.0
+        ],
+        "location_contact_shuttle": [
+            299.0,
+            1378.0,
+            266.0
         ],
         "sides_changed": 3,
-        "current_rally_top_init_score": 1,
-        "contact_timestamp_shuttle": 2980.5,
-        "Action_FB_init_top": "Forehand",
-        "shot": "Placement",
+        "current_set": 3,
         "location_Init_start_bottom": [
             [
-                442,
-                1133
+                428,
+                1266
             ],
             [
-                438,
-                1152
+                456,
+                1245
             ]
-        ],
-        "end_timestamp_shuttle": 2982.5,
-        "location_contact_shuttle": [
-            611.0,
-            218.0,
-            255.0
-        ],
-        "Action_wl_init_top": "Winner",
+        ]
+    },
+    "73": {
+        "contact_timestamp_shuttle": 2981.6,
+        "current_set_bottom_init_score": 3,
         "location_Init_end_bottom": [
             [
-                364,
+                359,
                 1182
             ],
             [
-                408,
+                433,
                 1181
             ]
         ],
+        "end_timestamp_shuttle": 2982.4,
+        "shot": "Placement",
+        "Action_wl_init_top": "Winner",
+        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
-                494,
-                351
+                517,
+                314
             ],
             [
-                546,
-                271
+                557,
+                244
             ]
         ],
-        "current_set_bottom_init_score": 3,
+        "current_set_top_init_score": 13,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
-                422,
-                278
+                646,
+                264
             ],
             [
-                385,
-                341
+                530,
+                314
             ]
         ],
-        "current_rally_bottom_init_score": 0,
-        "current_set": 3,
-        "current_set_top_init_score": 13
-    },
-    "74": {
         "location_end_shuttle": [
-            583,
-            236,
+            162,
+            1200,
             0
         ],
+        "location_contact_shuttle": [
+            611.0,
+            220.0,
+            255.0
+        ],
         "sides_changed": 3,
-        "current_rally_top_init_score": 0,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
+        "current_set": 3,
         "location_Init_start_bottom": [
             [
-                305,
-                1340
+                415,
+                1171
             ],
             [
-                308,
-                1339
+                494,
+                1171
             ]
-        ],
-        "end_timestamp_shuttle": 3013.8,
-        "location_contact_shuttle": [
-            607.0,
-            948.0,
-            136.0
-        ],
+        ]
+    },
+    "74": {
+        "contact_timestamp_shuttle": 3012.8,
+        "current_set_bottom_init_score": 4,
         "location_Init_end_bottom": [
             [
                 516,
@@ -4625,7 +4611,10 @@
                 1022
             ]
         ],
-        "contact_timestamp_shuttle": 3011.8,
+        "Action_wl_init_bottom": "Winner",
+        "end_timestamp_shuttle": 3013.8,
+        "Action_FB_init_bottom": "Forehand",
+        "shot": "Placement",
         "location_Init_end_top": [
             [
                 433,
@@ -4636,335 +4625,355 @@
                 439
             ]
         ],
-        "current_set": 3,
+        "current_set_top_init_score": 13,
+        "current_rally_top_init_score": 0,
+        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
-                498,
-                438
+                520,
+                426
             ],
             [
-                432,
-                340
+                460,
+                445
             ]
         ],
-        "current_rally_bottom_init_score": 1,
-        "current_set_bottom_init_score": 4,
-        "Action_wl_init_bottom": "Winner",
-        "current_set_top_init_score": 13
+        "location_end_shuttle": [
+            573,
+            126,
+            0
+        ],
+        "location_contact_shuttle": [
+            605.0,
+            914.0,
+            143.0
+        ],
+        "sides_changed": 3,
+        "current_set": 3,
+        "location_Init_start_bottom": [
+            [
+                452,
+                1105
+            ],
+            [
+                559,
+                1013
+            ]
+        ]
     },
     "75": {
-        "location_end_shuttle": [
-            574,
-            287,
-            0
-        ],
-        "sides_changed": 3,
-        "current_rally_top_init_score": 0,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Smash",
-        "location_Init_start_bottom": [
-            [
-                297,
-                1163
-            ],
-            [
-                356,
-                1153
-            ]
-        ],
-        "end_timestamp_shuttle": 3039.5,
-        "location_contact_shuttle": [
-            478.0,
-            1215.0,
-            271.0
-        ],
+        "contact_timestamp_shuttle": 3038.6,
+        "current_set_bottom_init_score": 5,
         "location_Init_end_bottom": [
             [
-                495,
-                1104
+                431,
+                1276
             ],
             [
-                492,
-                1171
+                472,
+                1180
             ]
         ],
-        "contact_timestamp_shuttle": 3037.5,
+        "Action_wl_init_bottom": "Winner",
+        "end_timestamp_shuttle": 3039.0,
+        "Action_FB_init_bottom": "Forehand",
+        "shot": "Smash",
         "location_Init_end_top": [
             [
-                513,
-                229
+                484,
+                271
             ],
             [
-                481,
-                199
+                418,
+                272
             ]
         ],
-        "current_set": 3,
+        "current_set_top_init_score": 13,
+        "current_rally_top_init_score": 0,
+        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
-                233,
-                634
+                442,
+                335
             ],
             [
-                297,
-                596
+                379,
+                363
             ]
         ],
-        "current_rally_bottom_init_score": 1,
-        "current_set_bottom_init_score": 5,
-        "Action_wl_init_bottom": "Winner",
-        "current_set_top_init_score": 13
-    },
-    "76": {
         "location_end_shuttle": [
-            625,
-            202,
+            573,
+            262,
             0
         ],
+        "location_contact_shuttle": [
+            478.0,
+            1237.0,
+            269.0
+        ],
         "sides_changed": 3,
-        "current_rally_top_init_score": 0,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
+        "current_set": 3,
         "location_Init_start_bottom": [
             [
-                244,
-                1107
+                431,
+                1276
             ],
             [
-                297,
-                1106
+                457,
+                1265
             ]
-        ],
-        "end_timestamp_shuttle": 3082.3,
-        "location_contact_shuttle": [
-            542.0,
-            1241.0,
-            210.0
-        ],
+        ]
+    },
+    "76": {
+        "contact_timestamp_shuttle": 3081.2,
+        "current_set_bottom_init_score": 6,
         "location_Init_end_bottom": [
             [
                 475,
                 1210
             ],
             [
-                498,
-                1220
-            ]
-        ],
-        "contact_timestamp_shuttle": 3080.3,
-        "location_Init_end_top": [
-            [
-                474,
-                385
-            ],
-            [
-                538,
-                385
-            ]
-        ],
-        "current_set": 3,
-        "location_Init_start_top": [
-            [
-                316,
-                452
-            ],
-            [
-                238,
-                551
-            ]
-        ],
-        "current_rally_bottom_init_score": 1,
-        "current_set_bottom_init_score": 6,
-        "Action_wl_init_bottom": "Winner",
-        "current_set_top_init_score": 13
-    },
-    "77": {
-        "location_end_shuttle": [
-            189,
-            1375,
-            0
-        ],
-        "sides_changed": 3,
-        "current_rally_top_init_score": 1,
-        "contact_timestamp_shuttle": 3126.7,
-        "Action_FB_init_top": "Forehand",
-        "shot": "Placement",
-        "location_Init_start_bottom": [
-            [
-                512,
-                1104
-            ],
-            [
-                586,
-                965
-            ]
-        ],
-        "end_timestamp_shuttle": 3128.7,
-        "location_contact_shuttle": [
-            223.0,
-            213.0,
-            131.0
-        ],
-        "Action_wl_init_top": "Winner",
-        "location_Init_end_bottom": [
-            [
-                205,
-                1340
-            ],
-            [
-                270,
-                1361
-            ]
-        ],
-        "location_Init_end_top": [
-            [
-                329,
-                327
-            ],
-            [
-                368,
-                330
-            ]
-        ],
-        "current_set_bottom_init_score": 6,
-        "location_Init_start_top": [
-            [
-                525,
-                456
-            ],
-            [
                 483,
-                497
+                1235
             ]
         ],
-        "current_rally_bottom_init_score": 0,
-        "current_set": 3,
-        "current_set_top_init_score": 14
-    },
-    "78": {
-        "location_end_shuttle": [
-            637,
-            418,
-            0
-        ],
-        "sides_changed": 3,
-        "current_rally_top_init_score": 0,
+        "Action_wl_init_bottom": "Winner",
+        "end_timestamp_shuttle": 3082.1,
         "Action_FB_init_bottom": "Forehand",
         "shot": "Smash",
-        "location_Init_start_bottom": [
-            [
-                499,
-                1348
-            ],
-            [
-                536,
-                1327
-            ]
-        ],
-        "end_timestamp_shuttle": 3164.3,
-        "location_contact_shuttle": [
-            500.0,
-            1324.0,
-            287.0
-        ],
-        "location_Init_end_bottom": [
-            [
-                433,
-                1235
-            ],
-            [
-                479,
-                1151
-            ]
-        ],
-        "contact_timestamp_shuttle": 3162.3,
         "location_Init_end_top": [
             [
-                476,
-                385
+                457,
+                380
             ],
             [
-                490,
-                403
+                525,
+                408
             ]
         ],
-        "current_set": 3,
+        "current_set_top_init_score": 13,
+        "current_rally_top_init_score": 0,
+        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
-                374,
-                332
+                321,
+                486
             ],
             [
-                397,
-                363
+                239,
+                506
             ]
         ],
-        "current_rally_bottom_init_score": 1,
-        "current_set_bottom_init_score": 7,
-        "Action_wl_init_bottom": "Winner",
-        "current_set_top_init_score": 14
-    },
-    "79": {
         "location_end_shuttle": [
-            193,
-            86,
+            627,
+            220,
             0
         ],
+        "location_contact_shuttle": [
+            524.0,
+            1319.0,
+            202.0
+        ],
         "sides_changed": 3,
-        "current_rally_top_init_score": 1,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
+        "current_set": 3,
         "location_Init_start_bottom": [
             [
-                363,
-                1201
+                365,
+                1256
             ],
             [
-                381,
-                1172
+                376,
+                1256
             ]
-        ],
-        "end_timestamp_shuttle": 3196.0,
-        "location_contact_shuttle": [
-            486.0,
-            960.0,
-            136.0
-        ],
+        ]
+    },
+    "77": {
+        "contact_timestamp_shuttle": 3127.7,
+        "current_set_bottom_init_score": 6,
         "location_Init_end_bottom": [
             [
-                398,
-                1077
+                187,
+                1341
             ],
             [
-                373,
+                187,
+                1341
+            ]
+        ],
+        "end_timestamp_shuttle": 3129.2,
+        "shot": "Placement",
+        "Action_wl_init_top": "Winner",
+        "Action_FB_init_top": "Forehand",
+        "location_Init_end_top": [
+            [
+                337,
+                381
+            ],
+            [
+                383,
+                381
+            ]
+        ],
+        "current_set_top_init_score": 14,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
+        "location_Init_start_top": [
+            [
+                348,
+                336
+            ],
+            [
+                256,
+                243
+            ]
+        ],
+        "location_end_shuttle": [
+            188,
+            1409,
+            0
+        ],
+        "location_contact_shuttle": [
+            222.0,
+            220.0,
+            128.0
+        ],
+        "sides_changed": 3,
+        "current_set": 3,
+        "location_Init_start_bottom": [
+            [
+                415,
+                1114
+            ],
+            [
+                432,
+                1114
+            ]
+        ]
+    },
+    "78": {
+        "contact_timestamp_shuttle": 3163.4,
+        "current_set_bottom_init_score": 7,
+        "location_Init_end_bottom": [
+            [
+                439,
+                1255
+            ],
+            [
+                478,
+                1245
+            ]
+        ],
+        "Action_wl_init_bottom": "Winner",
+        "end_timestamp_shuttle": 3164.1,
+        "Action_FB_init_bottom": "Forehand",
+        "shot": "Smash",
+        "location_Init_end_top": [
+            [
+                470,
+                362
+            ],
+            [
+                527,
+                450
+            ]
+        ],
+        "current_set_top_init_score": 14,
+        "current_rally_top_init_score": 0,
+        "current_rally_bottom_init_score": 1,
+        "location_Init_start_top": [
+            [
+                461,
+                380
+            ],
+            [
+                389,
+                369
+            ]
+        ],
+        "location_end_shuttle": [
+            637,
+            416,
+            0
+        ],
+        "location_contact_shuttle": [
+            495.0,
+            1154.0,
+            316.0
+        ],
+        "sides_changed": 3,
+        "current_set": 3,
+        "location_Init_start_bottom": [
+            [
+                468,
+                1425
+            ],
+            [
+                480,
+                1459
+            ]
+        ]
+    },
+    "79": {
+        "contact_timestamp_shuttle": 3195.0,
+        "current_set_bottom_init_score": 7,
+        "location_Init_end_bottom": [
+            [
+                392,
+                1087
+            ],
+            [
+                323,
                 1033
             ]
         ],
-        "contact_timestamp_shuttle": 3194.0,
+        "Action_wl_init_bottom": "Mistake",
+        "end_timestamp_shuttle": 3196.3,
+        "Action_FB_init_bottom": "Forehand",
+        "shot": "Placement",
         "location_Init_end_top": [
             [
-                401,
-                363
+                367,
+                316
             ],
             [
-                373,
-                289
+                378,
+                278
             ]
         ],
-        "current_set": 3,
+        "current_set_top_init_score": 15,
+        "current_rally_top_init_score": 1,
+        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
-                368,
-                347
+                351,
+                452
             ],
             [
-                337,
-                410
+                302,
+                505
             ]
         ],
-        "current_rally_bottom_init_score": 0,
-        "current_set_bottom_init_score": 7,
-        "Action_wl_init_bottom": "Mistake",
-        "current_set_top_init_score": 15
+        "location_end_shuttle": [
+            207,
+            85,
+            0
+        ],
+        "location_contact_shuttle": [
+            486.0,
+            968.0,
+            135.0
+        ],
+        "sides_changed": 3,
+        "current_set": 3,
+        "location_Init_start_bottom": [
+            [
+                470,
+                1059
+            ],
+            [
+                453,
+                1023
+            ]
+        ]
     }
 }

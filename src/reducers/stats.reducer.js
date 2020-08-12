@@ -16,6 +16,7 @@ const initialState = {
   totalHeightBot: 0,
   averageHeightBot: 0,
   averageHeightTop: 0,
+  selectedShot: [0],
 };
 
 export default function statsReducer(state = initialState, action) {
@@ -151,6 +152,12 @@ export default function statsReducer(state = initialState, action) {
         totalHeightBot: new_height_of_bot.toFixed(2),
         averageHeightBot: avg_height_bot,
         averageHeightTop: avg_height_top,
+      };
+    }
+    case "SET_SELECTED_SHOT": {
+      return {
+        ...state,
+        selectedShot:action.payload.index
       };
     }
     default:

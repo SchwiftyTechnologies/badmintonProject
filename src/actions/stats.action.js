@@ -124,3 +124,17 @@ export const AddCount = () => {
     payload: {},
   };
 };
+
+export const SetSelectedShot = (index) => {
+  return {
+    type: "SET_SELECTED_SHOT",
+    payload: { index },
+  };
+};
+
+export const SetSelectedShotLeft = (rally_index,item) => {
+  return {
+    type: "SET_SELECTED_SHOT_LEFT",
+    payload: { rally_index,item },
+  };
+};

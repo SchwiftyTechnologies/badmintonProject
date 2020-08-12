@@ -6,6 +6,9 @@ import { Player } from "video-react";
 import ReactPlayer from "react-player";
 import VideoPlayer from "./videoPlayer";
 import { connect } from "react-redux";
+import MultiImg from "../assets/multi.png";
+import SelectImg from "../assets/select.png";
+import CheckedImage from "../assets/checked.png";
 
 import {
   UpdateStretch,
@@ -16,6 +19,7 @@ import {
   AddCount,
   ResetCount,
   UpdateHeight,
+  SetSelectedShot,
 } from "../actions/stats.action";
 
 class Field extends Component {
@@ -36,6 +40,7 @@ class Field extends Component {
       height2_perc: this.props.height2_perc,
       width1_perc: this.props.width1_perc,
       width2_perc: this.props.width2_perc,
+      selectedPart: [],
     };
 
     this.canvasRef = React.createRef();
@@ -226,7 +231,7 @@ class Field extends Component {
       ctx.lineTo(
         146 * this.state.width_factor +
           518 * this.state.width_factor * (this.state.width1_perc / 100),
-        1360 * this.state.height_factor
+        1440 * this.state.height_factor
       );
       ctx.stroke();
 
@@ -239,7 +244,7 @@ class Field extends Component {
       ctx.lineTo(
         146 * this.state.width_factor +
           518 * this.state.width_factor * (this.state.width2_perc / 100),
-        1360 * this.state.height_factor
+        1440 * this.state.height_factor
       );
       ctx.stroke();
       ctx.closePath();
@@ -325,6 +330,8 @@ class Field extends Component {
 
   checkIfLine = (X, Y) => {
     let shot_count = 0;
+    let i = 0;
+    this.courtDrawerFunction(this.props, shot_count);
     const canvas = this.canvasRef.current;
     const ctx = canvas.getContext("2d");
     if (this.props.isRightSide) {
@@ -338,7 +345,9 @@ class Field extends Component {
         ctx.moveTo(x1, y1); // start of line
         ctx.lineTo(x2, y2);
         ctx.lineWidth = 5;
+        ctx.strokeStyle = "red";
         if (ctx.isPointInStroke(X, Y)) {
+          this.props._SetSelectedShot([i]);
           console.log("Selected shot", item);
           ctx.stroke();
           ctx.closePath();
@@ -351,6 +360,7 @@ class Field extends Component {
           this.props.setVideoSettings(startTime);
           break;
         }
+        i += 1;
       }
     } else {
       let ret_val = false;
@@ -358,6 +368,7 @@ class Field extends Component {
       if (this.props.patter_length === 1) {
         for (let rally of this.props.pattern_array) {
           if (rally.length > 0) {
+            let ralCount = 0;
             for (let item of rally) {
               if (
                 shot_count >= this.props.fromShot &&
@@ -375,12 +386,19 @@ class Field extends Component {
                       Y
                     );
                     if (ret_val) {
+                      this.props._SetSelectedShot([
+                        rally_index,
+                        ralCount,
+                        0,
+                        shot_count,
+                      ]);
                       break;
                     }
                   }
                 }
               }
               shot_count += 1;
+              ralCount += 1;
             }
           }
           rally_index += 1;
@@ -388,6 +406,7 @@ class Field extends Component {
       } else if (this.props.patter_length === 2) {
         for (let rally of this.props.pattern_array) {
           if (rally.length > 0) {
+            let ralCount = 0;
             for (let item of rally) {
               if (
                 shot_count >= this.props.fromShot &&
@@ -405,6 +424,12 @@ class Field extends Component {
                       Y
                     );
                     if (ret_val) {
+                      this.props._SetSelectedShot([
+                        rally_index,
+                        shot_count,
+                        0,
+                        shot_count,
+                      ]);
                       break;
                     }
                   }
@@ -419,12 +444,19 @@ class Field extends Component {
                       Y
                     );
                     if (ret_val) {
+                      this.props._SetSelectedShot([
+                        rally_index,
+                        shot_count,
+                        1,
+                        shot_count,
+                      ]);
                       break;
                     }
                   }
                 }
               }
               shot_count += 1;
+              ralCount += 1;
             }
           }
           rally_index += 1;
@@ -432,6 +464,7 @@ class Field extends Component {
       } else if (this.props.patter_length === 3) {
         for (let rally of this.props.pattern_array) {
           if (rally.length > 0) {
+            let ralCount = 0;
             for (let item of rally) {
               if (
                 shot_count >= this.props.fromShot &&
@@ -449,6 +482,12 @@ class Field extends Component {
                       Y
                     );
                     if (ret_val) {
+                      this.props._SetSelectedShot([
+                        rally_index,
+                        shot_count,
+                        0,
+                        shot_count,
+                      ]);
                       break;
                     }
                   }
@@ -463,6 +502,12 @@ class Field extends Component {
                       Y
                     );
                     if (ret_val) {
+                      this.props._SetSelectedShot([
+                        rally_index,
+                        shot_count,
+                        1,
+                        shot_count,
+                      ]);
                       break;
                     }
                   }
@@ -477,12 +522,19 @@ class Field extends Component {
                       Y
                     );
                     if (ret_val) {
+                      this.props._SetSelectedShot([
+                        rally_index,
+                        shot_count,
+                        2,
+                        shot_count,
+                      ]);
                       break;
                     }
                   }
                 }
               }
               shot_count += 1;
+              ralCount += 1;
             }
           }
           rally_index += 1;
@@ -522,7 +574,8 @@ class Field extends Component {
       if (ctx.isPointInStroke(X, Y)) {
         console.log("shuttle contact", shot);
         console.log("shuttle end", nextShot);
-
+        ctx.strokeStyle = "red";
+        ctx.stroke();
         ctx.closePath();
         let startTime = shot.start_frame_shot.toString();
         let endTime = nextShot.end_frame_shot;
@@ -562,7 +615,8 @@ class Field extends Component {
       if (ctx.isPointInStroke(X, Y)) {
         console.log("shuttle contact", shot);
         console.log("shuttle end", nextShot);
-
+        ctx.strokeStyle = "red";
+        ctx.stroke();
         ctx.closePath();
         let startTime = shot.start_frame_shot.toString();
         let endTime = nextShot.end_frame_shot;
@@ -809,47 +863,186 @@ class Field extends Component {
   };
 
   clickCheckerFunction = (loc, ind, init_player) => {
+    let x1 =
+      146 * this.state.width_factor +
+      518 * this.state.width_factor * (this.state.width1_perc / 100);
+
+    let x2 =
+      146 * this.state.width_factor +
+      518 * this.state.width_factor * (this.state.width2_perc / 100);
+
+    let y1 =
+      100 * this.state.height_factor +
+      670 * this.state.height_factor * (this.state.height1_perc / 100);
+
+    let y2 =
+      100 * this.state.height_factor +
+      670 * this.state.height_factor * (this.state.height2_perc / 100);
+    let loc_array = [
+      [146 * this.state.width_factor, x1, 100 * this.state.height_factor, y1],
+      [x1, x2, 100 * this.state.height_factor, y1],
+      [x2, 660 * this.state.width_factor, 100 * this.state.height_factor, y1],
+      [146 * this.state.width_factor, x1, y1, y2],
+      [x1, x2, y1, y2],
+      [x2, 660 * this.state.width_factor, y1, y2],
+      [146 * this.state.width_factor, x1, y2, 770 * this.state.height_factor],
+      [x1, x2, y2, 770 * this.state.height_factor],
+      [x2, 660 * this.state.width_factor, y2, 770 * this.state.height_factor],
+      [
+        146 * this.state.width_factor,
+        x1,
+        770 * this.state.height_factor,
+        770 * this.state.height_factor +
+          670 * this.state.height_factor * (this.state.height1_perc / 100),
+      ],
+      [
+        x1,
+        x2,
+        770 * this.state.height_factor,
+        770 * this.state.height_factor +
+          670 * this.state.height_factor * (this.state.height1_perc / 100),
+      ],
+      [
+        x2,
+        660 * this.state.width_factor,
+        770 * this.state.height_factor,
+        770 * this.state.height_factor +
+          670 * this.state.height_factor * (this.state.height1_perc / 100),
+      ],
+      [
+        146 * this.state.width_factor,
+        x1,
+        770 * this.state.height_factor +
+          670 * this.state.height_factor * (this.state.height1_perc / 100),
+        770 * this.state.height_factor +
+          670 * this.state.height_factor * (this.state.height2_perc / 100),
+      ],
+      [
+        x1,
+        x2,
+        770 * this.state.height_factor +
+          670 * this.state.height_factor * (this.state.height1_perc / 100),
+        770 * this.state.height_factor +
+          670 * this.state.height_factor * (this.state.height2_perc / 100),
+      ],
+      [
+        x2,
+        660 * this.state.width_factor,
+        770 * this.state.height_factor +
+          670 * this.state.height_factor * (this.state.height1_perc / 100),
+        770 * this.state.height_factor +
+          670 * this.state.height_factor * (this.state.height2_perc / 100),
+      ],
+      [
+        146 * this.state.width_factor,
+        x1,
+        770 * this.state.height_factor +
+          670 * this.state.height_factor * (this.state.height2_perc / 100),
+        1440 * this.state.height_factor,
+      ],
+      [
+        x1,
+        x2,
+        770 * this.state.height_factor +
+          670 * this.state.height_factor * (this.state.height2_perc / 100),
+        1440 * this.state.height_factor,
+      ],
+      [
+        x2,
+        660 * this.state.width_factor,
+        770 * this.state.height_factor +
+          670 * this.state.height_factor * (this.state.height2_perc / 100),
+        1440 * this.state.height_factor,
+      ],
+    ];
+    let shot_count = 0;
     if (this.props.perc) {
       let data_array = Array(25).fill(0);
+      let locArray = Array(2).fill(0);
       let total_length = 0;
       let num_shots_in_segment = 0;
       let player_played_val = "";
-      if (this.props.isRightSide) {
-        this.props.rightSideData.map((item, index) => {
-          total_length = 1 + total_length;
-          if (item.Action_FB_init_bottom) {
-            player_played_val = "bottom";
+      let selected = this.state.selectedPart;
+
+      if (this.props.selectAll) {
+        selected = [];
+        if (init_player === "top") {
+          for (let i = 0; i < 9; i++) {
+            selected.push(loc_array[i]);
+          }
+        } else {
+          for (let i = 9; i < 18; i++) {
+            selected.push(loc_array[i]);
+          }
+        }
+      } else {
+        let val = true;
+        let index = -1;
+        if (selected.length > 0) {
+          for (let j = 0; j < selected.length; j++) {
+            if (
+              selected[j][0] === loc[0] &&
+              selected[j][1] === loc[1] &&
+              selected[j][2] === loc[2] &&
+              selected[j][3] === loc[3]
+            ) {
+              val = false;
+              index = j;
+              break;
+            }
+          }
+          if (val) {
+            selected.push(loc);
           } else {
-            player_played_val = "top";
+            if (index > -1) {
+              selected.splice(index, 1);
+            }
           }
-          let n = this.shotSegmentCheckRight(item, loc);
-          if (n === 1) {
-            data_array = this.segementChecker(item, data_array);
+        } else {
+          selected.push(loc);
+        }
+      }
+      if (this.props.isRightSide) {
+        selected.map((location, locIndex) => {
+          this.highlightSegment([
+            location[0],
+            location[1] - location[0],
+            location[2],
+            location[3] - location[2],
+          ]);
+          total_length = 0;
+          this.props.rightSideData.map((item, index) => {
+            total_length = 1 + total_length;
+            if (item.Action_FB_init_bottom) {
+              player_played_val = "bottom";
+            } else {
+              player_played_val = "top";
+            }
+            let n = this.shotSegmentCheckRight(item, location);
+            if (n === 1) {
+              data_array = this.segementChecker(item, data_array);
+            }
+            num_shots_in_segment = num_shots_in_segment + n;
+          });
+          if (player_played_val === init_player) {
+            let x = (location[0] + location[1]) / 2;
+            let y = (location[2] + location[3]) / 2;
+            if (selected.length === 1) {
+              locArray[0] = (locArray[0] + x) / selected.length;
+              locArray[1] = (locArray[1] + y) / selected.length;
+            } else {
+              locArray[0] = (locArray[0] + x) / 2;
+              locArray[1] = (locArray[1] + y) / 2;
+            }
           }
-          num_shots_in_segment = num_shots_in_segment + n;
         });
+
         if (player_played_val === init_player) {
-          let arr = [];
-          let x = (loc[0] + loc[1]) / 2;
-          let y = (loc[2] + loc[3]) / 2;
-          if (player_played_val === "bottom") {
-            x = (loc[0] + loc[1]) / 2;
-            y = (loc[2] + loc[3]) / 2;
-          }
-          arr.push(x);
-          arr.push(y);
-          console.log(
-            "look",
-            total_length,
-            num_shots_in_segment,
-            init_player,
-            arr
-          );
           this.drawPercentage(
             total_length,
             num_shots_in_segment,
             init_player,
-            arr
+            locArray
           );
           if (num_shots_in_segment > 0) {
             this.drawPercentagePrecentageOpposite(
@@ -861,45 +1054,57 @@ class Field extends Component {
         }
       } else {
         if (this.props.percFirstShot) {
-          this.props.pattern_array.map((rally, rally_index) => {
-            total_length = rally.length + total_length;
-            if (rally.length > 0) {
-              rally.map((item, index) => {
-                let int_item = parseInt(item);
-                if (this.props.shots[rally_index].length > int_item + 1) {
-                  player_played_val = this.props.shots[rally_index][int_item]
-                    .player_played;
-                  let n = this.shotSegmentCheck(
-                    this.props.shots[rally_index][int_item],
-                    this.props.shots[rally_index][int_item + 1],
-                    loc
-                  );
-                  if (n === 1) {
-                    data_array = this.segementChecker(
+          selected.map((location, locIndex) => {
+            this.highlightSegment([
+              location[0],
+              location[1] - location[0],
+              location[2],
+              location[3] - location[2],
+            ]);
+            total_length = 0;
+            this.props.pattern_array.map((rally, rally_index) => {
+              total_length = rally.length + total_length;
+              if (rally.length > 0) {
+                rally.map((item, index) => {
+                  let int_item = parseInt(item);
+                  if (this.props.shots[rally_index].length > int_item + 1) {
+                    player_played_val = this.props.shots[rally_index][int_item]
+                      .player_played;
+                    let n = this.shotSegmentCheck(
+                      this.props.shots[rally_index][int_item],
                       this.props.shots[rally_index][int_item + 1],
-                      data_array
+                      location
                     );
+                    if (n === 1) {
+                      data_array = this.segementChecker(
+                        this.props.shots[rally_index][int_item + 1],
+                        data_array
+                      );
+                    }
+                    num_shots_in_segment = num_shots_in_segment + n;
                   }
-                  num_shots_in_segment = num_shots_in_segment + n;
-                }
-              });
+                });
+              }
+            });
+            if (player_played_val === init_player) {
+              let x = (location[0] + location[1]) / 2;
+              let y = (location[2] + location[3]) / 2;
+              if (selected.length === 1) {
+                locArray[0] = (locArray[0] + x) / selected.length;
+                locArray[1] = (locArray[1] + y) / selected.length;
+              } else {
+                locArray[0] = (locArray[0] + x) / 2;
+                locArray[1] = (locArray[1] + y) / 2;
+              }
             }
           });
+
           if (player_played_val === init_player) {
-            let arr = [];
-            let x = (loc[0] + loc[1]) / 2;
-            let y = (loc[2] + loc[3]) / 2;
-            if (player_played_val === "bottom") {
-              x = (loc[0] + loc[1]) / 2;
-              y = (loc[2] + loc[3]) / 2;
-            }
-            arr.push(x);
-            arr.push(y);
             this.drawPercentage(
               total_length,
               num_shots_in_segment,
               init_player,
-              arr
+              locArray
             );
             if (num_shots_in_segment > 0) {
               this.drawPercentagePrecentageOpposite(
@@ -913,46 +1118,58 @@ class Field extends Component {
           this.props.percSecondShot &&
           this.props.patter_length !== 1
         ) {
-          this.props.pattern_array.map((rally, rally_index) => {
-            total_length = rally.length + total_length;
-            if (rally.length > 0) {
-              rally.map((item, index) => {
-                let int_item = parseInt(item);
-                if (this.props.shots[rally_index].length > int_item + 2) {
-                  player_played_val = this.props.shots[rally_index][
-                    int_item + 1
-                  ].player_played;
-                  let n = this.shotSegmentCheck(
-                    this.props.shots[rally_index][int_item + 1],
-                    this.props.shots[rally_index][int_item + 2],
-                    loc
-                  );
-                  if (n === 1) {
-                    data_array = this.segementChecker(
+          selected.map((location, locIndex) => {
+            this.highlightSegment([
+              location[0],
+              location[1] - location[0],
+              location[2],
+              location[3] - location[2],
+            ]);
+            total_length = 0;
+            this.props.pattern_array.map((rally, rally_index) => {
+              total_length = rally.length + total_length;
+              if (rally.length > 0) {
+                rally.map((item, index) => {
+                  let int_item = parseInt(item);
+                  if (this.props.shots[rally_index].length > int_item + 2) {
+                    player_played_val = this.props.shots[rally_index][
+                      int_item + 1
+                    ].player_played;
+                    let n = this.shotSegmentCheck(
+                      this.props.shots[rally_index][int_item + 1],
                       this.props.shots[rally_index][int_item + 2],
-                      data_array
+                      location
                     );
+                    if (n === 1) {
+                      data_array = this.segementChecker(
+                        this.props.shots[rally_index][int_item + 2],
+                        data_array
+                      );
+                    }
+                    num_shots_in_segment = num_shots_in_segment + n;
                   }
-                  num_shots_in_segment = num_shots_in_segment + n;
-                }
-              });
+                });
+              }
+            });
+            if (player_played_val === init_player) {
+              let x = (location[0] + location[1]) / 2;
+              let y = (location[2] + location[3]) / 2;
+              if (selected.length === 1) {
+                locArray[0] = (locArray[0] + x) / selected.length;
+                locArray[1] = (locArray[1] + y) / selected.length;
+              } else {
+                locArray[0] = (locArray[0] + x) / 2;
+                locArray[1] = (locArray[1] + y) / 2;
+              }
             }
           });
+
           if (player_played_val === init_player) {
-            let arr = [];
-            let x = (loc[0] + loc[1]) / 2;
-            let y = (loc[2] + loc[3]) / 2;
-            if (player_played_val === "bottom") {
-              x = (loc[0] + loc[1]) / 2;
-              y = (loc[2] + loc[3]) / 2;
-            }
-            arr.push(x);
-            arr.push(y);
             this.drawPercentage(
               total_length,
               num_shots_in_segment,
               player_played_val,
-              arr
+              locArray
             );
             if (num_shots_in_segment > 0) {
               this.drawPercentagePrecentageOpposite(
@@ -963,46 +1180,58 @@ class Field extends Component {
             }
           }
         } else if (this.props.percThirdShot && this.props.patter_length === 3) {
-          this.props.pattern_array.map((rally, rally_index) => {
-            total_length = rally.length + total_length;
-            if (rally.length > 0) {
-              rally.map((item, index) => {
-                let int_item = parseInt(item);
-                if (this.props.shots[rally_index].length > int_item + 3) {
-                  player_played_val = this.props.shots[rally_index][
-                    int_item + 2
-                  ].player_played;
-                  let n = this.shotSegmentCheck(
-                    this.props.shots[rally_index][int_item + 2],
-                    this.props.shots[rally_index][int_item + 3],
-                    loc
-                  );
-                  if (n === 1) {
-                    data_array = this.segementChecker(
+          selected.map((location, locIndex) => {
+            this.highlightSegment([
+              location[0],
+              location[1] - location[0],
+              location[2],
+              location[3] - location[2],
+            ]);
+            total_length = 0;
+            this.props.pattern_array.map((rally, rally_index) => {
+              total_length = rally.length + total_length;
+              if (rally.length > 0) {
+                rally.map((item, index) => {
+                  let int_item = parseInt(item);
+                  if (this.props.shots[rally_index].length > int_item + 3) {
+                    player_played_val = this.props.shots[rally_index][
+                      int_item + 2
+                    ].player_played;
+                    let n = this.shotSegmentCheck(
+                      this.props.shots[rally_index][int_item + 2],
                       this.props.shots[rally_index][int_item + 3],
-                      data_array
+                      location
                     );
+                    if (n === 1) {
+                      data_array = this.segementChecker(
+                        this.props.shots[rally_index][int_item + 3],
+                        data_array
+                      );
+                    }
+                    num_shots_in_segment = num_shots_in_segment + n;
                   }
-                  num_shots_in_segment = num_shots_in_segment + n;
-                }
-              });
+                });
+              }
+            });
+            if (player_played_val === init_player) {
+              let x = (location[0] + location[1]) / 2;
+              let y = (location[2] + location[3]) / 2;
+              if (selected.length === 1) {
+                locArray[0] = (locArray[0] + x) / selected.length;
+                locArray[1] = (locArray[1] + y) / selected.length;
+              } else {
+                locArray[0] = (locArray[0] + x) / 2;
+                locArray[1] = (locArray[1] + y) / 2;
+              }
             }
           });
+
           if (player_played_val === init_player) {
-            let arr = [];
-            let x = (loc[0] + loc[1]) / 2;
-            let y = (loc[2] + loc[3]) / 2;
-            if (player_played_val === "bottom") {
-              x = (loc[0] + loc[1]) / 2;
-              y = (loc[2] + loc[3]) / 2;
-            }
-            arr.push(x);
-            arr.push(y);
             this.drawPercentage(
               total_length,
               num_shots_in_segment,
               player_played_val,
-              arr
+              locArray
             );
             if (num_shots_in_segment > 0) {
               this.drawPercentagePrecentageOpposite(
@@ -1116,6 +1345,10 @@ class Field extends Component {
       this.drawCourt();
     }
 
+    if (!this.props.multiSelect) {
+      this.setState({ selectedPart: [] });
+    }
+
     if (this.props.perc || this.props.arrows) {
       if (this.props.isBottom) {
         if (this.props.percFirstShot || this.props.percThirdShot) {
@@ -1163,12 +1396,6 @@ class Field extends Component {
         y >= 100 * this.state.height_factor &&
         y <= y1
       ) {
-        this.highlightSegment([
-          146 * this.state.width_factor,
-          x1 - 146 * this.state.width_factor,
-          100 * this.state.height_factor,
-          y1 - 100 * this.state.height_factor,
-        ]);
         this.clickCheckerFunction(
           [
             146 * this.state.width_factor,
@@ -1185,14 +1412,8 @@ class Field extends Component {
         y >= 100 * this.state.height_factor &&
         y <= y1
       ) {
-        this.highlightSegment([
-          x1,
-          x2 - x1,
-          100 * this.state.height_factor,
-          y1 - 100 * this.state.height_factor,
-        ]);
         this.clickCheckerFunction(
-          [x1, x2, 100 * this.state.height_factor, y],
+          [x1, x2, 100 * this.state.height_factor, y1],
           1,
           "top"
         );
@@ -1202,12 +1423,6 @@ class Field extends Component {
         y >= 100 * this.state.height_factor &&
         y <= y1
       ) {
-        this.highlightSegment([
-          x2,
-          660 * this.state.width_factor - x2,
-          100 * this.state.height_factor,
-          y1 - 100 * this.state.height_factor,
-        ]);
         this.clickCheckerFunction(
           [
             x2,
@@ -1224,19 +1439,12 @@ class Field extends Component {
         y <= y2 &&
         y >= y1
       ) {
-        this.highlightSegment([
-          146 * this.state.width_factor,
-          x1 - 146 * this.state.width_factor,
-          y1,
-          y2 - y1,
-        ]);
         this.clickCheckerFunction(
           [146 * this.state.width_factor, x1, y1, y2],
           3,
           "top"
         );
       } else if (x <= x2 && x >= x1 && y <= y2 && y >= y1) {
-        this.highlightSegment([x1, x2 - x1, y1, y2 - y1]);
         this.clickCheckerFunction([x1, x2, y1, y2], 4, "top");
       } else if (
         x >= x2 &&
@@ -1244,12 +1452,6 @@ class Field extends Component {
         y <= y2 &&
         y >= y1
       ) {
-        this.highlightSegment([
-          x2,
-          660 * this.state.width_factor - x2,
-          y1,
-          y2 - y1,
-        ]);
         this.clickCheckerFunction(
           [x2, 660 * this.state.width_factor, y1, y2],
           5,
@@ -1261,12 +1463,6 @@ class Field extends Component {
         y >= y2 &&
         y <= 770 * this.state.height_factor
       ) {
-        this.highlightSegment([
-          146 * this.state.width_factor,
-          x1 - 146 * this.state.width_factor,
-          y2,
-          770 * this.state.height_factor - y2,
-        ]);
         this.clickCheckerFunction(
           [
             146 * this.state.width_factor,
@@ -1283,12 +1479,6 @@ class Field extends Component {
         y >= y2 &&
         y <= 770 * this.state.height_factor
       ) {
-        this.highlightSegment([
-          x1,
-          x2 - x1,
-          y2,
-          770 * this.state.height_factor - y2,
-        ]);
         this.clickCheckerFunction(
           [x1, x2, y2, 770 * this.state.height_factor],
           7,
@@ -1300,12 +1490,6 @@ class Field extends Component {
         y >= y2 &&
         y <= 770 * this.state.height_factor
       ) {
-        this.highlightSegment([
-          x2,
-          660 * this.state.width_factor - x2,
-          y2,
-          770 * this.state.height_factor - y2,
-        ]);
         this.clickCheckerFunction(
           [
             x2,
@@ -1324,12 +1508,6 @@ class Field extends Component {
             670 * this.state.height_factor * (this.state.height1_perc / 100) &&
         y >= 770 * this.state.height_factor
       ) {
-        this.highlightSegment([
-          146 * this.state.width_factor,
-          x1 - 146 * this.state.width_factor,
-          770 * this.state.height_factor,
-          670 * this.state.height_factor * (this.state.height1_perc / 100),
-        ]);
         this.clickCheckerFunction(
           [
             146 * this.state.width_factor,
@@ -1349,12 +1527,6 @@ class Field extends Component {
             670 * this.state.height_factor * (this.state.height1_perc / 100) &&
         y >= 770 * this.state.height_factor
       ) {
-        this.highlightSegment([
-          x1,
-          x2 - x1,
-          770 * this.state.height_factor,
-          670 * this.state.height_factor * (this.state.height1_perc / 100),
-        ]);
         this.clickCheckerFunction(
           [
             x1,
@@ -1374,12 +1546,6 @@ class Field extends Component {
             670 * this.state.height_factor * (this.state.height1_perc / 100) &&
         y >= 770 * this.state.height_factor
       ) {
-        this.highlightSegment([
-          x2,
-          660 * this.state.width_factor - x2,
-          770 * this.state.height_factor,
-          670 * this.state.height_factor * (this.state.height1_perc / 100),
-        ]);
         this.clickCheckerFunction(
           [
             x2,
@@ -1401,16 +1567,6 @@ class Field extends Component {
           770 * this.state.height_factor +
             670 * this.state.height_factor * (this.state.height2_perc / 100)
       ) {
-        this.highlightSegment([
-          146 * this.state.width_factor,
-          x1 - 146 * this.state.width_factor,
-          770 * this.state.height_factor +
-            670 * this.state.height_factor * (this.state.height1_perc / 100),
-          770 * this.state.height_factor +
-            670 * this.state.height_factor * (this.state.height2_perc / 100) -
-            (770 * this.state.height_factor +
-              670 * this.state.height_factor * (this.state.height1_perc / 100)),
-        ]);
         this.clickCheckerFunction(
           [
             146 * this.state.width_factor,
@@ -1433,16 +1589,6 @@ class Field extends Component {
           770 * this.state.height_factor +
             670 * this.state.height_factor * (this.state.height2_perc / 100)
       ) {
-        this.highlightSegment([
-          x1,
-          x2 - x1,
-          770 * this.state.height_factor +
-            670 * this.state.height_factor * (this.state.height1_perc / 100),
-          770 * this.state.height_factor +
-            670 * this.state.height_factor * (this.state.height2_perc / 100) -
-            (770 * this.state.height_factor +
-              670 * this.state.height_factor * (this.state.height1_perc / 100)),
-        ]);
         this.clickCheckerFunction(
           [
             x1,
@@ -1465,16 +1611,6 @@ class Field extends Component {
           770 * this.state.height_factor +
             670 * this.state.height_factor * (this.state.height2_perc / 100)
       ) {
-        this.highlightSegment([
-          x2,
-          660 * this.state.width_factor - x2,
-          770 * this.state.height_factor +
-            670 * this.state.height_factor * (this.state.height1_perc / 100),
-          770 * this.state.height_factor +
-            670 * this.state.height_factor * (this.state.height2_perc / 100) -
-            (770 * this.state.height_factor +
-              670 * this.state.height_factor * (this.state.height1_perc / 100)),
-        ]);
         this.clickCheckerFunction(
           [
             x2,
@@ -1490,27 +1626,18 @@ class Field extends Component {
       } else if (
         x >= 146 * this.state.width_factor &&
         x <= x1 &&
-        y <= 1360 * this.state.height_factor &&
+        y <= 1440 * this.state.height_factor &&
         y >=
           770 * this.state.height_factor +
             670 * this.state.height_factor * (this.state.height2_perc / 100)
       ) {
-        this.highlightSegment([
-          146 * this.state.width_factor,
-          x1 - 146 * this.state.width_factor,
-          770 * this.state.height_factor +
-            670 * this.state.height_factor * (this.state.height2_perc / 100),
-          1360 * this.state.height_factor -
-            (770 * this.state.height_factor +
-              670 * this.state.height_factor * (this.state.height2_perc / 100)),
-        ]);
         this.clickCheckerFunction(
           [
             146 * this.state.width_factor,
             x1,
             770 * this.state.height_factor +
               670 * this.state.height_factor * (this.state.height2_perc / 100),
-            1360 * this.state.height_factor,
+            1440 * this.state.height_factor,
           ],
           15,
           "bottom"
@@ -1518,27 +1645,18 @@ class Field extends Component {
       } else if (
         x <= x2 &&
         x >= x1 &&
-        y <= 1360 * this.state.height_factor &&
+        y <= 1440 * this.state.height_factor &&
         y >=
           770 * this.state.height_factor +
             670 * this.state.height_factor * (this.state.height2_perc / 100)
       ) {
-        this.highlightSegment([
-          x1,
-          x2 - x1,
-          770 * this.state.height_factor +
-            670 * this.state.height_factor * (this.state.height2_perc / 100),
-          1360 * this.state.height_factor -
-            (770 * this.state.height_factor +
-              670 * this.state.height_factor * (this.state.height2_perc / 100)),
-        ]);
         this.clickCheckerFunction(
           [
             x1,
             x2,
             770 * this.state.height_factor +
               670 * this.state.height_factor * (this.state.height2_perc / 100),
-            1360 * this.state.height_factor,
+            1440 * this.state.height_factor,
           ],
           16,
           "bottom"
@@ -1546,27 +1664,18 @@ class Field extends Component {
       } else if (
         x >= x2 &&
         x <= 660 * this.state.width_factor &&
-        y <= 1360 * this.state.height_factor &&
+        y <= 1440 * this.state.height_factor &&
         y >=
           770 * this.state.height_factor +
             670 * this.state.height_factor * (this.state.height2_perc / 100)
       ) {
-        this.highlightSegment([
-          x2,
-          660 * this.state.width_factor - x2,
-          770 * this.state.height_factor +
-            670 * this.state.height_factor * (this.state.height2_perc / 100),
-          1360 * this.state.height_factor -
-            (770 * this.state.height_factor +
-              670 * this.state.height_factor * (this.state.height2_perc / 100)),
-        ]);
         this.clickCheckerFunction(
           [
             x2,
             660 * this.state.width_factor,
             770 * this.state.height_factor +
               670 * this.state.height_factor * (this.state.height2_perc / 100),
-            1360 * this.state.height_factor,
+            1440 * this.state.height_factor,
           ],
           17,
           "bottom"
@@ -1791,7 +1900,7 @@ class Field extends Component {
       return data_array;
     } else if (
       x <= 146 * this.state.width_factor &&
-      x >= 0 &&
+      x > 0 &&
       y >= 100 * this.state.height_factor &&
       y <= 770 * this.state.height_factor
     ) {
@@ -1799,9 +1908,9 @@ class Field extends Component {
       return data_array;
     } else if (
       x <= this.state.width &&
-      x >= 0 &&
+      x > 0 &&
       y <= 100 * this.state.height_factor &&
-      y >= 0
+      y > 0
     ) {
       data_array[19] = data_array[19] + 1;
       return data_array;
@@ -1815,7 +1924,7 @@ class Field extends Component {
       return data_array;
     } else if (
       x <= 146 * this.state.width_factor &&
-      x >= 0 &&
+      x > 0 &&
       y >= 770 * this.state.height_factor &&
       y <= 1440 * this.state.height_factor
     ) {
@@ -1823,7 +1932,7 @@ class Field extends Component {
       return data_array;
     } else if (
       x <= this.state.width &&
-      x >= 0 &&
+      x > 0 &&
       y <= this.state.height &&
       y >= 1440 * this.state.height_factor
     ) {
@@ -1896,7 +2005,7 @@ class Field extends Component {
           bot_x * this.state.width_factor,
           bot_y * this.state.height_factor
         );
-        ctx.strokeStyle = "teal";
+        ctx.strokeStyle = "#00bfff";
         ctx.lineWidth = 3;
         ctx.stroke();
         ctx.closePath();
@@ -1963,7 +2072,7 @@ class Field extends Component {
           top_x * this.state.width_factor,
           top_y * this.state.height_factor
         );
-        ctx.strokeStyle = "rgb(255, 154, 71)";
+        ctx.strokeStyle = "#FF8019";
         ctx.lineWidth = 3;
         ctx.stroke();
         ctx.closePath();
@@ -2039,7 +2148,7 @@ class Field extends Component {
         "%";
 
       ctx.beginPath();
-      ctx.fillStyle = "rgb(255, 154, 71)";
+      ctx.fillStyle = "#FF8019";
       ctx.font = "bold 16px Arial";
       ctx.fillText(perc_val, location[0], location[1]);
       ctx.closePath();
@@ -2051,7 +2160,7 @@ class Field extends Component {
         "%";
 
       ctx.beginPath();
-      ctx.fillStyle = "teal";
+      ctx.fillStyle = "#00bfff";
       ctx.font = "bold 16px Arial";
       ctx.fillText(perc_val, location[0], location[1]);
       ctx.closePath();
@@ -2137,21 +2246,21 @@ class Field extends Component {
       [
         146 * this.state.width_factor,
         x1,
-        1360 * this.state.height_factor,
+        1440 * this.state.height_factor,
         770 * this.state.height_factor +
           670 * this.state.height_factor * (this.state.height2_perc / 100),
       ],
       [
         x2,
         x1,
-        1360 * this.state.height_factor,
+        1440 * this.state.height_factor,
         770 * this.state.height_factor +
           670 * this.state.height_factor * (this.state.height2_perc / 100),
       ],
       [
         x2,
         660 * this.state.width_factor,
-        1360 * this.state.height_factor,
+        1440 * this.state.height_factor,
         770 * this.state.height_factor +
           670 * this.state.height_factor * (this.state.height2_perc / 100),
       ],
@@ -2188,7 +2297,6 @@ class Field extends Component {
         770 * this.state.height_factor,
       ],
     ];
-    console.log("data", data_array);
     if (player_played === "top") {
       for (let i = 9; i < 18; i++) {
         const canvas = this.canvasRef.current;
@@ -2200,7 +2308,7 @@ class Field extends Component {
         let y = (location[2] + location[3]) / 2;
 
         ctx.beginPath();
-        ctx.fillStyle = "teal";
+        ctx.fillStyle = "#00bfff";
         ctx.font = "bold 12px Arial";
         ctx.fillText(perc_val, x, y);
         ctx.closePath();
@@ -2215,7 +2323,7 @@ class Field extends Component {
         let y = (location[2] + location[3]) / 2;
 
         ctx.beginPath();
-        ctx.fillStyle = "teal";
+        ctx.fillStyle = "#00bfff";
         ctx.font = "bold 12px Arial";
         ctx.fillText(perc_val, x, y);
         ctx.closePath();
@@ -2229,7 +2337,7 @@ class Field extends Component {
       let y = (location[2] + location[3]) / 2;
 
       ctx.beginPath();
-      ctx.fillStyle = "teal";
+      ctx.fillStyle = "#00bfff";
       ctx.font = "bold 12px Arial";
       ctx.fillText(perc_val, x, y);
       ctx.closePath();
@@ -2244,7 +2352,7 @@ class Field extends Component {
         let y = (location[2] + location[3]) / 2;
 
         ctx.beginPath();
-        ctx.fillStyle = "rgb(255, 154, 71)";
+        ctx.fillStyle = "#FF8019";
         ctx.font = "bold 12px Arial";
         ctx.fillText(perc_val, x, y);
         ctx.closePath();
@@ -2259,7 +2367,7 @@ class Field extends Component {
         let y = (location[2] + location[3]) / 2;
 
         ctx.beginPath();
-        ctx.fillStyle = "rgb(255, 154, 71)";
+        ctx.fillStyle = "#FF8019";
         ctx.font = "bold 12px Arial";
         ctx.fillText(perc_val, x, y);
         ctx.closePath();
@@ -2273,7 +2381,7 @@ class Field extends Component {
       let y = (location[2] + location[3]) / 2;
 
       ctx.beginPath();
-      ctx.fillStyle = "rgb(255, 154, 71)";
+      ctx.fillStyle = "#FF8019";
       ctx.font = "bold 12px Arial";
       ctx.fillText(perc_val, x, y);
       ctx.closePath();
@@ -2303,20 +2411,41 @@ class Field extends Component {
     context.closePath();
   };
 
-  componentWillReceiveProps(nextProps) {
-    let shot_count = 0;
-    this.props._ResetStretch();
-    this.props._ResetDistance();
-    this.props._ResetCount();
-
-    if (nextProps !== this.props) {
-      this.setState({
-        height1_perc: nextProps.height1_perc,
-        height2_perc: nextProps.height2_perc,
-        width1_perc: nextProps.width1_perc,
-        width2_perc: nextProps.width2_perc,
+  courtDrawerFunction = (nextProps, shot_count) => {
+    if (nextProps.isRightSide) {
+      const canvas = this.canvasRef.current;
+      const ctx = canvas.getContext("2d");
+      ctx.clearRect(0, 0, this.state.width, this.state.height);
+      this.drawCourt();
+      if (nextProps.perc || nextProps.arrows) {
+        if (nextProps.isBottom) {
+          if (nextProps.percFirstShot || nextProps.percThirdShot) {
+            this.drawSegments("bottom");
+          } else {
+            this.drawSegments("top");
+          }
+        } else {
+          if (nextProps.percFirstShot || nextProps.percThirdShot) {
+            this.drawSegments("top");
+          } else {
+            this.drawSegments("bottom");
+          }
+        }
+      }
+      nextProps.rightSideData.map((item, index) => {
+        if (
+          shot_count >= nextProps.fromShot &&
+          shot_count <= nextProps.toShot
+        ) {
+          this.props._AddCount();
+          this.drawShotIndRightSide(item, nextProps);
+          this.drawFeetInRight(item, nextProps);
+          this.drawDistanceInRightSide(item, nextProps);
+        }
+        shot_count += 1;
       });
-      if (nextProps.isRightSide) {
+    } else {
+      if (nextProps.patter_length !== -1) {
         const canvas = this.canvasRef.current;
         const ctx = canvas.getContext("2d");
         ctx.clearRect(0, 0, this.state.width, this.state.height);
@@ -2336,204 +2465,218 @@ class Field extends Component {
             }
           }
         }
-        nextProps.rightSideData.map((item, index) => {
-          if (
-            shot_count >= nextProps.fromShot &&
-            shot_count <= nextProps.toShot
-          ) {
-            this.props._AddCount();
-            this.drawShotIndRightSide(item, nextProps);
-            this.drawFeetInRight(item, nextProps);
-            this.drawDistanceInRightSide(item, nextProps);
-          }
-          shot_count += 1;
-        });
-      } else {
-        if (nextProps.patter_length !== -1) {
-          const canvas = this.canvasRef.current;
-          const ctx = canvas.getContext("2d");
-          ctx.clearRect(0, 0, this.state.width, this.state.height);
-          this.drawCourt();
-          if (nextProps.perc || nextProps.arrows) {
-            if (nextProps.isBottom) {
-              if (nextProps.percFirstShot || nextProps.percThirdShot) {
-                this.drawSegments("bottom");
-              } else {
-                this.drawSegments("top");
-              }
-            } else {
-              if (nextProps.percFirstShot || nextProps.percThirdShot) {
-                this.drawSegments("top");
-              } else {
-                this.drawSegments("bottom");
-              }
-            }
-          }
-          if (nextProps.patter_length === 1) {
-            nextProps.pattern_array.map((rally, rally_index) => {
-              if (rally.length > 0) {
-                rally.map((item, index) => {
-                  if (
-                    shot_count >= nextProps.fromShot &&
-                    shot_count <= nextProps.toShot
-                  ) {
-                    this.props._AddCount();
-                    let int_item = parseInt(item);
+        if (nextProps.patter_length === 1) {
+          nextProps.pattern_array.map((rally, rally_index) => {
+            if (rally.length > 0) {
+              rally.map((item, index) => {
+                if (
+                  shot_count >= nextProps.fromShot &&
+                  shot_count <= nextProps.toShot
+                ) {
+                  this.props._AddCount();
+                  let int_item = parseInt(item);
+                  this.drawFeet(
+                    nextProps.shots[rally_index][int_item],
+                    0,
+                    nextProps,
+                    1
+                  );
+                  if (nextProps.shots[rally_index].length > int_item + 1) {
                     this.drawFeet(
-                      nextProps.shots[rally_index][int_item],
+                      nextProps.shots[rally_index][int_item + 1],
+                      1,
+                      nextProps,
+                      1
+                    );
+                    if (nextProps.firstshot) {
+                      this.drawShot(
+                        nextProps.shots[rally_index][int_item],
+                        nextProps.shots[rally_index][int_item + 1],
+                        "rgb(173, 173, 10)",
+                        nextProps,
+                        1
+                      );
+                    }
+                  }
+                }
+                shot_count += 1;
+              });
+            }
+          });
+        } else if (nextProps.patter_length === 2) {
+          nextProps.pattern_array.map((rally, rally_index) => {
+            if (rally.length > 0) {
+              rally.map((item, index) => {
+                if (
+                  shot_count >= nextProps.fromShot &&
+                  shot_count <= nextProps.toShot
+                ) {
+                  this.props._AddCount();
+                  let int_item = parseInt(item);
+                  this.drawFeet(
+                    nextProps.shots[rally_index][int_item],
+                    0,
+                    nextProps,
+                    2
+                  );
+                  if (nextProps.shots[rally_index].length > int_item + 1) {
+                    this.drawFeet(
+                      nextProps.shots[rally_index][int_item + 1],
                       0,
                       nextProps,
                       1
                     );
-                    if (nextProps.shots[rally_index].length > int_item + 1) {
-                      this.drawFeet(
+                    if (nextProps.firstshot) {
+                      this.drawShot(
+                        nextProps.shots[rally_index][int_item],
                         nextProps.shots[rally_index][int_item + 1],
-                        1,
+                        "rgb(173, 173, 10)",
                         nextProps,
-                        1
+                        2
                       );
-                      if (nextProps.firstshot) {
-                        this.drawShot(
-                          nextProps.shots[rally_index][int_item],
-                          nextProps.shots[rally_index][int_item + 1],
-                          "rgb(173, 173, 10)",
-                          nextProps,
-                          1
-                        );
-                      }
                     }
                   }
-                  shot_count += 1;
-                });
-              }
-            });
-          } else if (nextProps.patter_length === 2) {
-            nextProps.pattern_array.map((rally, rally_index) => {
-              if (rally.length > 0) {
-                rally.map((item, index) => {
-                  if (
-                    shot_count >= nextProps.fromShot &&
-                    shot_count <= nextProps.toShot
-                  ) {
-                    this.props._AddCount();
-                    let int_item = parseInt(item);
+                  if (nextProps.shots[rally_index].length > int_item + 2) {
                     this.drawFeet(
-                      nextProps.shots[rally_index][int_item],
+                      nextProps.shots[rally_index][int_item + 2],
+                      1,
+                      nextProps,
+                      2
+                    );
+                    if (nextProps.secondshot) {
+                      this.drawShot(
+                        nextProps.shots[rally_index][int_item + 1],
+                        nextProps.shots[rally_index][int_item + 2],
+                        "green",
+                        nextProps,
+                        2
+                      );
+                    }
+                  }
+                }
+                shot_count += 1;
+              });
+            }
+          });
+        } else if (nextProps.patter_length === 3) {
+          nextProps.pattern_array.map((rally, rally_index) => {
+            if (rally.length > 0) {
+              rally.map((item, index) => {
+                if (
+                  shot_count >= nextProps.fromShot &&
+                  shot_count <= nextProps.toShot
+                ) {
+                  this.props._AddCount();
+                  let int_item = parseInt(item);
+                  this.drawFeet(
+                    nextProps.shots[rally_index][int_item],
+                    0,
+                    nextProps,
+                    2
+                  );
+                  if (nextProps.shots[rally_index].length > int_item + 1) {
+                    this.drawFeet(
+                      nextProps.shots[rally_index][int_item + 1],
                       0,
                       nextProps,
                       2
                     );
-                    if (nextProps.shots[rally_index].length > int_item + 1) {
-                      this.drawFeet(
+                    if (nextProps.firstshot) {
+                      this.drawShot(
+                        nextProps.shots[rally_index][int_item],
                         nextProps.shots[rally_index][int_item + 1],
-                        0,
+                        "rgb(173, 173, 10)",
                         nextProps,
-                        1
+                        3
                       );
-                      if (nextProps.firstshot) {
-                        this.drawShot(
-                          nextProps.shots[rally_index][int_item],
-                          nextProps.shots[rally_index][int_item + 1],
-                          "rgb(173, 173, 10)",
-                          nextProps,
-                          2
-                        );
-                      }
-                    }
-                    if (nextProps.shots[rally_index].length > int_item + 2) {
-                      this.drawFeet(
-                        nextProps.shots[rally_index][int_item + 2],
-                        1,
-                        nextProps,
-                        2
-                      );
-                      if (nextProps.secondshot) {
-                        this.drawShot(
-                          nextProps.shots[rally_index][int_item + 1],
-                          nextProps.shots[rally_index][int_item + 2],
-                          "green",
-                          nextProps,
-                          2
-                        );
-                      }
                     }
                   }
-                  shot_count += 1;
-                });
-              }
-            });
-          } else if (nextProps.patter_length === 3) {
-            nextProps.pattern_array.map((rally, rally_index) => {
-              if (rally.length > 0) {
-                rally.map((item, index) => {
-                  if (
-                    shot_count >= nextProps.fromShot &&
-                    shot_count <= nextProps.toShot
-                  ) {
-                    this.props._AddCount();
-                    let int_item = parseInt(item);
+                  if (nextProps.shots[rally_index].length > int_item + 2) {
                     this.drawFeet(
-                      nextProps.shots[rally_index][int_item],
+                      nextProps.shots[rally_index][int_item + 2],
                       0,
                       nextProps,
                       2
                     );
-                    if (nextProps.shots[rally_index].length > int_item + 1) {
-                      this.drawFeet(
+                    if (nextProps.secondshot) {
+                      this.drawShot(
                         nextProps.shots[rally_index][int_item + 1],
-                        0,
-                        nextProps,
-                        2
-                      );
-                      if (nextProps.firstshot) {
-                        this.drawShot(
-                          nextProps.shots[rally_index][int_item],
-                          nextProps.shots[rally_index][int_item + 1],
-                          "rgb(173, 173, 10)",
-                          nextProps,
-                          3
-                        );
-                      }
-                    }
-                    if (nextProps.shots[rally_index].length > int_item + 2) {
-                      this.drawFeet(
                         nextProps.shots[rally_index][int_item + 2],
-                        0,
+                        "green",
                         nextProps,
-                        2
+                        3
                       );
-                      if (nextProps.secondshot) {
-                        this.drawShot(
-                          nextProps.shots[rally_index][int_item + 1],
-                          nextProps.shots[rally_index][int_item + 2],
-                          "green",
-                          nextProps,
-                          3
-                        );
-                      }
                     }
-                    if (nextProps.shots[rally_index].length > int_item + 3) {
-                      this.drawFeet(
+                  }
+                  if (nextProps.shots[rally_index].length > int_item + 3) {
+                    this.drawFeet(
+                      nextProps.shots[rally_index][int_item + 3],
+                      1,
+                      nextProps,
+                      2
+                    );
+                    if (nextProps.thirdshot) {
+                      this.drawShot(
+                        nextProps.shots[rally_index][int_item + 2],
                         nextProps.shots[rally_index][int_item + 3],
-                        1,
+                        "violet",
                         nextProps,
-                        2
+                        3
                       );
-                      if (nextProps.thirdshot) {
-                        this.drawShot(
-                          nextProps.shots[rally_index][int_item + 2],
-                          nextProps.shots[rally_index][int_item + 3],
-                          "violet",
-                          nextProps,
-                          3
-                        );
-                      }
                     }
                   }
-                  shot_count += 1;
-                });
-              }
-            });
+                }
+                shot_count += 1;
+              });
+            }
+          });
+        }
+      }
+    }
+  };
+
+  componentWillReceiveProps(nextProps) {
+    let shot_count = 0;
+    this.props._ResetStretch();
+    this.props._ResetDistance();
+    this.props._ResetCount();
+    this.setState({ selectedPart: [] });
+
+    if (nextProps !== this.props) {
+      this.setState({
+        height1_perc: nextProps.height1_perc,
+        height2_perc: nextProps.height2_perc,
+        width1_perc: nextProps.width1_perc,
+        width2_perc: nextProps.width2_perc,
+      });
+      this.courtDrawerFunction(nextProps, shot_count);
+      if (nextProps.selectedShot[1] !== null) {
+        if (nextProps.selectedShot !== null) {
+          if (
+            nextProps.selectedShot[0] !== this.props.selectedShot[0] ||
+            nextProps.selectedShot[1] !== this.props.selectedShot[1]
+          ) {
+            let rallyIndex = nextProps.selectedShot[0];
+            let shotIndex = nextProps.selectedShot[1];
+            let itemVal = nextProps.pattern_array[rallyIndex][shotIndex];
+            let nextShotIndex = itemVal + 1;
+            this.drawVideoShot(
+              nextProps.shots[rallyIndex][itemVal],
+              nextProps.shots[rallyIndex][nextShotIndex]
+            );
+          }
+        }
+      } else {
+        if (
+          nextProps.selectedShot !== null &&
+          nextProps.selectedShot[0] !== this.props.selectedShot[0]
+        ) {
+          if (nextProps.isRightSide) {
+            if (nextProps.rightSideData[nextProps.selectedShot[0]]) {
+              this.drawVideoShotRIght(
+                nextProps.rightSideData[nextProps.selectedShot[0]]
+              );
+            }
           }
         }
       }
@@ -2757,7 +2900,7 @@ class Field extends Component {
         Array.isArray(shot.location_Init_start_top) &&
         Array.isArray(shot.location_Init_end_top)
       ) {
-        ctx.strokeStyle = "rgb(255, 154, 71)";
+        ctx.strokeStyle = "#FF8019";
         ctx.lineWidth = 4;
         let start_x_top =
           (shot.location_Init_start_top[0][0] +
@@ -2829,7 +2972,7 @@ class Field extends Component {
           end_x_bot * this.state.width_factor,
           end_y_bot * this.state.height_factor
         );
-        ctx.strokeStyle = "teal";
+        ctx.strokeStyle = "#00bfff";
         ctx.lineWidth = 4;
         ctx.stroke();
         ctx.closePath();
@@ -2841,6 +2984,108 @@ class Field extends Component {
           "bottom",
           1
         );
+      }
+    }
+  };
+
+  drawVideoShotRIght = (item) => {
+    const canvas = this.canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    let x1 = item.location_contact_shuttle[0] * this.state.width_factor;
+    let y1 = item.location_contact_shuttle[1] * this.state.height_factor;
+    let x2 = item.location_end_shuttle[0] * this.state.width_factor;
+    let y2 = item.location_end_shuttle[1] * this.state.height_factor;
+
+    ctx.beginPath();
+    ctx.moveTo(x1, y1); // start of line
+    ctx.lineTo(x2, y2);
+    ctx.lineWidth = 5;
+    ctx.strokeStyle = "red";
+    ctx.stroke();
+    ctx.closePath();
+    this.canvas_arrow(x1, y1, x2, y2);
+    let startTime = item.contact_timestamp_shuttle.toString();
+
+    let url =
+      "https://firebasestorage.googleapis.com/v0/b/badmintonproject-3701e.appspot.com/o/Match16_check.mp4?alt=media&token=39a6ab57-670a-4c9b-8f60-5cbe00c4e9d5#t=";
+    let reqUrl = url + startTime;
+    this.props.setVideoSettings(startTime);
+  };
+
+  drawVideoShot = (shot, nextShot) => {
+    if (nextShot && shot) {
+      if (shot.player_played === "top") {
+        const canvas = this.canvasRef.current;
+        const ctx = canvas.getContext("2d");
+
+        //intial postion of shuttle
+        let top_x = (shot.position_top[0][0] + shot.position_top[1][0]) / 2;
+        let top_y = (shot.position_top[0][1] + shot.position_top[1][1]) / 2;
+
+        //final position of shuttle
+        let bot_x =
+          (nextShot.position_bottom[0][0] + nextShot.position_bottom[1][0]) / 2;
+        let bot_y =
+          (nextShot.position_bottom[0][1] + nextShot.position_bottom[1][1]) / 2;
+
+        ctx.beginPath();
+        ctx.setLineDash([0]);
+        ctx.moveTo(
+          top_x * this.state.width_factor,
+          top_y * this.state.height_factor
+        );
+        ctx.lineTo(
+          bot_x * this.state.width_factor,
+          bot_y * this.state.height_factor
+        );
+        ctx.strokeStyle = "red";
+        ctx.stroke();
+        ctx.closePath();
+        let startTime = shot.start_frame_shot.toString();
+        let endTime = nextShot.end_frame_shot;
+        // this.setState({ popUp: true, startTime, endTime });
+        let url =
+          "https://firebasestorage.googleapis.com/v0/b/badmintonproject-3701e.appspot.com/o/Match16_check.mp4?alt=media&token=39a6ab57-670a-4c9b-8f60-5cbe00c4e9d5#t=";
+        let reqUrl = url + startTime;
+        this.props.setVideoSettings(startTime);
+
+        ctx.lineWidth = 5;
+      } else if (shot.player_played === "bottom") {
+        const canvas = this.canvasRef.current;
+        const ctx = canvas.getContext("2d");
+
+        //intial postion of shuttle
+        let bot_x =
+          (shot.position_bottom[0][0] + shot.position_bottom[1][0]) / 2;
+        let bot_y =
+          (shot.position_bottom[0][1] + shot.position_bottom[1][1]) / 2;
+
+        //final position of shuttle
+        let top_x =
+          (nextShot.position_top[0][0] + nextShot.position_top[1][0]) / 2;
+        let top_y =
+          (nextShot.position_top[0][1] + nextShot.position_top[1][1]) / 2;
+
+        ctx.beginPath();
+        ctx.setLineDash([0]);
+        ctx.moveTo(
+          top_x * this.state.width_factor,
+          top_y * this.state.height_factor
+        );
+        ctx.lineTo(
+          bot_x * this.state.width_factor,
+          bot_y * this.state.height_factor
+        );
+
+        ctx.lineWidth = 5;
+        ctx.strokeStyle = "red";
+        ctx.stroke();
+        ctx.closePath();
+        let startTime = shot.start_frame_shot.toString();
+        let endTime = nextShot.end_frame_shot;
+        // this.setState({ popUp: true, startTime, endTime });
+
+        this.props.setVideoSettings(startTime);
       }
     }
   };
@@ -2861,22 +3106,15 @@ class Field extends Component {
             this.onClickCourt(e);
           }}
         ></canvas>
-        {this.state.popUp ? (
-          <NewWindow
-            onUnload={() => {
-              this.setState({ popUp: false });
-            }}
-          >
-            <VideoPlayer
-              startTime={this.state.startTime}
-              endTime={this.state.endTime}
-            />
-          </NewWindow>
-        ) : null}
       </div>
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  stats: state.stats,
+  court: state.court,
+});
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -2891,6 +3129,7 @@ const mapDispatchToProps = (dispatch) => {
     _AddCount: () => dispatch(AddCount()),
     _ResetCount: () => dispatch(ResetCount()),
     _updateHeight: (h1, h2, player) => dispatch(UpdateHeight(h1, h2, player)),
+    _SetSelectedShot: (index) => dispatch(SetSelectedShot(index)),
   };
 };
 

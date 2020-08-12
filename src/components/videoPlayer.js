@@ -17,22 +17,19 @@ class VideoPlayer extends Component {
     this.playerRef = React.createRef();
   }
 
-  // componentDidUpdate() {
-  //   console.log("htis", this.props.url);
-  //   let time = parseFloat(this.props.url);
-  //   // this.seek(Math.floor(time));
-  //   this.seek(time);
-  // }
-
-  componentWillReceiveProps(nextProps) {
-    console.log(nextProps.url, this.props.url);
-    if (nextProps.url !== this.props.url) {
-      console.log("htis", this.props.url);
-      let time = parseFloat(this.props.url);
-      // this.seek(Math.floor(time));
-      this.seek(time);
-    }
+  componentDidUpdate() {
+    let time = parseFloat(this.props.url);
+    // this.seek(Math.floor(time));
+    this.seek(time);
   }
+
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.url !== this.props.url) {
+  //     let time = parseFloat(nextProps.url);
+  //     // this.seek(Math.floor(time));
+  //     this.seek(time);
+  //   }
+  // }
 
   seek = (seconds) => {
     this.player.seekTo(seconds, "seconds");

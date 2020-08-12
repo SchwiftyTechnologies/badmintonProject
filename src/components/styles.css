@@ -1,6 +1,6 @@
 .btn_orange {
   background: rgb(63, 63, 63);
-  color: rgb(255, 154, 71);
+  color: #FF8019;
   border: 2px solid rgb(85, 85, 85);
   box-sizing: border-box;
   cursor: pointer;
@@ -27,7 +27,7 @@
 }
 .btn_teal {
   background: rgb(63, 63, 63);
-  color: teal;
+  color: #00bfff;
   border: 2px solid rgb(85, 85, 85);
   box-sizing: border-box;
   cursor: pointer;
@@ -103,7 +103,7 @@
 }
 .btn_small_orange {
   background: rgb(63, 63, 63);
-  color: rgb(255, 154, 71);
+  color: #FF8019;
   border: 2px solid rgb(85, 85, 85);
   box-sizing: border-box;
   cursor: pointer;
@@ -125,7 +125,7 @@
 
 .btn_small_teal {
   background: rgb(63, 63, 63);
-  color: teal;
+  color: #00bfff;
   border: 2px solid rgb(85, 85, 85);
   box-sizing: border-box;
   cursor: pointer;
@@ -171,7 +171,7 @@
   border: 2px solid rgb(85, 85, 85);
   border-radius: 2px;
   box-sizing: border-box;
-  color: rgb(255, 154, 71);
+  color: #FF8019;
   cursor: default;
   outline: none;
   padding: 8px 52px 8px 10px;
@@ -186,7 +186,7 @@
   border: 2px solid rgb(85, 85, 85);
   border-radius: 2px;
   box-sizing: border-box;
-  color: teal;
+  color: #00bfff;
   cursor: default;
   outline: none;
   padding: 8px 52px 8px 10px;
@@ -250,7 +250,7 @@
 
 .Dropdown-option-orange {
   box-sizing: border-box;
-  color: rgb(255, 154, 71);
+  color: #FF8019;
   cursor: pointer;
   display: block;
   padding: 8px 10px;
@@ -259,7 +259,7 @@
 
 .Dropdown-option-teal {
   box-sizing: border-box;
-  color: teal;
+  color: #00bfff;
   cursor: pointer;
   display: block;
   padding: 8px 10px;
@@ -411,7 +411,7 @@ input::-webkit-inner-spin-button {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  color: rgb(255, 154, 71);
+  color: #FF8019;
   align-items: left;
 }
 
@@ -419,7 +419,7 @@ input::-webkit-inner-spin-button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: rgb(255, 154, 71);
+  color: #FF8019;
   align-items: center;
 }
 
@@ -441,7 +441,7 @@ input::-webkit-inner-spin-button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: teal;
+  color: #00bfff;
   align-items: center;
 }
 
