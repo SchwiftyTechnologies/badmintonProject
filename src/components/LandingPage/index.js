@@ -4,7 +4,7 @@ import "./styles.css"
 class LandingPage extends Component {
     componentDidMount(){
         var sound = document.querySelector('#keypress-sound');
-        var dataText = ["Are you fully prepared for Matchday ?", "Be fully prepared with Matchday ai"];
+        var dataText = ["Are you fully prepared for Matchday ?", "Be fully prepared with Matchday.ai"];
         function typeWriter(text, i, fnCallback) {
             if (i < (text.length)) {
                 document.querySelector("#landing-heading").innerHTML = text.substring(0, i+1) +'<span id="landing-cursor" aria-hidden="true"></span>';
