@@ -1,0 +1,235 @@
+#landing-cursor {
+  border-right: 0.07em solid;
+  margin-left: 3px;
+  animation: caret 1s steps(1) infinite;
+}
+#keypress-sound {
+  visibility: hidden;
+}
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+#landing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  height: fit-content;
+  margin: 0;
+  padding: 0;
+}
+#top-container {
+  min-height: 280px;
+  height: 40vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+#landing-heading {
+  margin-top: 0rem;
+  padding: 3px 15px 0px 15px;
+  font-size: 3rem;
+  min-height: 9vh;
+  line-height: 4rem;
+}
+#button-container img {
+  margin-top: 10px;
+  min-height: 130px;
+  height: 20vh;
+  width: auto;
+}
+#button-container a {
+  display: block;
+  text-decoration: none;
+  background-color: #00000010;
+  padding: 7px 10px;
+  margin-top: 8px;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  color: black;
+  transition-duration: 0.1s;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#button-container a:hover {
+  transform: scale(1.05);
+}
+
+#info-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 0px 0px;
+  width: 100%;
+  height: 60vh;
+  margin: 0px;
+  padding: 0px;
+}
+.info {
+  /* background-color: #00000020; */
+  min-height: 200px;
+  height: 28vh;
+  border: 1px solid #000000;
+  margin: 0;
+  padding: 10px;
+}
+.info img {
+  margin-top: 10px;
+}
+.info div {
+  font-size: 1.8rem;
+  padding: 20px 20px 10px 20px;
+}
+
+@media all and (max-width: 1200px) {
+  #info-container {
+    grid-template-columns: auto auto;
+  }
+}
+@media all and (max-width: 750px) {
+  #info-container {
+    grid-template-columns: auto;
+  }
+  #landing-heading {
+    font-size: 1.7rem;
+    line-height: 2rem;
+    padding: 10px 20px;
+    min-height: 8vh;
+  }
+  .info div {
+    font-size: 1.4rem;
+    padding: 10px 20px 5px 20px;
+  }
+}
+
+/* schedule styles */
+.schedule-bg-secondary {
+  background-color: #00000030;
+}
+#schedule-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.schedule-item {
+  display: grid;
+  grid-template-columns: 12% 37% 17% 17% 17%;
+  grid-row-gap: 5px;
+  margin: 7px 5px 7px 5px;
+  min-height: 50px;
+  height: max-content;
+}
+.schedule-common-style {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 58px;
+  margin: 0px 4px 0px 4px;
+  padding: 5px;
+  border: 1px solid #000000;
+  align-items: center;
+  text-align: center;
+}
+.schedule-thumbnail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 58px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #000000;
+  margin-left: 4px;
+  margin-right: 4px;
+  font-size: 1.1rem;
+}
+.schedule-player-image {
+  display: inline-block;
+  background-position: top;
+  background-size: cover;
+  height: 57px;
+  width: 48%;
+  max-width: 60px;
+  margin: 0;
+}
+#schedule-filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 30px;
+  margin: 0 7px 0 3px;
+  padding: 5px;
+  min-width: 200px;
+  border: 1px solid #000000;
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+#schedule-filter button {
+  padding: 3px 30px 3px 30px;
+  margin: 5px 15px 5px 15px;
+}
+#schedule-sort button {
+  padding: 3px 5px 3px 5px;
+  margin: 3px;
+  font-size: 0.8rem;
+}
+#schedule-sort {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 30px;
+  margin: 0;
+  padding: 5px 10px 5px 10px;
+  width: 88%;
+  border: 1px solid #000000;
+  margin-left: auto;
+  margin-right: 15px;
+  grid-column-start: 5;
+  grid-column-end: 6;
+}
+#schedule-sort form,
+#schedule-filter form {
+  display: inline-block;
+}
+#schedule-filter form select {
+  height: 35px;
+  width: 110px;
+  margin: 3px 25px 0 7px;
+  padding: 4px 20px;
+  font-size: 1rem;
+}
+#schedule-sort form select {
+  height: 35px;
+  min-width: 90px;
+  width: fit-content;
+  margin: 3px 5px 0 7px;
+  padding: 4px 10px;
+  font-size: 1rem;
+  text-align: center;
+}
+@media all and (max-width: 900px) {
+  .schedule-item {
+    grid-template-columns: 33% 33% 33%;
+  }
+  .schedule-match {
+    grid-column-start: 2;
+    grid-column-end: 4;
+  }
+  #schedule-sort {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    margin: 0 3px 0 3px;
+  }
+  #schedule-filter form span {
+    margin: 3px 0px 3px 0px;
+    display: block;
+  }
+}
