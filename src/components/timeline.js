@@ -21,7 +21,7 @@ class Timeline extends Component {
                 backgroundColor: "rgb(63, 63, 63)",
                 minWidth:
                   (
-                    (item.end_time - item.start_time) /
+                    (item.end_time - item.start_time) *
                     this.props.factor
                   ).toString() + "px",
                 marginTop: "3px",
@@ -36,7 +36,8 @@ class Timeline extends Component {
                 marginRight: "3px",
                 textAlign: "center",
                 color: "rgb(173, 173, 10)",
-                fontSize: (55 / this.props.numberFactor).toString() + "px",
+                fontSize:
+                  (55 / (this.props.numberFactor * 1.2)).toString() + "px",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",

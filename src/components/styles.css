@@ -1,6 +1,6 @@
 .btn_orange {
   background: rgb(63, 63, 63);
-  color: rgb(255, 154, 71);
+  color: #FF8019;
   border: 2px solid rgb(85, 85, 85);
   box-sizing: border-box;
   cursor: pointer;
@@ -27,7 +27,7 @@
 }
 .btn_teal {
   background: rgb(63, 63, 63);
-  color: teal;
+  color: #00bfff;
   border: 2px solid rgb(85, 85, 85);
   box-sizing: border-box;
   cursor: pointer;
@@ -103,7 +103,7 @@
 }
 .btn_small_orange {
   background: rgb(63, 63, 63);
-  color: rgb(255, 154, 71);
+  color: #FF8019;
   border: 2px solid rgb(85, 85, 85);
   box-sizing: border-box;
   cursor: pointer;
@@ -125,7 +125,7 @@
 
 .btn_small_teal {
   background: rgb(63, 63, 63);
-  color: teal;
+  color: #00bfff;
   border: 2px solid rgb(85, 85, 85);
   box-sizing: border-box;
   cursor: pointer;
@@ -171,7 +171,7 @@
   border: 2px solid rgb(85, 85, 85);
   border-radius: 2px;
   box-sizing: border-box;
-  color: rgb(255, 154, 71);
+  color: #FF8019;
   cursor: default;
   outline: none;
   padding: 8px 52px 8px 10px;
@@ -186,7 +186,7 @@
   border: 2px solid rgb(85, 85, 85);
   border-radius: 2px;
   box-sizing: border-box;
-  color: teal;
+  color: #00bfff;
   cursor: default;
   outline: none;
   padding: 8px 52px 8px 10px;
@@ -250,7 +250,7 @@
 
 .Dropdown-option-orange {
   box-sizing: border-box;
-  color: rgb(255, 154, 71);
+  color: #FF8019;
   cursor: pointer;
   display: block;
   padding: 8px 10px;
@@ -259,7 +259,7 @@
 
 .Dropdown-option-teal {
   box-sizing: border-box;
-  color: teal;
+  color: #00bfff;
   cursor: pointer;
   display: block;
   padding: 8px 10px;
@@ -377,8 +377,8 @@ input::-webkit-inner-spin-button {
 
 .main {
   overflow: hidden;
-  padding: 5px;
   background-color: rgb(46, 46, 46);
+  padding-top: 5px;
 }
 
 .main::-webkit-scrollbar {
@@ -394,7 +394,7 @@ input::-webkit-inner-spin-button {
   display: flex;
   flex-direction: row;
   align-items: center;
-  font-size: 15px;
+  font-size: 13px;
   width: 100%;
   justify-content: flex-end;
 }
@@ -403,22 +403,23 @@ input::-webkit-inner-spin-button {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  /* margin-right: 4%; */
 }
 
 .column_1 {
-  flex: 3.5;
+  flex: 4.8;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  color: rgb(255, 154, 71);
-  align-items: center;
+  color: #FF8019;
+  align-items: left;
 }
 
 .column_1_1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: rgb(255, 154, 71);
+  color: #FF8019;
   align-items: center;
 }
 
@@ -440,7 +441,7 @@ input::-webkit-inner-spin-button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: teal;
+  color: #00bfff;
   align-items: center;
 }
 
@@ -516,7 +517,7 @@ input::-webkit-inner-spin-button {
 }
 
 .column_2 {
-  flex: 3;
+  flex: 5;
   display: flex;
   flex-direction: row;
 }
@@ -635,15 +636,32 @@ input::-webkit-inner-spin-button {
   display: flex;
   flex-direction: row;
   border: 2px solid rgb(85, 85, 85);
-  margin-top: 10px;
-  margin-left: 8%;
-  margin-right: 8%;
+  margin-top: 5px;
+  margin-left: 4.5%;
   height: 75px;
   background-color: rgb(46, 46, 46);
-  width: 85%;
+  width: 90%;
 }
 
 .bottom_bar_row_1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.line_break {
+  height: 100%;
+  width: 2px;
+  background-color: rgb(173, 173, 10);
+}
+
+.image_rotate {
+  cursor: pointer;
+  transform: rotate(180deg);
+}
+
+.video_player_right{
+  flex: 8;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
