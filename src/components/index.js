@@ -3388,6 +3388,7 @@ class Badminton extends Component {
                     src={PlayImage}
                     height={20}
                     width={20}
+                    style={{ marginRight: "10px" }}
                     className="image_rotate"
                     onClick={() => {
                       if (this.state.isRightSide) {
@@ -3508,12 +3509,13 @@ class Badminton extends Component {
                     firstClickVideo={this.state.firstClickVideo}
                     selectedShot={this.props.stats.selectedShot}
                   ></Field>
-                  <div>
+                  <div style={{ paddingLeft: "10px" }}>
                     <div
                       style={{
                         display: "flex",
                         flexDirection: "row",
                         alignItems: "center",
+                        marginBottom: "7px",
                       }}
                     >
                       {this.state.multiSelect ? (
@@ -3540,7 +3542,13 @@ class Badminton extends Component {
                     </div>
                     <img
                       src={PlayImage}
-                      style={{ height: 20, width: 20, cursor: "pointer" }}
+                      style={{
+                        height: 20,
+                        width: 20,
+                        cursor: "pointer",
+                        marginTop: "7px",
+                        marginBottom: "7px",
+                      }}
                       onClick={() => {
                         if (this.state.isRightSide) {
                           if (
@@ -3622,6 +3630,7 @@ class Badminton extends Component {
                         display: "flex",
                         flexDirection: "row",
                         alignItems: "center",
+                        marginTop: "7px",
                       }}
                     >
                       {this.state.selectAll ? (

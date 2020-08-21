@@ -426,7 +426,7 @@ class Field extends Component {
                     if (ret_val) {
                       this.props._SetSelectedShot([
                         rally_index,
-                        shot_count,
+                        ralCount,
                         0,
                         shot_count,
                       ]);
@@ -446,7 +446,7 @@ class Field extends Component {
                     if (ret_val) {
                       this.props._SetSelectedShot([
                         rally_index,
-                        shot_count,
+                        ralCount,
                         1,
                         shot_count,
                       ]);
@@ -484,7 +484,7 @@ class Field extends Component {
                     if (ret_val) {
                       this.props._SetSelectedShot([
                         rally_index,
-                        shot_count,
+                        ralCount,
                         0,
                         shot_count,
                       ]);
@@ -504,7 +504,7 @@ class Field extends Component {
                     if (ret_val) {
                       this.props._SetSelectedShot([
                         rally_index,
-                        shot_count,
+                        ralCount,
                         1,
                         shot_count,
                       ]);
@@ -524,7 +524,7 @@ class Field extends Component {
                     if (ret_val) {
                       this.props._SetSelectedShot([
                         rally_index,
-                        shot_count,
+                        ralCount,
                         2,
                         shot_count,
                       ]);
@@ -2650,33 +2650,51 @@ class Field extends Component {
         width2_perc: nextProps.width2_perc,
       });
       this.courtDrawerFunction(nextProps, shot_count);
-      if (nextProps.selectedShot[1] !== null) {
-        if (nextProps.selectedShot !== null) {
-          if (
-            nextProps.selectedShot[0] !== this.props.selectedShot[0] ||
-            nextProps.selectedShot[1] !== this.props.selectedShot[1]
-          ) {
-            let rallyIndex = nextProps.selectedShot[0];
-            let shotIndex = nextProps.selectedShot[1];
-            let itemVal = nextProps.pattern_array[rallyIndex][shotIndex];
-            let nextShotIndex = itemVal + 1;
-            this.drawVideoShot(
-              nextProps.shots[rallyIndex][itemVal],
-              nextProps.shots[rallyIndex][nextShotIndex]
-            );
-          }
-        }
-      } else {
-        if (
-          nextProps.selectedShot !== null &&
-          nextProps.selectedShot[0] !== this.props.selectedShot[0]
-        ) {
-          if (nextProps.isRightSide) {
-            if (nextProps.rightSideData[nextProps.selectedShot[0]]) {
-              this.drawVideoShotRIght(
-                nextProps.rightSideData[nextProps.selectedShot[0]]
+    }
+    console.log("look11");
+    if (nextProps.selectedShot.length > 1) {
+      console.log(
+        "look",
+        nextProps.selectedShot[0],
+        this.props.selectedShot[0]
+      );
+      if (
+        nextProps.selectedShot[0] !== this.props.selectedShot[0] ||
+        nextProps.selectedShot[1] !== this.props.selectedShot[1] ||
+        nextProps.selectedShot[2] !== this.props.selectedShot[2]
+      ) {
+        console.log("0", nextProps.selectedShot[0]);
+        if (nextProps.selectedShot[1] !== null) {
+          console.log("1");
+          if (nextProps.selectedShot !== null) {
+            console.log("2");
+            if (
+              nextProps.selectedShot[0] !== this.props.selectedShot[0] ||
+              nextProps.selectedShot[1] !== this.props.selectedShot[1]
+            ) {
+              console.log("3");
+              let rallyIndex = nextProps.selectedShot[0];
+              let shotIndex = nextProps.selectedShot[1];
+              let itemVal = nextProps.pattern_array[rallyIndex][shotIndex];
+              let nextShotIndex = itemVal + 1;
+              this.drawVideoShot(
+                nextProps.shots[rallyIndex][itemVal],
+                nextProps.shots[rallyIndex][nextShotIndex]
               );
             }
+          }
+        }
+      }
+    } else {
+      if (
+        nextProps.selectedShot !== null &&
+        nextProps.selectedShot[0] !== this.props.selectedShot[0]
+      ) {
+        if (nextProps.isRightSide) {
+          if (nextProps.rightSideData[nextProps.selectedShot[0]]) {
+            this.drawVideoShotRIght(
+              nextProps.rightSideData[nextProps.selectedShot[0]]
+            );
           }
         }
       }
