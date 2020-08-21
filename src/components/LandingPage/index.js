@@ -42,7 +42,7 @@ class LandingPage extends Component {
                     <div id="landing-heading"/>
                     <div id="button-container">
                         <img alt="Not Found" src={require('./assets/trophy.png')} className="ml-lg-0 ml-3" height="40" width="40"></img>
-                        <a href="/schedule">Cick to Enter</a>
+                        <a href="/schedule">Click to Enter</a>
                     </div>
                 </div> 
                 <div id="info-container">
