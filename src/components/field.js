@@ -9,6 +9,7 @@ import { connect } from "react-redux";
 import MultiImg from "../assets/multi.png";
 import SelectImg from "../assets/select.png";
 import CheckedImage from "../assets/checked.png";
+import badminton_data from "../Badminton_data_14.json";
 
 import {
   UpdateStretch,
@@ -41,11 +42,26 @@ class Field extends Component {
       width1_perc: this.props.width1_perc,
       width2_perc: this.props.width2_perc,
       selectedPart: [],
+      sidePerc: Array(18).fill({}),
     };
 
     this.canvasRef = React.createRef();
     this.playerRef = React.createRef();
   }
+
+  regularpolygon = (x, y, radius, sides, color) => {
+    const canvas = this.canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    ctx.beginPath();
+    var a = (Math.PI * 2) / sides;
+    ctx.translate(x, y);
+    ctx.moveTo(radius, 0);
+    ctx.strokeStyle = color;
+    for (var i = 1; i < sides; i++) {
+      ctx.lineTo(radius * Math.cos(a * i), radius * Math.sin(a * i));
+    }
+    ctx.closePath();
+  };
 
   drawSegments = (player) => {
     const canvas = this.canvasRef.current;
@@ -1953,9 +1969,128 @@ class Field extends Component {
 
   componentDidMount() {
     this.drawCourt();
+    // this.drawPercentageBoxes();
   }
 
-  drawShot(shot, nextShot, color_val, nextProps, shot_count) {
+  drawStar = (bot_x, bot_y, color_val) => {
+    const canvas = this.canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    ctx.beginPath();
+    ctx.moveTo(
+      bot_x * this.state.width_factor,
+      bot_y * this.state.height_factor
+    );
+    ctx.lineTo(
+      bot_x * this.state.width_factor + 5,
+      bot_y * this.state.height_factor
+    );
+    ctx.moveTo(
+      bot_x * this.state.width_factor,
+      bot_y * this.state.height_factor
+    );
+    ctx.lineTo(
+      bot_x * this.state.width_factor - 5,
+      bot_y * this.state.height_factor
+    );
+    ctx.moveTo(
+      bot_x * this.state.width_factor,
+      bot_y * this.state.height_factor
+    );
+    ctx.lineTo(
+      bot_x * this.state.width_factor,
+      bot_y * this.state.height_factor + 5
+    );
+    ctx.moveTo(
+      bot_x * this.state.width_factor,
+      bot_y * this.state.height_factor
+    );
+    ctx.lineTo(
+      bot_x * this.state.width_factor,
+      bot_y * this.state.height_factor - 5
+    );
+    ctx.moveTo(
+      bot_x * this.state.width_factor,
+      bot_y * this.state.height_factor
+    );
+    ctx.lineTo(
+      bot_x * this.state.width_factor + 3,
+      bot_y * this.state.height_factor + 3
+    );
+    ctx.moveTo(
+      bot_x * this.state.width_factor,
+      bot_y * this.state.height_factor
+    );
+    ctx.lineTo(
+      bot_x * this.state.width_factor - 3,
+      bot_y * this.state.height_factor - 3
+    );
+    ctx.moveTo(
+      bot_x * this.state.width_factor,
+      bot_y * this.state.height_factor
+    );
+    ctx.lineTo(
+      bot_x * this.state.width_factor + 3,
+      bot_y * this.state.height_factor - 3
+    );
+    ctx.moveTo(
+      bot_x * this.state.width_factor,
+      bot_y * this.state.height_factor
+    );
+    ctx.lineTo(
+      bot_x * this.state.width_factor - 3,
+      bot_y * this.state.height_factor + 3
+    );
+    ctx.strokeStyle = color_val;
+    ctx.lineWidth = 2;
+    ctx.setLineDash([0]);
+    ctx.stroke();
+    ctx.closePath();
+  };
+
+  drawcross = (bot_x, bot_y, color_val) => {
+    const canvas = this.canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    ctx.beginPath();
+    ctx.moveTo(
+      bot_x * this.state.width_factor,
+      bot_y * this.state.height_factor
+    );
+    ctx.lineTo(
+      bot_x * this.state.width_factor + 5,
+      bot_y * this.state.height_factor + 5
+    );
+    ctx.moveTo(
+      bot_x * this.state.width_factor,
+      bot_y * this.state.height_factor
+    );
+    ctx.lineTo(
+      bot_x * this.state.width_factor - 5,
+      bot_y * this.state.height_factor + 5
+    );
+    ctx.moveTo(
+      bot_x * this.state.width_factor,
+      bot_y * this.state.height_factor
+    );
+    ctx.lineTo(
+      bot_x * this.state.width_factor + 5,
+      bot_y * this.state.height_factor - 5
+    );
+    ctx.moveTo(
+      bot_x * this.state.width_factor,
+      bot_y * this.state.height_factor
+    );
+    ctx.lineTo(
+      bot_x * this.state.width_factor - 5,
+      bot_y * this.state.height_factor - 5
+    );
+    ctx.strokeStyle = color_val;
+    ctx.lineWidth = 2;
+    ctx.setLineDash([0]);
+    ctx.stroke();
+    ctx.closePath();
+  };
+
+  drawShot(shot, nextShot, color_val, nextProps, shot_count, code, final) {
     let dif = nextProps.toShot - nextProps.fromShot + 1;
     if (shot.player_played === "top") {
       const canvas = this.canvasRef.current;
@@ -1965,17 +2100,247 @@ class Field extends Component {
       let top_x = (shot.position_top[0][0] + shot.position_top[1][0]) / 2;
       let top_y = (shot.position_top[0][1] + shot.position_top[1][1]) / 2;
 
+      //final position of shuttle
+      let bot_x =
+        (nextShot.position_bottom[0][0] + nextShot.position_bottom[1][0]) / 2;
+      let bot_y =
+        (nextShot.position_bottom[0][1] + nextShot.position_bottom[1][1]) / 2;
+
+      if (code === "nomistakes") {
+        ctx.beginPath();
+        ctx.arc(
+          top_x * this.state.width_factor,
+          top_y * this.state.height_factor,
+          3,
+          0,
+          2 * Math.PI
+        );
+        ctx.fillStyle = "#cc5500";
+        ctx.fill();
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = "#cc5500";
+        ctx.setLineDash([0]);
+        ctx.stroke();
+        ctx.closePath();
+
+        // this.sidePercentageChecker(
+        //   top_x * this.state.width_factor,
+        //   top_y * this.state.height_factor,
+        //   "nomistakes"
+        // );
+
+        ctx.beginPath();
+        ctx.arc(
+          bot_x * this.state.width_factor,
+          bot_y * this.state.height_factor,
+          3,
+          0,
+          2 * Math.PI
+        );
+        ctx.fillStyle = "#cc5500";
+        ctx.fill();
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = "#cc5500";
+        ctx.setLineDash([0]);
+        ctx.stroke();
+        ctx.closePath();
+      } else if (code === "tW") {
+        ctx.beginPath();
+        ctx.rect(
+          top_x * this.state.width_factor,
+          top_y * this.state.height_factor,
+          7,
+          7
+        );
+        ctx.strokeStyle = "#00FF00";
+        ctx.lineWidth = 2;
+        ctx.setLineDash([0]);
+        ctx.stroke();
+        ctx.closePath();
+
+        if (final) {
+          this.drawStar(
+            nextShot.Shuttle_ground_contact_location[0],
+            nextShot.Shuttle_ground_contact_location[1],
+            "#00FF00"
+          );
+        } else {
+          ctx.beginPath();
+          ctx.rect(
+            bot_x * this.state.width_factor,
+            bot_y * this.state.height_factor,
+            7,
+            7
+          );
+          ctx.strokeStyle = "#00FF00";
+          ctx.lineWidth = 2;
+          ctx.setLineDash([0]);
+          ctx.stroke();
+          ctx.closePath();
+        }
+      } else if (code === "tM") {
+        ctx.beginPath();
+        ctx.moveTo(
+          top_x * this.state.width_factor - 7,
+          top_y * this.state.height_factor
+        );
+        ctx.lineTo(
+          top_x * this.state.width_factor,
+          top_y * this.state.height_factor - 7
+        );
+        ctx.lineTo(
+          top_x * this.state.width_factor + 7,
+          top_y * this.state.height_factor
+        );
+        ctx.lineTo(
+          top_x * this.state.width_factor - 7,
+          top_y * this.state.height_factor
+        );
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "red";
+        ctx.setLineDash([0]);
+        ctx.stroke();
+        ctx.closePath();
+
+        if (final) {
+          this.drawcross(
+            nextShot.Shuttle_ground_contact_location[0],
+            nextShot.Shuttle_ground_contact_location[1],
+            "red"
+          );
+        } else {
+          ctx.beginPath();
+          ctx.moveTo(
+            bot_x * this.state.width_factor - 7,
+            bot_y * this.state.height_factor
+          );
+          ctx.lineTo(
+            bot_x * this.state.width_factor,
+            bot_y * this.state.height_factor - 7
+          );
+          ctx.lineTo(
+            bot_x * this.state.width_factor + 7,
+            bot_y * this.state.height_factor
+          );
+          ctx.lineTo(
+            bot_x * this.state.width_factor - 7,
+            bot_y * this.state.height_factor
+          );
+          ctx.lineWidth = 2;
+          ctx.strokeStyle = "red";
+          ctx.setLineDash([0]);
+          ctx.stroke();
+          ctx.closePath();
+        }
+      } else if (code === "bW") {
+        ctx.beginPath();
+        ctx.rect(
+          top_x * this.state.width_factor,
+          top_y * this.state.height_factor,
+          7,
+          7
+        );
+        ctx.strokeStyle = "red";
+        ctx.lineWidth = 2;
+        ctx.setLineDash([0]);
+        ctx.stroke();
+        ctx.closePath();
+        if (final) {
+          this.drawcross(
+            nextShot.Shuttle_ground_contact_location[0],
+            nextShot.Shuttle_ground_contact_location[1],
+            "red"
+          );
+        } else {
+          ctx.beginPath();
+          ctx.rect(
+            bot_x * this.state.width_factor,
+            bot_y * this.state.height_factor,
+            7,
+            7
+          );
+          ctx.strokeStyle = "red";
+          ctx.lineWidth = 2;
+          ctx.setLineDash([0]);
+          ctx.stroke();
+          ctx.closePath();
+        }
+      } else if (code === "bM") {
+        ctx.beginPath();
+        ctx.moveTo(
+          top_x * this.state.width_factor - 7,
+          top_y * this.state.height_factor
+        );
+        ctx.lineTo(
+          top_x * this.state.width_factor,
+          top_y * this.state.height_factor - 7
+        );
+        ctx.lineTo(
+          top_x * this.state.width_factor + 7,
+          top_y * this.state.height_factor
+        );
+        ctx.lineTo(
+          top_x * this.state.width_factor - 7,
+          top_y * this.state.height_factor
+        );
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "#00FF00";
+        ctx.setLineDash([0]);
+        ctx.stroke();
+        ctx.closePath();
+        if (final) {
+          this.drawStar(
+            nextShot.Shuttle_ground_contact_location[0],
+            nextShot.Shuttle_ground_contact_location[1],
+            "#00FF00"
+          );
+        } else {
+          ctx.beginPath();
+          ctx.moveTo(
+            bot_x * this.state.width_factor - 7,
+            bot_y * this.state.height_factor
+          );
+          ctx.lineTo(
+            bot_x * this.state.width_factor,
+            bot_y * this.state.height_factor - 7
+          );
+          ctx.lineTo(
+            bot_x * this.state.width_factor + 7,
+            bot_y * this.state.height_factor
+          );
+          ctx.lineTo(
+            bot_x * this.state.width_factor - 7,
+            bot_y * this.state.height_factor
+          );
+          ctx.lineWidth = 3;
+          ctx.strokeStyle = "#00FF00";
+          ctx.setLineDash([0]);
+          ctx.stroke();
+          ctx.closePath();
+        }
+      } else {
+        ctx.beginPath();
+        ctx.arc(
+          top_x * this.state.width_factor,
+          top_y * this.state.height_factor,
+          3,
+          0,
+          2 * Math.PI
+        );
+        ctx.fillStyle = "#cc5500";
+        ctx.fill();
+        ctx.strokeStyle = "#FFFFFF";
+        ctx.setLineDash([0]);
+        ctx.stroke();
+        ctx.closePath();
+      }
+
       //intial midpoint of bottom player
       let bot_x_intial =
         (shot.position_bottom[0][0] + shot.position_bottom[1][0]) / 2;
       let bot_y_intial =
         (shot.position_bottom[0][1] + shot.position_bottom[1][1]) / 2;
 
-      //final position of shuttle
-      let bot_x =
-        (nextShot.position_bottom[0][0] + nextShot.position_bottom[1][0]) / 2;
-      let bot_y =
-        (nextShot.position_bottom[0][1] + nextShot.position_bottom[1][1]) / 2;
       if (nextProps.placrecTop) {
         ctx.beginPath();
         ctx.setLineDash([0]);
@@ -2027,22 +2392,243 @@ class Field extends Component {
     } else if (shot.player_played === "bottom") {
       const canvas = this.canvasRef.current;
       const ctx = canvas.getContext("2d");
-
+      console.log("shit", shot, code);
       //intial postion of shuttle
       let bot_x = (shot.position_bottom[0][0] + shot.position_bottom[1][0]) / 2;
       let bot_y = (shot.position_bottom[0][1] + shot.position_bottom[1][1]) / 2;
-
-      //intial midpoint of bottom player
-      let top_x_intial =
-        (shot.position_top[0][0] + shot.position_top[1][0]) / 2;
-      let top_y_intial =
-        (shot.position_top[0][1] + shot.position_top[1][1]) / 2;
 
       //final position of shuttle
       let top_x =
         (nextShot.position_top[0][0] + nextShot.position_top[1][0]) / 2;
       let top_y =
         (nextShot.position_top[0][1] + nextShot.position_top[1][1]) / 2;
+
+      if (code === "nomistakes") {
+        ctx.beginPath();
+        ctx.arc(
+          bot_x * this.state.width_factor,
+          bot_y * this.state.height_factor,
+          3,
+          0,
+          2 * Math.PI
+        );
+        ctx.fillStyle = "#cc5500";
+        ctx.fill();
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = "#cc5500";
+        ctx.setLineDash([0]);
+        ctx.stroke();
+        ctx.closePath();
+
+        ctx.beginPath();
+        ctx.arc(
+          top_x * this.state.width_factor,
+          top_y * this.state.height_factor,
+          3,
+          0,
+          2 * Math.PI
+        );
+        ctx.fillStyle = "#cc5500";
+        ctx.fill();
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = "#cc5500";
+        ctx.setLineDash([0]);
+        ctx.stroke();
+        ctx.closePath();
+      } else if (code === "tW") {
+        ctx.beginPath();
+        ctx.rect(
+          bot_x * this.state.width_factor,
+          bot_y * this.state.height_factor,
+          7,
+          7
+        );
+        ctx.strokeStyle = "red";
+        ctx.lineWidth = 2;
+        ctx.setLineDash([0]);
+        ctx.stroke();
+        ctx.closePath();
+        if (final) {
+          this.drawcross(
+            nextShot.Shuttle_ground_contact_location[0],
+            nextShot.Shuttle_ground_contact_location[1],
+            "red"
+          );
+        } else {
+          ctx.beginPath();
+          ctx.rect(
+            top_x * this.state.width_factor,
+            top_y * this.state.height_factor,
+            7,
+            7
+          );
+          ctx.strokeStyle = "red";
+          ctx.lineWidth = 2;
+          ctx.setLineDash([0]);
+          ctx.stroke();
+          ctx.closePath();
+        }
+      } else if (code === "tM") {
+        ctx.beginPath();
+        ctx.moveTo(
+          bot_x * this.state.width_factor - 7,
+          bot_y * this.state.height_factor
+        );
+        ctx.lineTo(
+          bot_x * this.state.width_factor,
+          bot_y * this.state.height_factor - 7
+        );
+        ctx.lineTo(
+          bot_x * this.state.width_factor + 7,
+          bot_y * this.state.height_factor
+        );
+        ctx.lineTo(
+          bot_x * this.state.width_factor - 7,
+          bot_y * this.state.height_factor
+        );
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "#00FF00";
+        ctx.setLineDash([0]);
+        ctx.stroke();
+        ctx.closePath();
+        if (final) {
+          this.drawStar(
+            nextShot.Shuttle_ground_contact_location[0],
+            nextShot.Shuttle_ground_contact_location[1],
+            "#00FF00"
+          );
+        } else {
+          ctx.beginPath();
+          ctx.moveTo(
+            top_x * this.state.width_factor - 7,
+            top_y * this.state.height_factor
+          );
+          ctx.lineTo(
+            top_x * this.state.width_factor,
+            top_y * this.state.height_factor - 7
+          );
+          ctx.lineTo(
+            top_x * this.state.width_factor + 7,
+            top_y * this.state.height_factor
+          );
+          ctx.lineTo(
+            top_x * this.state.width_factor - 7,
+            top_y * this.state.height_factor
+          );
+          ctx.lineWidth = 2;
+          ctx.strokeStyle = "#00FF00";
+          ctx.setLineDash([0]);
+          ctx.stroke();
+          ctx.closePath();
+        }
+      } else if (code === "bW") {
+        ctx.beginPath();
+        ctx.rect(
+          bot_x * this.state.width_factor,
+          bot_y * this.state.height_factor,
+          7,
+          7
+        );
+        ctx.strokeStyle = "#00FF00";
+        ctx.lineWidth = 2;
+        ctx.setLineDash([0]);
+        ctx.stroke();
+        ctx.closePath();
+        if (final) {
+          this.drawStar(
+            nextShot.Shuttle_ground_contact_location[0],
+            nextShot.Shuttle_ground_contact_location[1],
+            "#00FF00"
+          );
+        } else {
+          ctx.beginPath();
+          ctx.rect(
+            top_x * this.state.width_factor,
+            top_y * this.state.height_factor,
+            7,
+            7
+          );
+          ctx.strokeStyle = "#00FF00";
+          ctx.lineWidth = 2;
+          ctx.setLineDash([0]);
+          ctx.stroke();
+          ctx.closePath();
+        }
+      } else if (code === "bM") {
+        ctx.beginPath();
+        ctx.moveTo(
+          bot_x * this.state.width_factor - 7,
+          bot_y * this.state.height_factor
+        );
+        ctx.lineTo(
+          bot_x * this.state.width_factor,
+          bot_y * this.state.height_factor - 7
+        );
+        ctx.lineTo(
+          bot_x * this.state.width_factor + 7,
+          bot_y * this.state.height_factor
+        );
+        ctx.lineTo(
+          bot_x * this.state.width_factor - 7,
+          bot_y * this.state.height_factor
+        );
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "red";
+        ctx.setLineDash([0]);
+        ctx.stroke();
+        ctx.closePath();
+        if (final) {
+          this.drawcross(
+            nextShot.Shuttle_ground_contact_location[0],
+            nextShot.Shuttle_ground_contact_location[1],
+            "red"
+          );
+        } else {
+          ctx.beginPath();
+          ctx.moveTo(
+            top_x * this.state.width_factor - 7,
+            top_y * this.state.height_factor
+          );
+          ctx.lineTo(
+            top_x * this.state.width_factor,
+            top_y * this.state.height_factor - 7
+          );
+          ctx.lineTo(
+            top_x * this.state.width_factor + 7,
+            top_y * this.state.height_factor
+          );
+          ctx.lineTo(
+            top_x * this.state.width_factor - 7,
+            top_y * this.state.height_factor
+          );
+          ctx.lineWidth = 2;
+          ctx.strokeStyle = "red";
+          ctx.setLineDash([0]);
+          ctx.stroke();
+          ctx.closePath();
+        }
+      } else {
+        ctx.beginPath();
+        ctx.arc(
+          bot_x * this.state.width_factor,
+          bot_y * this.state.height_factor,
+          3,
+          0,
+          2 * Math.PI
+        );
+        ctx.fillStyle = "#cc5500";
+        ctx.fill();
+        ctx.strokeStyle = "#FFFFFF";
+        ctx.setLineDash([0]);
+        ctx.stroke();
+        ctx.closePath();
+      }
+
+      //intial midpoint of bottom player
+      let top_x_intial =
+        (shot.position_top[0][0] + shot.position_top[1][0]) / 2;
+      let top_y_intial =
+        (shot.position_top[0][1] + shot.position_top[1][1]) / 2;
 
       if (nextProps.placrecBot) {
         ctx.beginPath();
@@ -2489,12 +3075,36 @@ class Field extends Component {
                       1
                     );
                     if (nextProps.firstshot) {
+                      let badminton_array = Object.values(badminton_data);
+                      let code = "nomistakes";
+                      let final = false;
+                      console.log(
+                        "lookzies",
+                        badminton_array[rally_index],
+                        int_item
+                      );
+                      if (
+                        badminton_array[rally_index] &&
+                        badminton_array[rally_index].start_index_sequence &&
+                        badminton_array[rally_index].start_index_sequence <=
+                          int_item
+                      ) {
+                        code = badminton_array[rally_index].Action_init;
+                      }
+                      if (
+                        nextProps.shots[rally_index].length - 1 ===
+                        int_item + 1
+                      ) {
+                        final = true;
+                      }
                       this.drawShot(
                         nextProps.shots[rally_index][int_item],
                         nextProps.shots[rally_index][int_item + 1],
                         "rgb(173, 173, 10)",
                         nextProps,
-                        1
+                        1,
+                        code,
+                        final
                       );
                     }
                   }
@@ -2640,7 +3250,7 @@ class Field extends Component {
     this.props._ResetStretch();
     this.props._ResetDistance();
     this.props._ResetCount();
-    this.setState({ selectedPart: [] });
+    this.setState({ selectedPart: [], sidePerc: Array(25).fill(0) });
 
     if (nextProps !== this.props) {
       this.setState({
@@ -2651,28 +3261,18 @@ class Field extends Component {
       });
       this.courtDrawerFunction(nextProps, shot_count);
     }
-    console.log("look11");
     if (nextProps.selectedShot.length > 1) {
-      console.log(
-        "look",
-        nextProps.selectedShot[0],
-        this.props.selectedShot[0]
-      );
       if (
         nextProps.selectedShot[0] !== this.props.selectedShot[0] ||
         nextProps.selectedShot[1] !== this.props.selectedShot[1] ||
         nextProps.selectedShot[2] !== this.props.selectedShot[2]
       ) {
-        console.log("0", nextProps.selectedShot[0]);
         if (nextProps.selectedShot[1] !== null) {
-          console.log("1");
           if (nextProps.selectedShot !== null) {
-            console.log("2");
             if (
               nextProps.selectedShot[0] !== this.props.selectedShot[0] ||
               nextProps.selectedShot[1] !== this.props.selectedShot[1]
             ) {
-              console.log("3");
               let rallyIndex = nextProps.selectedShot[0];
               let shotIndex = nextProps.selectedShot[1];
               let itemVal = nextProps.pattern_array[rallyIndex][shotIndex];
@@ -3104,6 +3704,310 @@ class Field extends Component {
         // this.setState({ popUp: true, startTime, endTime });
 
         this.props.setVideoSettings(startTime);
+      }
+    }
+  };
+
+  drawPercentageBoxes = () => {
+    const canvas = this.canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    ctx.beginPath();
+    ctx.rect(
+      10 * this.state.width_factor,
+      445 * this.state.height_factor,
+      80 * this.state.width_factor,
+      320 * this.state.height_factor
+    );
+    ctx.strokeStyle = "#FF8019";
+    ctx.lineWidth = 3;
+    ctx.setLineDash([0]);
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.rect(
+      10 * this.state.width_factor,
+      100 * this.state.height_factor,
+      80 * this.state.width_factor,
+      320 * this.state.height_factor
+    );
+    ctx.strokeStyle = "#FF8019";
+    ctx.lineWidth = 3;
+    ctx.setLineDash([0]);
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.rect(
+      720 * this.state.width_factor,
+      445 * this.state.height_factor,
+      80 * this.state.width_factor,
+      320 * this.state.height_factor
+    );
+    ctx.strokeStyle = "#FF8019";
+    ctx.lineWidth = 3;
+    ctx.setLineDash([0]);
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.rect(
+      720 * this.state.width_factor,
+      100 * this.state.height_factor,
+      80 * this.state.width_factor,
+      320 * this.state.height_factor
+    );
+    ctx.strokeStyle = "#FF8019";
+    ctx.lineWidth = 3;
+    ctx.setLineDash([0]);
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.fillStyle = "#cc5500";
+    ctx.font = "bold 14px Arial";
+    ctx.fillText(
+      "10%",
+      15 * this.state.width_factor,
+      160 * this.state.height_factor
+    );
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.fillStyle = "#00FF00";
+    ctx.font = "bold 14px Arial";
+    ctx.fillText(
+      "10%",
+      15 * this.state.width_factor,
+      270 * this.state.height_factor
+    );
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.fillStyle = "red";
+    ctx.font = "bold 14px Arial";
+    ctx.fillText(
+      "10%",
+      15 * this.state.width_factor,
+      380 * this.state.height_factor
+    );
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.fillStyle = "#cc5500";
+    ctx.font = "bold 14px Arial";
+    ctx.fillText(
+      "10%",
+      15 * this.state.width_factor,
+      495 * this.state.height_factor
+    );
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.fillStyle = "#00FF00";
+    ctx.font = "bold 14px Arial";
+    ctx.fillText(
+      "10%",
+      15 * this.state.width_factor,
+      605 * this.state.height_factor
+    );
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.fillStyle = "red";
+    ctx.font = "bold 14px Arial";
+    ctx.fillText(
+      "10%",
+      15 * this.state.width_factor,
+      715 * this.state.height_factor
+    );
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.fillStyle = "#cc5500";
+    ctx.font = "bold 14px Arial";
+    ctx.fillText(
+      "10%",
+      725 * this.state.width_factor,
+      160 * this.state.height_factor
+    );
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.fillStyle = "#00FF00";
+    ctx.font = "bold 14px Arial";
+    ctx.fillText(
+      "10%",
+      725 * this.state.width_factor,
+      270 * this.state.height_factor
+    );
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.fillStyle = "red";
+    ctx.font = "bold 14px Arial";
+    ctx.fillText(
+      "10%",
+      725 * this.state.width_factor,
+      380 * this.state.height_factor
+    );
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.fillStyle = "#cc5500";
+    ctx.font = "bold 14px Arial";
+    ctx.fillText(
+      "10%",
+      725 * this.state.width_factor,
+      495 * this.state.height_factor
+    );
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.fillStyle = "#00FF00";
+    ctx.font = "bold 14px Arial";
+    ctx.fillText(
+      "10%",
+      725 * this.state.width_factor,
+      605 * this.state.height_factor
+    );
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.fillStyle = "red";
+    ctx.font = "bold 14px Arial";
+    ctx.fillText(
+      "10%",
+      725 * this.state.width_factor,
+      715 * this.state.height_factor
+    );
+    ctx.closePath();
+  };
+
+  sidePercentageChecker = (x, y, type) => {
+    let x1 =
+      146 * this.state.width_factor +
+      518 * this.state.width_factor * (this.state.width1_perc / 100);
+
+    let x2 =
+      146 * this.state.width_factor +
+      518 * this.state.width_factor * (this.state.width2_perc / 100);
+
+    let y1 =
+      100 * this.state.height_factor +
+      670 * this.state.height_factor * (this.state.height1_perc / 100);
+
+    let y2 =
+      100 * this.state.height_factor +
+      670 * this.state.height_factor * (this.state.height2_perc / 100);
+    let loc_array = [
+      [146 * this.state.width_factor, x1, 100 * this.state.height_factor, y1],
+      [x1, x2, 100 * this.state.height_factor, y1],
+      [x2, 660 * this.state.width_factor, 100 * this.state.height_factor, y1],
+      [146 * this.state.width_factor, x1, y1, y2],
+      [x1, x2, y1, y2],
+      [x2, 660 * this.state.width_factor, y1, y2],
+      [146 * this.state.width_factor, x1, y2, 770 * this.state.height_factor],
+      [x1, x2, y2, 770 * this.state.height_factor],
+      [x2, 660 * this.state.width_factor, y2, 770 * this.state.height_factor],
+      [
+        146 * this.state.width_factor,
+        x1,
+        770 * this.state.height_factor,
+        770 * this.state.height_factor +
+          670 * this.state.height_factor * (this.state.height1_perc / 100),
+      ],
+      [
+        x1,
+        x2,
+        770 * this.state.height_factor,
+        770 * this.state.height_factor +
+          670 * this.state.height_factor * (this.state.height1_perc / 100),
+      ],
+      [
+        x2,
+        660 * this.state.width_factor,
+        770 * this.state.height_factor,
+        770 * this.state.height_factor +
+          670 * this.state.height_factor * (this.state.height1_perc / 100),
+      ],
+      [
+        146 * this.state.width_factor,
+        x1,
+        770 * this.state.height_factor +
+          670 * this.state.height_factor * (this.state.height1_perc / 100),
+        770 * this.state.height_factor +
+          670 * this.state.height_factor * (this.state.height2_perc / 100),
+      ],
+      [
+        x1,
+        x2,
+        770 * this.state.height_factor +
+          670 * this.state.height_factor * (this.state.height1_perc / 100),
+        770 * this.state.height_factor +
+          670 * this.state.height_factor * (this.state.height2_perc / 100),
+      ],
+      [
+        x2,
+        660 * this.state.width_factor,
+        770 * this.state.height_factor +
+          670 * this.state.height_factor * (this.state.height1_perc / 100),
+        770 * this.state.height_factor +
+          670 * this.state.height_factor * (this.state.height2_perc / 100),
+      ],
+      [
+        146 * this.state.width_factor,
+        x1,
+        770 * this.state.height_factor +
+          670 * this.state.height_factor * (this.state.height2_perc / 100),
+        1440 * this.state.height_factor,
+      ],
+      [
+        x1,
+        x2,
+        770 * this.state.height_factor +
+          670 * this.state.height_factor * (this.state.height2_perc / 100),
+        1440 * this.state.height_factor,
+      ],
+      [
+        x2,
+        660 * this.state.width_factor,
+        770 * this.state.height_factor +
+          670 * this.state.height_factor * (this.state.height2_perc / 100),
+        1440 * this.state.height_factor,
+      ],
+    ];
+
+    // loc_array.map((item, index) => {
+    //   if (x > item[0] && x < item[1] && y > item[2] && y < item[3]) {
+    //     let tempArray = this.state.sidePerc;
+    //     console.log("lookie", index);
+    //     if (tempArray[index][type]) {
+    //       tempArray[index][type] += 1;
+    //     } else {
+    //       tempArray[index][type] = 0;
+    //     }
+    //     this.setState({ sidePerc: tempArray });
+    //   }
+    // });
+
+    for (let i = 0; i < 18; i++) {
+      if (
+        x > loc_array[i][0] &&
+        x < loc_array[i][1] &&
+        y > loc_array[i][2] &&
+        y < loc_array[i][3]
+      ) {
+        let tempArray = this.state.sidePerc;
+        console.log("lookie", i);
+        if (tempArray[i][type]) {
+          tempArray[i][type] += 1;
+        } else {
+          tempArray[i][type] = 0;
+        }
+        this.setState({ sidePerc: tempArray });
+        console.log("look", tempArray);
+        break;
       }
     }
   };

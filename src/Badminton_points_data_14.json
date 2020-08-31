@@ -1,21 +1,6 @@
 {
     "1": {
-        "contact_timestamp_shuttle": 73.3,
-        "current_set_bottom_init_score": 1,
-        "location_Init_end_bottom": [
-            [
-                426,
-                1096
-            ],
-            [
-                426,
-                1096
-            ]
-        ],
-        "end_timestamp_shuttle": 73.8,
-        "shot": "Net Shot",
         "Action_wl_init_top": "Mistake",
-        "Action_FB_init_top": "Backhand",
         "location_Init_end_top": [
             [
                 473,
@@ -26,9 +11,17 @@
                 416
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                441,
+                1236
+            ],
+            [
+                456,
+                1214
+            ]
+        ],
         "current_set_top_init_score": 0,
-        "current_rally_top_init_score": 0,
-        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 473,
@@ -39,32 +32,48 @@
                 435
             ]
         ],
-        "location_end_shuttle": [
-            567,
-            766,
-            137.0
-        ],
+        "current_set": 1,
+        "player_played": "T",
+        "Action_FB_init_top": "Backhand",
+        "end_timestamp_shuttle": 73.8,
         "location_contact_shuttle": [
             546,
             452,
             49.0
         ],
-        "sides_changed": 0,
-        "current_set": 1,
-        "location_Init_start_bottom": [
+        "shot": "Net Shot",
+        "location_end_shuttle": [
+            567,
+            766,
+            137.0
+        ],
+        "current_rally_top_init_score": 0,
+        "location_Init_end_bottom": [
             [
-                441,
-                1236
+                426,
+                1096
             ],
             [
-                456,
-                1214
+                426,
+                1096
             ]
-        ]
+        ],
+        "current_set_bottom_init_score": 1,
+        "current_rally_bottom_init_score": 1,
+        "contact_timestamp_shuttle": 73.3,
+        "sides_changed": 0
     },
     "2": {
-        "contact_timestamp_shuttle": 88.7,
-        "current_set_bottom_init_score": 1,
+        "location_Init_end_top": [
+            [
+                374,
+                306
+            ],
+            [
+                301,
+                286
+            ]
+        ],
         "location_Init_end_bottom": [
             [
                 318,
@@ -75,23 +84,18 @@
                 994
             ]
         ],
-        "Action_wl_init_bottom": "Mistake",
-        "end_timestamp_shuttle": 89.0,
-        "Action_FB_init_bottom": "Backhand",
-        "shot": "Net Shot",
-        "location_Init_end_top": [
+        "location_Init_start_bottom": [
             [
-                374,
-                306
+                313,
+                1133
             ],
             [
-                301,
-                286
+                285,
+                994
             ]
         ],
+        "Action_wl_init_bottom": "Mistake",
         "current_set_top_init_score": 1,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 337,
@@ -102,46 +106,28 @@
                 193
             ]
         ],
-        "location_end_shuttle": [
-            418,
-            767,
-            132.0
-        ],
+        "current_set": 1,
+        "player_played": "B",
+        "end_timestamp_shuttle": 89.0,
         "location_contact_shuttle": [
             229,
             1037,
             187.0
         ],
-        "sides_changed": 0,
-        "current_set": 1,
-        "location_Init_start_bottom": [
-            [
-                313,
-                1133
-            ],
-            [
-                285,
-                994
-            ]
-        ]
+        "shot": "Net Shot",
+        "location_end_shuttle": [
+            418,
+            767,
+            132.0
+        ],
+        "Action_FB_init_bottom": "Backhand",
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 1,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 88.7,
+        "sides_changed": 0
     },
     "3": {
-        "contact_timestamp_shuttle": 107.0,
-        "current_set_bottom_init_score": 2,
-        "location_Init_end_bottom": [
-            [
-                285,
-                1179
-            ],
-            [
-                382,
-                1172
-            ]
-        ],
-        "Action_wl_init_bottom": "Winner",
-        "end_timestamp_shuttle": 107.8,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Smash",
         "location_Init_end_top": [
             [
                 390,
@@ -152,9 +138,28 @@
                 361
             ]
         ],
+        "location_Init_end_bottom": [
+            [
+                285,
+                1179
+            ],
+            [
+                382,
+                1172
+            ]
+        ],
+        "location_Init_start_bottom": [
+            [
+                299,
+                1317
+            ],
+            [
+                308,
+                1322
+            ]
+        ],
+        "Action_wl_init_bottom": "Winner",
         "current_set_top_init_score": 1,
-        "current_rally_top_init_score": 0,
-        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 437,
@@ -165,32 +170,38 @@
                 341
             ]
         ],
-        "location_end_shuttle": [
-            149,
-            274,
-            0
-        ],
+        "current_set": 1,
+        "player_played": "B",
+        "end_timestamp_shuttle": 107.8,
         "location_contact_shuttle": [
             327,
             1344,
             269.0
         ],
-        "sides_changed": 0,
-        "current_set": 1,
-        "location_Init_start_bottom": [
-            [
-                299,
-                1317
-            ],
-            [
-                308,
-                1322
-            ]
-        ]
+        "shot": "Smash",
+        "location_end_shuttle": [
+            149,
+            274,
+            0
+        ],
+        "Action_FB_init_bottom": "Forehand",
+        "current_rally_top_init_score": 0,
+        "current_set_bottom_init_score": 2,
+        "current_rally_bottom_init_score": 1,
+        "contact_timestamp_shuttle": 107.0,
+        "sides_changed": 0
     },
     "4": {
-        "contact_timestamp_shuttle": 121.5,
-        "current_set_bottom_init_score": 2,
+        "location_Init_end_top": [
+            [
+                381,
+                105
+            ],
+            [
+                380,
+                71
+            ]
+        ],
         "location_Init_end_bottom": [
             [
                 397,
@@ -201,23 +212,18 @@
                 1132
             ]
         ],
-        "Action_wl_init_bottom": "Mistake",
-        "end_timestamp_shuttle": 123.4,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
-        "location_Init_end_top": [
+        "location_Init_start_bottom": [
             [
-                381,
-                105
+                444,
+                1166
             ],
             [
-                380,
-                71
+                421,
+                1143
             ]
         ],
+        "Action_wl_init_bottom": "Mistake",
         "current_set_top_init_score": 2,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 314,
@@ -228,46 +234,28 @@
                 286
             ]
         ],
-        "location_end_shuttle": [
-            326,
-            39,
-            0
-        ],
+        "current_set": 1,
+        "player_played": "B",
+        "end_timestamp_shuttle": 123.4,
         "location_contact_shuttle": [
             444,
             1206,
             132.0
         ],
-        "sides_changed": 0,
-        "current_set": 1,
-        "location_Init_start_bottom": [
-            [
-                444,
-                1166
-            ],
-            [
-                421,
-                1143
-            ]
-        ]
+        "shot": "Placement",
+        "location_end_shuttle": [
+            326,
+            39,
+            0
+        ],
+        "Action_FB_init_bottom": "Forehand",
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 2,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 121.5,
+        "sides_changed": 0
     },
     "5": {
-        "contact_timestamp_shuttle": 136.1,
-        "current_set_bottom_init_score": 3,
-        "location_Init_end_bottom": [
-            [
-                455,
-                1257
-            ],
-            [
-                475,
-                1268
-            ]
-        ],
-        "Action_wl_init_bottom": "Winner",
-        "end_timestamp_shuttle": 136.8,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Smash",
         "location_Init_end_top": [
             [
                 367,
@@ -278,9 +266,28 @@
                 360
             ]
         ],
+        "location_Init_end_bottom": [
+            [
+                455,
+                1257
+            ],
+            [
+                475,
+                1268
+            ]
+        ],
+        "location_Init_start_bottom": [
+            [
+                446,
+                1172
+            ],
+            [
+                489,
+                1257
+            ]
+        ],
+        "Action_wl_init_bottom": "Winner",
         "current_set_top_init_score": 2,
-        "current_rally_top_init_score": 0,
-        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 456,
@@ -291,46 +298,29 @@
                 360
             ]
         ],
-        "location_end_shuttle": [
-            154,
-            237,
-            0
-        ],
+        "current_set": 1,
+        "player_played": "B",
+        "end_timestamp_shuttle": 136.8,
         "location_contact_shuttle": [
             557,
             1301,
             261.0
         ],
-        "sides_changed": 0,
-        "current_set": 1,
-        "location_Init_start_bottom": [
-            [
-                446,
-                1172
-            ],
-            [
-                489,
-                1257
-            ]
-        ]
+        "shot": "Smash",
+        "location_end_shuttle": [
+            154,
+            237,
+            0
+        ],
+        "Action_FB_init_bottom": "Forehand",
+        "current_rally_top_init_score": 0,
+        "current_set_bottom_init_score": 3,
+        "current_rally_bottom_init_score": 1,
+        "contact_timestamp_shuttle": 136.1,
+        "sides_changed": 0
     },
     "6": {
-        "contact_timestamp_shuttle": 156.9,
-        "current_set_bottom_init_score": 3,
-        "location_Init_end_bottom": [
-            [
-                397,
-                1212
-            ],
-            [
-                295,
-                1185
-            ]
-        ],
-        "end_timestamp_shuttle": 157.6,
-        "shot": "Smash",
         "Action_wl_init_top": "Winner",
-        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
                 320,
@@ -341,9 +331,17 @@
                 510
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                355,
+                1150
+            ],
+            [
+                308,
+                1162
+            ]
+        ],
         "current_set_top_init_score": 3,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 368,
@@ -354,32 +352,48 @@
                 545
             ]
         ],
-        "location_end_shuttle": [
-            153,
-            1280,
-            0
-        ],
+        "current_set": 1,
+        "player_played": "T",
+        "Action_FB_init_top": "Forehand",
+        "end_timestamp_shuttle": 157.6,
         "location_contact_shuttle": [
             209,
             623,
             217.0
         ],
-        "sides_changed": 0,
-        "current_set": 1,
-        "location_Init_start_bottom": [
+        "shot": "Smash",
+        "location_end_shuttle": [
+            153,
+            1280,
+            0
+        ],
+        "current_rally_top_init_score": 1,
+        "location_Init_end_bottom": [
             [
-                355,
-                1150
+                397,
+                1212
             ],
             [
-                308,
-                1162
+                295,
+                1185
             ]
-        ]
+        ],
+        "current_set_bottom_init_score": 3,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 156.9,
+        "sides_changed": 0
     },
     "7": {
-        "contact_timestamp_shuttle": 172.8,
-        "current_set_bottom_init_score": 4,
+        "location_Init_end_top": [
+            [
+                469,
+                369
+            ],
+            [
+                416,
+                350
+            ]
+        ],
         "location_Init_end_bottom": [
             [
                 377,
@@ -390,23 +404,18 @@
                 1258
             ]
         ],
-        "Action_wl_init_bottom": "Winner",
-        "end_timestamp_shuttle": 173.6,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Smash",
-        "location_Init_end_top": [
+        "location_Init_start_bottom": [
             [
-                469,
-                369
+                329,
+                1190
             ],
             [
-                416,
-                350
+                382,
+                1190
             ]
         ],
+        "Action_wl_init_bottom": "Winner",
         "current_set_top_init_score": 3,
-        "current_rally_top_init_score": 0,
-        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 475,
@@ -417,46 +426,29 @@
                 389
             ]
         ],
-        "location_end_shuttle": [
-            604,
-            476,
-            0
-        ],
+        "current_set": 1,
+        "player_played": "B",
+        "end_timestamp_shuttle": 173.6,
         "location_contact_shuttle": [
             338,
             1299,
             272.0
         ],
-        "sides_changed": 0,
-        "current_set": 1,
-        "location_Init_start_bottom": [
-            [
-                329,
-                1190
-            ],
-            [
-                382,
-                1190
-            ]
-        ]
+        "shot": "Smash",
+        "location_end_shuttle": [
+            604,
+            476,
+            0
+        ],
+        "Action_FB_init_bottom": "Forehand",
+        "current_rally_top_init_score": 0,
+        "current_set_bottom_init_score": 4,
+        "current_rally_bottom_init_score": 1,
+        "contact_timestamp_shuttle": 172.8,
+        "sides_changed": 0
     },
     "8": {
-        "contact_timestamp_shuttle": 195.2,
-        "current_set_bottom_init_score": 4,
-        "location_Init_end_bottom": [
-            [
-                487,
-                1262
-            ],
-            [
-                544,
-                1278
-            ]
-        ],
-        "end_timestamp_shuttle": 196.6,
-        "shot": "Placement",
         "Action_wl_init_top": "Winner",
-        "Action_FB_init_top": "Backhand",
         "location_Init_end_top": [
             [
                 513,
@@ -467,9 +459,17 @@
                 379
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                415,
+                1137
+            ],
+            [
+                446,
+                1077
+            ]
+        ],
         "current_set_top_init_score": 4,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 560,
@@ -480,46 +480,38 @@
                 534
             ]
         ],
-        "location_end_shuttle": [
-            570,
-            1407,
-            0
-        ],
+        "current_set": 1,
+        "player_played": "T",
+        "Action_FB_init_top": "Backhand",
+        "end_timestamp_shuttle": 196.6,
         "location_contact_shuttle": [
             588,
             601,
             88.0
         ],
-        "sides_changed": 0,
-        "current_set": 1,
-        "location_Init_start_bottom": [
-            [
-                415,
-                1137
-            ],
-            [
-                446,
-                1077
-            ]
-        ]
-    },
-    "9": {
-        "contact_timestamp_shuttle": 224.8,
-        "current_set_bottom_init_score": 5,
+        "shot": "Placement",
+        "location_end_shuttle": [
+            570,
+            1407,
+            0
+        ],
+        "current_rally_top_init_score": 1,
         "location_Init_end_bottom": [
             [
-                278,
-                1191
+                487,
+                1262
             ],
             [
-                301,
-                1243
+                544,
+                1278
             ]
         ],
-        "Action_wl_init_bottom": "Winner",
-        "end_timestamp_shuttle": 225.6,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Smash",
+        "current_set_bottom_init_score": 4,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 195.2,
+        "sides_changed": 0
+    },
+    "9": {
         "location_Init_end_top": [
             [
                 338,
@@ -530,9 +522,28 @@
                 326
             ]
         ],
+        "location_Init_end_bottom": [
+            [
+                278,
+                1191
+            ],
+            [
+                301,
+                1243
+            ]
+        ],
+        "location_Init_start_bottom": [
+            [
+                338,
+                1179
+            ],
+            [
+                255,
+                1180
+            ]
+        ],
+        "Action_wl_init_bottom": "Winner",
         "current_set_top_init_score": 4,
-        "current_rally_top_init_score": 0,
-        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 473,
@@ -543,32 +554,38 @@
                 233
             ]
         ],
-        "location_end_shuttle": [
-            153,
-            274,
-            0
-        ],
+        "current_set": 1,
+        "player_played": "B",
+        "end_timestamp_shuttle": 225.6,
         "location_contact_shuttle": [
             257,
             1304,
             274.0
         ],
-        "sides_changed": 0,
-        "current_set": 1,
-        "location_Init_start_bottom": [
-            [
-                338,
-                1179
-            ],
-            [
-                255,
-                1180
-            ]
-        ]
+        "shot": "Smash",
+        "location_end_shuttle": [
+            153,
+            274,
+            0
+        ],
+        "Action_FB_init_bottom": "Forehand",
+        "current_rally_top_init_score": 0,
+        "current_set_bottom_init_score": 5,
+        "current_rally_bottom_init_score": 1,
+        "contact_timestamp_shuttle": 224.8,
+        "sides_changed": 0
     },
     "10": {
-        "contact_timestamp_shuttle": 251.3,
-        "current_set_bottom_init_score": 6,
+        "location_Init_end_top": [
+            [
+                435,
+                275
+            ],
+            [
+                455,
+                275
+            ]
+        ],
         "location_Init_end_bottom": [
             [
                 430,
@@ -579,23 +596,18 @@
                 1071
             ]
         ],
-        "Action_wl_init_bottom": "Winner",
-        "end_timestamp_shuttle": 252.1,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
-        "location_Init_end_top": [
+        "location_Init_start_bottom": [
             [
-                435,
-                275
+                370,
+                993
             ],
             [
-                455,
-                275
+                446,
+                908
             ]
         ],
+        "Action_wl_init_bottom": "Winner",
         "current_set_top_init_score": 4,
-        "current_rally_top_init_score": 0,
-        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 315,
@@ -606,46 +618,29 @@
                 370
             ]
         ],
-        "location_end_shuttle": [
-            650,
-            117,
-            0
-        ],
+        "current_set": 1,
+        "player_played": "B",
+        "end_timestamp_shuttle": 252.1,
         "location_contact_shuttle": [
             503,
             1053,
             188.0
         ],
-        "sides_changed": 0,
-        "current_set": 1,
-        "location_Init_start_bottom": [
-            [
-                370,
-                993
-            ],
-            [
-                446,
-                908
-            ]
-        ]
+        "shot": "Placement",
+        "location_end_shuttle": [
+            650,
+            117,
+            0
+        ],
+        "Action_FB_init_bottom": "Forehand",
+        "current_rally_top_init_score": 0,
+        "current_set_bottom_init_score": 6,
+        "current_rally_bottom_init_score": 1,
+        "contact_timestamp_shuttle": 251.3,
+        "sides_changed": 0
     },
     "11": {
-        "contact_timestamp_shuttle": 285.1,
-        "current_set_bottom_init_score": 6,
-        "location_Init_end_bottom": [
-            [
-                429,
-                1160
-            ],
-            [
-                562,
-                1224
-            ]
-        ],
-        "end_timestamp_shuttle": 285.9,
-        "shot": "Smash",
         "Action_wl_init_top": "Winner",
-        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
                 532,
@@ -656,9 +651,17 @@
                 274
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                476,
+                1043
+            ],
+            [
+                491,
+                1074
+            ]
+        ],
         "current_set_top_init_score": 5,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 504,
@@ -669,46 +672,38 @@
                 223
             ]
         ],
-        "location_end_shuttle": [
-            650,
-            1212,
-            0
-        ],
+        "current_set": 1,
+        "player_played": "T",
+        "Action_FB_init_top": "Forehand",
+        "end_timestamp_shuttle": 285.9,
         "location_contact_shuttle": [
             596,
             195,
             220.0
         ],
-        "sides_changed": 0,
-        "current_set": 1,
-        "location_Init_start_bottom": [
-            [
-                476,
-                1043
-            ],
-            [
-                491,
-                1074
-            ]
-        ]
-    },
-    "12": {
-        "contact_timestamp_shuttle": 323.4,
-        "current_set_bottom_init_score": 7,
+        "shot": "Smash",
+        "location_end_shuttle": [
+            650,
+            1212,
+            0
+        ],
+        "current_rally_top_init_score": 1,
         "location_Init_end_bottom": [
             [
-                588,
-                821
+                429,
+                1160
             ],
             [
-                583,
-                712
+                562,
+                1224
             ]
         ],
-        "Action_wl_init_bottom": "Winner",
-        "end_timestamp_shuttle": 323.6,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Smash",
+        "current_set_bottom_init_score": 6,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 285.1,
+        "sides_changed": 0
+    },
+    "12": {
         "location_Init_end_top": [
             [
                 495,
@@ -719,9 +714,28 @@
                 285
             ]
         ],
+        "location_Init_end_bottom": [
+            [
+                588,
+                821
+            ],
+            [
+                583,
+                712
+            ]
+        ],
+        "location_Init_start_bottom": [
+            [
+                546,
+                851
+            ],
+            [
+                538,
+                836
+            ]
+        ],
+        "Action_wl_init_bottom": "Winner",
         "current_set_top_init_score": 5,
-        "current_rally_top_init_score": 0,
-        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 482,
@@ -732,46 +746,28 @@
                 285
             ]
         ],
-        "location_end_shuttle": [
-            355,
-            514,
-            0
-        ],
+        "current_set": 1,
+        "player_played": "B",
+        "end_timestamp_shuttle": 323.6,
         "location_contact_shuttle": [
             586,
             878,
             232.0
         ],
-        "sides_changed": 0,
-        "current_set": 1,
-        "location_Init_start_bottom": [
-            [
-                546,
-                851
-            ],
-            [
-                538,
-                836
-            ]
-        ]
+        "shot": "Smash",
+        "location_end_shuttle": [
+            355,
+            514,
+            0
+        ],
+        "Action_FB_init_bottom": "Forehand",
+        "current_rally_top_init_score": 0,
+        "current_set_bottom_init_score": 7,
+        "current_rally_bottom_init_score": 1,
+        "contact_timestamp_shuttle": 323.4,
+        "sides_changed": 0
     },
     "13": {
-        "contact_timestamp_shuttle": 347.9,
-        "current_set_bottom_init_score": 8,
-        "location_Init_end_bottom": [
-            [
-                397,
-                1138
-            ],
-            [
-                463,
-                1149
-            ]
-        ],
-        "Action_wl_init_bottom": "Winner",
-        "end_timestamp_shuttle": 349.6,
-        "Action_FB_init_bottom": "Backhand",
-        "shot": "Placement",
         "location_Init_end_top": [
             [
                 607,
@@ -782,9 +778,28 @@
                 135
             ]
         ],
+        "location_Init_end_bottom": [
+            [
+                397,
+                1138
+            ],
+            [
+                463,
+                1149
+            ]
+        ],
+        "location_Init_start_bottom": [
+            [
+                374,
+                1190
+            ],
+            [
+                271,
+                1265
+            ]
+        ],
+        "Action_wl_init_bottom": "Winner",
         "current_set_top_init_score": 5,
-        "current_rally_top_init_score": 0,
-        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 395,
@@ -795,46 +810,28 @@
                 380
             ]
         ],
-        "location_end_shuttle": [
-            645,
-            132,
-            0
-        ],
+        "current_set": 1,
+        "player_played": "B",
+        "end_timestamp_shuttle": 349.6,
         "location_contact_shuttle": [
             202,
             1267,
             163.0
         ],
-        "sides_changed": 0,
-        "current_set": 1,
-        "location_Init_start_bottom": [
-            [
-                374,
-                1190
-            ],
-            [
-                271,
-                1265
-            ]
-        ]
+        "shot": "Placement",
+        "location_end_shuttle": [
+            645,
+            132,
+            0
+        ],
+        "Action_FB_init_bottom": "Backhand",
+        "current_rally_top_init_score": 0,
+        "current_set_bottom_init_score": 8,
+        "current_rally_bottom_init_score": 1,
+        "contact_timestamp_shuttle": 347.9,
+        "sides_changed": 0
     },
     "14": {
-        "contact_timestamp_shuttle": 446.4,
-        "current_set_bottom_init_score": 8,
-        "location_Init_end_bottom": [
-            [
-                355,
-                1126
-            ],
-            [
-                399,
-                1120
-            ]
-        ],
-        "Action_wl_init_bottom": "Mistake",
-        "end_timestamp_shuttle": 448.5,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
         "location_Init_end_top": [
             [
                 335,
@@ -845,9 +842,28 @@
                 54
             ]
         ],
+        "location_Init_end_bottom": [
+            [
+                355,
+                1126
+            ],
+            [
+                399,
+                1120
+            ]
+        ],
+        "location_Init_start_bottom": [
+            [
+                417,
+                1137
+            ],
+            [
+                444,
+                1160
+            ]
+        ],
+        "Action_wl_init_bottom": "Mistake",
         "current_set_top_init_score": 6,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 315,
@@ -858,46 +874,28 @@
                 317
             ]
         ],
-        "location_end_shuttle": [
-            264,
-            40,
-            0
-        ],
+        "current_set": 1,
+        "player_played": "B",
+        "end_timestamp_shuttle": 448.5,
         "location_contact_shuttle": [
             444,
             1224,
             140.0
         ],
-        "sides_changed": 0,
-        "current_set": 1,
-        "location_Init_start_bottom": [
-            [
-                417,
-                1137
-            ],
-            [
-                444,
-                1160
-            ]
-        ]
+        "shot": "Placement",
+        "location_end_shuttle": [
+            264,
+            40,
+            0
+        ],
+        "Action_FB_init_bottom": "Forehand",
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 8,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 446.4,
+        "sides_changed": 0
     },
     "15": {
-        "contact_timestamp_shuttle": 473.0,
-        "current_set_bottom_init_score": 8,
-        "location_Init_end_bottom": [
-            [
-                336,
-                1078
-            ],
-            [
-                401,
-                1120
-            ]
-        ],
-        "Action_wl_init_bottom": "Mistake",
-        "end_timestamp_shuttle": 474.6,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
         "location_Init_end_top": [
             [
                 284,
@@ -908,9 +906,28 @@
                 127
             ]
         ],
+        "location_Init_end_bottom": [
+            [
+                336,
+                1078
+            ],
+            [
+                401,
+                1120
+            ]
+        ],
+        "location_Init_start_bottom": [
+            [
+                514,
+                1267
+            ],
+            [
+                628,
+                1313
+            ]
+        ],
+        "Action_wl_init_bottom": "Mistake",
         "current_set_top_init_score": 7,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 493,
@@ -921,46 +938,29 @@
                 285
             ]
         ],
-        "location_end_shuttle": [
-            234,
-            14,
-            0
-        ],
+        "current_set": 1,
+        "player_played": "B",
+        "end_timestamp_shuttle": 474.6,
         "location_contact_shuttle": [
             639,
             1327,
             226.0
         ],
-        "sides_changed": 0,
-        "current_set": 1,
-        "location_Init_start_bottom": [
-            [
-                514,
-                1267
-            ],
-            [
-                628,
-                1313
-            ]
-        ]
+        "shot": "Placement",
+        "location_end_shuttle": [
+            234,
+            14,
+            0
+        ],
+        "Action_FB_init_bottom": "Forehand",
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 8,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 473.0,
+        "sides_changed": 0
     },
     "16": {
-        "contact_timestamp_shuttle": 524.9,
-        "current_set_bottom_init_score": 8,
-        "location_Init_end_bottom": [
-            [
-                289,
-                1345
-            ],
-            [
-                321,
-                1374
-            ]
-        ],
-        "end_timestamp_shuttle": 526.6,
-        "shot": "Placement",
         "Action_wl_init_top": "Winner",
-        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
                 449,
@@ -971,9 +971,17 @@
                 350
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                270,
+                1202
+            ],
+            [
+                310,
+                1270
+            ]
+        ],
         "current_set_top_init_score": 8,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 434,
@@ -984,46 +992,38 @@
                 330
             ]
         ],
-        "location_end_shuttle": [
-            345,
-            1407,
-            0
-        ],
+        "current_set": 1,
+        "player_played": "T",
+        "Action_FB_init_top": "Forehand",
+        "end_timestamp_shuttle": 526.6,
         "location_contact_shuttle": [
             464,
             316,
             133.0
         ],
-        "sides_changed": 0,
-        "current_set": 1,
-        "location_Init_start_bottom": [
-            [
-                270,
-                1202
-            ],
-            [
-                310,
-                1270
-            ]
-        ]
-    },
-    "17": {
-        "contact_timestamp_shuttle": 542.1,
-        "current_set_bottom_init_score": 8,
+        "shot": "Placement",
+        "location_end_shuttle": [
+            345,
+            1407,
+            0
+        ],
+        "current_rally_top_init_score": 1,
         "location_Init_end_bottom": [
             [
-                413,
-                1353
+                289,
+                1345
             ],
             [
-                456,
-                1320
+                321,
+                1374
             ]
         ],
-        "Action_wl_init_bottom": "Mistake",
-        "end_timestamp_shuttle": 542.4,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Net Shot",
+        "current_set_bottom_init_score": 8,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 524.9,
+        "sides_changed": 0
+    },
+    "17": {
         "location_Init_end_top": [
             [
                 474,
@@ -1034,9 +1034,28 @@
                 360
             ]
         ],
+        "location_Init_end_bottom": [
+            [
+                413,
+                1353
+            ],
+            [
+                456,
+                1320
+            ]
+        ],
+        "location_Init_start_bottom": [
+            [
+                422,
+                1343
+            ],
+            [
+                465,
+                1392
+            ]
+        ],
+        "Action_wl_init_bottom": "Mistake",
         "current_set_top_init_score": 9,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 457,
@@ -1047,46 +1066,28 @@
                 316
             ]
         ],
-        "location_end_shuttle": [
-            520,
-            766,
-            131.0
-        ],
+        "current_set": 1,
+        "player_played": "B",
+        "end_timestamp_shuttle": 542.4,
         "location_contact_shuttle": [
             454,
             1398,
             252.0
         ],
-        "sides_changed": 0,
-        "current_set": 1,
-        "location_Init_start_bottom": [
-            [
-                422,
-                1343
-            ],
-            [
-                465,
-                1392
-            ]
-        ]
+        "shot": "Net Shot",
+        "location_end_shuttle": [
+            520,
+            766,
+            131.0
+        ],
+        "Action_FB_init_bottom": "Forehand",
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 8,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 542.1,
+        "sides_changed": 0
     },
     "18": {
-        "contact_timestamp_shuttle": 569.4,
-        "current_set_bottom_init_score": 8,
-        "location_Init_end_bottom": [
-            [
-                389,
-                1172
-            ],
-            [
-                452,
-                1257
-            ]
-        ],
-        "Action_wl_init_bottom": "Mistake",
-        "end_timestamp_shuttle": 570.3,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
         "location_Init_end_top": [
             [
                 382,
@@ -1097,9 +1098,28 @@
                 361
             ]
         ],
+        "location_Init_end_bottom": [
+            [
+                389,
+                1172
+            ],
+            [
+                452,
+                1257
+            ]
+        ],
+        "location_Init_start_bottom": [
+            [
+                504,
+                1224
+            ],
+            [
+                545,
+                1288
+            ]
+        ],
+        "Action_wl_init_bottom": "Mistake",
         "current_set_top_init_score": 10,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 496,
@@ -1110,46 +1130,29 @@
                 265
             ]
         ],
-        "location_end_shuttle": [
-            119,
-            237,
-            0
-        ],
+        "current_set": 1,
+        "player_played": "B",
+        "end_timestamp_shuttle": 570.3,
         "location_contact_shuttle": [
             549,
             1328,
             276.0
         ],
-        "sides_changed": 0,
-        "current_set": 1,
-        "location_Init_start_bottom": [
-            [
-                504,
-                1224
-            ],
-            [
-                545,
-                1288
-            ]
-        ]
+        "shot": "Placement",
+        "location_end_shuttle": [
+            119,
+            237,
+            0
+        ],
+        "Action_FB_init_bottom": "Forehand",
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 8,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 569.4,
+        "sides_changed": 0
     },
     "19": {
-        "contact_timestamp_shuttle": 592.9,
-        "current_set_bottom_init_score": 9,
-        "location_Init_end_bottom": [
-            [
-                427,
-                1178
-            ],
-            [
-                541,
-                1171
-            ]
-        ],
-        "end_timestamp_shuttle": 593.6,
-        "shot": "Placement",
         "Action_wl_init_top": "Mistake",
-        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
                 536,
@@ -1160,9 +1163,17 @@
                 201
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                430,
+                1083
+            ],
+            [
+                478,
+                1113
+            ]
+        ],
         "current_set_top_init_score": 10,
-        "current_rally_top_init_score": 0,
-        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 596,
@@ -1173,46 +1184,38 @@
                 147
             ]
         ],
-        "location_end_shuttle": [
-            670,
-            1135,
-            0
-        ],
+        "current_set": 1,
+        "player_played": "T",
+        "Action_FB_init_top": "Forehand",
+        "end_timestamp_shuttle": 593.6,
         "location_contact_shuttle": [
             552,
             215,
             257.0
         ],
-        "sides_changed": 0,
-        "current_set": 1,
-        "location_Init_start_bottom": [
-            [
-                430,
-                1083
-            ],
-            [
-                478,
-                1113
-            ]
-        ]
-    },
-    "20": {
-        "contact_timestamp_shuttle": 620.0,
-        "current_set_bottom_init_score": 9,
+        "shot": "Placement",
+        "location_end_shuttle": [
+            670,
+            1135,
+            0
+        ],
+        "current_rally_top_init_score": 0,
         "location_Init_end_bottom": [
             [
-                473,
-                1225
+                427,
+                1178
             ],
             [
-                522,
+                541,
                 1171
             ]
         ],
-        "Action_wl_init_bottom": "Mistake",
-        "end_timestamp_shuttle": 621.1,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
+        "current_set_bottom_init_score": 9,
+        "current_rally_bottom_init_score": 1,
+        "contact_timestamp_shuttle": 592.9,
+        "sides_changed": 0
+    },
+    "20": {
         "location_Init_end_top": [
             [
                 551,
@@ -1223,9 +1226,28 @@
                 471
             ]
         ],
+        "location_Init_end_bottom": [
+            [
+                473,
+                1225
+            ],
+            [
+                522,
+                1171
+            ]
+        ],
+        "location_Init_start_bottom": [
+            [
+                460,
+                1225
+            ],
+            [
+                596,
+                1303
+            ]
+        ],
+        "Action_wl_init_bottom": "Mistake",
         "current_set_top_init_score": 11,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 501,
@@ -1236,46 +1258,28 @@
                 435
             ]
         ],
-        "location_end_shuttle": [
-            672,
-            442,
-            0
-        ],
+        "current_set": 1,
+        "player_played": "B",
+        "end_timestamp_shuttle": 621.1,
         "location_contact_shuttle": [
             656,
             1320,
             130.0
         ],
-        "sides_changed": 0,
-        "current_set": 1,
-        "location_Init_start_bottom": [
-            [
-                460,
-                1225
-            ],
-            [
-                596,
-                1303
-            ]
-        ]
+        "shot": "Placement",
+        "location_end_shuttle": [
+            672,
+            442,
+            0
+        ],
+        "Action_FB_init_bottom": "Forehand",
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 9,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 620.0,
+        "sides_changed": 0
     },
     "21": {
-        "contact_timestamp_shuttle": 642.4,
-        "current_set_bottom_init_score": 9,
-        "location_Init_end_bottom": [
-            [
-                405,
-                1084
-            ],
-            [
-                457,
-                1125
-            ]
-        ],
-        "Action_wl_init_bottom": "Mistake",
-        "end_timestamp_shuttle": 644.0,
-        "Action_FB_init_bottom": "Backhand",
-        "shot": "Placement",
         "location_Init_end_top": [
             [
                 569,
@@ -1286,9 +1290,28 @@
                 63
             ]
         ],
+        "location_Init_end_bottom": [
+            [
+                405,
+                1084
+            ],
+            [
+                457,
+                1125
+            ]
+        ],
+        "location_Init_start_bottom": [
+            [
+                301,
+                1085
+            ],
+            [
+                241,
+                968
+            ]
+        ],
+        "Action_wl_init_bottom": "Mistake",
         "current_set_top_init_score": 12,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 402,
@@ -1299,46 +1322,29 @@
                 360
             ]
         ],
-        "location_end_shuttle": [
-            653,
-            57,
-            0
-        ],
+        "current_set": 1,
+        "player_played": "B",
+        "end_timestamp_shuttle": 644.0,
         "location_contact_shuttle": [
             198,
             962,
             157.0
         ],
-        "sides_changed": 0,
-        "current_set": 1,
-        "location_Init_start_bottom": [
-            [
-                301,
-                1085
-            ],
-            [
-                241,
-                968
-            ]
-        ]
+        "shot": "Placement",
+        "location_end_shuttle": [
+            653,
+            57,
+            0
+        ],
+        "Action_FB_init_bottom": "Backhand",
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 9,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 642.4,
+        "sides_changed": 0
     },
     "22": {
-        "contact_timestamp_shuttle": 719.9,
-        "current_set_bottom_init_score": 10,
-        "location_Init_end_bottom": [
-            [
-                196,
-                1244
-            ],
-            [
-                174,
-                1308
-            ]
-        ],
-        "end_timestamp_shuttle": 721.4,
-        "shot": "Placement",
         "Action_wl_init_top": "Mistake",
-        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
                 359,
@@ -1349,9 +1355,17 @@
                 351
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                294,
+                1216
+            ],
+            [
+                341,
+                1215
+            ]
+        ],
         "current_set_top_init_score": 12,
-        "current_rally_top_init_score": 0,
-        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 362,
@@ -1362,46 +1376,39 @@
                 400
             ]
         ],
-        "location_end_shuttle": [
-            135,
-            1388,
-            0
-        ],
+        "current_set": 1,
+        "player_played": "T",
+        "Action_FB_init_top": "Forehand",
+        "end_timestamp_shuttle": 721.4,
         "location_contact_shuttle": [
             204,
             472,
             78.0
         ],
-        "sides_changed": 0,
-        "current_set": 1,
-        "location_Init_start_bottom": [
-            [
-                294,
-                1216
-            ],
-            [
-                341,
-                1215
-            ]
-        ]
-    },
-    "23": {
-        "contact_timestamp_shuttle": 749.0,
-        "current_set_bottom_init_score": 11,
+        "shot": "Placement",
+        "location_end_shuttle": [
+            135,
+            1388,
+            0
+        ],
+        "current_rally_top_init_score": 0,
         "location_Init_end_bottom": [
             [
-                479,
-                1387
+                196,
+                1244
             ],
             [
-                543,
-                1347
+                174,
+                1308
             ]
         ],
-        "end_timestamp_shuttle": 750.9,
-        "shot": "Placement",
+        "current_set_bottom_init_score": 10,
+        "current_rally_bottom_init_score": 1,
+        "contact_timestamp_shuttle": 719.9,
+        "sides_changed": 0
+    },
+    "23": {
         "Action_wl_init_top": "Mistake",
-        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
                 474,
@@ -1412,9 +1419,17 @@
                 316
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                395,
+                1138
+            ],
+            [
+                452,
+                1154
+            ]
+        ],
         "current_set_top_init_score": 12,
-        "current_rally_top_init_score": 0,
-        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 566,
@@ -1425,46 +1440,38 @@
                 81
             ]
         ],
-        "location_end_shuttle": [
-            565,
-            1457,
-            0
-        ],
+        "current_set": 1,
+        "player_played": "T",
+        "Action_FB_init_top": "Forehand",
+        "end_timestamp_shuttle": 750.9,
         "location_contact_shuttle": [
             542,
             252,
             251.0
         ],
-        "sides_changed": 0,
-        "current_set": 1,
-        "location_Init_start_bottom": [
-            [
-                395,
-                1138
-            ],
-            [
-                452,
-                1154
-            ]
-        ]
-    },
-    "24": {
-        "contact_timestamp_shuttle": 775.9,
-        "current_set_bottom_init_score": 11,
+        "shot": "Placement",
+        "location_end_shuttle": [
+            565,
+            1457,
+            0
+        ],
+        "current_rally_top_init_score": 0,
         "location_Init_end_bottom": [
             [
-                325,
-                1138
+                479,
+                1387
             ],
             [
-                393,
-                1126
+                543,
+                1347
             ]
         ],
-        "Action_wl_init_bottom": "Mistake",
-        "end_timestamp_shuttle": 777.5,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
+        "current_set_bottom_init_score": 11,
+        "current_rally_bottom_init_score": 1,
+        "contact_timestamp_shuttle": 749.0,
+        "sides_changed": 0
+    },
+    "24": {
         "location_Init_end_top": [
             [
                 231,
@@ -1475,9 +1482,28 @@
                 128
             ]
         ],
+        "location_Init_end_bottom": [
+            [
+                325,
+                1138
+            ],
+            [
+                393,
+                1126
+            ]
+        ],
+        "location_Init_start_bottom": [
+            [
+                493,
+                1131
+            ],
+            [
+                558,
+                1023
+            ]
+        ],
+        "Action_wl_init_bottom": "Mistake",
         "current_set_top_init_score": 13,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 539,
@@ -1488,46 +1514,29 @@
                 180
             ]
         ],
-        "location_end_shuttle": [
-            116,
-            87,
-            0
-        ],
+        "current_set": 1,
+        "player_played": "B",
+        "end_timestamp_shuttle": 777.5,
         "location_contact_shuttle": [
             559,
             1080,
             115.0
         ],
-        "sides_changed": 0,
-        "current_set": 1,
-        "location_Init_start_bottom": [
-            [
-                493,
-                1131
-            ],
-            [
-                558,
-                1023
-            ]
-        ]
+        "shot": "Placement",
+        "location_end_shuttle": [
+            116,
+            87,
+            0
+        ],
+        "Action_FB_init_bottom": "Forehand",
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 11,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 775.9,
+        "sides_changed": 0
     },
     "25": {
-        "contact_timestamp_shuttle": 836.6,
-        "current_set_bottom_init_score": 12,
-        "location_Init_end_bottom": [
-            [
-                239,
-                1007
-            ],
-            [
-                240,
-                1013
-            ]
-        ],
-        "end_timestamp_shuttle": 837.6,
-        "shot": "Placement",
         "Action_wl_init_top": "Mistake",
-        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
                 334,
@@ -1538,9 +1547,17 @@
                 276
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                380,
+                1184
+            ],
+            [
+                344,
+                1179
+            ]
+        ],
         "current_set_top_init_score": 13,
-        "current_rally_top_init_score": 0,
-        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 304,
@@ -1551,46 +1568,39 @@
                 307
             ]
         ],
-        "location_end_shuttle": [
-            89,
-            990,
-            0
-        ],
+        "current_set": 1,
+        "player_played": "T",
+        "Action_FB_init_top": "Forehand",
+        "end_timestamp_shuttle": 837.6,
         "location_contact_shuttle": [
             227,
             309,
             130.0
         ],
-        "sides_changed": 0,
-        "current_set": 1,
-        "location_Init_start_bottom": [
-            [
-                380,
-                1184
-            ],
-            [
-                344,
-                1179
-            ]
-        ]
-    },
-    "26": {
-        "contact_timestamp_shuttle": 882.4,
-        "current_set_bottom_init_score": 12,
+        "shot": "Placement",
+        "location_end_shuttle": [
+            89,
+            990,
+            0
+        ],
+        "current_rally_top_init_score": 0,
         "location_Init_end_bottom": [
             [
-                280,
-                1275
+                239,
+                1007
             ],
             [
-                194,
-                1385
+                240,
+                1013
             ]
         ],
-        "end_timestamp_shuttle": 883.9,
-        "shot": "Placement",
+        "current_set_bottom_init_score": 12,
+        "current_rally_bottom_init_score": 1,
+        "contact_timestamp_shuttle": 836.6,
+        "sides_changed": 0
+    },
+    "26": {
         "Action_wl_init_top": "Winner",
-        "Action_FB_init_top": "Backhand",
         "location_Init_end_top": [
             [
                 363,
@@ -1601,9 +1611,17 @@
                 427
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                385,
+                1126
+            ],
+            [
+                414,
+                1084
+            ]
+        ],
         "current_set_top_init_score": 14,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 355,
@@ -1614,46 +1632,38 @@
                 446
             ]
         ],
-        "location_end_shuttle": [
-            152,
-            1392,
-            0
-        ],
+        "current_set": 1,
+        "player_played": "T",
+        "Action_FB_init_top": "Backhand",
+        "end_timestamp_shuttle": 883.9,
         "location_contact_shuttle": [
             336,
             569,
             120.0
         ],
-        "sides_changed": 0,
-        "current_set": 1,
-        "location_Init_start_bottom": [
-            [
-                385,
-                1126
-            ],
-            [
-                414,
-                1084
-            ]
-        ]
-    },
-    "27": {
-        "contact_timestamp_shuttle": 907.6,
-        "current_set_bottom_init_score": 13,
+        "shot": "Placement",
+        "location_end_shuttle": [
+            152,
+            1392,
+            0
+        ],
+        "current_rally_top_init_score": 1,
         "location_Init_end_bottom": [
             [
-                424,
-                1258
+                280,
+                1275
             ],
             [
-                489,
-                1188
+                194,
+                1385
             ]
         ],
-        "Action_wl_init_bottom": "Winner",
-        "end_timestamp_shuttle": 908.3,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
+        "current_set_bottom_init_score": 12,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 882.4,
+        "sides_changed": 0
+    },
+    "27": {
         "location_Init_end_top": [
             [
                 494,
@@ -1664,9 +1674,28 @@
                 320
             ]
         ],
+        "location_Init_end_bottom": [
+            [
+                424,
+                1258
+            ],
+            [
+                489,
+                1188
+            ]
+        ],
+        "location_Init_start_bottom": [
+            [
+                443,
+                1378
+            ],
+            [
+                469,
+                1353
+            ]
+        ],
+        "Action_wl_init_bottom": "Winner",
         "current_set_top_init_score": 14,
-        "current_rally_top_init_score": 0,
-        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 474,
@@ -1677,46 +1706,29 @@
                 341
             ]
         ],
-        "location_end_shuttle": [
-            642,
-            185,
-            0
-        ],
+        "current_set": 1,
+        "player_played": "B",
+        "end_timestamp_shuttle": 908.3,
         "location_contact_shuttle": [
             498,
             1391,
             238.0
         ],
-        "sides_changed": 0,
-        "current_set": 1,
-        "location_Init_start_bottom": [
-            [
-                443,
-                1378
-            ],
-            [
-                469,
-                1353
-            ]
-        ]
+        "shot": "Placement",
+        "location_end_shuttle": [
+            642,
+            185,
+            0
+        ],
+        "Action_FB_init_bottom": "Forehand",
+        "current_rally_top_init_score": 0,
+        "current_set_bottom_init_score": 13,
+        "current_rally_bottom_init_score": 1,
+        "contact_timestamp_shuttle": 907.6,
+        "sides_changed": 0
     },
     "28": {
-        "contact_timestamp_shuttle": 932.0,
-        "current_set_bottom_init_score": 13,
-        "location_Init_end_bottom": [
-            [
-                399,
-                1138
-            ],
-            [
-                399,
-                1126
-            ]
-        ],
-        "end_timestamp_shuttle": 933.0,
-        "shot": "Placement",
         "Action_wl_init_top": "Winner",
-        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
                 460,
@@ -1727,9 +1739,17 @@
                 417
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                367,
+                1102
+            ],
+            [
+                416,
+                1065
+            ]
+        ],
         "current_set_top_init_score": 15,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 520,
@@ -1740,32 +1760,39 @@
                 543
             ]
         ],
-        "location_end_shuttle": [
-            203,
-            962,
-            0
-        ],
+        "current_set": 1,
+        "player_played": "T",
+        "Action_FB_init_top": "Forehand",
+        "end_timestamp_shuttle": 933.0,
         "location_contact_shuttle": [
             461,
             624,
             131.0
         ],
-        "sides_changed": 0,
-        "current_set": 1,
-        "location_Init_start_bottom": [
+        "shot": "Placement",
+        "location_end_shuttle": [
+            203,
+            962,
+            0
+        ],
+        "current_rally_top_init_score": 1,
+        "location_Init_end_bottom": [
             [
-                367,
-                1102
+                399,
+                1138
             ],
             [
-                416,
-                1065
+                399,
+                1126
             ]
-        ]
+        ],
+        "current_set_bottom_init_score": 13,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 932.0,
+        "sides_changed": 0
     },
     "29": {
-        "contact_timestamp_shuttle": 1066.3,
-        "current_set_bottom_init_score": 0,
+        "Action_wl_init_top": "Winner",
         "location_Init_end_bottom": [
             [
                 450,
@@ -1776,10 +1803,6 @@
                 1049
             ]
         ],
-        "end_timestamp_shuttle": 1067.1,
-        "shot": "Placement",
-        "Action_wl_init_top": "Winner",
-        "Action_FB_init_top": "Backhand",
         "location_Init_end_top": [
             [
                 432,
@@ -1790,9 +1813,17 @@
                 261
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                374,
+                1105
+            ],
+            [
+                413,
+                1114
+            ]
+        ],
         "current_set_top_init_score": 1,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 429,
@@ -1803,32 +1834,28 @@
                 219
             ]
         ],
-        "location_end_shuttle": [
-            650,
-            1240,
-            0
-        ],
+        "current_set": 2,
+        "player_played": "T",
+        "Action_FB_init_top": "Backhand",
+        "end_timestamp_shuttle": 1067.1,
         "location_contact_shuttle": [
             576.0,
             225.0,
             164.0
         ],
-        "sides_changed": 1,
-        "current_set": 2,
-        "location_Init_start_bottom": [
-            [
-                374,
-                1105
-            ],
-            [
-                413,
-                1114
-            ]
-        ]
+        "shot": "Placement",
+        "location_end_shuttle": [
+            650,
+            1240,
+            0
+        ],
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 0,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 1066.3,
+        "sides_changed": 1
     },
     "30": {
-        "contact_timestamp_shuttle": 1097.3,
-        "current_set_bottom_init_score": 0,
         "location_Init_end_bottom": [
             [
                 263,
@@ -1839,10 +1866,6 @@
                 1016
             ]
         ],
-        "Action_wl_init_bottom": "Mistake",
-        "end_timestamp_shuttle": 1097.9,
-        "Action_FB_init_bottom": "Backhand",
-        "shot": "Net Shot",
         "location_Init_end_top": [
             [
                 338,
@@ -1853,9 +1876,18 @@
                 556
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                347,
+                1106
+            ],
+            [
+                242,
+                999
+            ]
+        ],
+        "Action_wl_init_bottom": "Mistake",
         "current_set_top_init_score": 2,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 431,
@@ -1866,32 +1898,29 @@
                 458
             ]
         ],
-        "location_end_shuttle": [
-            193.0,
-            776.0,
-            132.0
-        ],
+        "current_set": 2,
+        "player_played": "B",
+        "end_timestamp_shuttle": 1097.9,
         "location_contact_shuttle": [
             233.0,
             998.0,
             67.0
         ],
-        "sides_changed": 1,
-        "current_set": 2,
-        "location_Init_start_bottom": [
-            [
-                347,
-                1106
-            ],
-            [
-                242,
-                999
-            ]
-        ]
+        "shot": "Net Shot",
+        "location_end_shuttle": [
+            193.0,
+            776.0,
+            132.0
+        ],
+        "Action_FB_init_bottom": "Backhand",
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 0,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 1097.3,
+        "sides_changed": 1
     },
     "31": {
-        "contact_timestamp_shuttle": 1141.8,
-        "current_set_bottom_init_score": 0,
+        "Action_wl_init_top": "Winner",
         "location_Init_end_bottom": [
             [
                 291,
@@ -1902,10 +1931,6 @@
                 1181
             ]
         ],
-        "Action_wl_init_bottom": "Mistake",
-        "end_timestamp_shuttle": 1142.2,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
         "location_Init_end_top": [
             [
                 287,
@@ -1916,9 +1941,17 @@
                 551
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                256,
+                1277
+            ],
+            [
+                334,
+                1226
+            ]
+        ],
         "current_set_top_init_score": 3,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 291,
@@ -1929,32 +1962,28 @@
                 506
             ]
         ],
-        "location_end_shuttle": [
-            527,
-            1132,
-            0
-        ],
+        "current_set": 2,
+        "player_played": "T",
+        "Action_FB_init_top": "Forehand",
+        "end_timestamp_shuttle": 1142.2,
         "location_contact_shuttle": [
             237.0,
             431.0,
             216.0
         ],
-        "sides_changed": 1,
-        "current_set": 2,
-        "location_Init_start_bottom": [
-            [
-                256,
-                1277
-            ],
-            [
-                334,
-                1226
-            ]
-        ]
+        "shot": "Smash",
+        "location_end_shuttle": [
+            527,
+            1132,
+            0
+        ],
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 0,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 1141.8,
+        "sides_changed": 1
     },
     "32": {
-        "contact_timestamp_shuttle": 1177.1,
-        "current_set_bottom_init_score": 0,
         "location_Init_end_bottom": [
             [
                 514,
@@ -1965,10 +1994,6 @@
                 1180
             ]
         ],
-        "Action_wl_init_bottom": "Mistake",
-        "end_timestamp_shuttle": 1178.3,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
         "location_Init_end_top": [
             [
                 634,
@@ -1979,9 +2004,18 @@
                 419
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                558,
+                1348
+            ],
+            [
+                625,
+                1379
+            ]
+        ],
+        "Action_wl_init_bottom": "Mistake",
         "current_set_top_init_score": 4,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 475,
@@ -1992,32 +2026,29 @@
                 392
             ]
         ],
-        "location_end_shuttle": [
-            692,
-            208,
-            0
-        ],
+        "current_set": 2,
+        "player_played": "B",
+        "end_timestamp_shuttle": 1178.3,
         "location_contact_shuttle": [
             680.0,
             1385.0,
             245.0
         ],
-        "sides_changed": 1,
-        "current_set": 2,
-        "location_Init_start_bottom": [
-            [
-                558,
-                1348
-            ],
-            [
-                625,
-                1379
-            ]
-        ]
+        "shot": "Placement",
+        "location_end_shuttle": [
+            692,
+            208,
+            0
+        ],
+        "Action_FB_init_bottom": "Forehand",
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 0,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 1177.1,
+        "sides_changed": 1
     },
     "33": {
-        "contact_timestamp_shuttle": 1196.7,
-        "current_set_bottom_init_score": 1,
+        "Action_wl_init_top": "Mistake",
         "location_Init_end_bottom": [
             [
                 526,
@@ -2028,10 +2059,6 @@
                 1095
             ]
         ],
-        "end_timestamp_shuttle": 1197.3,
-        "shot": "Net Shot",
-        "Action_wl_init_top": "Mistake",
-        "Action_FB_init_top": "Backhand",
         "location_Init_end_top": [
             [
                 500,
@@ -2042,9 +2069,17 @@
                 408
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                421,
+                1338
+            ],
+            [
+                439,
+                1265
+            ]
+        ],
         "current_set_top_init_score": 4,
-        "current_rally_top_init_score": 0,
-        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 377,
@@ -2055,32 +2090,28 @@
                 356
             ]
         ],
-        "location_end_shuttle": [
-            544.0,
-            772.0,
-            123.0
-        ],
+        "current_set": 2,
+        "player_played": "T",
+        "Action_FB_init_top": "Backhand",
+        "end_timestamp_shuttle": 1197.3,
         "location_contact_shuttle": [
             585.0,
             307.0,
             78.0
         ],
-        "sides_changed": 1,
-        "current_set": 2,
-        "location_Init_start_bottom": [
-            [
-                421,
-                1338
-            ],
-            [
-                439,
-                1265
-            ]
-        ]
+        "shot": "Net Shot",
+        "location_end_shuttle": [
+            544.0,
+            772.0,
+            123.0
+        ],
+        "current_rally_top_init_score": 0,
+        "current_set_bottom_init_score": 1,
+        "current_rally_bottom_init_score": 1,
+        "contact_timestamp_shuttle": 1196.7,
+        "sides_changed": 1
     },
     "34": {
-        "contact_timestamp_shuttle": 1222.9,
-        "current_set_bottom_init_score": 2,
         "location_Init_end_bottom": [
             [
                 274,
@@ -2091,10 +2122,6 @@
                 1088
             ]
         ],
-        "Action_wl_init_bottom": "Winner",
-        "end_timestamp_shuttle": 1223.5,
-        "Action_FB_init_bottom": "Backhand",
-        "shot": "Placement",
         "location_Init_end_top": [
             [
                 453,
@@ -2105,9 +2132,18 @@
                 375
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                273,
+                1061
+            ],
+            [
+                271,
+                1052
+            ]
+        ],
+        "Action_wl_init_bottom": "Winner",
         "current_set_top_init_score": 4,
-        "current_rally_top_init_score": 0,
-        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 315,
@@ -2118,32 +2154,29 @@
                 294
             ]
         ],
-        "location_end_shuttle": [
-            562,
-            496,
-            0
-        ],
+        "current_set": 2,
+        "player_played": "B",
+        "end_timestamp_shuttle": 1223.5,
         "location_contact_shuttle": [
             283.0,
             974.0,
             223.0
         ],
-        "sides_changed": 1,
-        "current_set": 2,
-        "location_Init_start_bottom": [
-            [
-                273,
-                1061
-            ],
-            [
-                271,
-                1052
-            ]
-        ]
+        "shot": "Placement",
+        "location_end_shuttle": [
+            562,
+            496,
+            0
+        ],
+        "Action_FB_init_bottom": "Backhand",
+        "current_rally_top_init_score": 0,
+        "current_set_bottom_init_score": 2,
+        "current_rally_bottom_init_score": 1,
+        "contact_timestamp_shuttle": 1222.9,
+        "sides_changed": 1
     },
     "35": {
-        "contact_timestamp_shuttle": 1254.9,
-        "current_set_bottom_init_score": 2,
+        "Action_wl_init_top": "Winner",
         "location_Init_end_bottom": [
             [
                 202,
@@ -2154,10 +2187,6 @@
                 1502
             ]
         ],
-        "end_timestamp_shuttle": 1256.6,
-        "shot": "Placement",
-        "Action_wl_init_top": "Winner",
-        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
                 362,
@@ -2168,9 +2197,17 @@
                 386
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                355,
+                1246
+            ],
+            [
+                413,
+                1181
+            ]
+        ],
         "current_set_top_init_score": 5,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 519,
@@ -2181,32 +2218,29 @@
                 321
             ]
         ],
-        "location_end_shuttle": [
-            239,
-            1428,
-            0
-        ],
+        "current_set": 2,
+        "player_played": "T",
+        "Action_FB_init_top": "Forehand",
+        "end_timestamp_shuttle": 1256.6,
         "location_contact_shuttle": [
             504.0,
             230.0,
             263.0
         ],
-        "sides_changed": 1,
-        "current_set": 2,
-        "location_Init_start_bottom": [
-            [
-                355,
-                1246
-            ],
-            [
-                413,
-                1181
-            ]
-        ]
+        "shot": "Placement",
+        "location_end_shuttle": [
+            239,
+            1428,
+            0
+        ],
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 2,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 1254.9,
+        "sides_changed": 1
     },
     "36": {
-        "contact_timestamp_shuttle": 1282.4,
-        "current_set_bottom_init_score": 3,
+        "Action_wl_init_top": "Mistake",
         "location_Init_end_bottom": [
             [
                 254,
@@ -2217,10 +2251,6 @@
                 1172
             ]
         ],
-        "end_timestamp_shuttle": 1283.2,
-        "shot": "Placement",
-        "Action_wl_init_top": "Mistake",
-        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
                 329,
@@ -2231,9 +2261,17 @@
                 405
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                353,
+                1246
+            ],
+            [
+                376,
+                1256
+            ]
+        ],
         "current_set_top_init_score": 5,
-        "current_rally_top_init_score": 0,
-        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 335,
@@ -2244,32 +2282,28 @@
                 243
             ]
         ],
-        "location_end_shuttle": [
-            140,
-            1424,
-            0
-        ],
+        "current_set": 2,
+        "player_played": "T",
+        "Action_FB_init_top": "Forehand",
+        "end_timestamp_shuttle": 1283.2,
         "location_contact_shuttle": [
             206.0,
             189.0,
             224.0
         ],
-        "sides_changed": 1,
-        "current_set": 2,
-        "location_Init_start_bottom": [
-            [
-                353,
-                1246
-            ],
-            [
-                376,
-                1256
-            ]
-        ]
+        "shot": "Placement",
+        "location_end_shuttle": [
+            140,
+            1424,
+            0
+        ],
+        "current_rally_top_init_score": 0,
+        "current_set_bottom_init_score": 3,
+        "current_rally_bottom_init_score": 1,
+        "contact_timestamp_shuttle": 1282.4,
+        "sides_changed": 1
     },
     "37": {
-        "contact_timestamp_shuttle": 1306.7,
-        "current_set_bottom_init_score": 3,
         "location_Init_end_bottom": [
             [
                 619,
@@ -2280,10 +2314,6 @@
                 897
             ]
         ],
-        "Action_wl_init_bottom": "Mistake",
-        "end_timestamp_shuttle": 1308.1,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
         "location_Init_end_top": [
             [
                 377,
@@ -2294,9 +2324,18 @@
                 712
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                532,
+                1067
+            ],
+            [
+                584,
+                1013
+            ]
+        ],
+        "Action_wl_init_bottom": "Mistake",
         "current_set_top_init_score": 6,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 509,
@@ -2307,32 +2346,28 @@
                 522
             ]
         ],
-        "location_end_shuttle": [
-            138,
-            757,
-            0
-        ],
+        "current_set": 2,
+        "player_played": "B",
+        "end_timestamp_shuttle": 1308.1,
         "location_contact_shuttle": [
             618.0,
             870.0,
             60.0
         ],
-        "sides_changed": 1,
-        "current_set": 2,
-        "location_Init_start_bottom": [
-            [
-                532,
-                1067
-            ],
-            [
-                584,
-                1013
-            ]
-        ]
+        "shot": "Placement",
+        "location_end_shuttle": [
+            138,
+            757,
+            0
+        ],
+        "Action_FB_init_bottom": "Forehand",
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 3,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 1306.7,
+        "sides_changed": 1
     },
     "38": {
-        "contact_timestamp_shuttle": 1368.3,
-        "current_set_bottom_init_score": 4,
         "location_Init_end_bottom": [
             [
                 373,
@@ -2343,10 +2378,6 @@
                 1182
             ]
         ],
-        "Action_wl_init_bottom": "Winner",
-        "end_timestamp_shuttle": 1369.5,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
         "location_Init_end_top": [
             [
                 305,
@@ -2357,9 +2388,18 @@
                 387
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                395,
+                1216
+            ],
+            [
+                555,
+                1199
+            ]
+        ],
+        "Action_wl_init_bottom": "Winner",
         "current_set_top_init_score": 6,
-        "current_rally_top_init_score": 0,
-        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 552,
@@ -2370,32 +2410,29 @@
                 230
             ]
         ],
-        "location_end_shuttle": [
-            178,
-            209,
-            0
-        ],
+        "current_set": 2,
+        "player_played": "B",
+        "end_timestamp_shuttle": 1369.5,
         "location_contact_shuttle": [
             621.0,
             1131.0,
             83.0
         ],
-        "sides_changed": 1,
-        "current_set": 2,
-        "location_Init_start_bottom": [
-            [
-                395,
-                1216
-            ],
-            [
-                555,
-                1199
-            ]
-        ]
+        "shot": "Placement",
+        "location_end_shuttle": [
+            178,
+            209,
+            0
+        ],
+        "Action_FB_init_bottom": "Forehand",
+        "current_rally_top_init_score": 0,
+        "current_set_bottom_init_score": 4,
+        "current_rally_bottom_init_score": 1,
+        "contact_timestamp_shuttle": 1368.3,
+        "sides_changed": 1
     },
     "39": {
-        "contact_timestamp_shuttle": 1398.6,
-        "current_set_bottom_init_score": 5,
+        "Action_wl_init_top": "Mistake",
         "location_Init_end_bottom": [
             [
                 353,
@@ -2406,10 +2443,6 @@
                 1171
             ]
         ],
-        "end_timestamp_shuttle": 1398.9,
-        "shot": "Placement",
-        "Action_wl_init_top": "Mistake",
-        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
                 370,
@@ -2420,9 +2453,17 @@
                 206
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                359,
+                1172
+            ],
+            [
+                418,
+                1162
+            ]
+        ],
         "current_set_top_init_score": 6,
-        "current_rally_top_init_score": 0,
-        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 333,
@@ -2433,32 +2474,29 @@
                 154
             ]
         ],
-        "location_end_shuttle": [
-            231,
-            1331,
-            0
-        ],
+        "current_set": 2,
+        "player_played": "T",
+        "Action_FB_init_top": "Forehand",
+        "end_timestamp_shuttle": 1398.9,
         "location_contact_shuttle": [
             352.0,
             124.0,
             251.0
         ],
-        "sides_changed": 1,
-        "current_set": 2,
-        "location_Init_start_bottom": [
-            [
-                359,
-                1172
-            ],
-            [
-                418,
-                1162
-            ]
-        ]
+        "shot": "Net Shot",
+        "location_end_shuttle": [
+            258.0,
+            775.0,
+            131.0
+        ],
+        "current_rally_top_init_score": 0,
+        "current_set_bottom_init_score": 5,
+        "current_rally_bottom_init_score": 1,
+        "contact_timestamp_shuttle": 1398.6,
+        "sides_changed": 1
     },
     "40": {
-        "contact_timestamp_shuttle": 1420.3,
-        "current_set_bottom_init_score": 6,
+        "Action_wl_init_top": "Mistake",
         "location_Init_end_bottom": [
             [
                 351,
@@ -2469,10 +2507,6 @@
                 1162
             ]
         ],
-        "end_timestamp_shuttle": 1420.7,
-        "shot": "Net Shot",
-        "Action_wl_init_top": "Mistake",
-        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
                 223,
@@ -2483,9 +2517,17 @@
                 452
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                297,
+                1246
+            ],
+            [
+                337,
+                1182
+            ]
+        ],
         "current_set_top_init_score": 6,
-        "current_rally_top_init_score": 0,
-        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 338,
@@ -2496,32 +2538,28 @@
                 544
             ]
         ],
-        "location_end_shuttle": [
-            202.0,
-            776.0,
-            124.0
-        ],
+        "current_set": 2,
+        "player_played": "T",
+        "Action_FB_init_top": "Forehand",
+        "end_timestamp_shuttle": 1420.7,
         "location_contact_shuttle": [
             187.0,
             489.0,
             87.0
         ],
-        "sides_changed": 1,
-        "current_set": 2,
-        "location_Init_start_bottom": [
-            [
-                297,
-                1246
-            ],
-            [
-                337,
-                1182
-            ]
-        ]
+        "shot": "Net Shot",
+        "location_end_shuttle": [
+            202.0,
+            776.0,
+            124.0
+        ],
+        "current_rally_top_init_score": 0,
+        "current_set_bottom_init_score": 6,
+        "current_rally_bottom_init_score": 1,
+        "contact_timestamp_shuttle": 1420.3,
+        "sides_changed": 1
     },
     "41": {
-        "contact_timestamp_shuttle": 1439.2,
-        "current_set_bottom_init_score": 6,
         "location_Init_end_bottom": [
             [
                 558,
@@ -2532,10 +2570,6 @@
                 1190
             ]
         ],
-        "Action_wl_init_bottom": "Mistake",
-        "end_timestamp_shuttle": 1439.4,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Net Shot",
         "location_Init_end_top": [
             [
                 391,
@@ -2546,9 +2580,18 @@
                 277
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                431,
+                1210
+            ],
+            [
+                551,
+                1104
+            ]
+        ],
+        "Action_wl_init_bottom": "Mistake",
         "current_set_top_init_score": 7,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 435,
@@ -2559,32 +2602,28 @@
                 316
             ]
         ],
-        "location_end_shuttle": [
-            450.0,
-            773.0,
-            131.0
-        ],
+        "current_set": 2,
+        "player_played": "B",
+        "end_timestamp_shuttle": 1439.4,
         "location_contact_shuttle": [
             611.0,
             1002.0,
             54.0
         ],
-        "sides_changed": 1,
-        "current_set": 2,
-        "location_Init_start_bottom": [
-            [
-                431,
-                1210
-            ],
-            [
-                551,
-                1104
-            ]
-        ]
+        "shot": "Net Shot",
+        "location_end_shuttle": [
+            450.0,
+            773.0,
+            131.0
+        ],
+        "Action_FB_init_bottom": "Forehand",
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 6,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 1439.2,
+        "sides_changed": 1
     },
     "42": {
-        "contact_timestamp_shuttle": 1458.3,
-        "current_set_bottom_init_score": 6,
         "location_Init_end_bottom": [
             [
                 316,
@@ -2595,10 +2634,6 @@
                 1201
             ]
         ],
-        "Action_wl_init_bottom": "Mistake",
-        "end_timestamp_shuttle": 1460.3,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
         "location_Init_end_top": [
             [
                 464,
@@ -2609,9 +2644,18 @@
                 426
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                266,
+                1361
+            ],
+            [
+                289,
+                1340
+            ]
+        ],
+        "Action_wl_init_bottom": "Mistake",
         "current_set_top_init_score": 8,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 353,
@@ -2622,32 +2666,29 @@
                 368
             ]
         ],
-        "location_end_shuttle": [
-            685,
-            288,
-            0
-        ],
+        "current_set": 2,
+        "player_played": "B",
+        "end_timestamp_shuttle": 1460.3,
         "location_contact_shuttle": [
             270.0,
             1384.0,
             269.0
         ],
-        "sides_changed": 1,
-        "current_set": 2,
-        "location_Init_start_bottom": [
-            [
-                266,
-                1361
-            ],
-            [
-                289,
-                1340
-            ]
-        ]
+        "shot": "Placement",
+        "location_end_shuttle": [
+            685,
+            288,
+            0
+        ],
+        "Action_FB_init_bottom": "Forehand",
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 6,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 1458.3,
+        "sides_changed": 1
     },
     "43": {
-        "contact_timestamp_shuttle": 1604.2,
-        "current_set_bottom_init_score": 7,
+        "Action_wl_init_top": "Mistake",
         "location_Init_end_bottom": [
             [
                 314,
@@ -2658,10 +2699,6 @@
                 1171
             ]
         ],
-        "end_timestamp_shuttle": 1604.5,
-        "shot": "Net Shot",
-        "Action_wl_init_top": "Mistake",
-        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
                 376,
@@ -2672,9 +2709,17 @@
                 242
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                379,
+                1172
+            ],
+            [
+                400,
+                1152
+            ]
+        ],
         "current_set_top_init_score": 8,
-        "current_rally_top_init_score": 0,
-        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 401,
@@ -2685,32 +2730,29 @@
                 232
             ]
         ],
-        "location_end_shuttle": [
-            446.0,
-            773.0,
-            127.0
-        ],
+        "current_set": 2,
+        "player_played": "T",
+        "Action_FB_init_top": "Forehand",
+        "end_timestamp_shuttle": 1604.5,
         "location_contact_shuttle": [
             251.0,
             201.0,
             155.0
         ],
-        "sides_changed": 1,
-        "current_set": 2,
-        "location_Init_start_bottom": [
-            [
-                379,
-                1172
-            ],
-            [
-                400,
-                1152
-            ]
-        ]
+        "shot": "Net Shot",
+        "location_end_shuttle": [
+            446.0,
+            773.0,
+            127.0
+        ],
+        "current_rally_top_init_score": 0,
+        "current_set_bottom_init_score": 7,
+        "current_rally_bottom_init_score": 1,
+        "contact_timestamp_shuttle": 1604.2,
+        "sides_changed": 1
     },
     "44": {
-        "contact_timestamp_shuttle": 1628.0,
-        "current_set_bottom_init_score": 7,
+        "Action_wl_init_top": "Winner",
         "location_Init_end_bottom": [
             [
                 258,
@@ -2721,10 +2763,6 @@
                 1107
             ]
         ],
-        "end_timestamp_shuttle": 1630.0,
-        "shot": "Placement",
-        "Action_wl_init_top": "Winner",
-        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
                 468,
@@ -2735,9 +2773,17 @@
                 357
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                381,
+                1181
+            ],
+            [
+                391,
+                1226
+            ]
+        ],
         "current_set_top_init_score": 9,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 510,
@@ -2748,32 +2794,29 @@
                 229
             ]
         ],
-        "location_end_shuttle": [
-            301,
-            815,
-            0
-        ],
+        "current_set": 2,
+        "player_played": "T",
+        "Action_FB_init_top": "Forehand",
+        "end_timestamp_shuttle": 1630.0,
         "location_contact_shuttle": [
             552.0,
             141.0,
             275.0
         ],
-        "sides_changed": 1,
-        "current_set": 2,
-        "location_Init_start_bottom": [
-            [
-                381,
-                1181
-            ],
-            [
-                391,
-                1226
-            ]
-        ]
+        "shot": "Placement",
+        "location_end_shuttle": [
+            301,
+            815,
+            0
+        ],
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 7,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 1628.0,
+        "sides_changed": 1
     },
     "45": {
-        "contact_timestamp_shuttle": 1655.6,
-        "current_set_bottom_init_score": 8,
+        "Action_wl_init_top": "Mistake",
         "location_Init_end_bottom": [
             [
                 481,
@@ -2784,10 +2827,6 @@
                 1234
             ]
         ],
-        "end_timestamp_shuttle": 1656.4,
-        "shot": "Smash",
-        "Action_wl_init_top": "Mistake",
-        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
                 532,
@@ -2798,9 +2837,17 @@
                 391
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                350,
+                1216
+            ],
+            [
+                389,
+                1191
+            ]
+        ],
         "current_set_top_init_score": 9,
-        "current_rally_top_init_score": 0,
-        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 523,
@@ -2811,32 +2858,29 @@
                 409
             ]
         ],
-        "location_end_shuttle": [
-            693,
-            1304,
-            0
-        ],
+        "current_set": 2,
+        "player_played": "T",
+        "Action_FB_init_top": "Forehand",
+        "end_timestamp_shuttle": 1656.4,
         "location_contact_shuttle": [
             554.0,
             253.0,
             261.0
         ],
-        "sides_changed": 1,
-        "current_set": 2,
-        "location_Init_start_bottom": [
-            [
-                350,
-                1216
-            ],
-            [
-                389,
-                1191
-            ]
-        ]
+        "shot": "Smash",
+        "location_end_shuttle": [
+            693,
+            1304,
+            0
+        ],
+        "current_rally_top_init_score": 0,
+        "current_set_bottom_init_score": 8,
+        "current_rally_bottom_init_score": 1,
+        "contact_timestamp_shuttle": 1655.6,
+        "sides_changed": 1
     },
     "46": {
-        "contact_timestamp_shuttle": 1691.2,
-        "current_set_bottom_init_score": 9,
+        "Action_wl_init_top": "Mistake",
         "location_Init_end_bottom": [
             [
                 340,
@@ -2847,10 +2891,6 @@
                 1152
             ]
         ],
-        "end_timestamp_shuttle": 1691.5,
-        "shot": "Net Shot",
-        "Action_wl_init_top": "Mistake",
-        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
                 295,
@@ -2861,9 +2901,17 @@
                 590
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                353,
+                1211
+            ],
+            [
+                351,
+                1172
+            ]
+        ],
         "current_set_top_init_score": 9,
-        "current_rally_top_init_score": 0,
-        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 233,
@@ -2874,32 +2922,29 @@
                 458
             ]
         ],
-        "location_end_shuttle": [
-            202.0,
-            776.0,
-            128.0
-        ],
+        "current_set": 2,
+        "player_played": "T",
+        "Action_FB_init_top": "Forehand",
+        "end_timestamp_shuttle": 1691.5,
         "location_contact_shuttle": [
             211.0,
             531.0,
             129.0
         ],
-        "sides_changed": 1,
-        "current_set": 2,
-        "location_Init_start_bottom": [
-            [
-                353,
-                1211
-            ],
-            [
-                351,
-                1172
-            ]
-        ]
+        "shot": "Net Shot",
+        "location_end_shuttle": [
+            202.0,
+            776.0,
+            128.0
+        ],
+        "current_rally_top_init_score": 0,
+        "current_set_bottom_init_score": 9,
+        "current_rally_bottom_init_score": 1,
+        "contact_timestamp_shuttle": 1691.2,
+        "sides_changed": 1
     },
     "47": {
-        "contact_timestamp_shuttle": 1725.5,
-        "current_set_bottom_init_score": 10,
+        "Action_wl_init_top": "Mistake",
         "location_Init_end_bottom": [
             [
                 321,
@@ -2910,10 +2955,6 @@
                 1246
             ]
         ],
-        "end_timestamp_shuttle": 1725.9,
-        "shot": "Net Shot",
-        "Action_wl_init_top": "Mistake",
-        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
                 339,
@@ -2924,9 +2965,17 @@
                 263
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                333,
+                1246
+            ],
+            [
+                428,
+                1225
+            ]
+        ],
         "current_set_top_init_score": 9,
-        "current_rally_top_init_score": 0,
-        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 362,
@@ -2937,32 +2986,28 @@
                 274
             ]
         ],
-        "location_end_shuttle": [
-            186.0,
-            776.0,
-            126.0
-        ],
+        "current_set": 2,
+        "player_played": "T",
+        "Action_FB_init_top": "Forehand",
+        "end_timestamp_shuttle": 1725.9,
         "location_contact_shuttle": [
             256.0,
             208.0,
             207.0
         ],
-        "sides_changed": 1,
-        "current_set": 2,
-        "location_Init_start_bottom": [
-            [
-                333,
-                1246
-            ],
-            [
-                428,
-                1225
-            ]
-        ]
+        "shot": "Net Shot",
+        "location_end_shuttle": [
+            186.0,
+            776.0,
+            126.0
+        ],
+        "current_rally_top_init_score": 0,
+        "current_set_bottom_init_score": 10,
+        "current_rally_bottom_init_score": 1,
+        "contact_timestamp_shuttle": 1725.5,
+        "sides_changed": 1
     },
     "48": {
-        "contact_timestamp_shuttle": 1755.9,
-        "current_set_bottom_init_score": 10,
         "location_Init_end_bottom": [
             [
                 438,
@@ -2973,10 +3018,6 @@
                 1180
             ]
         ],
-        "Action_wl_init_bottom": "Mistake",
-        "end_timestamp_shuttle": 1757.7,
-        "Action_FB_init_bottom": "Backhand",
-        "shot": "Placement",
         "location_Init_end_top": [
             [
                 500,
@@ -2987,9 +3028,18 @@
                 196
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                374,
+                1105
+            ],
+            [
+                276,
+                985
+            ]
+        ],
+        "Action_wl_init_bottom": "Mistake",
         "current_set_top_init_score": 10,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 398,
@@ -3000,32 +3050,28 @@
                 427
             ]
         ],
-        "location_end_shuttle": [
-            553,
-            79,
-            0
-        ],
+        "current_set": 2,
+        "player_played": "B",
+        "end_timestamp_shuttle": 1757.7,
         "location_contact_shuttle": [
             256.0,
             896.0,
             83.0
         ],
-        "sides_changed": 1,
-        "current_set": 2,
-        "location_Init_start_bottom": [
-            [
-                374,
-                1105
-            ],
-            [
-                276,
-                985
-            ]
-        ]
+        "shot": "Placement",
+        "location_end_shuttle": [
+            553,
+            79,
+            0
+        ],
+        "Action_FB_init_bottom": "Backhand",
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 10,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 1755.9,
+        "sides_changed": 1
     },
     "49": {
-        "contact_timestamp_shuttle": 1795.2,
-        "current_set_bottom_init_score": 10,
         "location_Init_end_bottom": [
             [
                 493,
@@ -3036,10 +3082,6 @@
                 1338
             ]
         ],
-        "Action_wl_init_bottom": "Mistake",
-        "end_timestamp_shuttle": 1795.4,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Net Shot",
         "location_Init_end_top": [
             [
                 485,
@@ -3050,9 +3092,18 @@
                 422
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                476,
+                1381
+            ],
+            [
+                506,
+                1425
+            ]
+        ],
+        "Action_wl_init_bottom": "Mistake",
         "current_set_top_init_score": 11,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 431,
@@ -3063,32 +3114,28 @@
                 476
             ]
         ],
-        "location_end_shuttle": [
-            616.0,
-            771.0,
-            119.0
-        ],
+        "current_set": 2,
+        "player_played": "B",
+        "end_timestamp_shuttle": 1795.4,
         "location_contact_shuttle": [
             573.0,
             1286.0,
             255.0
         ],
-        "sides_changed": 1,
-        "current_set": 2,
-        "location_Init_start_bottom": [
-            [
-                476,
-                1381
-            ],
-            [
-                506,
-                1425
-            ]
-        ]
+        "shot": "Net Shot",
+        "location_end_shuttle": [
+            616.0,
+            771.0,
+            119.0
+        ],
+        "Action_FB_init_bottom": "Forehand",
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 10,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 1795.2,
+        "sides_changed": 1
     },
     "50": {
-        "contact_timestamp_shuttle": 1840.3,
-        "current_set_bottom_init_score": 11,
         "location_Init_end_bottom": [
             [
                 439,
@@ -3099,10 +3146,6 @@
                 1338
             ]
         ],
-        "Action_wl_init_bottom": "Winner",
-        "end_timestamp_shuttle": 1840.8,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Smash",
         "location_Init_end_top": [
             [
                 383,
@@ -3113,9 +3156,18 @@
                 362
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                458,
+                1338
+            ],
+            [
+                498,
+                1425
+            ]
+        ],
+        "Action_wl_init_bottom": "Winner",
         "current_set_top_init_score": 11,
-        "current_rally_top_init_score": 0,
-        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 494,
@@ -3126,32 +3178,29 @@
                 427
             ]
         ],
-        "location_end_shuttle": [
-            440,
-            354,
-            0
-        ],
+        "current_set": 2,
+        "player_played": "B",
+        "end_timestamp_shuttle": 1840.8,
         "location_contact_shuttle": [
             495.0,
             1269.0,
             259.0
         ],
-        "sides_changed": 1,
-        "current_set": 2,
-        "location_Init_start_bottom": [
-            [
-                458,
-                1338
-            ],
-            [
-                498,
-                1425
-            ]
-        ]
+        "shot": "Smash",
+        "location_end_shuttle": [
+            440,
+            354,
+            0
+        ],
+        "Action_FB_init_bottom": "Forehand",
+        "current_rally_top_init_score": 0,
+        "current_set_bottom_init_score": 11,
+        "current_rally_bottom_init_score": 1,
+        "contact_timestamp_shuttle": 1840.3,
+        "sides_changed": 1
     },
     "51": {
-        "contact_timestamp_shuttle": 1874.5,
-        "current_set_bottom_init_score": 12,
+        "Action_wl_init_top": "Mistake",
         "location_Init_end_bottom": [
             [
                 340,
@@ -3162,10 +3211,6 @@
                 1181
             ]
         ],
-        "end_timestamp_shuttle": 1874.8,
-        "shot": "Net Shot",
-        "Action_wl_init_top": "Mistake",
-        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
                 313,
@@ -3176,9 +3221,17 @@
                 136
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                356,
+                1182
+            ],
+            [
+                428,
+                1181
+            ]
+        ],
         "current_set_top_init_score": 11,
-        "current_rally_top_init_score": 0,
-        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 323,
@@ -3189,60 +3242,40 @@
                 194
             ]
         ],
-        "location_end_shuttle": [
-            443.0,
-            773.0,
-            82.0
-        ],
+        "current_set": 2,
+        "player_played": "T",
+        "Action_FB_init_top": "Forehand",
+        "end_timestamp_shuttle": 1874.8,
         "location_contact_shuttle": [
             288.0,
             136.0,
             265.0
         ],
-        "sides_changed": 1,
-        "current_set": 2,
-        "location_Init_start_bottom": [
-            [
-                356,
-                1182
-            ],
-            [
-                428,
-                1181
-            ]
-        ]
+        "shot": "Net Shot",
+        "location_end_shuttle": [
+            443.0,
+            773.0,
+            82.0
+        ],
+        "current_rally_top_init_score": 0,
+        "current_set_bottom_init_score": 12,
+        "current_rally_bottom_init_score": 1,
+        "contact_timestamp_shuttle": 1874.5,
+        "sides_changed": 1
     },
     "52": {
-        "contact_timestamp_shuttle": 1912.5,
-        "current_set_bottom_init_score": 12,
+        "Action_wl_init_top": "Winner",
         "location_Init_end_bottom": [
             [
-                399,
-                1171
+                291,
+                1202
             ],
             [
-                489,
-                1171
+                396,
+                1143
             ]
         ],
-        "Action_wl_init_bottom": "Mistake",
-        "end_timestamp_shuttle": 1912.9,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Net Shot",
         "location_Init_end_top": [
-            [
-                322,
-                387
-            ],
-            [
-                383,
-                421
-            ]
-        ],
-        "current_set_top_init_score": 12,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
-        "location_Init_start_top": [
             [
                 291,
                 411
@@ -3252,32 +3285,50 @@
                 440
             ]
         ],
-        "location_end_shuttle": [
-            538.0,
-            772.0,
-            123.0
-        ],
-        "location_contact_shuttle": [
-            529.0,
-            1074.0,
-            87.0
-        ],
-        "sides_changed": 1,
-        "current_set": 2,
         "location_Init_start_bottom": [
             [
-                291,
+                277,
                 1202
             ],
             [
-                396,
-                1143
+                354,
+                1162
             ]
-        ]
+        ],
+        "current_set_top_init_score": 12,
+        "location_Init_start_top": [
+            [
+                287,
+                459
+            ],
+            [
+                239,
+                531
+            ]
+        ],
+        "current_set": 2,
+        "player_played": "T",
+        "Action_FB_init_top": "Forehand",
+        "end_timestamp_shuttle": 1912.5,
+        "location_contact_shuttle": [
+            370.0,
+            495.0,
+            177.0
+        ],
+        "shot": "Smash",
+        "location_end_shuttle": [
+            560,
+            1371,
+            0
+        ],
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 12,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 1912.1,
+        "sides_changed": 1
     },
     "53": {
-        "contact_timestamp_shuttle": 1960.2,
-        "current_set_bottom_init_score": 13,
+        "Action_wl_init_top": "Mistake",
         "location_Init_end_bottom": [
             [
                 416,
@@ -3288,10 +3339,6 @@
                 1414
             ]
         ],
-        "end_timestamp_shuttle": 1961.6,
-        "shot": "Placement",
-        "Action_wl_init_top": "Mistake",
-        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
                 471,
@@ -3302,9 +3349,17 @@
                 445
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                392,
+                1105
+            ],
+            [
+                389,
+                1105
+            ]
+        ],
         "current_set_top_init_score": 12,
-        "current_rally_top_init_score": 0,
-        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 280,
@@ -3315,32 +3370,29 @@
                 479
             ]
         ],
-        "location_end_shuttle": [
-            564,
-            1501,
-            0
-        ],
+        "current_set": 2,
+        "player_played": "T",
+        "Action_FB_init_top": "Forehand",
+        "end_timestamp_shuttle": 1961.6,
         "location_contact_shuttle": [
             230.0,
             580.0,
             97.0
         ],
-        "sides_changed": 1,
-        "current_set": 2,
-        "location_Init_start_bottom": [
-            [
-                392,
-                1105
-            ],
-            [
-                389,
-                1105
-            ]
-        ]
+        "shot": "Placement",
+        "location_end_shuttle": [
+            564,
+            1501,
+            0
+        ],
+        "current_rally_top_init_score": 0,
+        "current_set_bottom_init_score": 13,
+        "current_rally_bottom_init_score": 1,
+        "contact_timestamp_shuttle": 1960.2,
+        "sides_changed": 1
     },
     "54": {
-        "contact_timestamp_shuttle": 1991.4,
-        "current_set_bottom_init_score": 14,
+        "Action_wl_init_top": "Mistake",
         "location_Init_end_bottom": [
             [
                 332,
@@ -3351,10 +3403,6 @@
                 1221
             ]
         ],
-        "end_timestamp_shuttle": 1992.5,
-        "shot": "Placement",
-        "Action_wl_init_top": "Mistake",
-        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
                 326,
@@ -3365,9 +3413,17 @@
                 493
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                273,
+                1182
+            ],
+            [
+                271,
+                1173
+            ]
+        ],
         "current_set_top_init_score": 12,
-        "current_rally_top_init_score": 0,
-        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 254,
@@ -3378,32 +3434,28 @@
                 410
             ]
         ],
-        "location_end_shuttle": [
-            133,
-            1404,
-            0
-        ],
+        "current_set": 2,
+        "player_played": "T",
+        "Action_FB_init_top": "Forehand",
+        "end_timestamp_shuttle": 1992.5,
         "location_contact_shuttle": [
             222.0,
             554.0,
             137.0
         ],
-        "sides_changed": 1,
-        "current_set": 2,
-        "location_Init_start_bottom": [
-            [
-                273,
-                1182
-            ],
-            [
-                271,
-                1173
-            ]
-        ]
+        "shot": "Placement",
+        "location_end_shuttle": [
+            133,
+            1404,
+            0
+        ],
+        "current_rally_top_init_score": 0,
+        "current_set_bottom_init_score": 14,
+        "current_rally_bottom_init_score": 1,
+        "contact_timestamp_shuttle": 1991.4,
+        "sides_changed": 1
     },
     "55": {
-        "contact_timestamp_shuttle": 2028.6,
-        "current_set_bottom_init_score": 14,
         "location_Init_end_bottom": [
             [
                 343,
@@ -3414,10 +3466,6 @@
                 1182
             ]
         ],
-        "Action_wl_init_bottom": "Mistake",
-        "end_timestamp_shuttle": 2030.1,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
         "location_Init_end_top": [
             [
                 239,
@@ -3428,9 +3476,18 @@
                 279
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                520,
+                1337
+            ],
+            [
+                618,
+                1358
+            ]
+        ],
+        "Action_wl_init_bottom": "Mistake",
         "current_set_top_init_score": 13,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 498,
@@ -3441,32 +3498,28 @@
                 334
             ]
         ],
-        "location_end_shuttle": [
-            244,
-            92,
-            0
-        ],
+        "current_set": 2,
+        "player_played": "B",
+        "end_timestamp_shuttle": 2030.1,
         "location_contact_shuttle": [
             671.0,
             1299.0,
             246.0
         ],
-        "sides_changed": 1,
-        "current_set": 2,
-        "location_Init_start_bottom": [
-            [
-                520,
-                1337
-            ],
-            [
-                618,
-                1358
-            ]
-        ]
+        "shot": "Placement",
+        "location_end_shuttle": [
+            244,
+            92,
+            0
+        ],
+        "Action_FB_init_bottom": "Forehand",
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 14,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 2028.6,
+        "sides_changed": 1
     },
     "56": {
-        "contact_timestamp_shuttle": 2076.0,
-        "current_set_bottom_init_score": 14,
         "location_Init_end_bottom": [
             [
                 239,
@@ -3477,10 +3530,6 @@
                 1182
             ]
         ],
-        "Action_wl_init_bottom": "Mistake",
-        "end_timestamp_shuttle": 2076.6,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
         "location_Init_end_top": [
             [
                 396,
@@ -3491,9 +3540,18 @@
                 404
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                275,
+                1257
+            ],
+            [
+                296,
+                1287
+            ]
+        ],
+        "Action_wl_init_bottom": "Mistake",
         "current_set_top_init_score": 14,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 364,
@@ -3504,109 +3562,92 @@
                 358
             ]
         ],
-        "location_end_shuttle": [
-            133,
-            234,
-            0
-        ],
+        "current_set": 2,
+        "player_played": "B",
+        "end_timestamp_shuttle": 2076.6,
         "location_contact_shuttle": [
             251.0,
             1262.0,
             221.0
         ],
-        "sides_changed": 1,
-        "current_set": 2,
-        "location_Init_start_bottom": [
-            [
-                275,
-                1257
-            ],
-            [
-                296,
-                1287
-            ]
-        ]
+        "shot": "Placement",
+        "location_end_shuttle": [
+            133,
+            234,
+            0
+        ],
+        "Action_FB_init_bottom": "Forehand",
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 14,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 2076.0,
+        "sides_changed": 1
     },
     "57": {
-        "contact_timestamp_shuttle": 2113.6,
-        "current_set_bottom_init_score": 15,
+        "Action_wl_init_top": "Mistake",
         "location_Init_end_bottom": [
             [
-                561,
-                1013
+                513,
+                1132
             ],
             [
-                582,
-                974
+                586,
+                1094
             ]
         ],
-        "Action_wl_init_bottom": "Winner",
-        "end_timestamp_shuttle": 2114.0,
-        "Action_FB_init_bottom": "Backhand",
-        "shot": "Placement",
         "location_Init_end_top": [
             [
                 501,
                 351
             ],
             [
-                445,
-                445
+                532,
+                438
+            ]
+        ],
+        "location_Init_start_bottom": [
+            [
+                564,
+                1022
+            ],
+            [
+                583,
+                1004
             ]
         ],
         "current_set_top_init_score": 14,
-        "current_rally_top_init_score": 0,
-        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
-                508,
-                379
+                503,
+                351
             ],
             [
-                457,
-                421
+                476,
+                450
             ]
         ],
-        "location_end_shuttle": [
-            550,
-            328,
-            0
-        ],
-        "location_contact_shuttle": [
-            631.0,
-            892.0,
-            150.0
-        ],
-        "sides_changed": 1,
         "current_set": 2,
-        "location_Init_start_bottom": [
-            [
-                495,
-                1114
-            ],
-            [
-                579,
-                974
-            ]
-        ]
+        "player_played": "T",
+        "Action_FB_init_top": "Backhand",
+        "end_timestamp_shuttle": 2114.4,
+        "location_contact_shuttle": [
+            546.0,
+            409.0,
+            185.0
+        ],
+        "shot": "Net Shot",
+        "location_end_shuttle": [
+            428.0,
+            773.0,
+            126.0
+        ],
+        "current_rally_top_init_score": 0,
+        "current_set_bottom_init_score": 15,
+        "current_rally_bottom_init_score": 1,
+        "contact_timestamp_shuttle": 2114.1,
+        "sides_changed": 1
     },
     "58": {
-        "contact_timestamp_shuttle": 2242.0,
-        "current_set_bottom_init_score": 0,
-        "location_Init_end_bottom": [
-            [
-                255,
-                1174
-            ],
-            [
-                291,
-                1139
-            ]
-        ],
-        "Action_wl_init_bottom": "Mistake",
-        "end_timestamp_shuttle": 2243.1,
-        "Action_FB_init_bottom": "Backhand",
-        "shot": "Placement",
         "location_Init_end_top": [
             [
                 209,
@@ -3617,9 +3658,28 @@
                 456
             ]
         ],
+        "location_Init_end_bottom": [
+            [
+                255,
+                1174
+            ],
+            [
+                291,
+                1139
+            ]
+        ],
+        "location_Init_start_bottom": [
+            [
+                332,
+                1167
+            ],
+            [
+                363,
+                1084
+            ]
+        ],
+        "Action_wl_init_bottom": "Mistake",
         "current_set_top_init_score": 1,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 335,
@@ -3630,46 +3690,28 @@
                 214
             ]
         ],
-        "location_end_shuttle": [
-            95,
-            481,
-            0
-        ],
+        "current_set": 3,
+        "player_played": "B",
+        "end_timestamp_shuttle": 2243.1,
         "location_contact_shuttle": [
             195,
             1192,
             104.0
         ],
-        "sides_changed": 2,
-        "current_set": 3,
-        "location_Init_start_bottom": [
-            [
-                332,
-                1167
-            ],
-            [
-                363,
-                1084
-            ]
-        ]
+        "shot": "Placement",
+        "location_end_shuttle": [
+            95,
+            481,
+            0
+        ],
+        "Action_FB_init_bottom": "Backhand",
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 0,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 2242.0,
+        "sides_changed": 2
     },
     "59": {
-        "contact_timestamp_shuttle": 2260.4,
-        "current_set_bottom_init_score": 0,
-        "location_Init_end_bottom": [
-            [
-                445,
-                1131
-            ],
-            [
-                492,
-                1083
-            ]
-        ],
-        "Action_wl_init_bottom": "Mistake",
-        "end_timestamp_shuttle": 2261.7,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
         "location_Init_end_top": [
             [
                 585,
@@ -3680,9 +3722,28 @@
                 525
             ]
         ],
+        "location_Init_end_bottom": [
+            [
+                445,
+                1131
+            ],
+            [
+                492,
+                1083
+            ]
+        ],
+        "location_Init_start_bottom": [
+            [
+                410,
+                1077
+            ],
+            [
+                571,
+                1035
+            ]
+        ],
+        "Action_wl_init_bottom": "Mistake",
         "current_set_top_init_score": 2,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 478,
@@ -3693,46 +3754,29 @@
                 330
             ]
         ],
-        "location_end_shuttle": [
-            671,
-            471,
-            0
-        ],
+        "current_set": 3,
+        "player_played": "B",
+        "end_timestamp_shuttle": 2261.7,
         "location_contact_shuttle": [
             623,
             1080,
             95.0
         ],
-        "sides_changed": 2,
-        "current_set": 3,
-        "location_Init_start_bottom": [
-            [
-                410,
-                1077
-            ],
-            [
-                571,
-                1035
-            ]
-        ]
+        "shot": "Placement",
+        "location_end_shuttle": [
+            671,
+            471,
+            0
+        ],
+        "Action_FB_init_bottom": "Forehand",
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 0,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 2260.4,
+        "sides_changed": 2
     },
     "60": {
-        "contact_timestamp_shuttle": 2286.1,
-        "current_set_bottom_init_score": 1,
-        "location_Init_end_bottom": [
-            [
-                460,
-                1095
-            ],
-            [
-                588,
-                997
-            ]
-        ],
-        "end_timestamp_shuttle": 2287.1,
-        "shot": "Placement",
         "Action_wl_init_top": "Mistake",
-        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
                 330,
@@ -3743,9 +3787,17 @@
                 193
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                357,
+                1167
+            ],
+            [
+                374,
+                1150
+            ]
+        ],
         "current_set_top_init_score": 2,
-        "current_rally_top_init_score": 0,
-        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 288,
@@ -3756,46 +3808,39 @@
                 105
             ]
         ],
-        "location_end_shuttle": [
-            666,
-            957,
-            0
-        ],
+        "current_set": 3,
+        "player_played": "T",
+        "Action_FB_init_top": "Forehand",
+        "end_timestamp_shuttle": 2287.1,
         "location_contact_shuttle": [
             212,
             232,
             270.0
         ],
-        "sides_changed": 2,
-        "current_set": 3,
-        "location_Init_start_bottom": [
-            [
-                357,
-                1167
-            ],
-            [
-                374,
-                1150
-            ]
-        ]
-    },
-    "61": {
-        "contact_timestamp_shuttle": 2398.1,
-        "current_set_bottom_init_score": 1,
+        "shot": "Placement",
+        "location_end_shuttle": [
+            666,
+            957,
+            0
+        ],
+        "current_rally_top_init_score": 0,
         "location_Init_end_bottom": [
             [
-                322,
-                1270
+                460,
+                1095
             ],
             [
-                443,
-                1268
+                588,
+                997
             ]
         ],
-        "end_timestamp_shuttle": 2398.4,
-        "shot": "Smash",
+        "current_set_bottom_init_score": 1,
+        "current_rally_bottom_init_score": 1,
+        "contact_timestamp_shuttle": 2286.1,
+        "sides_changed": 2
+    },
+    "61": {
         "Action_wl_init_top": "Winner",
-        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
                 343,
@@ -3806,9 +3851,17 @@
                 643
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                328,
+                1275
+            ],
+            [
+                408,
+                1269
+            ]
+        ],
         "current_set_top_init_score": 3,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 345,
@@ -3819,46 +3872,38 @@
                 592
             ]
         ],
-        "location_end_shuttle": [
-            560,
-            1289,
-            0
-        ],
+        "current_set": 3,
+        "player_played": "T",
+        "Action_FB_init_top": "Forehand",
+        "end_timestamp_shuttle": 2398.4,
         "location_contact_shuttle": [
             320,
             629,
             198.0
         ],
-        "sides_changed": 2,
-        "current_set": 3,
-        "location_Init_start_bottom": [
-            [
-                328,
-                1275
-            ],
-            [
-                408,
-                1269
-            ]
-        ]
-    },
-    "62": {
-        "contact_timestamp_shuttle": 2426.1,
-        "current_set_bottom_init_score": 1,
+        "shot": "Smash",
+        "location_end_shuttle": [
+            560,
+            1289,
+            0
+        ],
+        "current_rally_top_init_score": 1,
         "location_Init_end_bottom": [
             [
-                473,
-                1137
+                322,
+                1270
             ],
             [
-                409,
-                1090
+                443,
+                1268
             ]
         ],
-        "Action_wl_init_bottom": "Mistake",
-        "end_timestamp_shuttle": 2427.7,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
+        "current_set_bottom_init_score": 1,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 2398.1,
+        "sides_changed": 2
+    },
+    "62": {
         "location_Init_end_top": [
             [
                 555,
@@ -3869,9 +3914,28 @@
                 273
             ]
         ],
+        "location_Init_end_bottom": [
+            [
+                473,
+                1137
+            ],
+            [
+                409,
+                1090
+            ]
+        ],
+        "location_Init_start_bottom": [
+            [
+                519,
+                1230
+            ],
+            [
+                588,
+                1288
+            ]
+        ],
+        "Action_wl_init_bottom": "Mistake",
         "current_set_top_init_score": 4,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 499,
@@ -3882,46 +3946,28 @@
                 275
             ]
         ],
-        "location_end_shuttle": [
-            596,
-            16,
-            0
-        ],
+        "current_set": 3,
+        "player_played": "B",
+        "end_timestamp_shuttle": 2427.7,
         "location_contact_shuttle": [
             605,
             1319,
             252.0
         ],
-        "sides_changed": 2,
-        "current_set": 3,
-        "location_Init_start_bottom": [
-            [
-                519,
-                1230
-            ],
-            [
-                588,
-                1288
-            ]
-        ]
+        "shot": "Placement",
+        "location_end_shuttle": [
+            596,
+            16,
+            0
+        ],
+        "Action_FB_init_bottom": "Forehand",
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 1,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 2426.1,
+        "sides_changed": 2
     },
     "63": {
-        "contact_timestamp_shuttle": 2487.2,
-        "current_set_bottom_init_score": 1,
-        "location_Init_end_bottom": [
-            [
-                277,
-                1350
-            ],
-            [
-                361,
-                1269
-            ]
-        ],
-        "Action_wl_init_bottom": "Mistake",
-        "end_timestamp_shuttle": 2487.6,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Net Shot",
         "location_Init_end_top": [
             [
                 452,
@@ -3932,9 +3978,28 @@
                 341
             ]
         ],
+        "location_Init_end_bottom": [
+            [
+                277,
+                1350
+            ],
+            [
+                361,
+                1269
+            ]
+        ],
+        "location_Init_start_bottom": [
+            [
+                280,
+                1302
+            ],
+            [
+                337,
+                1269
+            ]
+        ],
+        "Action_wl_init_bottom": "Mistake",
         "current_set_top_init_score": 5,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 418,
@@ -3945,46 +4010,28 @@
                 296
             ]
         ],
-        "location_end_shuttle": [
-            519,
-            766,
-            103.0
-        ],
+        "current_set": 3,
+        "player_played": "B",
+        "end_timestamp_shuttle": 2487.6,
         "location_contact_shuttle": [
             292,
             1311,
             263.0
         ],
-        "sides_changed": 2,
-        "current_set": 3,
-        "location_Init_start_bottom": [
-            [
-                280,
-                1302
-            ],
-            [
-                337,
-                1269
-            ]
-        ]
+        "shot": "Net Shot",
+        "location_end_shuttle": [
+            519,
+            766,
+            103.0
+        ],
+        "Action_FB_init_bottom": "Forehand",
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 1,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 2487.2,
+        "sides_changed": 2
     },
     "64": {
-        "contact_timestamp_shuttle": 2536.6,
-        "current_set_bottom_init_score": 2,
-        "location_Init_end_bottom": [
-            [
-                494,
-                1049
-            ],
-            [
-                593,
-                1075
-            ]
-        ],
-        "Action_wl_init_bottom": "Winner",
-        "end_timestamp_shuttle": 2536.9,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Smash",
         "location_Init_end_top": [
             [
                 499,
@@ -3995,9 +4042,28 @@
                 224
             ]
         ],
+        "location_Init_end_bottom": [
+            [
+                494,
+                1049
+            ],
+            [
+                593,
+                1075
+            ]
+        ],
+        "location_Init_start_bottom": [
+            [
+                429,
+                952
+            ],
+            [
+                445,
+                1005
+            ]
+        ],
+        "Action_wl_init_bottom": "Winner",
         "current_set_top_init_score": 5,
-        "current_rally_top_init_score": 0,
-        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 438,
@@ -4008,46 +4074,28 @@
                 255
             ]
         ],
-        "location_end_shuttle": [
-            592,
-            315,
-            0
-        ],
+        "current_set": 3,
+        "player_played": "B",
+        "end_timestamp_shuttle": 2536.9,
         "location_contact_shuttle": [
             532,
             1089,
             261.0
         ],
-        "sides_changed": 2,
-        "current_set": 3,
-        "location_Init_start_bottom": [
-            [
-                429,
-                952
-            ],
-            [
-                445,
-                1005
-            ]
-        ]
+        "shot": "Smash",
+        "location_end_shuttle": [
+            592,
+            315,
+            0
+        ],
+        "Action_FB_init_bottom": "Forehand",
+        "current_rally_top_init_score": 0,
+        "current_set_bottom_init_score": 2,
+        "current_rally_bottom_init_score": 1,
+        "contact_timestamp_shuttle": 2536.6,
+        "sides_changed": 2
     },
     "65": {
-        "contact_timestamp_shuttle": 2573.9,
-        "current_set_bottom_init_score": 3,
-        "location_Init_end_bottom": [
-            [
-                558,
-                1224
-            ],
-            [
-                506,
-                1194
-            ]
-        ],
-        "Action_wl_init_bottom": "Winner",
-        "end_timestamp_shuttle": 2575.9,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
         "location_Init_end_top": [
             [
                 424,
@@ -4058,9 +4106,28 @@
                 306
             ]
         ],
+        "location_Init_end_bottom": [
+            [
+                558,
+                1224
+            ],
+            [
+                506,
+                1194
+            ]
+        ],
+        "location_Init_start_bottom": [
+            [
+                335,
+                1126
+            ],
+            [
+                357,
+                1138
+            ]
+        ],
+        "Action_wl_init_bottom": "Winner",
         "current_set_top_init_score": 5,
-        "current_rally_top_init_score": 0,
-        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 300,
@@ -4071,46 +4138,28 @@
                 519
             ]
         ],
-        "location_end_shuttle": [
-            148,
-            273,
-            0
-        ],
+        "current_set": 3,
+        "player_played": "B",
+        "end_timestamp_shuttle": 2575.9,
         "location_contact_shuttle": [
             606,
             1300,
             300.0
         ],
-        "sides_changed": 2,
-        "current_set": 3,
-        "location_Init_start_bottom": [
-            [
-                335,
-                1126
-            ],
-            [
-                357,
-                1138
-            ]
-        ]
+        "shot": "Placement",
+        "location_end_shuttle": [
+            148,
+            273,
+            0
+        ],
+        "Action_FB_init_bottom": "Forehand",
+        "current_rally_top_init_score": 0,
+        "current_set_bottom_init_score": 3,
+        "current_rally_bottom_init_score": 1,
+        "contact_timestamp_shuttle": 2573.9,
+        "sides_changed": 2
     },
     "66": {
-        "contact_timestamp_shuttle": 2611.0,
-        "current_set_bottom_init_score": 3,
-        "location_Init_end_bottom": [
-            [
-                277,
-                1133
-            ],
-            [
-                274,
-                1109
-            ]
-        ],
-        "Action_wl_init_bottom": "Mistake",
-        "end_timestamp_shuttle": 2611.6,
-        "Action_FB_init_bottom": "Backhand",
-        "shot": "Net Shot",
         "location_Init_end_top": [
             [
                 329,
@@ -4121,9 +4170,28 @@
                 455
             ]
         ],
+        "location_Init_end_bottom": [
+            [
+                277,
+                1133
+            ],
+            [
+                274,
+                1109
+            ]
+        ],
+        "location_Init_start_bottom": [
+            [
+                261,
+                1145
+            ],
+            [
+                263,
+                1139
+            ]
+        ],
+        "Action_wl_init_bottom": "Mistake",
         "current_set_top_init_score": 6,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 397,
@@ -4134,46 +4202,28 @@
                 380
             ]
         ],
-        "location_end_shuttle": [
-            243,
-            769,
-            118.0
-        ],
+        "current_set": 3,
+        "player_played": "B",
+        "end_timestamp_shuttle": 2611.6,
         "location_contact_shuttle": [
             213,
             1037,
             104.0
         ],
-        "sides_changed": 2,
-        "current_set": 3,
-        "location_Init_start_bottom": [
-            [
-                261,
-                1145
-            ],
-            [
-                263,
-                1139
-            ]
-        ]
+        "shot": "Net Shot",
+        "location_end_shuttle": [
+            243,
+            769,
+            118.0
+        ],
+        "Action_FB_init_bottom": "Backhand",
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 3,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 2611.0,
+        "sides_changed": 2
     },
     "67": {
-        "contact_timestamp_shuttle": 2650.7,
-        "current_set_bottom_init_score": 3,
-        "location_Init_end_bottom": [
-            [
-                270,
-                1139
-            ],
-            [
-                261,
-                1103
-            ]
-        ],
-        "Action_wl_init_bottom": "Mistake",
-        "end_timestamp_shuttle": 2651.3,
-        "Action_FB_init_bottom": "Backhand",
-        "shot": "Net Shot",
         "location_Init_end_top": [
             [
                 295,
@@ -4184,9 +4234,28 @@
                 256
             ]
         ],
+        "location_Init_end_bottom": [
+            [
+                270,
+                1139
+            ],
+            [
+                261,
+                1103
+            ]
+        ],
+        "location_Init_start_bottom": [
+            [
+                271,
+                1145
+            ],
+            [
+                421,
+                1131
+            ]
+        ],
+        "Action_wl_init_bottom": "Mistake",
         "current_set_top_init_score": 7,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 268,
@@ -4197,46 +4266,28 @@
                 106
             ]
         ],
-        "location_end_shuttle": [
-            229,
-            769,
-            133.0
-        ],
+        "current_set": 3,
+        "player_played": "B",
+        "end_timestamp_shuttle": 2651.3,
         "location_contact_shuttle": [
             181,
             1194,
             102.0
         ],
-        "sides_changed": 2,
-        "current_set": 3,
-        "location_Init_start_bottom": [
-            [
-                271,
-                1145
-            ],
-            [
-                421,
-                1131
-            ]
-        ]
+        "shot": "Net Shot",
+        "location_end_shuttle": [
+            229,
+            769,
+            133.0
+        ],
+        "Action_FB_init_bottom": "Backhand",
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 3,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 2650.7,
+        "sides_changed": 2
     },
     "68": {
-        "contact_timestamp_shuttle": 2679.2,
-        "current_set_bottom_init_score": 3,
-        "location_Init_end_bottom": [
-            [
-                455,
-                1131
-            ],
-            [
-                491,
-                1142
-            ]
-        ],
-        "Action_wl_init_bottom": "Mistake",
-        "end_timestamp_shuttle": 2681.1,
-        "Action_FB_init_bottom": "Backhand",
-        "shot": "Placement",
         "location_Init_end_top": [
             [
                 626,
@@ -4247,9 +4298,28 @@
                 124
             ]
         ],
+        "location_Init_end_bottom": [
+            [
+                455,
+                1131
+            ],
+            [
+                491,
+                1142
+            ]
+        ],
+        "location_Init_start_bottom": [
+            [
+                298,
+                1115
+            ],
+            [
+                292,
+                1109
+            ]
+        ],
+        "Action_wl_init_bottom": "Mistake",
         "current_set_top_init_score": 8,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 382,
@@ -4260,32 +4330,28 @@
                 370
             ]
         ],
-        "location_end_shuttle": [
-            693,
-            102,
-            0
-        ],
+        "current_set": 3,
+        "player_played": "B",
+        "end_timestamp_shuttle": 2681.1,
         "location_contact_shuttle": [
             215,
             965,
             75.0
         ],
-        "sides_changed": 2,
-        "current_set": 3,
-        "location_Init_start_bottom": [
-            [
-                298,
-                1115
-            ],
-            [
-                292,
-                1109
-            ]
-        ]
+        "shot": "Placement",
+        "location_end_shuttle": [
+            693,
+            102,
+            0
+        ],
+        "Action_FB_init_bottom": "Backhand",
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 3,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 2679.2,
+        "sides_changed": 2
     },
     "69": {
-        "contact_timestamp_shuttle": 2797.1,
-        "current_set_bottom_init_score": 3,
         "location_Init_end_bottom": [
             [
                 296,
@@ -4296,10 +4362,6 @@
                 1191
             ]
         ],
-        "Action_wl_init_bottom": "Mistake",
-        "end_timestamp_shuttle": 2798.0,
-        "Action_FB_init_bottom": "Backhand",
-        "shot": "Placement",
         "location_Init_end_top": [
             [
                 333,
@@ -4310,9 +4372,18 @@
                 393
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                277,
+                1153
+            ],
+            [
+                211,
+                1107
+            ]
+        ],
+        "Action_wl_init_bottom": "Mistake",
         "current_set_top_init_score": 9,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 234,
@@ -4323,32 +4394,29 @@
                 358
             ]
         ],
-        "location_end_shuttle": [
-            79,
-            224,
-            0
-        ],
+        "current_set": 3,
+        "player_played": "B",
+        "end_timestamp_shuttle": 2798.0,
         "location_contact_shuttle": [
             168.0,
             1174.0,
             106.0
         ],
-        "sides_changed": 3,
-        "current_set": 3,
-        "location_Init_start_bottom": [
-            [
-                277,
-                1153
-            ],
-            [
-                211,
-                1107
-            ]
-        ]
+        "shot": "Placement",
+        "location_end_shuttle": [
+            79,
+            224,
+            0
+        ],
+        "Action_FB_init_bottom": "Backhand",
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 3,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 2797.1,
+        "sides_changed": 3
     },
     "70": {
-        "contact_timestamp_shuttle": 2831.0,
-        "current_set_bottom_init_score": 3,
+        "Action_wl_init_top": "Winner",
         "location_Init_end_bottom": [
             [
                 314,
@@ -4359,10 +4427,6 @@
                 1181
             ]
         ],
-        "Action_wl_init_bottom": "Mistake",
-        "end_timestamp_shuttle": 2831.3,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
         "location_Init_end_top": [
             [
                 457,
@@ -4373,9 +4437,17 @@
                 428
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                344,
+                1172
+            ],
+            [
+                423,
+                1191
+            ]
+        ],
         "current_set_top_init_score": 10,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 473,
@@ -4386,32 +4458,29 @@
                 445
             ]
         ],
+        "current_set": 3,
+        "player_played": "T",
+        "Action_FB_init_top": "Forehand",
+        "end_timestamp_shuttle": 2831.3,
+        "location_contact_shuttle": [
+            388.0,
+            552.0,
+            179.0
+        ],
+        "shot": "Smash",
         "location_end_shuttle": [
-            361,
-            1076,
+            370,
+            1407,
             0
         ],
-        "location_contact_shuttle": [
-            392.0,
-            385.0,
-            206.0
-        ],
-        "sides_changed": 3,
-        "current_set": 3,
-        "location_Init_start_bottom": [
-            [
-                344,
-                1172
-            ],
-            [
-                423,
-                1191
-            ]
-        ]
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 3,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 2831.0,
+        "sides_changed": 3
     },
     "71": {
-        "contact_timestamp_shuttle": 2894.7,
-        "current_set_bottom_init_score": 3,
+        "Action_wl_init_top": "Winner",
         "location_Init_end_bottom": [
             [
                 362,
@@ -4422,10 +4491,6 @@
                 977
             ]
         ],
-        "end_timestamp_shuttle": 2895.7,
-        "shot": "Placement",
-        "Action_wl_init_top": "Winner",
-        "Action_FB_init_top": "Backhand",
         "location_Init_end_top": [
             [
                 470,
@@ -4436,9 +4501,17 @@
                 457
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                475,
+                1349
+            ],
+            [
+                488,
+                1338
+            ]
+        ],
         "current_set_top_init_score": 11,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 503,
@@ -4449,95 +4522,93 @@
                 455
             ]
         ],
-        "location_end_shuttle": [
-            162,
-            941,
-            0
-        ],
+        "current_set": 3,
+        "player_played": "T",
+        "Action_FB_init_top": "Backhand",
+        "end_timestamp_shuttle": 2895.7,
         "location_contact_shuttle": [
             633.0,
             448.0,
             70.0
         ],
-        "sides_changed": 3,
-        "current_set": 3,
-        "location_Init_start_bottom": [
-            [
-                475,
-                1349
-            ],
-            [
-                488,
-                1338
-            ]
-        ]
+        "shot": "Placement",
+        "location_end_shuttle": [
+            162,
+            941,
+            0
+        ],
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 3,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 2894.7,
+        "sides_changed": 3
     },
     "72": {
-        "contact_timestamp_shuttle": 2939.7,
-        "current_set_bottom_init_score": 3,
         "location_Init_end_bottom": [
             [
-                340,
-                1256
+                271,
+                1405
             ],
             [
-                349,
-                1287
+                354,
+                1328
             ]
         ],
-        "Action_wl_init_bottom": "Mistake",
-        "end_timestamp_shuttle": 2941.7,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Net Shot",
         "location_Init_end_top": [
             [
-                469,
-                415
+                354,
+                358
             ],
             [
                 461,
-                415
+                380
             ]
         ],
-        "current_set_top_init_score": 12,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
-        "location_Init_start_top": [
-            [
-                503,
-                402
-            ],
-            [
-                514,
-                438
-            ]
-        ],
-        "location_end_shuttle": [
-            451.0,
-            773.0,
-            125.0
-        ],
-        "location_contact_shuttle": [
-            299.0,
-            1378.0,
-            266.0
-        ],
-        "sides_changed": 3,
-        "current_set": 3,
         "location_Init_start_bottom": [
             [
-                428,
-                1266
+                303,
+                1512
             ],
             [
-                456,
-                1245
+                350,
+                1415
             ]
-        ]
+        ],
+        "Action_wl_init_bottom": "Mistake",
+        "current_set_top_init_score": 12,
+        "location_Init_start_top": [
+            [
+                395,
+                410
+            ],
+            [
+                460,
+                427
+            ]
+        ],
+        "current_set": 3,
+        "player_played": "B",
+        "end_timestamp_shuttle": 2941.0,
+        "location_contact_shuttle": [
+            290.0,
+            1423.0,
+            240.0
+        ],
+        "shot": "Net Shot",
+        "location_end_shuttle": [
+            461.0,
+            773.0,
+            114.0
+        ],
+        "Action_FB_init_bottom": "Forehand",
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 3,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 2940.7,
+        "sides_changed": 3
     },
     "73": {
-        "contact_timestamp_shuttle": 2981.6,
-        "current_set_bottom_init_score": 3,
+        "Action_wl_init_top": "Winner",
         "location_Init_end_bottom": [
             [
                 359,
@@ -4548,10 +4619,6 @@
                 1181
             ]
         ],
-        "end_timestamp_shuttle": 2982.4,
-        "shot": "Placement",
-        "Action_wl_init_top": "Winner",
-        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
                 517,
@@ -4562,9 +4629,17 @@
                 244
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                415,
+                1171
+            ],
+            [
+                494,
+                1171
+            ]
+        ],
         "current_set_top_init_score": 13,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 646,
@@ -4575,32 +4650,28 @@
                 314
             ]
         ],
-        "location_end_shuttle": [
-            162,
-            1200,
-            0
-        ],
+        "current_set": 3,
+        "player_played": "T",
+        "Action_FB_init_top": "Forehand",
+        "end_timestamp_shuttle": 2982.4,
         "location_contact_shuttle": [
             611.0,
             220.0,
             255.0
         ],
-        "sides_changed": 3,
-        "current_set": 3,
-        "location_Init_start_bottom": [
-            [
-                415,
-                1171
-            ],
-            [
-                494,
-                1171
-            ]
-        ]
+        "shot": "Placement",
+        "location_end_shuttle": [
+            162,
+            1200,
+            0
+        ],
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 3,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 2981.6,
+        "sides_changed": 3
     },
     "74": {
-        "contact_timestamp_shuttle": 3012.8,
-        "current_set_bottom_init_score": 4,
         "location_Init_end_bottom": [
             [
                 516,
@@ -4611,10 +4682,6 @@
                 1022
             ]
         ],
-        "Action_wl_init_bottom": "Winner",
-        "end_timestamp_shuttle": 3013.8,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
         "location_Init_end_top": [
             [
                 433,
@@ -4625,9 +4692,18 @@
                 439
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                452,
+                1105
+            ],
+            [
+                559,
+                1013
+            ]
+        ],
+        "Action_wl_init_bottom": "Winner",
         "current_set_top_init_score": 13,
-        "current_rally_top_init_score": 0,
-        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 520,
@@ -4638,32 +4714,28 @@
                 445
             ]
         ],
-        "location_end_shuttle": [
-            573,
-            126,
-            0
-        ],
+        "current_set": 3,
+        "player_played": "B",
+        "end_timestamp_shuttle": 3013.8,
         "location_contact_shuttle": [
             605.0,
             914.0,
             143.0
         ],
-        "sides_changed": 3,
-        "current_set": 3,
-        "location_Init_start_bottom": [
-            [
-                452,
-                1105
-            ],
-            [
-                559,
-                1013
-            ]
-        ]
+        "shot": "Placement",
+        "location_end_shuttle": [
+            573,
+            126,
+            0
+        ],
+        "Action_FB_init_bottom": "Forehand",
+        "current_rally_top_init_score": 0,
+        "current_set_bottom_init_score": 4,
+        "current_rally_bottom_init_score": 1,
+        "contact_timestamp_shuttle": 3012.8,
+        "sides_changed": 3
     },
     "75": {
-        "contact_timestamp_shuttle": 3038.6,
-        "current_set_bottom_init_score": 5,
         "location_Init_end_bottom": [
             [
                 431,
@@ -4674,10 +4746,6 @@
                 1180
             ]
         ],
-        "Action_wl_init_bottom": "Winner",
-        "end_timestamp_shuttle": 3039.0,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Smash",
         "location_Init_end_top": [
             [
                 484,
@@ -4688,9 +4756,18 @@
                 272
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                431,
+                1276
+            ],
+            [
+                457,
+                1265
+            ]
+        ],
+        "Action_wl_init_bottom": "Winner",
         "current_set_top_init_score": 13,
-        "current_rally_top_init_score": 0,
-        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 442,
@@ -4701,32 +4778,28 @@
                 363
             ]
         ],
-        "location_end_shuttle": [
-            573,
-            262,
-            0
-        ],
+        "current_set": 3,
+        "player_played": "B",
+        "end_timestamp_shuttle": 3039.0,
         "location_contact_shuttle": [
             478.0,
             1237.0,
             269.0
         ],
-        "sides_changed": 3,
-        "current_set": 3,
-        "location_Init_start_bottom": [
-            [
-                431,
-                1276
-            ],
-            [
-                457,
-                1265
-            ]
-        ]
+        "shot": "Smash",
+        "location_end_shuttle": [
+            573,
+            262,
+            0
+        ],
+        "Action_FB_init_bottom": "Forehand",
+        "current_rally_top_init_score": 0,
+        "current_set_bottom_init_score": 5,
+        "current_rally_bottom_init_score": 1,
+        "contact_timestamp_shuttle": 3038.6,
+        "sides_changed": 3
     },
     "76": {
-        "contact_timestamp_shuttle": 3081.2,
-        "current_set_bottom_init_score": 6,
         "location_Init_end_bottom": [
             [
                 475,
@@ -4737,10 +4810,6 @@
                 1235
             ]
         ],
-        "Action_wl_init_bottom": "Winner",
-        "end_timestamp_shuttle": 3082.1,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Smash",
         "location_Init_end_top": [
             [
                 457,
@@ -4751,9 +4820,18 @@
                 408
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                365,
+                1256
+            ],
+            [
+                376,
+                1256
+            ]
+        ],
+        "Action_wl_init_bottom": "Winner",
         "current_set_top_init_score": 13,
-        "current_rally_top_init_score": 0,
-        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 321,
@@ -4764,32 +4842,29 @@
                 506
             ]
         ],
-        "location_end_shuttle": [
-            627,
-            220,
-            0
-        ],
+        "current_set": 3,
+        "player_played": "B",
+        "end_timestamp_shuttle": 3082.1,
         "location_contact_shuttle": [
             524.0,
             1319.0,
             202.0
         ],
-        "sides_changed": 3,
-        "current_set": 3,
-        "location_Init_start_bottom": [
-            [
-                365,
-                1256
-            ],
-            [
-                376,
-                1256
-            ]
-        ]
+        "shot": "Smash",
+        "location_end_shuttle": [
+            627,
+            220,
+            0
+        ],
+        "Action_FB_init_bottom": "Forehand",
+        "current_rally_top_init_score": 0,
+        "current_set_bottom_init_score": 6,
+        "current_rally_bottom_init_score": 1,
+        "contact_timestamp_shuttle": 3081.2,
+        "sides_changed": 3
     },
     "77": {
-        "contact_timestamp_shuttle": 3127.7,
-        "current_set_bottom_init_score": 6,
+        "Action_wl_init_top": "Winner",
         "location_Init_end_bottom": [
             [
                 187,
@@ -4800,10 +4875,6 @@
                 1341
             ]
         ],
-        "end_timestamp_shuttle": 3129.2,
-        "shot": "Placement",
-        "Action_wl_init_top": "Winner",
-        "Action_FB_init_top": "Forehand",
         "location_Init_end_top": [
             [
                 337,
@@ -4814,9 +4885,17 @@
                 381
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                415,
+                1114
+            ],
+            [
+                432,
+                1114
+            ]
+        ],
         "current_set_top_init_score": 14,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 348,
@@ -4827,32 +4906,28 @@
                 243
             ]
         ],
-        "location_end_shuttle": [
-            188,
-            1409,
-            0
-        ],
+        "current_set": 3,
+        "player_played": "T",
+        "Action_FB_init_top": "Forehand",
+        "end_timestamp_shuttle": 3129.2,
         "location_contact_shuttle": [
             222.0,
             220.0,
             128.0
         ],
-        "sides_changed": 3,
-        "current_set": 3,
-        "location_Init_start_bottom": [
-            [
-                415,
-                1114
-            ],
-            [
-                432,
-                1114
-            ]
-        ]
+        "shot": "Placement",
+        "location_end_shuttle": [
+            188,
+            1409,
+            0
+        ],
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 6,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 3127.7,
+        "sides_changed": 3
     },
     "78": {
-        "contact_timestamp_shuttle": 3163.4,
-        "current_set_bottom_init_score": 7,
         "location_Init_end_bottom": [
             [
                 439,
@@ -4863,10 +4938,6 @@
                 1245
             ]
         ],
-        "Action_wl_init_bottom": "Winner",
-        "end_timestamp_shuttle": 3164.1,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Smash",
         "location_Init_end_top": [
             [
                 470,
@@ -4877,9 +4948,18 @@
                 450
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                468,
+                1425
+            ],
+            [
+                480,
+                1459
+            ]
+        ],
+        "Action_wl_init_bottom": "Winner",
         "current_set_top_init_score": 14,
-        "current_rally_top_init_score": 0,
-        "current_rally_bottom_init_score": 1,
         "location_Init_start_top": [
             [
                 461,
@@ -4890,32 +4970,28 @@
                 369
             ]
         ],
-        "location_end_shuttle": [
-            637,
-            416,
-            0
-        ],
+        "current_set": 3,
+        "player_played": "B",
+        "end_timestamp_shuttle": 3164.1,
         "location_contact_shuttle": [
             495.0,
             1154.0,
             316.0
         ],
-        "sides_changed": 3,
-        "current_set": 3,
-        "location_Init_start_bottom": [
-            [
-                468,
-                1425
-            ],
-            [
-                480,
-                1459
-            ]
-        ]
+        "shot": "Smash",
+        "location_end_shuttle": [
+            637,
+            416,
+            0
+        ],
+        "Action_FB_init_bottom": "Forehand",
+        "current_rally_top_init_score": 0,
+        "current_set_bottom_init_score": 7,
+        "current_rally_bottom_init_score": 1,
+        "contact_timestamp_shuttle": 3163.4,
+        "sides_changed": 3
     },
     "79": {
-        "contact_timestamp_shuttle": 3195.0,
-        "current_set_bottom_init_score": 7,
         "location_Init_end_bottom": [
             [
                 392,
@@ -4926,10 +5002,6 @@
                 1033
             ]
         ],
-        "Action_wl_init_bottom": "Mistake",
-        "end_timestamp_shuttle": 3196.3,
-        "Action_FB_init_bottom": "Forehand",
-        "shot": "Placement",
         "location_Init_end_top": [
             [
                 367,
@@ -4940,9 +5012,18 @@
                 278
             ]
         ],
+        "location_Init_start_bottom": [
+            [
+                470,
+                1059
+            ],
+            [
+                453,
+                1023
+            ]
+        ],
+        "Action_wl_init_bottom": "Mistake",
         "current_set_top_init_score": 15,
-        "current_rally_top_init_score": 1,
-        "current_rally_bottom_init_score": 0,
         "location_Init_start_top": [
             [
                 351,
@@ -4953,27 +5034,25 @@
                 505
             ]
         ],
-        "location_end_shuttle": [
-            207,
-            85,
-            0
-        ],
+        "current_set": 3,
+        "player_played": "B",
+        "end_timestamp_shuttle": 3196.3,
         "location_contact_shuttle": [
             486.0,
             968.0,
             135.0
         ],
-        "sides_changed": 3,
-        "current_set": 3,
-        "location_Init_start_bottom": [
-            [
-                470,
-                1059
-            ],
-            [
-                453,
-                1023
-            ]
-        ]
+        "shot": "Placement",
+        "location_end_shuttle": [
+            207,
+            85,
+            0
+        ],
+        "Action_FB_init_bottom": "Forehand",
+        "current_rally_top_init_score": 1,
+        "current_set_bottom_init_score": 7,
+        "current_rally_bottom_init_score": 0,
+        "contact_timestamp_shuttle": 3195.0,
+        "sides_changed": 3
     }
 }
