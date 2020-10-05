@@ -155,6 +155,7 @@ class Badminton extends Component {
       multiSelect: false,
       selectAll: true,
       firstClickVideo: true,
+      rallyIndexArray: [],
     };
   }
 
@@ -475,7 +476,8 @@ class Badminton extends Component {
     shot_hand_3,
     final_resp,
     final_shots,
-    final_array
+    final_array,
+    rallyIndexArray
   ) => {
     this.setState({ isBottom: false });
     final_array = [];
@@ -558,10 +560,11 @@ class Badminton extends Component {
           final_resp.push(response_array);
 
           final_shots.push(Object.values(this.state.badminton_array[i].shots));
+          rallyIndexArray.push(i);
         }
       }
     }
-    return [final_resp, final_shots, final_array];
+    return [final_resp, final_shots, final_array, rallyIndexArray];
   };
 
   findAllShotsBottom = (
@@ -570,7 +573,8 @@ class Badminton extends Component {
     shot_hand_3,
     final_resp,
     final_shots,
-    final_array
+    final_array,
+    rallyIndexArray
   ) => {
     this.setState({ isBottom: true });
     final_array = [];
@@ -653,10 +657,11 @@ class Badminton extends Component {
           final_resp.push(response_array);
 
           final_shots.push(Object.values(this.state.badminton_array[i].shots));
+          rallyIndexArray.push(i);
         }
       }
     }
-    return [final_resp, final_shots, final_array];
+    return [final_resp, final_shots, final_array, rallyIndexArray];
   };
 
   onClickPoints = (index) => {
@@ -1118,7 +1123,13 @@ class Badminton extends Component {
 
               let final_resp = [];
               let final_shots = [];
-              let temparray = [final_resp, final_shots, final_array];
+              let rallyIndexArray = [];
+              let temparray = [
+                final_resp,
+                final_shots,
+                final_array,
+                rallyIndexArray,
+              ];
               for (let shot_hand_1 of shot_hand_types) {
                 temparray = this.findAllShots(
                   shot_hand_1,
@@ -1126,13 +1137,15 @@ class Badminton extends Component {
                   null,
                   temparray[0],
                   temparray[1],
-                  temparray[2]
+                  temparray[2],
+                  temparray[3]
                 );
               }
               this.setState({ graph_data: temparray[1] });
               this.setState({
                 pattern_array: temparray[0],
                 patter_length: temparray[2].length,
+                rallyIndexArray: temparray[3],
               });
               patArray = temparray[0];
             } else if (this.state.shot_hand_top_1 === "A") {
@@ -1140,7 +1153,13 @@ class Badminton extends Component {
 
               let final_resp = [];
               let final_shots = [];
-              let temparray = [final_resp, final_shots, final_array];
+              let rallyIndexArray = [];
+              let temparray = [
+                final_resp,
+                final_shots,
+                final_array,
+                rallyIndexArray,
+              ];
               for (let shot_hand_1 of shot_hand_types) {
                 temparray = this.findAllShots(
                   shot_hand_1,
@@ -1148,13 +1167,15 @@ class Badminton extends Component {
                   null,
                   temparray[0],
                   temparray[1],
-                  temparray[2]
+                  temparray[2],
+                  temparray[3]
                 );
               }
               this.setState({ graph_data: temparray[1] });
               this.setState({
                 pattern_array: temparray[0],
                 patter_length: temparray[2].length,
+                rallyIndexArray: temparray[3],
               });
               patArray = temparray[0];
             }
@@ -1167,7 +1188,13 @@ class Badminton extends Component {
 
               let final_resp = [];
               let final_shots = [];
-              let temparray = [final_resp, final_shots, final_array];
+              let rallyIndexArray = [];
+              let temparray = [
+                final_resp,
+                final_shots,
+                final_array,
+                rallyIndexArray,
+              ];
               for (let shot_hand_1 of shot_hand_types) {
                 temparray = this.findAllShots(
                   shot_hand_1,
@@ -1175,13 +1202,15 @@ class Badminton extends Component {
                   null,
                   temparray[0],
                   temparray[1],
-                  temparray[2]
+                  temparray[2],
+                  temparray[3]
                 );
               }
               this.setState({ graph_data: temparray[1] });
               this.setState({
                 pattern_array: temparray[0],
                 patter_length: temparray[2].length,
+                rallyIndexArray: temparray[3],
               });
               patArray = temparray[0];
             } else if (
@@ -1192,7 +1221,13 @@ class Badminton extends Component {
 
               let final_resp = [];
               let final_shots = [];
-              let temparray = [final_resp, final_shots, final_array];
+              let rallyIndexArray = [];
+              let temparray = [
+                final_resp,
+                final_shots,
+                final_array,
+                rallyIndexArray,
+              ];
               for (let shot_hand_1 of shot_hand_types) {
                 for (let shot_hand_2 of shot_hand_types) {
                   temparray = this.findAllShots(
@@ -1201,7 +1236,8 @@ class Badminton extends Component {
                     null,
                     temparray[0],
                     temparray[1],
-                    temparray[2]
+                    temparray[2],
+                    temparray[3]
                   );
                 }
               }
@@ -1209,6 +1245,7 @@ class Badminton extends Component {
               this.setState({
                 pattern_array: temparray[0],
                 patter_length: temparray[2].length,
+                rallyIndexArray: temparray[3],
               });
               patArray = temparray[0];
             } else if (
@@ -1219,7 +1256,13 @@ class Badminton extends Component {
 
               let final_resp = [];
               let final_shots = [];
-              let temparray = [final_resp, final_shots, final_array];
+              let rallyIndexArray = [];
+              let temparray = [
+                final_resp,
+                final_shots,
+                final_array,
+                rallyIndexArray,
+              ];
 
               for (let shot_hand_2 of shot_hand_types) {
                 temparray = this.findAllShots(
@@ -1228,13 +1271,15 @@ class Badminton extends Component {
                   null,
                   temparray[0],
                   temparray[1],
-                  temparray[2]
+                  temparray[2],
+                  temparray[3]
                 );
               }
               this.setState({ graph_data: temparray[1] });
               this.setState({
                 pattern_array: temparray[0],
                 patter_length: temparray[2].length,
+                rallyIndexArray: temparray[3],
               });
               patArray = temparray[0];
             } else if (
@@ -1243,7 +1288,13 @@ class Badminton extends Component {
             ) {
               let final_resp = [];
               let final_shots = [];
-              let temparray = [final_resp, final_shots, final_array];
+              let rallyIndexArray = [];
+              let temparray = [
+                final_resp,
+                final_shots,
+                final_array,
+                rallyIndexArray,
+              ];
 
               temparray = this.findAllShots(
                 null,
@@ -1251,13 +1302,15 @@ class Badminton extends Component {
                 null,
                 temparray[0],
                 temparray[1],
-                temparray[2]
+                temparray[2],
+                temparray[3]
               );
 
               this.setState({ graph_data: temparray[1] });
               this.setState({
                 pattern_array: temparray[0],
                 patter_length: temparray[2].length,
+                rallyIndexArray: temparray[3],
               });
               patArray = temparray[0];
             }
@@ -1271,7 +1324,13 @@ class Badminton extends Component {
 
               let final_resp = [];
               let final_shots = [];
-              let temparray = [final_resp, final_shots, final_array];
+              let rallyIndexArray = [];
+              let temparray = [
+                final_resp,
+                final_shots,
+                final_array,
+                rallyIndexArray,
+              ];
               for (let shot_hand_1 of shot_hand_types) {
                 temparray = this.findAllShots(
                   shot_hand_1,
@@ -1279,13 +1338,15 @@ class Badminton extends Component {
                   null,
                   temparray[0],
                   temparray[1],
-                  temparray[2]
+                  temparray[2],
+                  temparray[3]
                 );
               }
               this.setState({ graph_data: temparray[1] });
               this.setState({
                 pattern_array: temparray[0],
                 patter_length: temparray[2].length,
+                rallyIndexArray: temparray[3],
               });
               patArray = temparray[0];
             } else if (
@@ -1297,7 +1358,13 @@ class Badminton extends Component {
 
               let final_resp = [];
               let final_shots = [];
-              let temparray = [final_resp, final_shots, final_array];
+              let rallyIndexArray = [];
+              let temparray = [
+                final_resp,
+                final_shots,
+                final_array,
+                rallyIndexArray,
+              ];
               for (let shot_hand_1 of shot_hand_types) {
                 for (let shot_hand_2 of shot_hand_types) {
                   temparray = this.findAllShots(
@@ -1306,7 +1373,8 @@ class Badminton extends Component {
                     null,
                     temparray[0],
                     temparray[1],
-                    temparray[2]
+                    temparray[2],
+                    temparray[3]
                   );
                 }
               }
@@ -1314,6 +1382,7 @@ class Badminton extends Component {
               this.setState({
                 pattern_array: temparray[0],
                 patter_length: temparray[2].length,
+                rallyIndexArray: temparray[3],
               });
               patArray = temparray[0];
             } else if (
@@ -1325,7 +1394,13 @@ class Badminton extends Component {
 
               let final_resp = [];
               let final_shots = [];
-              let temparray = [final_resp, final_shots, final_array];
+              let rallyIndexArray = [];
+              let temparray = [
+                final_resp,
+                final_shots,
+                final_array,
+                rallyIndexArray,
+              ];
               for (let shot_hand_1 of shot_hand_types) {
                 for (let shot_hand_2 of shot_hand_types) {
                   for (let shot_hand_3 of shot_hand_types) {
@@ -1335,7 +1410,8 @@ class Badminton extends Component {
                       shot_hand_3,
                       temparray[0],
                       temparray[1],
-                      temparray[2]
+                      temparray[2],
+                      temparray[3]
                     );
                   }
                 }
@@ -1344,6 +1420,7 @@ class Badminton extends Component {
               this.setState({
                 pattern_array: temparray[0],
                 patter_length: temparray[2].length,
+                rallyIndexArray: temparray[3],
               });
               patArray = temparray[0];
             } else if (
@@ -1355,7 +1432,13 @@ class Badminton extends Component {
 
               let final_resp = [];
               let final_shots = [];
-              let temparray = [final_resp, final_shots, final_array];
+              let rallyIndexArray = [];
+              let temparray = [
+                final_resp,
+                final_shots,
+                final_array,
+                rallyIndexArray,
+              ];
               for (let shot_hand_1 of shot_hand_types) {
                 for (let shot_hand_3 of shot_hand_types) {
                   temparray = this.findAllShots(
@@ -1364,7 +1447,8 @@ class Badminton extends Component {
                     shot_hand_3,
                     temparray[0],
                     temparray[1],
-                    temparray[2]
+                    temparray[2],
+                    temparray[3]
                   );
                 }
               }
@@ -1372,6 +1456,7 @@ class Badminton extends Component {
               this.setState({
                 pattern_array: temparray[0],
                 patter_length: temparray[2].length,
+                rallyIndexArray: temparray[3],
               });
               patArray = temparray[0];
             } else if (
@@ -1383,7 +1468,13 @@ class Badminton extends Component {
 
               let final_resp = [];
               let final_shots = [];
-              let temparray = [final_resp, final_shots, final_array];
+              let rallyIndexArray = [];
+              let temparray = [
+                final_resp,
+                final_shots,
+                final_array,
+                rallyIndexArray,
+              ];
 
               for (let shot_hand_2 of shot_hand_types) {
                 temparray = this.findAllShots(
@@ -1392,13 +1483,15 @@ class Badminton extends Component {
                   null,
                   temparray[0],
                   temparray[1],
-                  temparray[2]
+                  temparray[2],
+                  temparray[3]
                 );
               }
               this.setState({ graph_data: temparray[1] });
               this.setState({
                 pattern_array: temparray[0],
                 patter_length: temparray[2].length,
+                rallyIndexArray: temparray[3],
               });
               patArray = temparray[0];
             } else if (
@@ -1410,7 +1503,13 @@ class Badminton extends Component {
 
               let final_resp = [];
               let final_shots = [];
-              let temparray = [final_resp, final_shots, final_array];
+              let rallyIndexArray = [];
+              let temparray = [
+                final_resp,
+                final_shots,
+                final_array,
+                rallyIndexArray,
+              ];
 
               for (let shot_hand_2 of shot_hand_types) {
                 for (let shot_hand_3 of shot_hand_types) {
@@ -1420,7 +1519,8 @@ class Badminton extends Component {
                     shot_hand_3,
                     temparray[0],
                     temparray[1],
-                    temparray[2]
+                    temparray[2],
+                    temparray[3]
                   );
                 }
               }
@@ -1428,6 +1528,7 @@ class Badminton extends Component {
               this.setState({
                 pattern_array: temparray[0],
                 patter_length: temparray[2].length,
+                rallyIndexArray: temparray[3],
               });
               patArray = temparray[0];
             } else if (
@@ -1439,7 +1540,13 @@ class Badminton extends Component {
 
               let final_resp = [];
               let final_shots = [];
-              let temparray = [final_resp, final_shots, final_array];
+              let rallyIndexArray = [];
+              let temparray = [
+                final_resp,
+                final_shots,
+                final_array,
+                rallyIndexArray,
+              ];
 
               for (let shot_hand_3 of shot_hand_types) {
                 temparray = this.findAllShots(
@@ -1448,7 +1555,8 @@ class Badminton extends Component {
                   shot_hand_3,
                   temparray[0],
                   temparray[1],
-                  temparray[2]
+                  temparray[2],
+                  temparray[3]
                 );
               }
 
@@ -1456,6 +1564,7 @@ class Badminton extends Component {
               this.setState({
                 pattern_array: temparray[0],
                 patter_length: temparray[2].length,
+                rallyIndexArray: temparray[3],
               });
               patArray = temparray[0];
             }
@@ -1582,7 +1691,13 @@ class Badminton extends Component {
 
               let final_resp = [];
               let final_shots = [];
-              let temparray = [final_resp, final_shots, final_array];
+              let rallyIndexArray = [];
+              let temparray = [
+                final_resp,
+                final_shots,
+                final_array,
+                rallyIndexArray,
+              ];
               for (let shot_hand_1 of shot_hand_types) {
                 temparray = this.findAllShotsBottom(
                   shot_hand_1,
@@ -1590,13 +1705,15 @@ class Badminton extends Component {
                   null,
                   temparray[0],
                   temparray[1],
-                  temparray[2]
+                  temparray[2],
+                  temparray[3]
                 );
               }
               this.setState({ graph_data: temparray[1] });
               this.setState({
                 pattern_array: temparray[0],
                 patter_length: temparray[2].length,
+                rallyIndexArray: temparray[3],
               });
               patArray = temparray[0];
             } else if (this.state.shot_hand_bot_1 === "A") {
@@ -1604,7 +1721,13 @@ class Badminton extends Component {
 
               let final_resp = [];
               let final_shots = [];
-              let temparray = [final_resp, final_shots, final_array];
+              let rallyIndexArray = [];
+              let temparray = [
+                final_resp,
+                final_shots,
+                final_array,
+                rallyIndexArray,
+              ];
               for (let shot_hand_1 of shot_hand_types) {
                 temparray = this.findAllShotsBottom(
                   shot_hand_1,
@@ -1612,13 +1735,15 @@ class Badminton extends Component {
                   null,
                   temparray[0],
                   temparray[1],
-                  temparray[2]
+                  temparray[2],
+                  temparray[3]
                 );
               }
               this.setState({ graph_data: temparray[1] });
               this.setState({
                 pattern_array: temparray[0],
                 patter_length: temparray[2].length,
+                rallyIndexArray: temparray[3],
               });
               patArray = temparray[0];
             }
@@ -1631,7 +1756,13 @@ class Badminton extends Component {
 
               let final_resp = [];
               let final_shots = [];
-              let temparray = [final_resp, final_shots, final_array];
+              let rallyIndexArray = [];
+              let temparray = [
+                final_resp,
+                final_shots,
+                final_array,
+                rallyIndexArray,
+              ];
               for (let shot_hand_1 of shot_hand_types) {
                 temparray = this.findAllShotsBottom(
                   shot_hand_1,
@@ -1639,13 +1770,15 @@ class Badminton extends Component {
                   null,
                   temparray[0],
                   temparray[1],
-                  temparray[2]
+                  temparray[2],
+                  temparray[3]
                 );
               }
               this.setState({ graph_data: temparray[1] });
               this.setState({
                 pattern_array: temparray[0],
                 patter_length: temparray[2].length,
+                rallyIndexArray: temparray[3],
               });
               patArray = temparray[0];
             } else if (
@@ -1656,7 +1789,13 @@ class Badminton extends Component {
 
               let final_resp = [];
               let final_shots = [];
-              let temparray = [final_resp, final_shots, final_array];
+              let rallyIndexArray = [];
+              let temparray = [
+                final_resp,
+                final_shots,
+                final_array,
+                rallyIndexArray,
+              ];
               for (let shot_hand_1 of shot_hand_types) {
                 for (let shot_hand_2 of shot_hand_types) {
                   temparray = this.findAllShotsBottom(
@@ -1665,7 +1804,8 @@ class Badminton extends Component {
                     null,
                     temparray[0],
                     temparray[1],
-                    temparray[2]
+                    temparray[2],
+                    temparray[3]
                   );
                 }
               }
@@ -1673,6 +1813,7 @@ class Badminton extends Component {
               this.setState({
                 pattern_array: temparray[0],
                 patter_length: temparray[2].length,
+                rallyIndexArray: temparray[3],
               });
               patArray = temparray[0];
             } else if (
@@ -1683,7 +1824,13 @@ class Badminton extends Component {
 
               let final_resp = [];
               let final_shots = [];
-              let temparray = [final_resp, final_shots, final_array];
+              let rallyIndexArray = [];
+              let temparray = [
+                final_resp,
+                final_shots,
+                final_array,
+                rallyIndexArray,
+              ];
 
               for (let shot_hand_2 of shot_hand_types) {
                 temparray = this.findAllShotsBottom(
@@ -1692,13 +1839,15 @@ class Badminton extends Component {
                   null,
                   temparray[0],
                   temparray[1],
-                  temparray[2]
+                  temparray[2],
+                  temparray[3]
                 );
               }
               this.setState({ graph_data: temparray[1] });
               this.setState({
                 pattern_array: temparray[0],
                 patter_length: temparray[2].length,
+                rallyIndexArray: temparray[3],
               });
               patArray = temparray[0];
             } else if (
@@ -1707,7 +1856,13 @@ class Badminton extends Component {
             ) {
               let final_resp = [];
               let final_shots = [];
-              let temparray = [final_resp, final_shots, final_array];
+              let rallyIndexArray = [];
+              let temparray = [
+                final_resp,
+                final_shots,
+                final_array,
+                rallyIndexArray,
+              ];
 
               temparray = this.findAllShotsBottom(
                 null,
@@ -1715,13 +1870,15 @@ class Badminton extends Component {
                 null,
                 temparray[0],
                 temparray[1],
-                temparray[2]
+                temparray[2],
+                temparray[3]
               );
 
               this.setState({ graph_data: temparray[1] });
               this.setState({
                 pattern_array: temparray[0],
                 patter_length: temparray[2].length,
+                rallyIndexArray: temparray[3],
               });
               patArray = temparray[0];
             }
@@ -1735,7 +1892,13 @@ class Badminton extends Component {
 
               let final_resp = [];
               let final_shots = [];
-              let temparray = [final_resp, final_shots, final_array];
+              let rallyIndexArray = [];
+              let temparray = [
+                final_resp,
+                final_shots,
+                final_array,
+                rallyIndexArray,
+              ];
               for (let shot_hand_1 of shot_hand_types) {
                 temparray = this.findAllShotsBottom(
                   shot_hand_1,
@@ -1743,13 +1906,15 @@ class Badminton extends Component {
                   null,
                   temparray[0],
                   temparray[1],
-                  temparray[2]
+                  temparray[2],
+                  temparray[3]
                 );
               }
               this.setState({ graph_data: temparray[1] });
               this.setState({
                 pattern_array: temparray[0],
                 patter_length: temparray[2].length,
+                rallyIndexArray: temparray[3],
               });
               patArray = temparray[0];
             } else if (
@@ -1761,7 +1926,13 @@ class Badminton extends Component {
 
               let final_resp = [];
               let final_shots = [];
-              let temparray = [final_resp, final_shots, final_array];
+              let rallyIndexArray = [];
+              let temparray = [
+                final_resp,
+                final_shots,
+                final_array,
+                rallyIndexArray,
+              ];
               for (let shot_hand_1 of shot_hand_types) {
                 for (let shot_hand_2 of shot_hand_types) {
                   temparray = this.findAllShotsBottom(
@@ -1770,7 +1941,8 @@ class Badminton extends Component {
                     null,
                     temparray[0],
                     temparray[1],
-                    temparray[2]
+                    temparray[2],
+                    temparray[3]
                   );
                 }
               }
@@ -1778,6 +1950,7 @@ class Badminton extends Component {
               this.setState({
                 pattern_array: temparray[0],
                 patter_length: temparray[2].length,
+                rallyIndexArray: temparray[3],
               });
               patArray = temparray[0];
             } else if (
@@ -1789,7 +1962,13 @@ class Badminton extends Component {
 
               let final_resp = [];
               let final_shots = [];
-              let temparray = [final_resp, final_shots, final_array];
+              let rallyIndexArray = [];
+              let temparray = [
+                final_resp,
+                final_shots,
+                final_array,
+                rallyIndexArray,
+              ];
               for (let shot_hand_1 of shot_hand_types) {
                 for (let shot_hand_2 of shot_hand_types) {
                   for (let shot_hand_3 of shot_hand_types) {
@@ -1799,7 +1978,8 @@ class Badminton extends Component {
                       shot_hand_3,
                       temparray[0],
                       temparray[1],
-                      temparray[2]
+                      temparray[2],
+                      temparray[3]
                     );
                   }
                 }
@@ -1808,6 +1988,7 @@ class Badminton extends Component {
               this.setState({
                 pattern_array: temparray[0],
                 patter_length: temparray[2].length,
+                rallyIndexArray: temparray[3],
               });
               patArray = temparray[0];
             } else if (
@@ -1819,7 +2000,13 @@ class Badminton extends Component {
 
               let final_resp = [];
               let final_shots = [];
-              let temparray = [final_resp, final_shots, final_array];
+              let rallyIndexArray = [];
+              let temparray = [
+                final_resp,
+                final_shots,
+                final_array,
+                rallyIndexArray,
+              ];
               for (let shot_hand_1 of shot_hand_types) {
                 for (let shot_hand_3 of shot_hand_types) {
                   temparray = this.findAllShotsBottom(
@@ -1828,7 +2015,8 @@ class Badminton extends Component {
                     shot_hand_3,
                     temparray[0],
                     temparray[1],
-                    temparray[2]
+                    temparray[2],
+                    temparray[3]
                   );
                 }
               }
@@ -1836,6 +2024,7 @@ class Badminton extends Component {
               this.setState({
                 pattern_array: temparray[0],
                 patter_length: temparray[2].length,
+                rallyIndexArray: temparray[3],
               });
               patArray = temparray[0];
             } else if (
@@ -1847,7 +2036,13 @@ class Badminton extends Component {
 
               let final_resp = [];
               let final_shots = [];
-              let temparray = [final_resp, final_shots, final_array];
+              let rallyIndexArray = [];
+              let temparray = [
+                final_resp,
+                final_shots,
+                final_array,
+                rallyIndexArray,
+              ];
 
               for (let shot_hand_2 of shot_hand_types) {
                 temparray = this.findAllShotsBottom(
@@ -1856,13 +2051,15 @@ class Badminton extends Component {
                   null,
                   temparray[0],
                   temparray[1],
-                  temparray[2]
+                  temparray[2],
+                  temparray[3]
                 );
               }
               this.setState({ graph_data: temparray[1] });
               this.setState({
                 pattern_array: temparray[0],
                 patter_length: temparray[2].length,
+                rallyIndexArray: temparray[3],
               });
               patArray = temparray[0];
             } else if (
@@ -1874,7 +2071,13 @@ class Badminton extends Component {
 
               let final_resp = [];
               let final_shots = [];
-              let temparray = [final_resp, final_shots, final_array];
+              let rallyIndexArray = [];
+              let temparray = [
+                final_resp,
+                final_shots,
+                final_array,
+                rallyIndexArray,
+              ];
 
               for (let shot_hand_2 of shot_hand_types) {
                 for (let shot_hand_3 of shot_hand_types) {
@@ -1884,7 +2087,8 @@ class Badminton extends Component {
                     shot_hand_3,
                     temparray[0],
                     temparray[1],
-                    temparray[2]
+                    temparray[2],
+                    temparray[3]
                   );
                 }
               }
@@ -1892,6 +2096,7 @@ class Badminton extends Component {
               this.setState({
                 pattern_array: temparray[0],
                 patter_length: temparray[2].length,
+                rallyIndexArray: temparray[3],
               });
               patArray = temparray[0];
             } else if (
@@ -1903,7 +2108,13 @@ class Badminton extends Component {
 
               let final_resp = [];
               let final_shots = [];
-              let temparray = [final_resp, final_shots, final_array];
+              let rallyIndexArray = [];
+              let temparray = [
+                final_resp,
+                final_shots,
+                final_array,
+                rallyIndexArray,
+              ];
 
               for (let shot_hand_3 of shot_hand_types) {
                 temparray = this.findAllShotsBottom(
@@ -1912,7 +2123,8 @@ class Badminton extends Component {
                   shot_hand_3,
                   temparray[0],
                   temparray[1],
-                  temparray[2]
+                  temparray[2],
+                  temparray[3]
                 );
               }
 
@@ -1920,6 +2132,7 @@ class Badminton extends Component {
               this.setState({
                 pattern_array: temparray[0],
                 patter_length: temparray[2].length,
+                rallyIndexArray: temparray[3],
               });
               patArray = temparray[0];
             }
@@ -2500,7 +2713,7 @@ class Badminton extends Component {
                       placeholder="Select an option"
                       className="dropdown_custom"
                       isOrange={true}
-                      width={"80px"}
+                      width={"70px"}
                     />
                   </div>
                   <div className="dropdown_container">
@@ -2526,7 +2739,7 @@ class Badminton extends Component {
                       placeholder="Select an option"
                       className="dropdown_custom"
                       isOrange={false}
-                      width={"80px"}
+                      width={"70px"}
                     />
                   </div>
                   <div className="dropdown_container">
@@ -2552,7 +2765,7 @@ class Badminton extends Component {
                       placeholder="Select an option"
                       className="dropdown_custom"
                       isOrange={true}
-                      width={"80px"}
+                      width={"70px"}
                     />
                   </div>
                   <div className="dropdown_container">
@@ -2817,6 +3030,29 @@ class Badminton extends Component {
                   </div>
                 </div>
                 <div className="column_1_2">
+                  <div className="shot_types">
+                    {this.state.multiSelect ? (
+                      <img
+                        src={CheckImg}
+                        style={{ height: 24, width: 24 }}
+                        onClick={() => {
+                          this.setState({
+                            multiSelect: !this.state.multiSelect,
+                          });
+                        }}
+                      />
+                    ) : (
+                      <img
+                        src={UnCheckImg}
+                        style={{ height: 24, width: 24 }}
+                        onClick={() => {
+                          this.setState({
+                            multiSelect: !this.state.multiSelect,
+                          });
+                        }}
+                      />
+                    )}
+                  </div>
                   <div
                     className="shot_types"
                     style={{ color: "rgb(173, 173, 10)" }}
@@ -2930,6 +3166,29 @@ class Badminton extends Component {
                   </div>
                 </div>
                 <div className="column_1_2">
+                  <div className="shot_types">
+                    {this.state.selectAll ? (
+                      <img
+                        src={SelectFill}
+                        style={{ height: 24, width: 24 }}
+                        onClick={() => {
+                          this.setState({
+                            selectAll: !this.state.selectAll,
+                          });
+                        }}
+                      />
+                    ) : (
+                      <img
+                        src={SelectImg}
+                        style={{ height: 24, width: 24 }}
+                        onClick={() => {
+                          this.setState({
+                            selectAll: !this.state.selectAll,
+                          });
+                        }}
+                      />
+                    )}
+                  </div>
                   <div
                     className="shot_types"
                     style={{ color: "rgb(173, 173, 10)" }}
@@ -3138,7 +3397,7 @@ class Badminton extends Component {
                       placeholder="Select an option"
                       className="dropdown_custom"
                       isOrange={false}
-                      width={"80px"}
+                      width={"70px"}
                     />
                   </div>
                   <div className="dropdown_container">
@@ -3164,7 +3423,7 @@ class Badminton extends Component {
                       placeholder="Select an option"
                       className="dropdown_custom"
                       isOrange={true}
-                      width={"80px"}
+                      width={"70px"}
                     />
                   </div>
                   <div className="dropdown_container">
@@ -3190,7 +3449,7 @@ class Badminton extends Component {
                       placeholder="Select an option"
                       className="dropdown_custom"
                       isOrange={false}
-                      width={"80px"}
+                      width={"70px"}
                     />
                   </div>
                   <div className="dropdown_container">
@@ -3384,96 +3643,193 @@ class Badminton extends Component {
                     alignItems: "center",
                   }}
                 >
-                  <img
-                    src={PlayImage}
-                    height={20}
-                    width={20}
-                    style={{ marginRight: "10px" }}
-                    className="image_rotate"
-                    onClick={() => {
-                      if (this.state.isRightSide) {
-                        if (
-                          this.props.stats.selectedShot[0] > 0 &&
-                          this.props.stats.selectedShot[0] <=
-                            this.state.toShot &&
-                          this.props.stats.selectedShot[0] > this.state.fromShot
-                        ) {
-                          let ind =
-                            parseInt(this.props.stats.selectedShot[0]) - 1;
-                          this.props._SetSelectedShot([ind]);
-                        }
-                      } else {
-                        let shotCount = 0;
-
-                        if (this.props.stats.selectedShot[3]) {
+                  <div
+                    style={{
+                      height: "100%",
+                      display: "flex",
+                      flexDirection: "column",
+                      // alignItems: "center",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    {this.props.court.valuesArray.length > 0 ? (
+                      <div
+                        style={{
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "space-between",
+                          // height: "100%",
+                          flex: 2,
+                        }}
+                      >
+                        <div className="percentage-box">
+                          <p style={{ color: "#ffef00", fontSize: "12px" }}>
+                            {this.props.court.valuesArray[0]}%
+                          </p>
+                          <p style={{ color: "#00FF00", fontSize: "12px" }}>
+                            {this.props.court.valuesArray[1]}%
+                          </p>
+                          <p style={{ color: "red", fontSize: "12px" }}>
+                            {this.props.court.valuesArray[2]}%
+                          </p>
+                        </div>
+                        <div
+                          className="percentage-box"
+                          style={{
+                            marginTop: "5px",
+                          }}
+                        >
+                          <p style={{ color: "#ffef00", fontSize: "12px" }}>
+                            {this.props.court.valuesArray[3]}%
+                          </p>
+                          <p style={{ color: "#00FF00", fontSize: "12px" }}>
+                            {this.props.court.valuesArray[4]}%
+                          </p>
+                          <p style={{ color: "red", fontSize: "12px" }}>
+                            {this.props.court.valuesArray[5]}%
+                          </p>
+                        </div>
+                      </div>
+                    ) : (
+                      <div />
+                    )}
+                    <img
+                      src={PlayImage}
+                      height={20}
+                      width={20}
+                      style={{
+                        marginRight: "10px",
+                        marginTop: "30px",
+                        marginBottom: "30px",
+                      }}
+                      className="image_rotate"
+                      onClick={() => {
+                        if (this.state.isRightSide) {
                           if (
-                            this.props.stats.selectedShot[3] - 1 <=
-                            this.state.fromShot
-                          ) {
-                            if (
-                              this.state.toShot +
-                                1 -
-                                2 * this.state.currentDiff >=
-                              0
-                            ) {
-                              let fromShot =
-                                this.state.toShot -
-                                2 * this.state.currentDiff +
-                                1;
-                              let toShot =
-                                this.state.toShot - this.state.currentDiff;
-                              this.setState({ fromShot, toShot });
-                            }
-                          }
-                          shotCount = this.props.stats.selectedShot[3];
-                        }
-                        if (
-                          this.state.pattern_array[
-                            this.props.stats.selectedShot[0]
-                          ].length -
-                            1 >
-                          this.props.stats.selectedShot[1]
-                        ) {
-                          if (
-                            this.props.stats.selectedShot[1] <
+                            this.props.stats.selectedShot[0] > 0 &&
+                            this.props.stats.selectedShot[0] <=
                               this.state.toShot &&
-                            this.props.stats.selectedShot[1] >=
+                            this.props.stats.selectedShot[0] >
                               this.state.fromShot
                           ) {
                             let ind =
-                              parseInt(this.props.stats.selectedShot[1]) - 1;
-                            this.props._SetSelectedShot([
-                              this.props.stats.selectedShot[0],
-                              ind,
-                              this.props.stats.selectedShot[2],
-                              shotCount - 1,
-                            ]);
+                              parseInt(this.props.stats.selectedShot[0]) - 1;
+                            this.props._SetSelectedShot([ind]);
                           }
-                        } else if (
-                          this.state.pattern_array.length - 1 >
-                          this.props.stats.selectedShot[0]
-                        ) {
-                          for (
-                            let i = this.props.stats.selectedShot[0] - 1;
-                            i > 0;
-                            i--
+                        } else {
+                          let shotCount = 0;
+
+                          if (this.props.stats.selectedShot[3]) {
+                            if (
+                              this.props.stats.selectedShot[3] - 1 <=
+                              this.state.fromShot
+                            ) {
+                              if (
+                                this.state.toShot +
+                                  1 -
+                                  2 * this.state.currentDiff >=
+                                0
+                              ) {
+                                let fromShot =
+                                  this.state.toShot -
+                                  2 * this.state.currentDiff +
+                                  1;
+                                let toShot =
+                                  this.state.toShot - this.state.currentDiff;
+                                this.setState({ fromShot, toShot });
+                              }
+                            }
+                            shotCount = this.props.stats.selectedShot[3];
+                          }
+                          if (
+                            this.state.pattern_array[
+                              this.props.stats.selectedShot[0]
+                            ].length -
+                              1 >
+                            this.props.stats.selectedShot[1]
                           ) {
-                            if (this.state.pattern_array[i].length > 0) {
+                            if (
+                              this.props.stats.selectedShot[1] <
+                                this.state.toShot &&
+                              this.props.stats.selectedShot[1] >=
+                                this.state.fromShot
+                            ) {
+                              let ind =
+                                parseInt(this.props.stats.selectedShot[1]) - 1;
                               this.props._SetSelectedShot([
-                                i,
-                                this.state.pattern_array[i].length - 1,
-                                this.props.stats.selectedShot[2]
-                                  ? this.props.stats.selectedShot[2]
-                                  : 0,
+                                this.props.stats.selectedShot[0],
+                                ind,
+                                this.props.stats.selectedShot[2],
                                 shotCount - 1,
                               ]);
-                              break;
+                            }
+                          } else if (
+                            this.state.pattern_array.length - 1 >
+                            this.props.stats.selectedShot[0]
+                          ) {
+                            for (
+                              let i = this.props.stats.selectedShot[0] - 1;
+                              i > 0;
+                              i--
+                            ) {
+                              if (this.state.pattern_array[i].length > 0) {
+                                this.props._SetSelectedShot([
+                                  i,
+                                  this.state.pattern_array[i].length - 1,
+                                  this.props.stats.selectedShot[2]
+                                    ? this.props.stats.selectedShot[2]
+                                    : 0,
+                                  shotCount - 1,
+                                ]);
+                                break;
+                              }
                             }
                           }
                         }
-                      }
-                    }}
-                  />
+                      }}
+                    />
+                    {this.props.court.valuesArray.length > 0 ? (
+                      <div
+                        style={{
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "space-between",
+                          // height: "100%",
+                          flex: 2,
+                        }}
+                      >
+                        <div className="percentage-box">
+                          <p style={{ color: "#ffef00", fontSize: "12px" }}>
+                            {this.props.court.valuesArray[12]}%
+                          </p>
+                          <p style={{ color: "#00FF00", fontSize: "12px" }}>
+                            {this.props.court.valuesArray[13]}%
+                          </p>
+                          <p style={{ color: "red", fontSize: "12px" }}>
+                            {this.props.court.valuesArray[14]}%
+                          </p>
+                        </div>
+                        <div
+                          className="percentage-box"
+                          style={{
+                            marginTop: "5px",
+                          }}
+                        >
+                          <p style={{ color: "#ffef00", fontSize: "12px" }}>
+                            {this.props.court.valuesArray[15]}%
+                          </p>
+                          <p style={{ color: "#00FF00", fontSize: "12px" }}>
+                            {this.props.court.valuesArray[16]}%
+                          </p>
+                          <p style={{ color: "red", fontSize: "12px" }}>
+                            {this.props.court.valuesArray[17]}%
+                          </p>
+                        </div>
+                      </div>
+                    ) : (
+                      <div />
+                    )}
+                  </div>
                   <Field
                     shots={this.state.graph_data}
                     pattern_array={this.state.pattern_array}
@@ -3508,153 +3864,188 @@ class Badminton extends Component {
                     selectAll={this.state.selectAll}
                     firstClickVideo={this.state.firstClickVideo}
                     selectedShot={this.props.stats.selectedShot}
+                    rallyIndexArray={this.state.rallyIndexArray}
                   ></Field>
-                  <div style={{ paddingLeft: "10px" }}>
-                    <div
-                      style={{
-                        display: "flex",
-                        flexDirection: "row",
-                        alignItems: "center",
-                        marginBottom: "7px",
-                      }}
-                    >
-                      {this.state.multiSelect ? (
-                        <img
-                          src={CheckImg}
-                          style={{ height: 24, width: 24 }}
-                          onClick={() => {
-                            this.setState({
-                              multiSelect: !this.state.multiSelect,
-                            });
+                  <div
+                    style={{
+                      paddingLeft: "10px",
+                      height: "100%",
+                      display: "flex",
+                      flexDirection: "column",
+                      // alignItems: "center",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    {this.props.court.valuesArray.length > 0 ? (
+                      <div
+                        style={{
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "space-between",
+                          // height: "100%",
+                          flex: 2,
+                        }}
+                      >
+                        <div className="percentage-box">
+                          <p style={{ color: "#ffef00", fontSize: "12px" }}>
+                            {this.props.court.valuesArray[6]}%
+                          </p>
+                          <p style={{ color: "#00FF00", fontSize: "12px" }}>
+                            {this.props.court.valuesArray[7]}%
+                          </p>
+                          <p style={{ color: "red", fontSize: "12px" }}>
+                            {this.props.court.valuesArray[8]}%
+                          </p>
+                        </div>
+                        <div
+                          className="percentage-box"
+                          style={{
+                            marginTop: "5px",
                           }}
-                        />
-                      ) : (
-                        <img
-                          src={UnCheckImg}
-                          style={{ height: 24, width: 24 }}
-                          onClick={() => {
-                            this.setState({
-                              multiSelect: !this.state.multiSelect,
-                            });
-                          }}
-                        />
-                      )}
-                    </div>
-                    <img
-                      src={PlayImage}
-                      style={{
-                        height: 20,
-                        width: 20,
-                        cursor: "pointer",
-                        marginTop: "7px",
-                        marginBottom: "7px",
-                      }}
-                      onClick={() => {
-                        if (this.state.isRightSide) {
-                          if (
-                            this.state.rightSideData.length - 1 >
-                              this.props.stats.selectedShot[0] &&
-                            this.props.stats.selectedShot[0] <
-                              this.state.toShot &&
-                            this.props.stats.selectedShot[0] >=
-                              this.state.fromShot
-                          ) {
-                            let ind =
-                              parseInt(this.props.stats.selectedShot[0]) + 1;
-                            this.props._SetSelectedShot([ind]);
-                          }
-                        } else {
-                          let shotCount = 0;
-                          if (this.props.stats.selectedShot[3]) {
+                        >
+                          <p style={{ color: "#ffef00", fontSize: "12px" }}>
+                            {this.props.court.valuesArray[9]}%
+                          </p>
+                          <p style={{ color: "#00FF00", fontSize: "12px" }}>
+                            {this.props.court.valuesArray[10]}%
+                          </p>
+                          <p style={{ color: "red", fontSize: "12px" }}>
+                            {this.props.court.valuesArray[11]}%
+                          </p>
+                        </div>
+                      </div>
+                    ) : (
+                      <div />
+                    )}
+                    <div style={{ marginBottom: "23px", marginTop: "23px" }}>
+                      <img
+                        src={PlayImage}
+                        style={{
+                          height: 20,
+                          width: 20,
+                          cursor: "pointer",
+                          marginTop: "7px",
+                          marginBottom: "7px",
+                        }}
+                        onClick={() => {
+                          if (this.state.isRightSide) {
                             if (
-                              this.props.stats.selectedShot[3] >
-                              this.state.toShot
-                            ) {
-                              let toShot =
-                                this.state.toShot + this.state.currentDiff;
-                              let fromShot =
-                                toShot - this.state.currentDiff + 1;
-                              this.setState({ fromShot, toShot });
-                            }
-                            shotCount = this.props.stats.selectedShot[3];
-                          }
-                          if (
-                            this.state.pattern_array[
-                              this.props.stats.selectedShot[0]
-                            ].length -
-                              1 >
-                            this.props.stats.selectedShot[1]
-                          ) {
-                            if (
-                              this.props.stats.selectedShot[1] <
+                              this.state.rightSideData.length - 1 >
+                                this.props.stats.selectedShot[0] &&
+                              this.props.stats.selectedShot[0] <
                                 this.state.toShot &&
-                              this.props.stats.selectedShot[1] >=
+                              this.props.stats.selectedShot[0] >=
                                 this.state.fromShot
                             ) {
                               let ind =
-                                parseInt(this.props.stats.selectedShot[1]) + 1;
-                              this.props._SetSelectedShot([
-                                this.props.stats.selectedShot[0],
-                                ind,
-                                this.props.stats.selectedShot[2],
-                                shotCount + 1,
-                              ]);
+                                parseInt(this.props.stats.selectedShot[0]) + 1;
+                              this.props._SetSelectedShot([ind]);
                             }
-                          } else if (
-                            this.state.pattern_array.length - 1 >
-                            this.props.stats.selectedShot[0]
-                          ) {
-                            for (
-                              let i = this.props.stats.selectedShot[0] + 1;
-                              i < this.state.pattern_array.length;
-                              i++
+                          } else {
+                            let shotCount = 0;
+                            if (this.props.stats.selectedShot[3]) {
+                              if (
+                                this.props.stats.selectedShot[3] >
+                                this.state.toShot
+                              ) {
+                                let toShot =
+                                  this.state.toShot + this.state.currentDiff;
+                                let fromShot =
+                                  toShot - this.state.currentDiff + 1;
+                                this.setState({ fromShot, toShot });
+                              }
+                              shotCount = this.props.stats.selectedShot[3];
+                            }
+                            if (
+                              this.state.pattern_array[
+                                this.props.stats.selectedShot[0]
+                              ].length -
+                                1 >
+                              this.props.stats.selectedShot[1]
                             ) {
-                              if (this.state.pattern_array[i].length > 0) {
+                              if (
+                                this.props.stats.selectedShot[1] <
+                                  this.state.toShot &&
+                                this.props.stats.selectedShot[1] >=
+                                  this.state.fromShot
+                              ) {
+                                let ind =
+                                  parseInt(this.props.stats.selectedShot[1]) +
+                                  1;
                                 this.props._SetSelectedShot([
-                                  i,
-                                  0,
-                                  this.props.stats.selectedShot[2]
-                                    ? this.props.stats.selectedShot[2]
-                                    : 0,
+                                  this.props.stats.selectedShot[0],
+                                  ind,
+                                  this.props.stats.selectedShot[2],
                                   shotCount + 1,
                                 ]);
-                                break;
+                              }
+                            } else if (
+                              this.state.pattern_array.length - 1 >
+                              this.props.stats.selectedShot[0]
+                            ) {
+                              for (
+                                let i = this.props.stats.selectedShot[0] + 1;
+                                i < this.state.pattern_array.length;
+                                i++
+                              ) {
+                                if (this.state.pattern_array[i].length > 0) {
+                                  this.props._SetSelectedShot([
+                                    i,
+                                    0,
+                                    this.props.stats.selectedShot[2]
+                                      ? this.props.stats.selectedShot[2]
+                                      : 0,
+                                    shotCount + 1,
+                                  ]);
+                                  break;
+                                }
                               }
                             }
                           }
-                        }
-                      }}
-                    />
-                    <div
-                      style={{
-                        display: "flex",
-                        flexDirection: "row",
-                        alignItems: "center",
-                        marginTop: "7px",
-                      }}
-                    >
-                      {this.state.selectAll ? (
-                        <img
-                          src={SelectFill}
-                          style={{ height: 24, width: 24 }}
-                          onClick={() => {
-                            this.setState({
-                              selectAll: !this.state.selectAll,
-                            });
-                          }}
-                        />
-                      ) : (
-                        <img
-                          src={SelectImg}
-                          style={{ height: 24, width: 24 }}
-                          onClick={() => {
-                            this.setState({
-                              selectAll: !this.state.selectAll,
-                            });
-                          }}
-                        />
-                      )}
+                        }}
+                      />
                     </div>
+                    {this.props.court.valuesArray.length > 0 ? (
+                      <div
+                        style={{
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "space-between",
+                          // height: "100%",
+                          flex: 2,
+                        }}
+                      >
+                        <div className="percentage-box">
+                          <p style={{ color: "#ffef00", fontSize: "12px" }}>
+                            {this.props.court.valuesArray[18]}%
+                          </p>
+                          <p style={{ color: "#00FF00", fontSize: "12px" }}>
+                            {this.props.court.valuesArray[19]}%
+                          </p>
+                          <p style={{ color: "red", fontSize: "12px" }}>
+                            {this.props.court.valuesArray[20]}%
+                          </p>
+                        </div>
+                        <div
+                          className="percentage-box"
+                          style={{
+                            marginTop: "5px",
+                          }}
+                        >
+                          <p style={{ color: "#ffef00", fontSize: "12px" }}>
+                            {this.props.court.valuesArray[21]}%
+                          </p>
+                          <p style={{ color: "#00FF00", fontSize: "12px" }}>
+                            {this.props.court.valuesArray[22]}%
+                          </p>
+                          <p style={{ color: "red", fontSize: "12px" }}>
+                            {this.props.court.valuesArray[23]}%
+                          </p>
+                        </div>
+                      </div>
+                    ) : (
+                      <div />
+                    )}
                   </div>
                 </div>
               ) : // <img
@@ -3999,7 +4390,7 @@ class Badminton extends Component {
                     : "rgb(63, 63, 63)",
                 }}
               >
-                Forced Winners
+                Winners
               </button>
               <div className="right_buttons_cont_1">
                 <button
@@ -4195,7 +4586,7 @@ class Badminton extends Component {
                     : "rgb(63, 63, 63)",
                 }}
               >
-                Forced Winners
+                Winners
               </button>
               <div className="right_buttons_cont_1">
                 <button

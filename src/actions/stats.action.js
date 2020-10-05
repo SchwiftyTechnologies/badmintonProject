@@ -132,9 +132,16 @@ export const SetSelectedShot = (index) => {
   };
 };
 
-export const SetSelectedShotLeft = (rally_index,item) => {
+export const SetSelectedShotLeft = (rally_index, item) => {
   return {
     type: "SET_SELECTED_SHOT_LEFT",
-    payload: { rally_index,item },
+    payload: { rally_index, item },
+  };
+};
+
+export const setvaluesArray = (valuesArray) => {
+  return {
+    type: "SET_VALUES_ARRAY",
+    payload: { valuesArray },
   };
 };

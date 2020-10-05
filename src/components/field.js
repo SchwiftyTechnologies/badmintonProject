@@ -21,6 +21,7 @@ import {
   ResetCount,
   UpdateHeight,
   SetSelectedShot,
+  setvaluesArray,
 } from "../actions/stats.action";
 
 class Field extends Component {
@@ -28,10 +29,10 @@ class Field extends Component {
     super(props);
 
     this.state = {
-      width: 810 * 0.39,
-      width_factor: 0.39,
-      height: 1540 * 0.39,
-      height_factor: 0.39,
+      width: 810 * 0.36,
+      width_factor: 0.36,
+      height: 1540 * 0.36,
+      height_factor: 0.36,
       current_segment: -1,
       pointSelection: false,
       popUp: false,
@@ -42,26 +43,13 @@ class Field extends Component {
       width1_perc: this.props.width1_perc,
       width2_perc: this.props.width2_perc,
       selectedPart: [],
-      sidePerc: Array(18).fill({}),
+      sidePerc: [],
+      valuesArray: [],
     };
 
     this.canvasRef = React.createRef();
     this.playerRef = React.createRef();
   }
-
-  regularpolygon = (x, y, radius, sides, color) => {
-    const canvas = this.canvasRef.current;
-    const ctx = canvas.getContext("2d");
-    ctx.beginPath();
-    var a = (Math.PI * 2) / sides;
-    ctx.translate(x, y);
-    ctx.moveTo(radius, 0);
-    ctx.strokeStyle = color;
-    for (var i = 1; i < sides; i++) {
-      ctx.lineTo(radius * Math.cos(a * i), radius * Math.sin(a * i));
-    }
-    ctx.closePath();
-  };
 
   drawSegments = (player) => {
     const canvas = this.canvasRef.current;
@@ -790,14 +778,56 @@ class Field extends Component {
     const canvas = this.canvasRef.current;
     const ctx = canvas.getContext("2d");
     if (shot.Action_FB_init_top) {
-      if (nextProps.placrecTop) {
-        //intial postion of shuttle
-        let top_x = shot.location_contact_shuttle[0];
-        let top_y = shot.location_contact_shuttle[1];
+      //intial postion of shuttle
+      let top_x = shot.location_contact_shuttle[0];
+      let top_y = shot.location_contact_shuttle[1];
 
-        //final position of shuttle
-        let bot_x = shot.location_end_shuttle[0];
-        let bot_y = shot.location_end_shuttle[1];
+      //final position of shuttle
+      let bot_x = shot.location_end_shuttle[0];
+      let bot_y = shot.location_end_shuttle[1];
+
+      if (shot.Action_wl_init_top === "Winner") {
+        ctx.beginPath();
+        ctx.rect(
+          top_x * this.state.width_factor,
+          top_y * this.state.height_factor,
+          7,
+          7
+        );
+        ctx.strokeStyle = "#00FF00";
+        ctx.lineWidth = 1;
+        ctx.setLineDash([0]);
+        ctx.stroke();
+        ctx.closePath();
+
+        this.drawStar(bot_x, bot_y, "#00FF00");
+      } else {
+        ctx.beginPath();
+        ctx.moveTo(
+          top_x * this.state.width_factor - 7,
+          top_y * this.state.height_factor
+        );
+        ctx.lineTo(
+          top_x * this.state.width_factor,
+          top_y * this.state.height_factor - 7
+        );
+        ctx.lineTo(
+          top_x * this.state.width_factor + 7,
+          top_y * this.state.height_factor
+        );
+        ctx.lineTo(
+          top_x * this.state.width_factor - 7,
+          top_y * this.state.height_factor
+        );
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = "red";
+        ctx.setLineDash([0]);
+        ctx.stroke();
+        ctx.closePath();
+
+        this.drawcross(bot_x, bot_y, "red");
+      }
+      if (nextProps.placrecTop) {
         ctx.beginPath();
         ctx.setLineDash([0]);
         ctx.moveTo(
@@ -833,14 +863,57 @@ class Field extends Component {
         );
       }
     } else {
-      if (nextProps.placrecBot) {
-        //intial postion of shuttle
-        let top_x = shot.location_contact_shuttle[0];
-        let top_y = shot.location_contact_shuttle[1];
+      //intial postion of shuttle
+      let top_x = shot.location_contact_shuttle[0];
+      let top_y = shot.location_contact_shuttle[1];
 
-        //final position of shuttle
-        let bot_x = shot.location_end_shuttle[0];
-        let bot_y = shot.location_end_shuttle[1];
+      //final position of shuttle
+      let bot_x = shot.location_end_shuttle[0];
+      let bot_y = shot.location_end_shuttle[1];
+
+      if (shot.Action_wl_init_bottom === "Winner") {
+        ctx.beginPath();
+        ctx.rect(
+          top_x * this.state.width_factor,
+          top_y * this.state.height_factor,
+          7,
+          7
+        );
+        ctx.strokeStyle = "#00FF00";
+        ctx.lineWidth = 1;
+        ctx.setLineDash([0]);
+        ctx.stroke();
+        ctx.closePath();
+
+        this.drawStar(bot_x, bot_y, "#00FF00");
+      } else {
+        ctx.beginPath();
+        ctx.moveTo(
+          top_x * this.state.width_factor - 7,
+          top_y * this.state.height_factor
+        );
+        ctx.lineTo(
+          top_x * this.state.width_factor,
+          top_y * this.state.height_factor - 7
+        );
+        ctx.lineTo(
+          top_x * this.state.width_factor + 7,
+          top_y * this.state.height_factor
+        );
+        ctx.lineTo(
+          top_x * this.state.width_factor - 7,
+          top_y * this.state.height_factor
+        );
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = "red";
+        ctx.setLineDash([0]);
+        ctx.stroke();
+        ctx.closePath();
+
+        this.drawcross(bot_x, bot_y, "red");
+      }
+
+      if (nextProps.placrecBot) {
         ctx.beginPath();
         ctx.setLineDash([0]);
         ctx.moveTo(
@@ -1969,7 +2042,9 @@ class Field extends Component {
 
   componentDidMount() {
     this.drawCourt();
-    // this.drawPercentageBoxes();
+    this.setState({
+      sidePerc: Array(8).fill({ total: 0, nm: 0, win: 0, err: 0 }),
+    });
   }
 
   drawStar = (bot_x, bot_y, color_val) => {
@@ -2090,7 +2165,16 @@ class Field extends Component {
     ctx.closePath();
   };
 
-  drawShot(shot, nextShot, color_val, nextProps, shot_count, code, final) {
+  drawShot(
+    shot,
+    nextShot,
+    color_val,
+    nextProps,
+    shot_count,
+    code,
+    final,
+    side_perc
+  ) {
     let dif = nextProps.toShot - nextProps.fromShot + 1;
     if (shot.player_played === "top") {
       const canvas = this.canvasRef.current;
@@ -2106,45 +2190,77 @@ class Field extends Component {
       let bot_y =
         (nextShot.position_bottom[0][1] + nextShot.position_bottom[1][1]) / 2;
 
+      let sec_val_arr = [];
+
+      if (final) {
+        sec_val_arr = this.sidePercentageChecker(
+          top_x * this.state.width_factor,
+          top_y * this.state.height_factor,
+          nextShot.Shuttle_ground_contact_location[0] * this.state.width_factor,
+          nextShot.Shuttle_ground_contact_location[1] *
+            this.state.height_factor,
+          code,
+          "top"
+        );
+      } else {
+        sec_val_arr = this.sidePercentageChecker(
+          top_x * this.state.width_factor,
+          top_y * this.state.height_factor,
+          bot_x * this.state.width_factor,
+          bot_y * this.state.height_factor,
+          code,
+          "top"
+        );
+      }
+      let seb_val = 8;
+      let sec_val = 8;
+      console.log(sec_val_arr);
+      if (sec_val_arr.length === 2) {
+        seb_val = sec_val_arr[0];
+        sec_val = sec_val_arr[1];
+      }
+
       if (code === "nomistakes") {
+        side_perc[seb_val].nm = side_perc[seb_val].nm + 1;
+        side_perc[sec_val].nm = side_perc[sec_val].nm + 1;
+        side_perc[seb_val].total = side_perc[seb_val].total + 1;
+        side_perc[sec_val].total = side_perc[sec_val].total + 1;
         ctx.beginPath();
         ctx.arc(
           top_x * this.state.width_factor,
           top_y * this.state.height_factor,
-          3,
+          2,
           0,
           2 * Math.PI
         );
-        ctx.fillStyle = "#cc5500";
+        ctx.fillStyle = "#ffef00";
         ctx.fill();
-        ctx.lineWidth = 3;
-        ctx.strokeStyle = "#cc5500";
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "#ffef00";
         ctx.setLineDash([0]);
         ctx.stroke();
         ctx.closePath();
-
-        // this.sidePercentageChecker(
-        //   top_x * this.state.width_factor,
-        //   top_y * this.state.height_factor,
-        //   "nomistakes"
-        // );
 
         ctx.beginPath();
         ctx.arc(
           bot_x * this.state.width_factor,
           bot_y * this.state.height_factor,
-          3,
+          2,
           0,
           2 * Math.PI
         );
-        ctx.fillStyle = "#cc5500";
+        ctx.fillStyle = "#ffef00";
         ctx.fill();
-        ctx.lineWidth = 3;
-        ctx.strokeStyle = "#cc5500";
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "#ffef00";
         ctx.setLineDash([0]);
         ctx.stroke();
         ctx.closePath();
       } else if (code === "tW") {
+        side_perc[seb_val].win = side_perc[seb_val].win + 1;
+        side_perc[sec_val].win = side_perc[sec_val].win + 1;
+        side_perc[seb_val].total = side_perc[seb_val].total + 1;
+        side_perc[sec_val].total = side_perc[sec_val].total + 1;
         ctx.beginPath();
         ctx.rect(
           top_x * this.state.width_factor,
@@ -2153,7 +2269,7 @@ class Field extends Component {
           7
         );
         ctx.strokeStyle = "#00FF00";
-        ctx.lineWidth = 2;
+        ctx.lineWidth = 1;
         ctx.setLineDash([0]);
         ctx.stroke();
         ctx.closePath();
@@ -2173,12 +2289,16 @@ class Field extends Component {
             7
           );
           ctx.strokeStyle = "#00FF00";
-          ctx.lineWidth = 2;
+          ctx.lineWidth = 1;
           ctx.setLineDash([0]);
           ctx.stroke();
           ctx.closePath();
         }
       } else if (code === "tM") {
+        side_perc[seb_val].err = side_perc[seb_val].err + 1;
+        side_perc[sec_val].err = side_perc[sec_val].err + 1;
+        side_perc[seb_val].total = side_perc[seb_val].total + 1;
+        side_perc[sec_val].total = side_perc[sec_val].total + 1;
         ctx.beginPath();
         ctx.moveTo(
           top_x * this.state.width_factor - 7,
@@ -2196,7 +2316,7 @@ class Field extends Component {
           top_x * this.state.width_factor - 7,
           top_y * this.state.height_factor
         );
-        ctx.lineWidth = 2;
+        ctx.lineWidth = 1;
         ctx.strokeStyle = "red";
         ctx.setLineDash([0]);
         ctx.stroke();
@@ -2226,13 +2346,17 @@ class Field extends Component {
             bot_x * this.state.width_factor - 7,
             bot_y * this.state.height_factor
           );
-          ctx.lineWidth = 2;
+          ctx.lineWidth = 1;
           ctx.strokeStyle = "red";
           ctx.setLineDash([0]);
           ctx.stroke();
           ctx.closePath();
         }
       } else if (code === "bW") {
+        side_perc[seb_val].err = side_perc[seb_val].err + 1;
+        side_perc[sec_val].err = side_perc[sec_val].err + 1;
+        side_perc[seb_val].total = side_perc[seb_val].total + 1;
+        side_perc[sec_val].total = side_perc[sec_val].total + 1;
         ctx.beginPath();
         ctx.rect(
           top_x * this.state.width_factor,
@@ -2241,7 +2365,7 @@ class Field extends Component {
           7
         );
         ctx.strokeStyle = "red";
-        ctx.lineWidth = 2;
+        ctx.lineWidth = 1;
         ctx.setLineDash([0]);
         ctx.stroke();
         ctx.closePath();
@@ -2260,12 +2384,16 @@ class Field extends Component {
             7
           );
           ctx.strokeStyle = "red";
-          ctx.lineWidth = 2;
+          ctx.lineWidth = 1;
           ctx.setLineDash([0]);
           ctx.stroke();
           ctx.closePath();
         }
       } else if (code === "bM") {
+        side_perc[seb_val].win = side_perc[seb_val].win + 1;
+        side_perc[sec_val].win = side_perc[sec_val].win + 1;
+        side_perc[seb_val].total = side_perc[seb_val].total + 1;
+        side_perc[sec_val].total = side_perc[sec_val].total + 1;
         ctx.beginPath();
         ctx.moveTo(
           top_x * this.state.width_factor - 7,
@@ -2283,7 +2411,7 @@ class Field extends Component {
           top_x * this.state.width_factor - 7,
           top_y * this.state.height_factor
         );
-        ctx.lineWidth = 2;
+        ctx.lineWidth = 1;
         ctx.strokeStyle = "#00FF00";
         ctx.setLineDash([0]);
         ctx.stroke();
@@ -2327,7 +2455,7 @@ class Field extends Component {
           0,
           2 * Math.PI
         );
-        ctx.fillStyle = "#cc5500";
+        ctx.fillStyle = "#ffef00";
         ctx.fill();
         ctx.strokeStyle = "#FFFFFF";
         ctx.setLineDash([0]);
@@ -2389,10 +2517,10 @@ class Field extends Component {
           "bottom"
         );
       }
+      return side_perc;
     } else if (shot.player_played === "bottom") {
       const canvas = this.canvasRef.current;
       const ctx = canvas.getContext("2d");
-      console.log("shit", shot, code);
       //intial postion of shuttle
       let bot_x = (shot.position_bottom[0][0] + shot.position_bottom[1][0]) / 2;
       let bot_y = (shot.position_bottom[0][1] + shot.position_bottom[1][1]) / 2;
@@ -2402,20 +2530,47 @@ class Field extends Component {
         (nextShot.position_top[0][0] + nextShot.position_top[1][0]) / 2;
       let top_y =
         (nextShot.position_top[0][1] + nextShot.position_top[1][1]) / 2;
+      let sec_val_arr = [0, 0];
+      if (final) {
+        sec_val_arr = this.sidePercentageChecker(
+          bot_x * this.state.width_factor,
+          bot_y * this.state.height_factor,
+          nextShot.Shuttle_ground_contact_location[0] * this.state.width_factor,
+          nextShot.Shuttle_ground_contact_location[1] *
+            this.state.height_factor,
+          code,
+          "bot"
+        );
+      } else {
+        sec_val_arr = this.sidePercentageChecker(
+          bot_x * this.state.width_factor,
+          bot_y * this.state.height_factor,
+          top_x * this.state.width_factor,
+          top_y * this.state.height_factor,
+          code,
+          "bot"
+        );
+      }
+      let seb_val = sec_val_arr[0];
+      let sec_val = sec_val_arr[1];
 
       if (code === "nomistakes") {
+        side_perc[seb_val].nm = side_perc[seb_val].nm + 1;
+        side_perc[sec_val].nm = side_perc[sec_val].nm + 1;
+        side_perc[seb_val].total = side_perc[seb_val].total + 1;
+        side_perc[sec_val].total = side_perc[sec_val].total + 1;
         ctx.beginPath();
         ctx.arc(
           bot_x * this.state.width_factor,
           bot_y * this.state.height_factor,
-          3,
+          2,
           0,
           2 * Math.PI
         );
-        ctx.fillStyle = "#cc5500";
+        ctx.fillStyle = "#ffef00";
         ctx.fill();
-        ctx.lineWidth = 3;
-        ctx.strokeStyle = "#cc5500";
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "#ffef00";
         ctx.setLineDash([0]);
         ctx.stroke();
         ctx.closePath();
@@ -2424,18 +2579,22 @@ class Field extends Component {
         ctx.arc(
           top_x * this.state.width_factor,
           top_y * this.state.height_factor,
-          3,
+          2,
           0,
           2 * Math.PI
         );
-        ctx.fillStyle = "#cc5500";
+        ctx.fillStyle = "#ffef00";
         ctx.fill();
-        ctx.lineWidth = 3;
-        ctx.strokeStyle = "#cc5500";
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "#ffef00";
         ctx.setLineDash([0]);
         ctx.stroke();
         ctx.closePath();
       } else if (code === "tW") {
+        side_perc[seb_val].err = side_perc[seb_val].err + 1;
+        side_perc[sec_val].err = side_perc[sec_val].err + 1;
+        side_perc[seb_val].total = side_perc[seb_val].total + 1;
+        side_perc[sec_val].total = side_perc[sec_val].total + 1;
         ctx.beginPath();
         ctx.rect(
           bot_x * this.state.width_factor,
@@ -2444,7 +2603,7 @@ class Field extends Component {
           7
         );
         ctx.strokeStyle = "red";
-        ctx.lineWidth = 2;
+        ctx.lineWidth = 1;
         ctx.setLineDash([0]);
         ctx.stroke();
         ctx.closePath();
@@ -2463,12 +2622,16 @@ class Field extends Component {
             7
           );
           ctx.strokeStyle = "red";
-          ctx.lineWidth = 2;
+          ctx.lineWidth = 1;
           ctx.setLineDash([0]);
           ctx.stroke();
           ctx.closePath();
         }
       } else if (code === "tM") {
+        side_perc[seb_val].win = side_perc[seb_val].win + 1;
+        side_perc[sec_val].win = side_perc[sec_val].win + 1;
+        side_perc[seb_val].total = side_perc[seb_val].total + 1;
+        side_perc[sec_val].total = side_perc[sec_val].total + 1;
         ctx.beginPath();
         ctx.moveTo(
           bot_x * this.state.width_factor - 7,
@@ -2486,7 +2649,7 @@ class Field extends Component {
           bot_x * this.state.width_factor - 7,
           bot_y * this.state.height_factor
         );
-        ctx.lineWidth = 2;
+        ctx.lineWidth = 1;
         ctx.strokeStyle = "#00FF00";
         ctx.setLineDash([0]);
         ctx.stroke();
@@ -2515,13 +2678,17 @@ class Field extends Component {
             top_x * this.state.width_factor - 7,
             top_y * this.state.height_factor
           );
-          ctx.lineWidth = 2;
+          ctx.lineWidth = 1;
           ctx.strokeStyle = "#00FF00";
           ctx.setLineDash([0]);
           ctx.stroke();
           ctx.closePath();
         }
       } else if (code === "bW") {
+        side_perc[seb_val].win = side_perc[seb_val].win + 1;
+        side_perc[sec_val].win = side_perc[sec_val].win + 1;
+        side_perc[seb_val].total = side_perc[seb_val].total + 1;
+        side_perc[sec_val].total = side_perc[sec_val].total + 1;
         ctx.beginPath();
         ctx.rect(
           bot_x * this.state.width_factor,
@@ -2530,7 +2697,7 @@ class Field extends Component {
           7
         );
         ctx.strokeStyle = "#00FF00";
-        ctx.lineWidth = 2;
+        ctx.lineWidth = 1;
         ctx.setLineDash([0]);
         ctx.stroke();
         ctx.closePath();
@@ -2549,12 +2716,16 @@ class Field extends Component {
             7
           );
           ctx.strokeStyle = "#00FF00";
-          ctx.lineWidth = 2;
+          ctx.lineWidth = 1;
           ctx.setLineDash([0]);
           ctx.stroke();
           ctx.closePath();
         }
       } else if (code === "bM") {
+        side_perc[seb_val].err = side_perc[seb_val].err + 1;
+        side_perc[sec_val].err = side_perc[sec_val].err + 1;
+        side_perc[seb_val].total = side_perc[seb_val].total + 1;
+        side_perc[sec_val].total = side_perc[sec_val].total + 1;
         ctx.beginPath();
         ctx.moveTo(
           bot_x * this.state.width_factor - 7,
@@ -2572,7 +2743,7 @@ class Field extends Component {
           bot_x * this.state.width_factor - 7,
           bot_y * this.state.height_factor
         );
-        ctx.lineWidth = 2;
+        ctx.lineWidth = 1;
         ctx.strokeStyle = "red";
         ctx.setLineDash([0]);
         ctx.stroke();
@@ -2601,7 +2772,7 @@ class Field extends Component {
             top_x * this.state.width_factor - 7,
             top_y * this.state.height_factor
           );
-          ctx.lineWidth = 2;
+          ctx.lineWidth = 1;
           ctx.strokeStyle = "red";
           ctx.setLineDash([0]);
           ctx.stroke();
@@ -2616,7 +2787,7 @@ class Field extends Component {
           0,
           2 * Math.PI
         );
-        ctx.fillStyle = "#cc5500";
+        ctx.fillStyle = "#ffef00";
         ctx.fill();
         ctx.strokeStyle = "#FFFFFF";
         ctx.setLineDash([0]);
@@ -2677,6 +2848,7 @@ class Field extends Component {
           "top"
         );
       }
+      return side_perc;
     }
   }
 
@@ -3052,6 +3224,17 @@ class Field extends Component {
           }
         }
         if (nextProps.patter_length === 1) {
+          let side_perc = {
+            0: { total: 0, nm: 0, win: 0, err: 0 },
+            1: { total: 0, nm: 0, win: 0, err: 0 },
+            2: { total: 0, nm: 0, win: 0, err: 0 },
+            3: { total: 0, nm: 0, win: 0, err: 0 },
+            4: { total: 0, nm: 0, win: 0, err: 0 },
+            5: { total: 0, nm: 0, win: 0, err: 0 },
+            6: { total: 0, nm: 0, win: 0, err: 0 },
+            7: { total: 0, nm: 0, win: 0, err: 0 },
+            8: { total: 0, nm: 0, win: 0, err: 0 },
+          };
           nextProps.pattern_array.map((rally, rally_index) => {
             if (rally.length > 0) {
               rally.map((item, index) => {
@@ -3078,18 +3261,17 @@ class Field extends Component {
                       let badminton_array = Object.values(badminton_data);
                       let code = "nomistakes";
                       let final = false;
-                      console.log(
-                        "lookzies",
-                        badminton_array[rally_index],
-                        int_item
-                      );
+                      let indRallyIndex =
+                        nextProps.rallyIndexArray[rally_index];
+
                       if (
-                        badminton_array[rally_index] &&
-                        badminton_array[rally_index].start_index_sequence &&
-                        badminton_array[rally_index].start_index_sequence <=
+                        badminton_array[indRallyIndex] &&
+                        badminton_array[indRallyIndex].start_index_sequence !==
+                          null &&
+                        badminton_array[indRallyIndex].start_index_sequence <=
                           int_item
                       ) {
-                        code = badminton_array[rally_index].Action_init;
+                        code = badminton_array[indRallyIndex].Action_init;
                       }
                       if (
                         nextProps.shots[rally_index].length - 1 ===
@@ -3097,14 +3279,15 @@ class Field extends Component {
                       ) {
                         final = true;
                       }
-                      this.drawShot(
+                      side_perc = this.drawShot(
                         nextProps.shots[rally_index][int_item],
                         nextProps.shots[rally_index][int_item + 1],
                         "rgb(173, 173, 10)",
                         nextProps,
                         1,
                         code,
-                        final
+                        final,
+                        side_perc
                       );
                     }
                   }
@@ -3113,6 +3296,9 @@ class Field extends Component {
               });
             }
           });
+          if (this.props.indShot) {
+            this.drawPercentageBoxes(side_perc);
+          }
         } else if (nextProps.patter_length === 2) {
           nextProps.pattern_array.map((rally, rally_index) => {
             if (rally.length > 0) {
@@ -3250,7 +3436,9 @@ class Field extends Component {
     this.props._ResetStretch();
     this.props._ResetDistance();
     this.props._ResetCount();
-    this.setState({ selectedPart: [], sidePerc: Array(25).fill(0) });
+    this.setState({
+      selectedPart: [],
+    });
 
     if (nextProps !== this.props) {
       this.setState({
@@ -3708,313 +3896,406 @@ class Field extends Component {
     }
   };
 
-  drawPercentageBoxes = () => {
+  drawPercentageBoxes = (side_perc) => {
     const canvas = this.canvasRef.current;
     const ctx = canvas.getContext("2d");
-    ctx.beginPath();
-    ctx.rect(
-      10 * this.state.width_factor,
-      445 * this.state.height_factor,
-      80 * this.state.width_factor,
-      320 * this.state.height_factor
-    );
-    ctx.strokeStyle = "#FF8019";
-    ctx.lineWidth = 3;
-    ctx.setLineDash([0]);
-    ctx.stroke();
-    ctx.closePath();
-
-    ctx.beginPath();
-    ctx.rect(
-      10 * this.state.width_factor,
-      100 * this.state.height_factor,
-      80 * this.state.width_factor,
-      320 * this.state.height_factor
-    );
-    ctx.strokeStyle = "#FF8019";
-    ctx.lineWidth = 3;
-    ctx.setLineDash([0]);
-    ctx.stroke();
-    ctx.closePath();
-
-    ctx.beginPath();
-    ctx.rect(
-      720 * this.state.width_factor,
-      445 * this.state.height_factor,
-      80 * this.state.width_factor,
-      320 * this.state.height_factor
-    );
-    ctx.strokeStyle = "#FF8019";
-    ctx.lineWidth = 3;
-    ctx.setLineDash([0]);
-    ctx.stroke();
-    ctx.closePath();
-
-    ctx.beginPath();
-    ctx.rect(
-      720 * this.state.width_factor,
-      100 * this.state.height_factor,
-      80 * this.state.width_factor,
-      320 * this.state.height_factor
-    );
-    ctx.strokeStyle = "#FF8019";
-    ctx.lineWidth = 3;
-    ctx.setLineDash([0]);
-    ctx.stroke();
-    ctx.closePath();
-
-    ctx.beginPath();
-    ctx.fillStyle = "#cc5500";
-    ctx.font = "bold 14px Arial";
-    ctx.fillText(
-      "10%",
-      15 * this.state.width_factor,
-      160 * this.state.height_factor
-    );
-    ctx.closePath();
-
-    ctx.beginPath();
-    ctx.fillStyle = "#00FF00";
-    ctx.font = "bold 14px Arial";
-    ctx.fillText(
-      "10%",
-      15 * this.state.width_factor,
-      270 * this.state.height_factor
-    );
-    ctx.closePath();
-
-    ctx.beginPath();
-    ctx.fillStyle = "red";
-    ctx.font = "bold 14px Arial";
-    ctx.fillText(
-      "10%",
-      15 * this.state.width_factor,
-      380 * this.state.height_factor
-    );
-    ctx.closePath();
-
-    ctx.beginPath();
-    ctx.fillStyle = "#cc5500";
-    ctx.font = "bold 14px Arial";
-    ctx.fillText(
-      "10%",
-      15 * this.state.width_factor,
-      495 * this.state.height_factor
-    );
-    ctx.closePath();
-
-    ctx.beginPath();
-    ctx.fillStyle = "#00FF00";
-    ctx.font = "bold 14px Arial";
-    ctx.fillText(
-      "10%",
-      15 * this.state.width_factor,
-      605 * this.state.height_factor
-    );
-    ctx.closePath();
-
-    ctx.beginPath();
-    ctx.fillStyle = "red";
-    ctx.font = "bold 14px Arial";
-    ctx.fillText(
-      "10%",
-      15 * this.state.width_factor,
-      715 * this.state.height_factor
-    );
-    ctx.closePath();
-
-    ctx.beginPath();
-    ctx.fillStyle = "#cc5500";
-    ctx.font = "bold 14px Arial";
-    ctx.fillText(
-      "10%",
-      725 * this.state.width_factor,
-      160 * this.state.height_factor
-    );
-    ctx.closePath();
-
-    ctx.beginPath();
-    ctx.fillStyle = "#00FF00";
-    ctx.font = "bold 14px Arial";
-    ctx.fillText(
-      "10%",
-      725 * this.state.width_factor,
-      270 * this.state.height_factor
-    );
-    ctx.closePath();
-
-    ctx.beginPath();
-    ctx.fillStyle = "red";
-    ctx.font = "bold 14px Arial";
-    ctx.fillText(
-      "10%",
-      725 * this.state.width_factor,
-      380 * this.state.height_factor
-    );
-    ctx.closePath();
-
-    ctx.beginPath();
-    ctx.fillStyle = "#cc5500";
-    ctx.font = "bold 14px Arial";
-    ctx.fillText(
-      "10%",
-      725 * this.state.width_factor,
-      495 * this.state.height_factor
-    );
-    ctx.closePath();
-
-    ctx.beginPath();
-    ctx.fillStyle = "#00FF00";
-    ctx.font = "bold 14px Arial";
-    ctx.fillText(
-      "10%",
-      725 * this.state.width_factor,
-      605 * this.state.height_factor
-    );
-    ctx.closePath();
-
-    ctx.beginPath();
-    ctx.fillStyle = "red";
-    ctx.font = "bold 14px Arial";
-    ctx.fillText(
-      "10%",
-      725 * this.state.width_factor,
-      715 * this.state.height_factor
-    );
-    ctx.closePath();
-  };
-
-  sidePercentageChecker = (x, y, type) => {
+    let valuesArray = [];
+    let width_val = 50;
+    let height_val = 50;
     let x1 =
       146 * this.state.width_factor +
-      518 * this.state.width_factor * (this.state.width1_perc / 100);
-
-    let x2 =
-      146 * this.state.width_factor +
-      518 * this.state.width_factor * (this.state.width2_perc / 100);
+      514 * this.state.width_factor * (width_val / 100);
 
     let y1 =
       100 * this.state.height_factor +
-      670 * this.state.height_factor * (this.state.height1_perc / 100);
+      670 * this.state.height_factor * (height_val / 100);
 
     let y2 =
-      100 * this.state.height_factor +
-      670 * this.state.height_factor * (this.state.height2_perc / 100);
-    let loc_array = [
-      [146 * this.state.width_factor, x1, 100 * this.state.height_factor, y1],
-      [x1, x2, 100 * this.state.height_factor, y1],
-      [x2, 660 * this.state.width_factor, 100 * this.state.height_factor, y1],
-      [146 * this.state.width_factor, x1, y1, y2],
-      [x1, x2, y1, y2],
-      [x2, 660 * this.state.width_factor, y1, y2],
-      [146 * this.state.width_factor, x1, y2, 770 * this.state.height_factor],
-      [x1, x2, y2, 770 * this.state.height_factor],
-      [x2, 660 * this.state.width_factor, y2, 770 * this.state.height_factor],
-      [
-        146 * this.state.width_factor,
-        x1,
-        770 * this.state.height_factor,
-        770 * this.state.height_factor +
-          670 * this.state.height_factor * (this.state.height1_perc / 100),
-      ],
-      [
-        x1,
-        x2,
-        770 * this.state.height_factor,
-        770 * this.state.height_factor +
-          670 * this.state.height_factor * (this.state.height1_perc / 100),
-      ],
-      [
-        x2,
-        660 * this.state.width_factor,
-        770 * this.state.height_factor,
-        770 * this.state.height_factor +
-          670 * this.state.height_factor * (this.state.height1_perc / 100),
-      ],
-      [
-        146 * this.state.width_factor,
-        x1,
-        770 * this.state.height_factor +
-          670 * this.state.height_factor * (this.state.height1_perc / 100),
-        770 * this.state.height_factor +
-          670 * this.state.height_factor * (this.state.height2_perc / 100),
-      ],
-      [
-        x1,
-        x2,
-        770 * this.state.height_factor +
-          670 * this.state.height_factor * (this.state.height1_perc / 100),
-        770 * this.state.height_factor +
-          670 * this.state.height_factor * (this.state.height2_perc / 100),
-      ],
-      [
-        x2,
-        660 * this.state.width_factor,
-        770 * this.state.height_factor +
-          670 * this.state.height_factor * (this.state.height1_perc / 100),
-        770 * this.state.height_factor +
-          670 * this.state.height_factor * (this.state.height2_perc / 100),
-      ],
-      [
-        146 * this.state.width_factor,
-        x1,
-        770 * this.state.height_factor +
-          670 * this.state.height_factor * (this.state.height2_perc / 100),
-        1440 * this.state.height_factor,
-      ],
-      [
-        x1,
-        x2,
-        770 * this.state.height_factor +
-          670 * this.state.height_factor * (this.state.height2_perc / 100),
-        1440 * this.state.height_factor,
-      ],
-      [
-        x2,
-        660 * this.state.width_factor,
-        770 * this.state.height_factor +
-          670 * this.state.height_factor * (this.state.height2_perc / 100),
-        1440 * this.state.height_factor,
-      ],
-    ];
+      770 * this.state.height_factor +
+      670 * this.state.height_factor * (height_val / 100);
 
-    // loc_array.map((item, index) => {
-    //   if (x > item[0] && x < item[1] && y > item[2] && y < item[3]) {
-    //     let tempArray = this.state.sidePerc;
-    //     console.log("lookie", index);
-    //     if (tempArray[index][type]) {
-    //       tempArray[index][type] += 1;
-    //     } else {
-    //       tempArray[index][type] = 0;
-    //     }
-    //     this.setState({ sidePerc: tempArray });
-    //   }
-    // });
+    ctx.beginPath();
+    ctx.setLineDash([3]);
 
-    for (let i = 0; i < 18; i++) {
-      if (
-        x > loc_array[i][0] &&
-        x < loc_array[i][1] &&
-        y > loc_array[i][2] &&
-        y < loc_array[i][3]
-      ) {
-        let tempArray = this.state.sidePerc;
-        console.log("lookie", i);
-        if (tempArray[i][type]) {
-          tempArray[i][type] += 1;
-        } else {
-          tempArray[i][type] = 0;
-        }
-        this.setState({ sidePerc: tempArray });
-        console.log("look", tempArray);
-        break;
+    ctx.moveTo(x1, 100 * this.state.height_factor);
+    ctx.lineTo(x1, 1440 * this.state.height_factor);
+    ctx.strokeStyle = "#ffef00";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.setLineDash([3]);
+
+    ctx.moveTo(146 * this.state.width_factor, 100 * this.state.height_factor);
+    ctx.lineTo(146 * this.state.width_factor, 1440 * this.state.height_factor);
+    ctx.strokeStyle = "#ffef00";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.setLineDash([3]);
+
+    ctx.moveTo(660 * this.state.width_factor, 100 * this.state.height_factor);
+    ctx.lineTo(660 * this.state.width_factor, 1440 * this.state.height_factor);
+    ctx.strokeStyle = "#ffef00";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.setLineDash([3]);
+
+    ctx.moveTo(146 * this.state.width_factor, y1);
+    ctx.lineTo(660 * this.state.width_factor, y1);
+    ctx.strokeStyle = "#ffef00";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.setLineDash([3]);
+
+    ctx.moveTo(146 * this.state.width_factor, 100 * this.state.height_factor);
+    ctx.lineTo(660 * this.state.width_factor, 100 * this.state.height_factor);
+    ctx.strokeStyle = "#ffef00";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.setLineDash([3]);
+
+    ctx.moveTo(146 * this.state.width_factor, 770 * this.state.height_factor);
+    ctx.lineTo(660 * this.state.width_factor, 770 * this.state.height_factor);
+    ctx.strokeStyle = "#ffef00";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.setLineDash([3]);
+
+    ctx.moveTo(146 * this.state.width_factor, 1440 * this.state.height_factor);
+    ctx.lineTo(660 * this.state.width_factor, 1440 * this.state.height_factor);
+    ctx.strokeStyle = "#ffef00";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.setLineDash([3]);
+
+    ctx.moveTo(146 * this.state.width_factor, y2);
+    ctx.lineTo(660 * this.state.width_factor, y2);
+    ctx.strokeStyle = "#ffef00";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.setLineDash([3]);
+
+    ctx.moveTo(146 * this.state.width_factor, 100 * this.state.height_factor);
+    ctx.lineTo(0, 0);
+    ctx.strokeStyle = "#ff8019";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.setLineDash([3]);
+
+    ctx.moveTo(146 * this.state.width_factor, y1);
+    ctx.lineTo(0, 100);
+    ctx.strokeStyle = "#ff8019";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.setLineDash([3]);
+
+    ctx.moveTo(146 * this.state.width_factor, y1);
+    ctx.lineTo(0, 140);
+    ctx.strokeStyle = "#ff8019";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.setLineDash([3]);
+
+    ctx.moveTo(146 * this.state.width_factor, 770 * this.state.height_factor);
+    ctx.lineTo(0, 240);
+    ctx.strokeStyle = "#ff8019";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.setLineDash([3]);
+
+    ctx.moveTo(146 * this.state.width_factor, 770 * this.state.height_factor);
+    ctx.lineTo(0, 320);
+    ctx.strokeStyle = "#ff8019";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.setLineDash([3]);
+
+    ctx.moveTo(146 * this.state.width_factor, y2);
+    ctx.lineTo(0, 415);
+    ctx.strokeStyle = "#ff8019";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.setLineDash([3]);
+
+    ctx.moveTo(146 * this.state.width_factor, y2);
+    ctx.lineTo(0, 450);
+    ctx.strokeStyle = "#ff8019";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.setLineDash([3]);
+
+    ctx.moveTo(146 * this.state.width_factor, 1440 * this.state.height_factor);
+    ctx.lineTo(0, 550);
+    ctx.strokeStyle = "#ff8019";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.setLineDash([3]);
+
+    ctx.moveTo(660 * this.state.width_factor, 100 * this.state.height_factor);
+    ctx.lineTo(this.state.width, 0);
+    ctx.strokeStyle = "#ff8019";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.setLineDash([3]);
+
+    ctx.moveTo(660 * this.state.width_factor, y1);
+    ctx.lineTo(this.state.width, 100);
+    ctx.strokeStyle = "#ff8019";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.setLineDash([3]);
+
+    ctx.moveTo(660 * this.state.width_factor, y1);
+    ctx.lineTo(this.state.width, 140);
+    ctx.strokeStyle = "#ff8019";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.setLineDash([3]);
+
+    ctx.moveTo(660 * this.state.width_factor, 770 * this.state.height_factor);
+    ctx.lineTo(this.state.width, 240);
+    ctx.strokeStyle = "#ff8019";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.setLineDash([3]);
+
+    ctx.moveTo(660 * this.state.width_factor, 770 * this.state.height_factor);
+    ctx.lineTo(this.state.width, 320);
+    ctx.strokeStyle = "#ff8019";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.setLineDash([3]);
+
+    ctx.moveTo(660 * this.state.width_factor, y2);
+    ctx.lineTo(this.state.width, 415);
+    ctx.strokeStyle = "#ff8019";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.setLineDash([3]);
+
+    ctx.moveTo(660 * this.state.width_factor, y2);
+    ctx.lineTo(this.state.width, 450);
+    ctx.strokeStyle = "#ff8019";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.setLineDash([3]);
+
+    ctx.moveTo(660 * this.state.width_factor, 1440 * this.state.height_factor);
+    ctx.lineTo(this.state.width, 550);
+    ctx.strokeStyle = "#ff8019";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.closePath();
+
+
+
+    let totalTop = 0;
+    let totalBot = 0;
+    let sidepercarr = Object.values(side_perc);
+    console.log(side_perc);
+    for (let i = 0; i < 8; i++) {
+      if (i < 4) {
+        totalTop += sidepercarr[i].total;
+      } else {
+        totalBot += sidepercarr[i].total;
       }
     }
+    let val1 = (sidepercarr[0].nm / totalTop).toFixed(2) * 100;
+    valuesArray.push(val1.toFixed(0));
+    let val2 = (sidepercarr[0].win / totalTop).toFixed(2) * 100;
+    valuesArray.push(val2.toFixed(0));
+    let val3 = (sidepercarr[0].err / totalTop).toFixed(2) * 100;
+    valuesArray.push(val3.toFixed(0));
+    let val4 = (sidepercarr[2].nm / totalTop).toFixed(2) * 100;
+    valuesArray.push(val4.toFixed(0));
+    let val5 = (sidepercarr[2].win / totalTop).toFixed(2) * 100;
+    valuesArray.push(val5.toFixed(0));
+    let val6 = (sidepercarr[2].err / totalTop).toFixed(2) * 100;
+    valuesArray.push(val6.toFixed(0));
+    let val7 = (sidepercarr[1].nm / totalTop).toFixed(2) * 100;
+    valuesArray.push(val7.toFixed(0));
+    let val8 = (sidepercarr[1].win / totalTop).toFixed(2) * 100;
+    valuesArray.push(val8.toFixed(0));
+    let val9 = (sidepercarr[1].err / totalTop).toFixed(2) * 100;
+    valuesArray.push(val9.toFixed(0));
+    let val10 = (sidepercarr[3].nm / totalTop).toFixed(2) * 100;
+    valuesArray.push(val10.toFixed(0));
+    let val11 = (sidepercarr[3].win / totalTop).toFixed(2) * 100;
+    valuesArray.push(val11.toFixed(0));
+    let val12 = (sidepercarr[3].err / totalTop).toFixed(2) * 100;
+    valuesArray.push(val12.toFixed(0));
+
+    let val13 = (sidepercarr[4].nm / totalBot).toFixed(2) * 100;
+    valuesArray.push(val13.toFixed(0));
+    let val14 = (sidepercarr[4].win / totalBot).toFixed(2) * 100;
+    valuesArray.push(val14.toFixed(0));
+    let val15 = (sidepercarr[4].err / totalBot).toFixed(2) * 100;
+    valuesArray.push(val15.toFixed(0));
+    let val16 = (sidepercarr[6].nm / totalBot).toFixed(2) * 100;
+    valuesArray.push(val16.toFixed(0));
+    let val17 = (sidepercarr[6].win / totalBot).toFixed(2) * 100;
+    valuesArray.push(val17.toFixed(0));
+    let val18 = (sidepercarr[6].err / totalBot).toFixed(2) * 100;
+    valuesArray.push(val18.toFixed(0));
+    let val19 = (sidepercarr[5].nm / totalBot).toFixed(2) * 100;
+    valuesArray.push(val19.toFixed(0));
+    let val20 = (sidepercarr[5].win / totalBot).toFixed(2) * 100;
+    valuesArray.push(val20.toFixed(0));
+    let val21 = (sidepercarr[5].err / totalBot).toFixed(2) * 100;
+    valuesArray.push(val21.toFixed(0));
+    let val22 = (sidepercarr[7].nm / totalBot).toFixed(2) * 100;
+    valuesArray.push(val22.toFixed(0));
+    let val23 = (sidepercarr[7].win / totalBot).toFixed(2) * 100;
+    valuesArray.push(val23.toFixed(0));
+    let val24 = (sidepercarr[7].err / totalBot).toFixed(2) * 100;
+    valuesArray.push(val24.toFixed(0));
+    this.props._setvaluesArray(valuesArray);
+  };
+
+  sidePercentageChecker = (x, y, oppx, oppy, code, player) => {
+    let width_val = 50;
+    let height_val = 50;
+    let x1 =
+      146 * this.state.width_factor +
+      514 * this.state.width_factor * (width_val / 100);
+
+    let y1 =
+      100 * this.state.height_factor +
+      670 * this.state.height_factor * (height_val / 100);
+
+    let y2 =
+      770 * this.state.height_factor +
+      670 * this.state.height_factor * (height_val / 100);
+
+    let loc_array = [
+      [146 * this.state.width_factor, x1, 100 * this.state.height_factor, y1],
+      [x1, 660 * this.state.width_factor, 100 * this.state.height_factor, y1],
+      [146 * this.state.width_factor, x1, y1, 770 * this.state.height_factor],
+      [x1, 660 * this.state.width_factor, y1, 770 * this.state.height_factor],
+      [146 * this.state.width_factor, x1, 770 * this.state.height_factor, y2],
+      [x1, 660 * this.state.width_factor, 770 * this.state.height_factor, y2],
+      [146 * this.state.width_factor, x1, y2, 1440 * this.state.height_factor],
+      [x1, 660 * this.state.width_factor, y2, 1440 * this.state.height_factor],
+    ];
+    let tempArray = [];
+    if (player === "top") {
+      for (let i = 0; i < 4; i++) {
+        if (
+          x >= loc_array[i][0] &&
+          x < loc_array[i][1] &&
+          y >= loc_array[i][2] &&
+          y < loc_array[i][3]
+        ) {
+          tempArray.push(i);
+          for (let j = 4; j < 8; j++) {
+            if (
+              oppx >= loc_array[j][0] &&
+              oppx < loc_array[j][1] &&
+              oppy >= loc_array[j][2] &&
+              oppy < loc_array[j][3]
+            ) {
+              tempArray.push(j);
+              return tempArray;
+            }
+          }
+        }
+      }
+    } else {
+      for (let i = 4; i < 8; i++) {
+        if (
+          x >= loc_array[i][0] &&
+          x < loc_array[i][1] &&
+          y >= loc_array[i][2] &&
+          y < loc_array[i][3]
+        ) {
+          tempArray.push(i);
+          for (let j = 0; j < 4; j++) {
+            if (
+              oppx >= loc_array[j][0] &&
+              oppx < loc_array[j][1] &&
+              oppy >= loc_array[j][2] &&
+              oppy < loc_array[j][3]
+            ) {
+              tempArray.push(j);
+              return tempArray;
+            }
+          }
+        }
+      }
+    }
+    return tempArray;
   };
 
   render() {
     return (
-      <div>
+      <div style={{ display: "flex", flexDirection: "row" }}>
         <canvas
           id="canvas"
           ref={this.canvasRef}
@@ -4052,6 +4333,7 @@ const mapDispatchToProps = (dispatch) => {
     _ResetCount: () => dispatch(ResetCount()),
     _updateHeight: (h1, h2, player) => dispatch(UpdateHeight(h1, h2, player)),
     _SetSelectedShot: (index) => dispatch(SetSelectedShot(index)),
+    _setvaluesArray: (valuesArray) => dispatch(setvaluesArray(valuesArray)),
   };
 };
 

@@ -1,5 +1,6 @@
 const initialState = {
   selectedPart: [],
+  valuesArray: [],
 };
 
 export default function courtReducer(state = initialState, action) {
@@ -8,6 +9,12 @@ export default function courtReducer(state = initialState, action) {
       return {
         ...state,
         selectedPart: [],
+      };
+    }
+    case "SET_VALUES_ARRAY": {
+      return {
+        ...state,
+        valuesArray: action.payload.valuesArray,
       };
     }
     default:
